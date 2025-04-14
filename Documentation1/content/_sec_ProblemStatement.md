@@ -1,6 +1,6 @@
 # Phase 1: System Defination
 
-## Defining Specs(#sec-def-specs)
+## Defining Specs{#sec-def-specs}
 
 ## Choosing Topology
 
@@ -18,7 +18,7 @@ Based on the specifications from @sec-def-specs and the analysis in @wicht2020, 
 
 ## Block Diagram 
 
-
+![Block Diagram](figures/_fig_BlockDiagram.png){#fig-block-diagram}
 
 # Phase 2: Analog Design
 
@@ -34,21 +34,9 @@ Based on the specifications from @sec-def-specs and the analysis in @wicht2020, 
 
 # Phase 3: 
 
-![Design Flow](figures/_fig_Designflow.png)
+![Design Flow](figures/_fig_Designflow.png){#fig-design-flow}
 
 # Order of Design
 
-```mermaid
-graph TD
-    EA[Error Amplifier]
-    RG[ Ramp Generator<br>(test in isolation) ]
-    PWM[ Ramp gen. + Comparator (PWM) ]
-    MOSFET[ MOSFET + inductor + load ]
-    PROT[ Protection Logic<br>(Thermal + Voltage) ]
 
-    EA --> RG
-    RG --> PWM
-    PWM --> MOSFET
-    MOSFET --> PROT
-```
-![Order of Design](figures/_fig_orderofdesign.png)
+![Order of Design](figures/_fig_orderofdesign.png){#fig-order-of-design}
