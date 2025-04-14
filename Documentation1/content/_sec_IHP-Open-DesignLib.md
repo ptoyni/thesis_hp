@@ -9,9 +9,6 @@ The platform promotes community-based development, tape-outs via GitHub submissi
 
 | Tape-In Date   | Technology | Area Available (mm²) |
 |----------------|------------|-----------------------|
-| 10 May 2024    | SG13G2     | 10                    |
-| 11 Nov 2024    | SG13CMOS   | 220                   |
-| 22 Nov 2024    | SG13G2     | 20                    |
 | 07 Apr 2025    | SG13G2     | 140                   |
 | 09 May 2025    | SG13G2     | 30                    |
 | 18 Jul 2025    | SG13G2     | 30                    |
