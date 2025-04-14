@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.37">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Summary of IHP-Open-DesignLib and Free MPW Program</title>
+<title>Findings</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,19 +20,53 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="_sec_IHP-Open-DesignLib_files/libs/clipboard/clipboard.min.js"></script>
-<script src="_sec_IHP-Open-DesignLib_files/libs/quarto-html/quarto.js"></script>
-<script src="_sec_IHP-Open-DesignLib_files/libs/quarto-html/popper.min.js"></script>
-<script src="_sec_IHP-Open-DesignLib_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="_sec_IHP-Open-DesignLib_files/libs/quarto-html/anchor.min.js"></script>
-<link href="_sec_IHP-Open-DesignLib_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="_sec_IHP-Open-DesignLib_files/libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="_sec_IHP-Open-DesignLib_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="_sec_IHP-Open-DesignLib_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="_sec_IHP-Open-DesignLib_files/libs/bootstrap/bootstrap-933a14f46f0e4d1503cecf416b5e09b4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -45,10 +79,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a></li>
-  <li><a href="#available-technologies-and-tape-in-dates" id="toc-available-technologies-and-tape-in-dates" class="nav-link" data-scroll-target="#available-technologies-and-tape-in-dates"><span class="header-section-number">2</span> Available Technologies and Tape-in Dates</a></li>
-  <li><a href="#submission-process" id="toc-submission-process" class="nav-link" data-scroll-target="#submission-process"><span class="header-section-number">3</span> Submission Process</a></li>
-  <li><a href="#selection-criteria" id="toc-selection-criteria" class="nav-link" data-scroll-target="#selection-criteria"><span class="header-section-number">4</span> Selection Criteria</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#summary-of-ihp-open-designlib-and-free-mpw-program" id="toc-summary-of-ihp-open-designlib-and-free-mpw-program" class="nav-link" data-scroll-target="#summary-of-ihp-open-designlib-and-free-mpw-program"><span class="header-section-number">2</span> Summary of IHP-Open-DesignLib and Free MPW Program</a>
+  <ul class="collapse">
+  <li><a href="#available-technologies-and-tape-in-dates" id="toc-available-technologies-and-tape-in-dates" class="nav-link" data-scroll-target="#available-technologies-and-tape-in-dates"><span class="header-section-number">2.1</span> Available Technologies and Tape-in Dates</a></li>
+  <li><a href="#submission-process" id="toc-submission-process" class="nav-link" data-scroll-target="#submission-process"><span class="header-section-number">2.2</span> Submission Process</a></li>
+  <li><a href="#selection-criteria" id="toc-selection-criteria" class="nav-link" data-scroll-target="#selection-criteria"><span class="header-section-number">2.3</span> Selection Criteria</a></li>
+  </ul></li>
+  <li><a href="#installation-and-pdk" id="toc-installation-and-pdk" class="nav-link" data-scroll-target="#installation-and-pdk"><span class="header-section-number">3</span> Installation and PDK</a>
+  <ul class="collapse">
+  <li><a href="#sg13g2" id="toc-sg13g2" class="nav-link" data-scroll-target="#sg13g2"><span class="header-section-number">3.1</span> SG13G2</a></li>
+  </ul></li>
+  <li><a href="#process-flow-summary" id="toc-process-flow-summary" class="nav-link" data-scroll-target="#process-flow-summary"><span class="header-section-number">4</span> Process Flow Summary</a></li>
+  <li><a href="#cross-section-overview" id="toc-cross-section-overview" class="nav-link" data-scroll-target="#cross-section-overview"><span class="header-section-number">5</span> Cross-Section Overview</a></li>
+  <li><a href="#process-control" id="toc-process-control" class="nav-link" data-scroll-target="#process-control"><span class="header-section-number">6</span> Process Control</a></li>
+  <li><a href="#wafer-reject-criteria" id="toc-wafer-reject-criteria" class="nav-link" data-scroll-target="#wafer-reject-criteria"><span class="header-section-number">7</span> Wafer Reject Criteria</a></li>
+  <li><a href="#layout-rules" id="toc-layout-rules" class="nav-link" data-scroll-target="#layout-rules"><span class="header-section-number">8</span> Layout Rules</a></li>
+  <li><a href="#analog-design-flow" id="toc-analog-design-flow" class="nav-link" data-scroll-target="#analog-design-flow"><span class="header-section-number">9</span> Analog Design Flow</a></li>
   </ul>
 </nav>
 </div>
@@ -56,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Summary of IHP-Open-DesignLib and Free MPW Program</h1>
+<h1 class="title">Findings</h1>
 </div>
 
 
@@ -73,13 +120,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>This file iclude all the findings we hav so far</p>
+</section>
+<section id="summary-of-ihp-open-designlib-and-free-mpw-program" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="summary-of-ihp-open-designlib-and-free-mpw-program"><span class="header-section-number">2</span> Summary of IHP-Open-DesignLib and Free MPW Program</h2>
 <p><strong>IHP-Open-DesignLib</strong> is an open-source IC design repository supporting the <strong>SG13G2 BiCMOS</strong> and <strong>SG13CMOS</strong> processes from IHP. It enables the fabrication of non-commercial, academic, and research-based designs via free Multi-Project Wafer (MPW) runs under the <strong>FMD-QNC</strong> project (project code: 16ME083, funded by the German government).</p>
 <p>The platform promotes community-based development, tape-outs via GitHub submissions, and open access to prototype ICs fabricated at IHP’s pilot line.</p>
-</section>
-<section id="available-technologies-and-tape-in-dates" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="available-technologies-and-tape-in-dates"><span class="header-section-number">2</span> Available Technologies and Tape-in Dates</h2>
+<section id="available-technologies-and-tape-in-dates" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="available-technologies-and-tape-in-dates"><span class="header-section-number">2.1</span> Available Technologies and Tape-in Dates</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -129,8 +179,8 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>SG13G2</strong>: Full BiCMOS access with high-performance HBTs (up to ~300 GHz fT).<br>
 <strong>SG13CMOS</strong>: CMOS-only variant, no access to HBT devices.</p>
 </section>
-<section id="submission-process" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="submission-process"><span class="header-section-number">3</span> Submission Process</h2>
+<section id="submission-process" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="submission-process"><span class="header-section-number">2.2</span> Submission Process</h3>
 <ol type="1">
 <li><strong>Design Phase</strong>: Define project scope based on PDK capabilities. Sponsors may add criteria.</li>
 <li><strong>GitHub Submission</strong>: Submit the design via pull request to the <code>IHP-Open-DesignLib</code> repository.</li>
@@ -141,8 +191,8 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Evaluation &amp; Publication</strong>: Results and characterization data must be submitted back to the repository.</li>
 </ol>
 </section>
-<section id="selection-criteria" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="selection-criteria"><span class="header-section-number">4</span> Selection Criteria</h2>
+<section id="selection-criteria" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="selection-criteria"><span class="header-section-number">2.3</span> Selection Criteria</h3>
 <ul>
 <li>Open-source license must be included.</li>
 <li>Layout must pass Design Rule Check (DRC).</li>
@@ -156,6 +206,114 @@ ul.task-list li input[type="checkbox"] {
 <li>High area and padframe utilization.</li>
 </ul>
 <p>For more information, visit the <a href="https://github.com/IHP-GmbH/IHP-Open-DesignLib">IHP-Open-DesignLib GitHub</a>.</p>
+</section>
+</section>
+<section id="installation-and-pdk" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="installation-and-pdk"><span class="header-section-number">3</span> Installation and PDK</h2>
+<ul>
+<li><p><strong>Platform Compatibility</strong>: The IHP-Open-PDK is developed and tested primarily on Ubuntu LTS. Ubuntu 24.04 is recommended.</p></li>
+<li><p><strong>Dependencies</strong>: Many tools must be built from source. Key packages include <code>build-essential</code>, <code>clang</code>, <code>cmake</code>, <code>python3</code>, <code>qt5</code>, and many others for toolchains and simulation.</p></li>
+<li><p>Most tools (e.g., Magic, Xschem, Netgen, OpenROAD) must be <strong>built from source</strong> using code hosted on platforms like GitHub or GitLab.</p></li>
+<li><p><strong>Verilog-A Support</strong>:</p>
+<ul>
+<li>For <strong>ngspice</strong>, Verilog-A models require <strong>OpenVAF</strong>.</li>
+<li>For <strong>Xyce</strong>, Verilog-A models require <strong>ADMS</strong>.</li>
+</ul></li>
+<li><p><strong>Toolchain Setup</strong>: Tools like XSCHEM, NGSPICE, XYCE, and Pygmid must be installed separately.</p></li>
+<li><p><strong>Git</strong> is required to clone the repository.</p></li>
+<li><p>Unlike traditional PDKs like <strong>SKY130</strong> or <strong>GF180</strong>, the IHP-Open-PDK does <strong>not require installation</strong>. It delivers ready-to-use primitives and tool configuration files to minimize setup effort.</p></li>
+<li><p><strong>PDK Cloning</strong>:<br>
+Use the <code>--recursive</code> option while cloning:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--recursive</span> https://github.com/IHP-GmbH/IHP-Open-PDK.git</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> IHP-Open-PDK</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Branch Info</strong>:</p>
+<ul>
+<li><code>dev</code> branch contains the latest models and is required for compatibility with examples.<br>
+</li>
+<li><code>main</code> branch is more stable but lags behind <code>dev</code>.</li>
+</ul></li>
+<li><p><strong>Environment Setup</strong>: Set PDK-related variables in <code>.bashrc</code>, e.g., <code>PDK_ROOT</code>, <code>PDK</code>, <code>KLAYOUT_PATH</code>.</p></li>
+</ul>
+<section id="sg13g2" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="sg13g2"><span class="header-section-number">3.1</span> SG13G2</h3>
+<ul>
+<li>0.13 µm BiCMOS process.</li>
+<li>Includes high-speed <strong>SiGe:C npn-HBTs</strong> with <strong>fT = 300 GHz</strong>, <strong>fmax = 500 GHz</strong>.</li>
+<li>Supports 1.2 V (thin oxide) and 3.3 V (thick oxide) devices.</li>
+<li>Passive components: Poly resistors, MIM capacitors.</li>
+<li>Backend: 5 thin Al + 2 thick Al metal layers, MIM layer.</li>
+</ul>
+</section>
+</section>
+<section id="process-flow-summary" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="process-flow-summary"><span class="header-section-number">4</span> Process Flow Summary</h2>
+<ul>
+<li><strong>Isolation</strong>: Shallow trench isolation (STI).</li>
+<li><strong>Well Formation</strong>: NWell, PWell, Triple Well.</li>
+<li><strong>Gate Stack</strong>: Poly Gate formation.</li>
+<li><strong>Active Regions</strong>: Emitter, Collector, Bipolar Windows.</li>
+<li><strong>Implants</strong>: nSD / pSD implant and drive.</li>
+<li><strong>Metallization &amp; Contacts</strong>: Salicide formation, Metal1 to Metal5, vias.</li>
+<li><strong>Advanced Features</strong>: MIM capacitors, thick top metals.</li>
+<li><strong>Passivation &amp; Testing</strong>: Final passivation and parametric wafer testing.</li>
+</ul>
+</section>
+<section id="cross-section-overview" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="cross-section-overview"><span class="header-section-number">5</span> Cross-Section Overview</h2>
+<ul>
+<li><strong>Layers</strong> (from top to bottom):
+<ul>
+<li>Poly resistor (~160 nm), Nitride (50 nm), Field oxide (400 nm)</li>
+<li>ILD/CO with εr ≈ 4.1, total ~640 nm thick</li>
+<li>Epi layer (3750 nm, σ = 20 Ωcm), Si bulk (750 µm, σ = 50 Ωcm)</li>
+</ul></li>
+<li><strong>BEOL Details</strong>:
+<ul>
+<li>Metal layers stacked with dielectric layers (εr = 4.1 ± 0.1)</li>
+<li>Via spacings from 490–540 nm between layers</li>
+<li>Top dielectric (εr = 6.6) for MIM support</li>
+</ul></li>
+</ul>
+</section>
+<section id="process-control" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="process-control"><span class="header-section-number">6</span> Process Control</h2>
+<ul>
+<li><strong>Measurement Temperature</strong>: Standard measurements at 27°C; models extracted for -40°C to 125°C.</li>
+<li><strong>Parameter Types</strong>:
+<ul>
+<li><strong>Pass/Fail</strong>: Measured on every wafer, used for wafer selection with bold red SPEC limits.</li>
+<li><strong>Information</strong>:
+<ul>
+<li>Group 1: Measured per wafer, with blue SPEC limits.</li>
+<li>Group 2: Not on every wafer with italic blue SPEC limits. (e.g., thicknesses, model behavior).</li>
+</ul></li>
+</ul></li>
+<li><strong>Simulation Models</strong>: Process control parameters must not be used for circuit simulations. Use dedicated simulation models.</li>
+</ul>
+<p>All these Process Control Parameters are mentioned in the <a href="https://ihp-open-pdk-docs.readthedocs.io/en/latest/process_specs/02_process_control_params.html">attached reference</a> along with measurement conditions.</p>
+</section>
+<section id="wafer-reject-criteria" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="wafer-reject-criteria"><span class="header-section-number">7</span> Wafer Reject Criteria</h2>
+<ul>
+<li><strong>Evaluation Sites</strong>: Pass/Fail parameters measured at ≥9 sites across the wafer.</li>
+<li><strong>Passing Rule</strong>: A wafer passes if at least <strong>2/3 of sites (minimum 6)</strong> pass <strong>all</strong> Pass/Fail criteria.</li>
+</ul>
+</section>
+<section id="layout-rules" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="layout-rules"><span class="header-section-number">8</span> Layout Rules</h2>
+<ul>
+<li>Only the layers described in the <a href="https://ihp-open-pdk-docs.readthedocs.io/en/latest/layout_rules/02_layer_table.html">Layer table</a> are allowed to be used in layout designs. Do not use layers exclusively reserved for internal usage.</li>
+</ul>
+</section>
+<section id="analog-design-flow" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="analog-design-flow"><span class="header-section-number">9</span> Analog Design Flow</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/IMP.png" class="img-fluid figure-img"></p>
+<figcaption>Design Process Flow</figcaption>
+</figure>
+</div>
 </section>
 
 </main>
