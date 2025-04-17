@@ -58,6 +58,29 @@ This thesis presents the end-to-end custom IC design of a folded cascode error a
 | Power Consumption    | < 1 mW                           |
 | Input CM Range       | Rail-to-rail or 0.5–2.8 V        |
 
+In the section detailing buck converter control design (especially the voltage-mode control loop), @wicht2020 focuses on:
+
+- A transconductance amplifier used as the error amplifier
+
+- High open-loop gain
+
+- A clear emphasis on stability, bandwidth, and linear range
+
+- In most cases, the paper assumes low voltage (3.3V analog supply) domain
+
+- The architectures shown are two-stage OTAs or folded cascode for high PSRR
+
+Final Take:
+
+Folded Cascode OTA is very much aligned with @wicht2020 methodology, especially if our focus is on:
+
+- A high-gain, linear, feedback-stage amplifier
+
+- Working within 3.3V analog domain
+
+- Dealing with moderate capacitive loads (e.g. compensation network / VCOMP node)
+
+- @wicht2020 doesn’t enforce one architecture rigidly, but the characteristics described match folded cascode best.
 
 ## Design Process Overview
 
