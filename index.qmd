@@ -12,4 +12,6 @@ This file iclude all the findings we hav so far
 {{< include content\_sec_installation.md >}}
 {{< include content\_sec_analog_design.md >}}
 {{< include content\_sec_ProblemStatement.md >}}
-{{< include content\sec_analog_tapeout_scope.md >}}
+{{< include content\_sec_Requirements_AES.md >}}
+{{< include content\_sec_Thesis_HP.md >}}
+{{< include content\_sec_OpenPoints.md >}}
