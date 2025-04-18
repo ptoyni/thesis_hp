@@ -1,32 +1,6 @@
+# Open Source Tools and PDK
 
-
-## Installation and PDK
-
-- **Platform Compatibility**: The IHP-Open-PDK is developed and tested primarily on Ubuntu LTS. Ubuntu 24.04 is recommended.
-- **Dependencies**: Many tools must be built from source. Key packages include `build-essential`, `clang`, `cmake`, `python3`, `qt5`, and many others for toolchains and simulation.
-- Most tools (e.g., Magic, Xschem, Netgen, OpenROAD) must be **built from source** using code hosted on platforms like GitHub or GitLab.
-- **Verilog-A Support**:
-  - For **ngspice**, Verilog-A models require **OpenVAF**.
-  - For **Xyce**, Verilog-A models require **ADMS**.
-- **Toolchain Setup**: Tools like XSCHEM, NGSPICE, XYCE, and Pygmid must be installed separately.
-- **Git** is required to clone the repository. 
-- Unlike traditional PDKs like **SKY130** or **GF180**, the IHP-Open-PDK does **not require installation**. It delivers ready-to-use primitives and tool configuration files to minimize setup effort.
-
-
-- **PDK Cloning**:  
-  Use the `--recursive` option while cloning:  
-  ```bash
-  git clone --recursive https://github.com/IHP-GmbH/IHP-Open-PDK.git
-  cd IHP-Open-PDK
-  git checkout dev
-  ```
-- **Branch Info**:  
-  - `dev` branch contains the latest models and is required for compatibility with examples.  
-  - `main` branch is more stable but lags behind `dev`.
-- **Environment Setup**: Set PDK-related variables in `.bashrc`, e.g., `PDK_ROOT`, `PDK`, `KLAYOUT_PATH`.
-
-
-### SG13G2
+## IHP-Sg13g2 PDK
 
   - 0.13 µm BiCMOS process.
   - Includes high-speed **SiGe:C npn-HBTs** with  **fT = 300 GHz**, **fmax = 500 GHz**.
@@ -34,6 +8,53 @@
   - Passive components: Poly resistors, MIM capacitors.
   - Backend: 5 thin Al + 2 thick Al metal layers, MIM layer.
 
+- Unlike traditional PDKs like **SKY130** or **GF180**, the IHP-Open-PDK does **not require installation**. It delivers ready-to-use primitives and tool configuration files to minimize setup effort. Which can be done two ways.
+
+### **Method I : Building Tools**
+ The IHP-Open-PDK is developed and tested primarily on Ubuntu LTS. Ubuntu 24.04 is recommended.
+
+ - **Git** is required to clone the repository.
+
+ - Most tools (e.g., Magic, Xschem, Netgen, OpenROAD) can be **built from source** using code hosted on platforms, for more instructions visit  [IHP-DesignLib/Installation](https://ihp-open-pdk-docs.readthedocs.io/en/latest/install.html).
+
+ - **PDK Cloning**:  
+  Use the `--recursive` option while cloning:  
+  ```bash
+  git clone --recursive https://github.com/IHP-GmbH/IHP-Open-PDK.git
+  cd IHP-Open-PDK
+  git checkout dev
+  ```
+ - **Branch Info**:  
+  - `dev` branch contains the latest models and is required for compatibility with examples.  
+  - `main` branch is more stable but lags behind `dev`.
+
+ - **Environment Setup**: Set PDK-related variables in `.bashrc`, e.g., `PDK_ROOT`, `PDK`, `KLAYOUT_PATH`.
+
+### **Method II : OSIC-IIC Tools**
+
+ IIC-OSIC-TOOLS is an all-in-one Docker container for open-source-based integrated circuit designs for analog and digital circuit flows. The CPU architectures x86_64/amd64 and aarch64/arm64 are natively supported based on Ubuntu 24.04 LTS (since release 2025.01)
+
+ This collection of tools is curated by the Institute for Integrated Circuits and Quantum Computing (IICQC), Johannes Kepler University (JKU).
+
+ - **Docker** installation is required in desktop.
+
+ - It supports IHP-Open PDK along with other PDKs and no additional configuration is required.
+
+ - **PDK Cloning**:  
+  ```bash
+  git clone --depth=1 https://github.com/iic-jku/iic-osic-tools.git
+  ```
+ 
+ - It supports two modes of operation:
+
+   - Using a complete desktop environment (XFCE) in Xvnc (a VNC server), either directly accessing it with a VNC client of your choice or the integrated noVNC server that runs in your browser.
+   - Using a local X11 server and directly showing the application windows on your desktop.
+
+ - It has all the tools required for our work pre-installed in it.
+
+ - All the details for more specific installation and environment setup instructions are mentioned on their [Git Repository](https://github.com/iic-jku/iic-osic-tools.git).
+
+We are going to use **METHOD II -OSIC-IIC Tools** in our thesis as its efficient and offers far more scope than building tools from scratch.
 
 ## Process Flow Summary
 
