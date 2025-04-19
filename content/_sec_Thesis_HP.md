@@ -46,6 +46,10 @@ This thesis presents the end-to-end custom IC design of a folded cascode error a
 5. **GDSII Generation**  
    A validated GDSII file is generated for MPW (Multi-Project Wafer) tapeout submission through the IIC-OSIC shuttle, targeting integration into the full mixed-signal LED driver IC.
 
+![Design Flow](figures/_fig_Designflow.png){#fig-design-flow}
+
+
+
 ## Specifications
 
 | **Parameter**        | **Target Value**                 |
