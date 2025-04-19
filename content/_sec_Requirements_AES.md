@@ -10,3 +10,12 @@ To meet the defined performance and protection requirements efficiently, a buck 
 # Block Diagram
 
 ![Block Diagram](figures/_fig_BlockDiagram.png){#fig-block-diagram}
+
+| Block                                          | Function                                               |
+|------------------------------------------------|--------------------------------------------------------|
+| Power Stage Interface                          | Inductor-Capacitor Buck output stage                   |
+| PWM Generator                                  | Ramp + Comparator                                      |
+| Error Amplifier                                | Feedback loop, V_ref vs V_out                          |
+| Current Control                                | Per channel analog regulation (DAC + current sink)     |
+| Thermal + Voltage protections                  | Shutdown to over-temperature, over and under voltages  |
+| Biasing, reference circuits, reference sources | Bandgap or bias current                                |

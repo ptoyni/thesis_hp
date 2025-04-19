@@ -48,7 +48,7 @@ This thesis presents the end-to-end custom IC design of a folded cascode error a
 
 ## Specifications
 
-| **Parameter**        | **Target Value**                |
+| **Parameter**        | **Target Value**                 |
 |----------------------|----------------------------------|
 | Gain (DC)            | > 60 dB                          |
 | Bandwidth            | > 1 MHz                          |
