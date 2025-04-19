@@ -1,11 +1,10 @@
-
-
+# Tapeout and Technology Node
 
 **IHP-Open-DesignLib** is an open-source IC design repository supporting the **SG13G2 BiCMOS** and **SG13CMOS** processes from IHP. It enables the fabrication of non-commercial, academic, and research-based designs via free Multi-Project Wafer (MPW) runs under the **FMD-QNC** project (project code: 16ME083, funded by the German government).
 
 The platform promotes community-based development, tape-outs via GitHub submissions, and open access to prototype ICs fabricated at IHP’s pilot line.
 
-### Available Technologies and Tape-in Dates
+## Available Technologies and Tape-in Dates
 
 | Tape-In Date   | Technology | Area Available (mm²) |
 |----------------|------------|-----------------------|
@@ -17,7 +16,7 @@ The platform promotes community-based development, tape-outs via GitHub submissi
 **SG13G2**: Full BiCMOS access with high-performance HBTs (up to ~300 GHz fT).  
 **SG13CMOS**: CMOS-only variant, no access to HBT devices.
 
-### Submission Process
+## Submission Process
 
 1. **Design Phase**: Define project scope based on PDK capabilities. Sponsors may add criteria.
 2. **GitHub Submission**: Submit the design via pull request to the `IHP-Open-DesignLib` repository.
@@ -27,7 +26,7 @@ The platform promotes community-based development, tape-outs via GitHub submissi
 6. **Chip Depot Access**: Fabricated ICs are stored and made rentable via the IHP Open Chip Depot (max 2 years).
 7. **Evaluation & Publication**: Results and characterization data must be submitted back to the repository.
 
-### Selection Criteria
+## Selection Criteria
 
 - Open-source license must be included.
 - Layout must pass Design Rule Check (DRC).

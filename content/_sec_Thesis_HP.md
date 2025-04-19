@@ -1,6 +1,6 @@
 # Thesis Focus
 
-The focus of our thesis is the complete design and implementation of the error amplifier block within the selected buck converter topology. This involves developing the block from initial specification and schematic design through to layout, verification (including LVS and PEX), and final tapeout using exclusively open-source tools. The goal is to create a high-performance, low-power error amplifier tailored to the requirements of the mixed-signal LED driver IC, ensuring accurate regulation and stability of the control loop. This work will contribute a critical building block to the overall ASIC design while also serving as a case study in open-source analog IC design workflows.
+The focus of our thesis is designing and implementating error amplifier block within the selected buck converter topology using Open Source Tools. This involves developing the block from initial specification and schematic design through to layout, verification (including LVS and PEX), and final tapeout using exclusively open-source tools and IHP-SG13G2 PDK. The goal is to create a high-performance, low-power error amplifier tailored to the requirements of the mixed-signal LED driver IC, ensuring accurate regulation and stability of the control loop. This work will contribute a critical building block to the overall ASIC design while also serving as a case study in open-source analog IC design workflows.
 
 # Title: Development and Tapeout of an Analog Error Amplifier for LED Driver Control Using Open-Source Tools
 
@@ -83,6 +83,8 @@ Folded Cascode OTA is very much aligned with @wicht2020 methodology, especially 
 - @wicht2020 doesn’t enforce one architecture rigidly, but the characteristics described match folded cascode best.
 
 ## Design Process Overview
+
+![Design Process Flow](figures/IMP.png)
 
 1. **Literature Review** – Study error amplifier architectures, compensation, and integration in PMICs  
 2. **Topology Selection** – Choose folded cascode due to high gain and good output swing  
