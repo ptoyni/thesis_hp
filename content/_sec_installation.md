@@ -54,7 +54,10 @@
 
  - All the details for more specific installation and environment setup instructions are mentioned on their [Git Repository](https://github.com/iic-jku/iic-osic-tools.git).
 
+::: {.callout-important}
 We are going to use **METHOD II -OSIC-IIC Tools** in our thesis as its efficient and offers far more scope than building tools from scratch.
+
+:::
 
 ## Process Flow Summary
 
