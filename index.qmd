@@ -1,8 +1,38 @@
 ---
-title: "Findings"
-format: html
-toc: true
-number-sections: true
+title: "Development and Tapeout of an Analog Error Amplifier for LED Driver Control Using Open-Source Tools"
+subtitle: "Hochschule Bremen"
+author:
+    - name: Priyanka Toyni
+      orcid: 
+      email: ptoyni@hs-bremen.de
+      corresponding: true
+      roles: "Lead author"
+      affiliation:
+            - name: Hochschule Bremen - City University of Applied Sciences (HSB)
+              city: Bremen
+              state: Germany
+              url:  
+    - name: Hrishikesh Pangavhane
+      orcid: 
+      email: hpangavhane@hs-bremen.de
+      corresponding: true
+      roles: "Lead author"
+      affiliation:
+            - name: Hochschule Bremen - City University of Applied Sciences (HSB)
+              city: Bremen
+              state: Germany
+              url:  
+
+date: last-modified
+license: "Apache-2.0 license"
+bibliography: references.bib
+reader-mode: true
+
+page-footer:
+left: |
+    Development and Tapeout of an Analog Error Amplifier for LED Driver Control Using Open-Source Tools.
+right: |
+    This book was built with <a href="https://quarto.org/">Quarto</a>.
 ---
 
 # Introduction

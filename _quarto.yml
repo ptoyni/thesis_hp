@@ -1,74 +1,33 @@
 project:
-  type: book
-  output-dir: _book
-  
-book:
-  title: "Development and Tapeout of an Analog Error Amplifier for LED Driver Control Using Open-Source Tools"
-  author:
-    - name: Priyanka Toyni
-      orcid: 
-      email: ptoyni@hs-bremen.de
-      corresponding: true
-      roles: "Lead author"
-      affiliation:
-      - name: Hochschule Bremen - City University of Applied Sciences (HSB)
-        city: Bremen
-        state: Germany
-        url:  
-    - name: Hrishikesh Pangavhane
-      orcid: 
-      email: hpangavhane@hs-bremen.de
-      corresponding: true
-      roles: "Lead author"
-      affiliation:
-      - name: Hochschule Bremen - City University of Applied Sciences (HSB)
-        city: Bremen
-        state: Germany
-        url:  
-   
-  date: last-modified
-  license: "Apache-2.0 license"
-  reader-mode: true
+  type: manuscript
 
-  page-footer:
-    left: |
-      Development and Tapeout of an Analog Error Amplifier for LED Driver Control Using Open-Source Tools.
-    right: |
-      This book was built with <a href="https://quarto.org/">Quarto</a>.
-#  cover-image: figures/hsb-logo.png
-#  favicon: figures/hsb-logo.png
-#  site-url: 
-  repo-url: https://gitlab.on.hs-bremen.de/hpangavhane/thesis_hp
-  repo-branch: main
-  repo-actions: [edit, issue]
-
-  chapters:
-    - index.qmd
-
-bibliography: _bibliography/references.bib
-
-format:
-  html:
-    theme: flatly
-  pdf:
-    documentclass: scrbook # scrreptrt
-#    lof: true
-#    lot: true
-    toc: true    
-    geometry:
-      - top=30mm
-      - left=20mm
-      - heightrounded
-    hyperrefoptions:
-      - linktoc=all
-    colorlinks: true
-    linkcolor: "blue"
-    biblio-style: ieee
-    #    keep-tex: true
-    output-file: elk
-  epub:
-    theme: flatly
-    output-file: elk
+manuscript:
+  article: index.qmd
 
 execute:
   freeze: auto
+
+format:
+  html:
+    toc: true
+    fig-align: center
+    lang: en
+    number-sections: true
+    toc-expand: 2
+  pdf:
+    toc: false
+    fig-align: center
+    lang: en
+    number-sections: true
+    papersize: A4
+    pdf-engine: xelatex 
+  docx:
+    toc: false
+    fig-align: center
+    lang: en
+    number-sections: true
+    highlight-style: github
+    reference-doc: ./docx/Design_Challenge_template.docx
+
+bibliography: references.bib
+
