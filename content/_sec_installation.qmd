@@ -7,55 +7,64 @@
   - Supports 1.2 V (thin oxide) and 3.3 V (thick oxide) devices.
   - Passive components: Poly resistors, MIM capacitors.
   - Backend: 5 thin Al + 2 thick Al metal layers, MIM layer.
-
-- Unlike traditional PDKs like **SKY130** or **GF180**, the IHP-Open-PDK does **not require installation**. It delivers ready-to-use primitives and tool configuration files to minimize setup effort. Which can be done two ways.
+  - Unlike traditional PDKs like **SKY130** or **GF180**, the IHP-Open-PDK does **not require installation**. It
+    delivers ready-to-use primitives and tool configuration files to minimize setup effort. Which can be done two ways. 
 
 ### **Method I : Building Tools**
- The IHP-Open-PDK is developed and tested primarily on Ubuntu LTS. Ubuntu 24.04 is recommended.
+The IHP-Open-PDK is developed and tested primarily on Ubuntu LTS. Ubuntu 24.04 is recommended.
 
- - **Git** is required to clone the repository.
+- **Git** is required to clone the repository.
 
- - Most tools (e.g., Magic, Xschem, Netgen, OpenROAD) can be **built from source** using code hosted on platforms, for more instructions visit  [IHP-DesignLib/Installation](https://ihp-open-pdk-docs.readthedocs.io/en/latest/install.html).
+- Most tools (e.g., Magic, Xschem, Netgen, OpenROAD) can be **built from source** using code hosted on platforms, for
+  more instructions visit
+  [IHP-DesignLib/Installation](https://ihp-open-pdk-docs.readthedocs.io/en/latest/install.html). 
 
- - **PDK Cloning**:  
-  Use the `--recursive` option while cloning:  
-  ```bash
+- **PDK Cloning**:
+  Use the `--recursive` option while cloning:
+```bash
   git clone --recursive https://github.com/IHP-GmbH/IHP-Open-PDK.git
   cd IHP-Open-PDK
   git checkout dev
   ```
- - **Branch Info**:  
-  - `dev` branch contains the latest models and is required for compatibility with examples.  
-  - `main` branch is more stable but lags behind `dev`.
+- **Branch Info**:  
+- `dev` branch contains the latest models and is required for compatibility with examples.  
+- `main` branch is more stable but lags behind `dev`.
 
- - **Environment Setup**: Set PDK-related variables in `.bashrc`, e.g., `PDK_ROOT`, `PDK`, `KLAYOUT_PATH`.
+- **Environment Setup**: Set PDK-related variables in `.bashrc`, e.g., `PDK_ROOT`, `PDK`, `KLAYOUT_PATH`.
 
 ### **Method II : OSIC-IIC Tools**
 
- IIC-OSIC-TOOLS is an all-in-one Docker container for open-source-based integrated circuit designs for analog and digital circuit flows. The CPU architectures x86_64/amd64 and aarch64/arm64 are natively supported based on Ubuntu 24.04 LTS (since release 2025.01)
+IIC-OSIC-TOOLS is an all-in-one Docker container for open-source-based integrated circuit designs for analog and digital
+circuit flows. The CPU architectures x86_64/amd64 and aarch64/arm64 are natively supported based on Ubuntu 24.04 LTS
+(since release 2025.01)
 
- This collection of tools is curated by the Institute for Integrated Circuits and Quantum Computing (IICQC), Johannes Kepler University (JKU).
+This collection of tools is curated by the Institute for Integrated Circuits and Quantum Computing (IICQC), Johannes
+Kepler University (JKU). 
 
- - **Docker** installation is required in desktop.
+- **Docker** installation is required in desktop.
 
- - It supports IHP-Open PDK along with other PDKs and no additional configuration is required.
+- It supports IHP-Open PDK along with other PDKs and no additional configuration is required.
 
- - **PDK Cloning**:  
+- **PDK Cloning**:  
   ```bash
   git clone --depth=1 https://github.com/iic-jku/iic-osic-tools.git
   ```
  
- - It supports two modes of operation:
+- It supports two modes of operation:
 
-   - Using a complete desktop environment (XFCE) in Xvnc (a VNC server), either directly accessing it with a VNC client of your choice or the integrated noVNC server that runs in your browser.
-   - Using a local X11 server and directly showing the application windows on your desktop.
+- Using a complete desktop environment (XFCE) in Xvnc (a VNC server), either directly accessing it with a VNC client of
+  your choice or the integrated noVNC server that runs in your browser. 
 
- - It has all the tools required for our work pre-installed in it.
+- Using a local X11 server and directly showing the application windows on your desktop.
 
- - All the details for more specific installation and environment setup instructions are mentioned on their [Git Repository](https://github.com/iic-jku/iic-osic-tools.git).
+- It has all the tools required for our work pre-installed in it. 
+
+- All the details for more specific installation and environment setup instructions are mentioned on their [Git
+  Repository](https://github.com/iic-jku/iic-osic-tools.git).
 
 ::: {.callout-important}
-We are going to use **METHOD II -OSIC-IIC Tools** in our thesis as its efficient and offers far more scope than building tools from scratch.
+We are going to use **METHOD II -OSIC-IIC Tools** in our thesis as its efficient and offers far more scope than building
+tools from scratch. 
 
 :::
 
@@ -100,4 +109,6 @@ All these Process Control Parameters are mentioned in the [attached reference](h
 
 ## Layout Rules
 
-- Only the layers described in the [Layer table](https://ihp-open-pdk-docs.readthedocs.io/en/latest/layout_rules/02_layer_table.html) are allowed to be used in layout designs. Do not use layers exclusively reserved for internal usage.
+- Only the layers described in the [Layer
+  table](https://ihp-open-pdk-docs.readthedocs.io/en/latest/layout_rules/02_layer_table.html) are allowed to be used in
+  layout designs. Do not use layers exclusively reserved for internal usage. 

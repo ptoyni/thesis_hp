@@ -9,25 +9,25 @@ execute:
 
 format:
   html:
-    toc: true
-    fig-align: center
-    lang: en
-    number-sections: true
-    toc-expand: 2
+    theme: flatly
   pdf:
-    toc: false
-    fig-align: center
-    lang: en
-    number-sections: true
-    papersize: A4
-    pdf-engine: xelatex 
-  docx:
-    toc: false
-    fig-align: center
-    lang: en
-    number-sections: true
-    highlight-style: github
-    reference-doc: ./docx/Design_Challenge_template.docx
+    documentclass: scrreprt
+#    lof: true
+#    lot: true
+    toc: true    
+    geometry:
+      - top=30mm
+      - left=20mm
+      - heightrounded
+    hyperrefoptions:
+      - linktoc=all
+    colorlinks: true
+    linkcolor: "blue"
+    biblio-style: ieee
+    #    keep-tex: true
+    output-file: thesis_hp 
+  epub:
+    theme: flatly
+    output-file: thesis_hp
 
-bibliography: references.bib
 

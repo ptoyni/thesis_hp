@@ -1,0 +1,8 @@
+# Circuit design ettiquettes
+
+In a well-done design, the documentation is included in the schematic/source code, so there is no searching for a piece
+of documentation somewhere else (which is often not found anyway). 
+
+A detailed discussion about etiqquetes to be followed for **Pins**, **Schematics**, **Symbols**, **Mixed-Signals
+designs**, can be found
+[here](https://iic-jku.github.io/analog-circuit-design/analog_circuit_design.html#sec-designers-etiquette) 

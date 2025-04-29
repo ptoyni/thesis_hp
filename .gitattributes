@@ -2,4 +2,7 @@
 *.png filter=lfs diff=lfs merge=lfs -text
 # Use pandoc to track changes in *.docx file
 *.docx diff=pandoc
-
+*.raw filter=lfs diff=lfs merge=lfs -text
+*.parquet filter=lfs diff=lfs merge=lfs -text
+*.csv filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
