@@ -26,8 +26,8 @@ format:
     biblio-style: ieee
     #    keep-tex: true
     output-file: thesis_hp 
-  epub:
-    theme: flatly
-    output-file: thesis_hp
+#  epub:
+#    theme: flatly
+#    output-file: thesis_hp
 
 
