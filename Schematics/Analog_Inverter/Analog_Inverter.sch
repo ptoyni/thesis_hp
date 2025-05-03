@@ -38,7 +38,7 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {devices/ipin.sym} -470 80 0 0 {name=p4 lab=vinp}
+C {devices/ipin.sym} -470 80 0 0 {name=p4 lab=vin}
 C {devices/iopin.sym} -530 -160 0 1 {name=p2 lab=vdd}
 C {devices/iopin.sym} -530 280 0 1 {name=p3 lab=vss}
 C {devices/opin.sym} 60 80 0 0 {name=p6 lab=vout}
