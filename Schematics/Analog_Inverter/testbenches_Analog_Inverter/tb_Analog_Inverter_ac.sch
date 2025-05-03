@@ -24,7 +24,7 @@ C {devices/lab_wire.sym} -310 -110 1 0 {name=p4 sig_type=std_logic lab=Vdd}
 C {devices/lab_wire.sym} -310 -50 1 1 {name=p5 sig_type=std_logic lab=Vss}
 C {devices/code_shown.sym} 30 -460 0 0 {name=NGSPICE only_toplevel=true 
 value="
-Vin v_in 0 dc 0.75 ac 1
+*Vin v_in 0 dc 0.75 ac 1
 * Bias input to midpoint (VDD/2 = 0.75V for 1.5V supply)
 
 .control
@@ -42,3 +42,9 @@ C {devices/lab_wire.sym} -400 -80 0 0 {name=p7 sig_type=std_logic lab=v_in}
 C {devices/gnd.sym} -490 -210 0 0 {name=l3 lab=GND}
 C {devices/gnd.sym} -410 -210 0 0 {name=l1 lab=GND}
 C {/foss/designs/Thesis/workspace/thesis_hp/Schematics/Analog_Inverter/Analog_Inverter.sym} -250 -80 0 0 {name=x1}
+C {devices/vsource.sym} -330 -240 0 0 {name=Vin value="dc 0.75 ac 1"}
+C {devices/lab_wire.sym} -330 -270 0 1 {name=Vin1 sig_type=std_logic lab=v_in
+
+value="dc 0.75 ac 1"}
+C {devices/gnd.sym} -330 -210 0 0 {name=Vin2 lab=GND
+value="dc 0.75 ac 1"}
