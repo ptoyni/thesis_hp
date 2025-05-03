@@ -43,14 +43,15 @@ plot v(v_out)
 .endc
 .end
 "}
-C {devices/code_shown.sym} 540 -130 0 0 {name=MODEL1 only_toplevel=true
+C {devices/code_shown.sym} 540 -130 0 0 {name=TT_MODEL only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
 "}
 C {devices/lab_wire.sym} 130 -170 0 0 {name=p12 sig_type=std_logic lab=v_in}
 C {devices/gnd.sym} 40 -300 0 0 {name=l2 lab=GND}
 C {devices/gnd.sym} 120 -300 0 0 {name=l4 lab=GND}
-C {/foss/designs/Thesis/workspace/thesis_hp/Schematics/Analog_Inverter/Analog_Inverter.sym} 280 -170 0 0 {name=x1}
 C {devices/vsource.sym} 210 -330 0 0 {name=Vin value="dc 0 pulse(0 1.5 0 1n 1n 4n 10n)"}
 C {devices/lab_wire.sym} 210 -360 0 1 {name=p1 sig_type=std_logic lab=v_in}
 C {devices/gnd.sym} 210 -300 0 0 {name=l1 lab=GND}
+C {devices/title.sym} 170 60 0 0 {name=l5 author="(c) 2024 Hrishikesh, @HSB"}
+C {/foss/designs/Thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter/Analog_Inverter.sym} 280 -170 0 0 {name=x1}
