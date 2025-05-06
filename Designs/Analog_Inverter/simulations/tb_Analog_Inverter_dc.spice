@@ -1,0 +1,60 @@
+** sch_path: /foss/designs/Thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter/testbenches_Analog_Inverter/tb_Analog_Inverter_dc.sch
+**.subckt tb_Analog_Inverter_dc
+Vdd1 Vdd GND 1.5
+Vss1 Vss GND 0
+Vin v_in GND dc 0 pulse(0 1.5 0 1n 1n 4n 10n)
+x1 Vdd v_in v_out Vss Analog_Inverter
+**** begin user architecture code
+
+
+*Vin v_in 0 dc 0 pulse(0 1.5 0 1n 1n 4n 10n)
+
+.control
+reset
+dc vin 0 1.5 0.01
+save all
+let VP = 1.5
+let vo_mid = VP/2
+let dvout = deriv(v(v_out))
+meas DC VSW find v(v_in) when v(v_out)=vo_mid
+meas DC VIL find v(v_in) WHEN dvout=-1 CROSS=1
+meas DC VIH find v(v_in) WHEN dvout=-1 CROSS=2
+meas DC VOL find v(v_out) WHEN dvout=-1 CROSS=2
+meas DC VOH find v(v_out) WHEN dvout=-1 CROSS=1
+echo VTC measurements
+print VSW
+print VIL
+print VIH
+print VOH
+print VOL
+echo
+*set filetype=binary
+*write ./Analog_Inverter/simulations/tb_inv_dc.raw
+
+plot v(v_out)
+
+
+.endc
+.end
+
+
+ .lib cornerMOSlv.lib mos_tt
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:
+*+  /foss/designs/Thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter/Analog_Inverter.sym # of pins=4
+** sym_path: /foss/designs/Thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter/Analog_Inverter.sym
+** sch_path: /foss/designs/Thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter/Analog_Inverter.sch
+.subckt Analog_Inverter vdd vin vout vss
+*.ipin vin
+*.iopin vdd
+*.iopin vss
+*.opin vout
+XM1 vout vin vdd vdd sg13_lv_pmos w=40u l=0.52u ng=1 m=1
+XM2 vout vin vss vss sg13_lv_nmos w=20u l=0.52u ng=1 m=1
+.ends
+
+.GLOBAL GND
+.end

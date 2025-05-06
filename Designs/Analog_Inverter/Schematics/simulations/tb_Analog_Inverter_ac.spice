@@ -1,0 +1,40 @@
+** sch_path: /foss/designs/Thesis/workspace/thesis_hp/Schematics/Analog_Inverter/testbenches_Analog_Inverter/tb_Analog_Inverter_ac.sch
+**.subckt tb_Analog_Inverter_ac
+C2 v_out GND 5p m=1
+Vdd Vdd GND 1.5
+Vss Vss GND 0
+x1 Vdd v_in v_out Vss Analog_Inverter
+Vin v_in GND dc 0.75 ac 1
+**** begin user architecture code
+
+
+*Vin v_in 0 dc 0.75 ac 1
+* Bias input to midpoint (VDD/2 = 0.75V for 1.5V supply)
+
+.control
+resetop                          ; find DC operating point
+ac dec 100 1 1G             ; frequency sweep from 1Hz to 1GHz
+plot v(v_out)
+.endc
+.end
+
+
+ .lib cornerMOSlv.lib mos_tt
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /foss/designs/Thesis/workspace/thesis_hp/Schematics/Analog_Inverter/Analog_Inverter.sym # of pins=4
+** sym_path: /foss/designs/Thesis/workspace/thesis_hp/Schematics/Analog_Inverter/Analog_Inverter.sym
+** sch_path: /foss/designs/Thesis/workspace/thesis_hp/Schematics/Analog_Inverter/Analog_Inverter.sch
+.subckt Analog_Inverter vdd vin vout vss
+*.ipin vin
+*.iopin vdd
+*.iopin vss
+*.opin vout
+XM1 vout vin vdd vdd sg13_lv_pmos w=40u l=0.52u ng=1 m=1
+XM2 vout vin vss vss sg13_lv_nmos w=20u l=0.52u ng=1 m=1
+.ends
+
+.GLOBAL GND
+.end
