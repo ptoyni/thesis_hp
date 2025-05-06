@@ -1,9 +1,10 @@
-** sch_path: /foss/designs/Thesis/workspace/thesis_hp/Schematics/Analog_Inverter/testbenches_Analog_Inverter/tb_Analog_Inverter_dc.sch
+** sch_path: /foss/designs/thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/testbenches_Analog_Inverter/tb_Analog_Inverter_dc.sch
 **.subckt tb_Analog_Inverter_dc
 Vdd1 Vdd GND 1.5
 Vss1 Vss GND 0
-x1 Vdd v_in v_out Vss Analog_Inverter
 Vin v_in GND dc 0 pulse(0 1.5 0 1n 1n 4n 10n)
+C1 v_out GND 50f m=1
+x1 Vdd v_in v_out Vss Analog_Inverter
 **** begin user architecture code
 
 
@@ -29,9 +30,10 @@ print VOH
 print VOL
 echo
 *set filetype=binary
-*write ./Analog_Inverter/simulations/tb_inv_dc.raw
+write /designs/thesis/workspace/thesis_hp/designs/analog_inverter/schematics/simulations/tb_inv_dc.raw
 
 plot v(v_out)
+plot v(dvout)
 
 
 .endc
@@ -43,16 +45,16 @@ plot v(v_out)
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  /foss/designs/Thesis/workspace/thesis_hp/Schematics/Analog_Inverter/Analog_Inverter.sym # of pins=4
-** sym_path: /foss/designs/Thesis/workspace/thesis_hp/Schematics/Analog_Inverter/Analog_Inverter.sym
-** sch_path: /foss/designs/Thesis/workspace/thesis_hp/Schematics/Analog_Inverter/Analog_Inverter.sch
+* expanding   symbol:  /foss/designs/Thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter.sym # of pins=4
+** sym_path: /foss/designs/Thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter.sym
+** sch_path: /foss/designs/Thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter.sch
 .subckt Analog_Inverter vdd vin vout vss
 *.ipin vin
 *.iopin vdd
 *.iopin vss
 *.opin vout
-XM1 vout vin vdd vdd sg13_lv_pmos w=40u l=0.52u ng=1 m=1
-XM2 vout vin vss vss sg13_lv_nmos w=20u l=0.52u ng=1 m=1
+XM1 vout vin vdd vdd sg13_lv_pmos w=2u l=0.15u ng=1 m=1
+XM2 vout vin vss vss sg13_lv_nmos w=1u l=0.15u ng=1 m=1
 .ends
 
 .GLOBAL GND

@@ -5,11 +5,11 @@ V {}
 S {}
 E {}
 N 1160 -200 1160 -130 {lab=vout}
-N 1030 -320 1120 -320 {lab=vinp}
-N 1030 -200 1030 -100 {lab=vinp}
-N 1030 -100 1120 -100 {lab=vinp}
-N 850 -200 1030 -200 {lab=vinp}
-N 1030 -320 1030 -200 {lab=vinp}
+N 1030 -320 1120 -320 {lab=vin}
+N 1030 -200 1030 -100 {lab=vin}
+N 1030 -100 1120 -100 {lab=vin}
+N 850 -200 1030 -200 {lab=vin}
+N 1030 -320 1030 -200 {lab=vin}
 N 1160 -440 1160 -350 {lab=vdd}
 N 790 -440 1160 -440 {lab=vdd}
 N 790 0 1160 0 {lab=vss}
@@ -23,16 +23,16 @@ N 1160 -440 1240 -440 {lab=vdd}
 N 1160 -200 1380 -200 {lab=vout}
 N 1160 -290 1160 -200 {lab=vout}
 C {sg13g2_pr/sg13_lv_pmos.sym} 1140 -320 0 0 {name=M1
-l=0.52u
-w=40u
+l=0.15u
+w=2u
 ng=1
 m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 1140 -100 0 0 {name=M2
-l=0.52u
-w=20u
+l=0.15u
+w=1u
 ng=1
 m=1
 model=sg13_lv_nmos

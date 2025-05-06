@@ -9,11 +9,6 @@ lab=GND}
 N -170 -80 -170 -20 {
 lab=v_out}
 N -260 -80 -170 -80 {lab=v_out}
-C {devices/capa.sym} -170 10 0 0 {name=C2
-m=1
-value=5p
-footprint=1206
-device="ceramic capacitor"}
 C {devices/gnd.sym} -170 60 0 0 {name=l5 lab=GND}
 C {devices/lab_wire.sym} -260 -80 0 1 {name=p3 sig_type=std_logic lab=v_out}
 C {devices/vsource.sym} -490 -240 0 0 {name=Vdd value=1.5}
@@ -41,10 +36,16 @@ value=".lib cornerMOSlv.lib mos_tt
 C {devices/lab_wire.sym} -400 -80 0 0 {name=p7 sig_type=std_logic lab=v_in}
 C {devices/gnd.sym} -490 -210 0 0 {name=l3 lab=GND}
 C {devices/gnd.sym} -410 -210 0 0 {name=l1 lab=GND}
-C {/foss/designs/Thesis/workspace/thesis_hp/Schematics/Analog_Inverter/Analog_Inverter.sym} -250 -80 0 0 {name=x1}
 C {devices/vsource.sym} -330 -240 0 0 {name=Vin value="dc 0.75 ac 1"}
 C {devices/lab_wire.sym} -330 -270 0 1 {name=Vin1 sig_type=std_logic lab=v_in
 
 value="dc 0.75 ac 1"}
 C {devices/gnd.sym} -330 -210 0 0 {name=Vin2 lab=GND
 value="dc 0.75 ac 1"}
+C {/foss/designs/Thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter/Analog_Inverter.sym} -250 -80 0 0 {name=x1}
+C {devices/capa-2.sym} -170 10 0 0 {name=C1
+m=1
+value=50f
+footprint=1206
+device=polarized_capacitor
+}

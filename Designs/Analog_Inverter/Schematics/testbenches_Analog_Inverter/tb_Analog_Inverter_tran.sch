@@ -11,14 +11,14 @@ C {devices/lab_wire.sym} -480 -350 0 1 {name=p8 sig_type=std_logic lab=Vdd}
 C {devices/lab_wire.sym} -400 -350 0 1 {name=p9 sig_type=std_logic lab=Vss}
 C {devices/lab_wire.sym} -300 -190 1 0 {name=p10 sig_type=std_logic lab=Vdd}
 C {devices/lab_wire.sym} -300 -130 1 1 {name=p11 sig_type=std_logic lab=Vss}
-C {devices/code_shown.sym} 70 -1090 0 0 {name=MODEL1 only_toplevel=true
+C {devices/code_shown.sym} 20 -730 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
 "}
 C {devices/lab_wire.sym} -390 -160 0 0 {name=p12 sig_type=std_logic lab=v_in}
 C {devices/gnd.sym} -480 -290 0 0 {name=l2 lab=GND}
 C {devices/gnd.sym} -400 -290 0 0 {name=l4 lab=GND}
-C {devices/code_shown.sym} 80 -960 0 0 {name=NGSPICE2 only_toplevel=true 
+C {devices/code_shown.sym} 30 -600 0 0 {name=NGSPICE2 only_toplevel=true 
 value="
 
 Vin v_in 0 dc 0 pulse(0 1.5 0 1n 1n 4n 10n)
@@ -41,7 +41,7 @@ print t_rise
 print t_fall
 echo
 *set filetype=binary
-*write ./Analog_Inverter/simulations/tb_inv_dc.raw
+*write ./simulations/tb_inv_tran.raw
 
 
 plot v(v_out) v(v_in)
@@ -50,3 +50,4 @@ plot v(v_out) v(v_in)
 .end
 "}
 C {/foss/designs/Thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter/Analog_Inverter.sym} -240 -160 0 0 {name=x1}
+C {devices/title.sym} -560 90 0 0 {name=l5 author="(c) 2024 Hrishikesh, @HSB"}
