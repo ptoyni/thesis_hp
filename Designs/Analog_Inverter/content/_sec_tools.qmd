@@ -2,7 +2,11 @@
 
 ## Schematic Entry using Xschem
 
+<<<<<<< HEAD
 Schematic entry is performed using [Xschem]https://xschem.sourceforge.io/stefan/xschem_man/xschem_man.html), a powerful open-source schematic editor well-suited for analog and mixed circuit design. In this step, the analog inverter circuit is constructed by placing and connecting NMOS and PMOS transistors from the **IHP SG13G2 PDK** library. Xschem provides an intuitive interface for defining circuit topology, assigning device parameters like W/L ratios, and labeling nodes for simulation. Proper hierarchy and net labeling ensure compatibility with simulation and layout tools used later in the design flow.
+=======
+Schematic entry is performed using [Xschem](https://xschem.sourceforge.io/stefan/xschem_man/xschem_man.html), a powerful open-source schematic editor well-suited for analog and mixed circuit design. In this step, the analog inverter circuit is constructed by placing and connecting NMOS and PMOS transistors from the **IHP SG13G2 PDK** library. Xschem provides an intuitive interface for defining circuit topology, assigning device parameters like W/L ratios, and labeling nodes for simulation. Proper hierarchy and net labeling ensure compatibility with simulation and layout tools used later in the design flow.
+>>>>>>> f16623861683ae9920a8a8a8aa8d5da90f8a8425
 
 1. Start terminal and run IIC-OSIC docker image
 2. To select the PDK, use command 
