@@ -42,10 +42,10 @@ C {devices/lab_wire.sym} -330 -270 0 1 {name=Vin1 sig_type=std_logic lab=v_in
 value="dc 0.75 ac 1"}
 C {devices/gnd.sym} -330 -210 0 0 {name=Vin2 lab=GND
 value="dc 0.75 ac 1"}
-C {/foss/designs/Thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter/Analog_Inverter.sym} -250 -80 0 0 {name=x1}
 C {devices/capa-2.sym} -170 10 0 0 {name=C1
 m=1
 value=50f
 footprint=1206
 device=polarized_capacitor
 }
+C {/foss/designs/thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter.sym} -250 -80 0 0 {name=x1}

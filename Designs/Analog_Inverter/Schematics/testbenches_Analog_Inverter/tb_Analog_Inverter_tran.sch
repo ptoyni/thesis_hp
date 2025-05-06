@@ -49,5 +49,5 @@ plot v(v_out) v(v_in)
 .endc
 .end
 "}
-C {/foss/designs/Thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter/Analog_Inverter.sym} -240 -160 0 0 {name=x1}
 C {devices/title.sym} -560 90 0 0 {name=l5 author="(c) 2024 Hrishikesh, @HSB"}
+C {/foss/designs/thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter.sym} -240 -160 0 0 {name=x1}
