@@ -42,7 +42,7 @@ system operating within a 5 V output and 18–36 V input range.
 
 #### Layout Implementation
 
-3. **Layout Using Magic**
+3. **Layout Using Magic/Klayout**
 	The layout is implemented using the open-source tool Magic, adhering to best practices for analog layout:
 	- Symmetrical layout for differential pairs
 	- Common centroid matching for critical current mirrors and input stages
