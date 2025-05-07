@@ -1,0 +1,36 @@
+---
+title: "Analog Inverter Tutorial"
+author:
+  - name: Priyanka Toyni
+    orcid: 
+    email: ptoyni@hs-bremen.de
+    corresponding: true
+    roles: "Lead author"
+    affiliation:
+      - name: Hochschule Bremen - City University of Applied Sciences (HSB)
+        city: Bremen
+        state: Germany
+        url: https://www.hs-bremen.de  
+  - name: Hrishikesh Pangavhane
+    orcid: 
+    email: hpangavhane@hs-bremen.de
+    corresponding: true
+    roles: "Lead author"
+
+date: last-modified
+license: "Apache-2.0 license"
+bibliography: references.bib
+reader-mode: true
+
+page-footer:
+left: |
+    Analog Inverter Tutorial
+right: |
+    This report was built with <a href="https://quarto.org/">Quarto</a>.
+---
+
+
+
+
+{{< include content/_sec_Intro.qmd >}}
+{{< include content/_sec_tools.qmd >}}
