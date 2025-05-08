@@ -1,0 +1,92 @@
+magic
+tech ihp-sg13g2
+timestamp 1746602651
+<< nwell >>
+rect -181 112 121 287
+<< nmos >>
+rect -5 -25 10 75
+<< pmos >>
+rect -5 152 10 252
+<< ndiff >>
+rect -75 60 -5 75
+rect -75 -10 -50 60
+rect -30 -10 -5 60
+rect -75 -25 -5 -10
+rect 10 60 80 75
+rect 10 -10 35 60
+rect 55 -10 80 60
+rect 10 -25 80 -10
+<< pdiff >>
+rect -75 237 -5 252
+rect -75 167 -50 237
+rect -30 167 -5 237
+rect -75 152 -5 167
+rect 10 237 80 252
+rect 10 167 35 237
+rect 55 167 80 237
+rect 10 152 80 167
+<< ndiffc >>
+rect -50 -10 -30 60
+rect 35 -10 55 60
+<< pdiffc >>
+rect -50 167 -30 237
+rect 35 167 55 237
+<< psubdiff >>
+rect -145 60 -75 75
+rect -145 -10 -120 60
+rect -100 -10 -75 60
+rect -145 -25 -75 -10
+<< nsubdiff >>
+rect -145 237 -75 252
+rect -145 167 -120 237
+rect -100 167 -75 237
+rect -145 152 -75 167
+<< psubdiffcont >>
+rect -120 -10 -100 60
+<< nsubdiffcont >>
+rect -120 167 -100 237
+<< poly >>
+rect -5 252 10 272
+rect -5 75 10 152
+rect -5 -45 10 -25
+rect -35 -60 10 -45
+rect -35 -80 -20 -60
+rect 0 -80 10 -60
+rect -35 -90 10 -80
+<< polycont >>
+rect -20 -80 0 -60
+<< metal1 >>
+rect -185 242 -145 245
+rect -185 237 -25 242
+rect -185 167 -120 237
+rect -100 167 -50 237
+rect -30 167 -25 237
+rect -185 162 -25 167
+rect 30 237 60 245
+rect 30 167 35 237
+rect 55 167 60 237
+rect -185 160 -145 162
+rect -145 60 -25 65
+rect -145 -10 -120 60
+rect -100 -10 -50 60
+rect -30 -10 -25 60
+rect -145 -15 -25 -10
+rect 30 60 60 167
+rect 30 -10 35 60
+rect 55 -10 60 60
+rect -120 -60 5 -55
+rect -120 -80 -20 -60
+rect 0 -80 5 -60
+rect -120 -85 5 -80
+rect 30 -60 60 -10
+rect 30 -85 80 -60
+<< labels >>
+rlabel metal1 -145 20 -145 20 7 Vss
+port 2 w
+rlabel metal1 -185 200 -185 200 7 Vdd
+port 1 w
+rlabel metal1 -120 -70 -120 -70 7 Vin
+port 3 w
+rlabel metal1 80 -70 80 -70 3 Vout
+port 4 e
+<< end >>
