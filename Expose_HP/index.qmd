@@ -34,5 +34,4 @@ right: |
 {{< include content/_sec_Requirements_AES.qmd >}}
 {{< include content/_sec_Thesis_HP.qmd >}}
 {{< include content/_sec_IHP-Open-DesignLib.qmd >}}
-{{< include content/_sec_installation.qmd >}}
 {{< include content/_sec_OpenPoints.qmd >}}
