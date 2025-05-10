@@ -1,5 +1,5 @@
 ---
-title: "To what extent, the development and tapeout of an 'Analog Error Amplifier' for 'LED Driver Control' using 'Open-Source Tools' is possible"
+title: "To what extent, the development and tapeout of an 'Analog Block' for 'LED Driver Control' using 'Open-Source Tools' is possible"
 author:
   - name: Priyanka Toyni
     orcid: 
@@ -24,7 +24,7 @@ reader-mode: true
 
 page-footer:
 left: |
-    To what extent, the development and tapeout of an 'Analog Error Amplifier' for 'LED Driver Control' using 'Open-Source Tools' is possible.
+    To what extent, the development and tapeout of an 'Analog Block' for 'LED Driver Control' using 'Open-Source Tools' is possible.
 right: |
     This report was built with <a href="https://quarto.org/">Quarto</a>.
 ---
