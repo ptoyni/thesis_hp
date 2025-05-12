@@ -40,8 +40,8 @@ print t_delay
 print t_rise
 print t_fall
 echo
-*set filetype=binary
-*write ./simulations/tb_inv_tran.raw
+set filetype=binary
+write tb_inv_tran.raw v(v_in) v(v_out) t_rise t_fall t_delay 
 
 
 plot v(v_out) v(v_in)
@@ -50,4 +50,4 @@ plot v(v_out) v(v_in)
 .end
 "}
 C {devices/title.sym} -560 90 0 0 {name=l5 author="(c) 2024 Hrishikesh, @HSB"}
-C {/foss/designs/thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter.sym} -240 -160 0 0 {name=x1}
+C {Analog_Inverter.sym} -240 -160 0 0 {name=x1}

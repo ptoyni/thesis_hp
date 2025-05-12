@@ -10,4 +10,6 @@ _book
 _manuscript
 .quarto
 *.tex
+simulations
+*.raw
 /.quarto/
