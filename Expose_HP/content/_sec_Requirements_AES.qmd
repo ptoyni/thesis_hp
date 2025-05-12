@@ -1,6 +1,8 @@
 # Introduction
 
+As the demand for compact, energy-efficient electronic systems continues to grow, there is an equally strong need to make integrated circuit (IC) design more accessible and affordable. With the rise of open-source process design kits (PDKs) and toolchains, it is now possible for students, researchers, and small-scale innovators to contribute to silicon development without relying on expensive commercial EDA flows. This democratization of IC design aims to lower the barrier to entry and enable broader participation in semiconductor innovation.
 
+This thesis focuses on the custom design and tapeout of an analog building block intended for integration within a power management IC, specifically for use in a buck converter-based LED driver. The circuit is implemented in the IHP SG13G2 130 nm CMOS process and is designed to meet stringent requirements such as gain, power efficiency, and temperature stability given by Aircraft Electro/Electronic System (AES) GmBH. This thesis work is executed using the IIC-OSIC open-source toolchain. Extensive simulation across process-voltage-temperature (PVT) corners and post-layout extraction ensures that the final GDS is reliable for multi-project wafer (MPW) tapeout. This work contributes a verified, reusable analog IP block to the growing ecosystem of open-source IC design.
 
 # AES Requirements
  
