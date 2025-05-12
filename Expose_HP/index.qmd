@@ -1,5 +1,5 @@
 ---
-title: "To what extent, the development and tapeout of an 'Analog Block' for 'LED Driver Control' using 'Open-Source Tools' is possible"
+title: "Assessing the feasibility of developing and taping out an analog block for LED driver control using the open-source 'IHP-SG13G2 PDK' and 'IIC-OSIC-TOOLS'"
 author:
   - name: Priyanka Toyni
     orcid: 
@@ -24,7 +24,7 @@ reader-mode: true
 
 page-footer:
 left: |
-    To what extent, the development and tapeout of an 'Analog Block' for 'LED Driver Control' using 'Open-Source Tools' is possible.
+    Assessing the feasibility of developing and taping out an analog block for LED driver control using the open-source 'IHP-SG13G2 PDK' and 'IIC-OSIC-TOOLS'.
 right: |
     This report was built with <a href="https://quarto.org/">Quarto</a>.
 ---
