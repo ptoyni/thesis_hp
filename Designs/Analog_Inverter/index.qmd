@@ -31,3 +31,4 @@ right: |
 
 {{< include content/_sec_Intro.qmd >}}
 {{< include content/_sec_Tools.qmd >}}
+{{< include content/_sec_layout.qmd >}}
