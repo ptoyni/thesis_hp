@@ -40,7 +40,7 @@ print VOH
 print VOL
 echo 
 *set filetype=binary
-write /designs/thesis/workspace/thesis_hp/designs/analog_inverter/schematics/simulations/tb_inv_dc.raw
+write tb_inv_dc.raw v(v_in) v(v_out) dvout VSW VIL VIH VOL VOH
              
 plot v(v_out)    
 plot v(dvout)              
@@ -67,4 +67,4 @@ footprint=1206
 device=polarized_capacitor
 }
 C {devices/gnd.sym} 360 -60 0 0 {name=l7 lab=GND}
-C {/foss/designs/Thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter.sym} 280 -170 0 0 {name=x1}
+C {Analog_Inverter.sym} 280 -170 0 0 {name=x1}
