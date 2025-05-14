@@ -45,3 +45,5 @@ To rotate a PCell, go to the `Edit tab >> Move`, select the PCell, then right-cl
 9. Finally, save your layout by going to `File → Save As`, and choose the `GDSII` format to export your design. Your completed CMOS inverter layout should resemble the image shown below.
 
 ![Final Layout](./figures/_fig_inverter.png){#fig-inv}
+
+[Here](https://github.com/IHP-GmbH/IHP-Open-PDK/blob/main/ihp-sg13g2/libs.doc/doc/SG13G2_os_layout_rules.pdf) you can find all the layout rules in depth and with illustrations.

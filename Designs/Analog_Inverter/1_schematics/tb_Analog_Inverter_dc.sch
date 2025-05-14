@@ -67,4 +67,4 @@ footprint=1206
 device=polarized_capacitor
 }
 C {devices/gnd.sym} 360 -60 0 0 {name=l7 lab=GND}
-C {Analog_Inverter.sym} 280 -170 0 0 {name=x1}
+C {/foss/designs/thesis/workspace/thesis_hp/designs/analog_inverter/1_schematics/Analog_Inverter.sym} 280 -170 0 0 {name=x1}
