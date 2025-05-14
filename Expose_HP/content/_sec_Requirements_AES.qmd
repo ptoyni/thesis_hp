@@ -10,7 +10,7 @@ advanced diagnostics such as LED error detection.
 
 To meet the defined performance and protection requirements efficiently, a buck converter topology has been selected for
 the LED driver IC. This choice is based on the analysis and recommendations from Bernhard Wicht’s 2020 paper **Analog
-Building Blocks for DC-DC Converters,** @wicht2020 which highlights the buck converter as a suitable and
+Building Blocks for DC-DC Converters** @wicht2020, which highlights the buck converter as a suitable and
 energy-efficient architecture for step-down voltage regulation in integrated power management systems. Given the input
 voltage range of 18–36 V and the need for tightly regulated current control per channel (1–40 mA), the buck converter
 enables high efficiency and compact implementation. Its compatibility with mixed-signal integration and the ability to

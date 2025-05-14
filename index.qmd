@@ -29,8 +29,6 @@ right: |
     This report was built with <a href="https://quarto.org/">Quarto</a>.
 ---
 
-
-
 {{< include content/_sec_Requirements_AES.qmd >}}
 {{< include content/_sec_Thesis_HP.qmd >}}
 {{< include content/_sec_IHP-Open-DesignLib.qmd >}}

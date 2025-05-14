@@ -25,7 +25,7 @@ format:
     linkcolor: "blue"
     biblio-style: ieee
     #    keep-tex: true
-    output-file: thesis_hp 
+    output-file: expose_hp 
 #  epub:
 #    theme: flatly
 #    output-file: thesis_hp

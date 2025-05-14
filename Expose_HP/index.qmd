@@ -1,9 +1,9 @@
 ---
-title: "Assessing the feasibility of developing and taping out an analog block for LED driver control using the open-source 'IHP-SG13G2 PDK' and 'IIC-OSIC-TOOLS'"
+title: "Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS"
 author:
   - name: Priyanka Toyni
     orcid: 
-    email: ptoyni@hs-bremen.de
+    email: ptoyni@stud.hs-bremen.de
     corresponding: true
     roles: "Lead author"
     affiliation:
@@ -13,7 +13,7 @@ author:
         url: https://www.hs-bremen.de  
   - name: Hrishikesh Pangavhane
     orcid: 
-    email: hpangavhane@hs-bremen.de
+    email: hpangavhane@stud.hs-bremen.de
     corresponding: true
     roles: "Lead author"
 
@@ -23,13 +23,11 @@ bibliography: references.bib
 reader-mode: true
 
 page-footer:
-left: |
-    Assessing the feasibility of developing and taping out an analog block for LED driver control using the open-source 'IHP-SG13G2 PDK' and 'IIC-OSIC-TOOLS'.
+left: | 
+    Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS
 right: |
     This report was built with <a href="https://quarto.org/">Quarto</a>.
 ---
-
-
 
 {{< include content/_sec_Requirements_AES.qmd >}}
 {{< include content/_sec_Thesis_HP.qmd >}}
