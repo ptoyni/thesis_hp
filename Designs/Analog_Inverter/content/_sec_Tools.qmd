@@ -80,8 +80,8 @@ Outputs of dc and transient analysis can be seen in
 
 ## Post processing and simulation using python
 
-![Transient Curver](./1_schematics/simulations/_fig_inverter_transient.svg)
+![Transient Curver](./figures/simulations/_fig_inverter_transient.svg)
 
-![DC Charachteristics](./1_schematics/simulations/_fig_inverter_dc_analysis.svg)
+![DC Charachteristics](./figures/simulations/_fig_inverter_dc_analysis.svg)
 
-![VTC](./1_schematics/simulations/_fig_inverter_vtc.svg)
+![VTC](./figures/simulations/_fig_inverter_vtc.svg)
