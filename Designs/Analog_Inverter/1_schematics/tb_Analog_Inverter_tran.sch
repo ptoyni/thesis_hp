@@ -18,7 +18,7 @@ value=".lib cornerMOSlv.lib mos_tt
 C {devices/lab_wire.sym} -390 -160 0 0 {name=p12 sig_type=std_logic lab=v_in}
 C {devices/gnd.sym} -480 -290 0 0 {name=l2 lab=GND}
 C {devices/gnd.sym} -400 -290 0 0 {name=l4 lab=GND}
-C {devices/code_shown.sym} 30 -600 0 0 {name=NGSPICE2 only_toplevel=true 
+C {devices/code_shown.sym} 30 -610 0 0 {name=NGSPICE2 only_toplevel=true 
 value="
 
 Vin v_in 0 dc 0 pulse(0 1.5 0 1n 1n 4n 10n)
@@ -50,4 +50,4 @@ plot v(v_out) v(v_in)
 .end
 "}
 C {devices/title.sym} -560 90 0 0 {name=l5 author="(c) 2024 Hrishikesh, @HSB"}
-C {Analog_Inverter.sym} -240 -160 0 0 {name=x1}
+C {/foss/designs/thesis/workspace/thesis_hp/designs/analog_inverter/1_schematics/Analog_Inverter.sym} -240 -160 0 0 {name=x1}
