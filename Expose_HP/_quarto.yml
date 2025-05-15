@@ -11,7 +11,7 @@ format:
   html:
     theme: flatly
   pdf:
-    documentclass: scrreprt
+    documentclass: scrartcl
 #    lof: true
 #    lot: true
     toc: true    
@@ -24,10 +24,12 @@ format:
     colorlinks: true
     linkcolor: "blue"
     biblio-style: ieee
-    #    keep-tex: true
+    highlight-style: github
+    mainfont: "Calibri"
+#    keep-tex: true
     output-file: expose_hp 
 #  epub:
 #    theme: flatly
-#    output-file: thesis_hp
+#    output-file: expose_hp
 
 

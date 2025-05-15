@@ -48,4 +48,4 @@ value=50f
 footprint=1206
 device=polarized_capacitor
 }
-C {/foss/designs/thesis/workspace/thesis_hp/Designs/Analog_Inverter/Schematics/Analog_Inverter.sym} -250 -80 0 0 {name=x1}
+C {/foss/designs/thesis/workspace/thesis_hp/Designs/analog_inverter/Schematics/analog_inverter.sym} -250 -80 0 0 {name=x1}

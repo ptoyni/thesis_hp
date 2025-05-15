@@ -50,4 +50,4 @@ plot v(v_out) v(v_in)
 .end
 "}
 C {devices/title.sym} -560 90 0 0 {name=l5 author="(c) 2024 Hrishikesh, @HSB"}
-C {/foss/designs/thesis/workspace/thesis_hp/designs/analog_inverter/1_schematics/Analog_Inverter.sym} -240 -160 0 0 {name=x1}
+C {/foss/designs/thesis/workspace/thesis_hp/designs/analog_inverter/1_schematics/analog_inverter.sym} -240 -160 0 0 {name=x1}

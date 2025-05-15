@@ -1,6 +1,6 @@
-# NgSpice Commands {#sec-ngspice-commands}
+# ngspice Commands {#sec-ngspice-commands}
 
-Useful shortcuts are as follows
+Useful shortcuts are as follows:
 
 ## Commands
 
@@ -22,7 +22,7 @@ Useful shortcuts are as follows
 - `set var = value` to set the value of a variable; use variable with `$var`; `unset var` removes a variable
 - `set enable_noisy_r` to enable noise of behavioral resistors; usually, this is a good idea
 - `shell cmd` to run a shell command
-- `show : param`, like `show : gm` shows the $\gm$ of all devices after running an operating point with `op`
+- `show : param`, like `show : gm` shows the $g_m$ of all devices after running an operating point with `op`
 - `spec` plots a spectrum (i.e. frequency domain plot)
 - `status` shows the saved parameters and nodes
 - `tf` runs a transfer function analysis, returning transfer function, input and output resistance

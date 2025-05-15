@@ -3,7 +3,7 @@ title: "Analog Inverter Tutorial"
 author:
   - name: Priyanka Toyni
     orcid:  
-    email: ptoyni@hs-bremen.de
+    email: ptoyni@stud.hs-bremen.de
     corresponding: true
     roles: "Lead author"
     affiliation:
@@ -13,20 +13,19 @@ author:
         url: https://www.hs-bremen.de  
   - name: Hrishikesh Pangavhane
     orcid: 
-    email: hpangavhane@hs-bremen.de
+    email: hpangavhane@stud.hs-bremen.de
     corresponding: true
     roles: "Lead author"
 
+keyword:
+    - Inverter 
+    - Layout
+abstract: |
+    In ... general ...
 date: last-modified
 license: "Apache-2.0 license"
+number-sections: true
 bibliography: references.bib
-reader-mode: true
-
-page-footer:
-left: |
-    Analog Inverter Tutorial
-right: |
-    This report was built with <a href="https://quarto.org/">Quarto</a>.
 ---
 
 {{< include content/_sec_Intro.qmd >}}
