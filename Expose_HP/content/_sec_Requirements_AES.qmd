@@ -1,8 +1,15 @@
-# Introduction
+# Motivation
 
 As the demand for compact, energy-efficient electronic systems continues to grow, there is an equally strong need to make integrated circuit (IC) design more accessible and affordable. With the rise of open-source process design kits (PDKs) and toolchains, it is now possible for students, researchers, and small-scale innovators to contribute to silicon development without relying on expensive commercial EDA flows. This democratization of IC design aims to lower the barrier to entry and enable broader participation in semiconductor innovation.
 
-This thesis focuses on the custom design and tapeout of an analog building block intended for integration within a power management IC, specifically for use in a buck converter-based LED driver. The circuit is implemented in the IHP SG13G2 130 nm CMOS process and is designed to meet stringent requirements such as gain, power efficiency, and temperature stability given by Aircraft Electro/Electronic System (AES) GmBH. This thesis work is executed using the IIC-OSIC open-source toolchain. Extensive simulation across process-voltage-temperature (PVT) corners and post-layout extraction ensures that the final GDS is reliable for multi-project wafer (MPW) tapeout. This work contributes a verified, reusable analog IP block to the growing ecosystem of open-source IC design.
+## AES Campus
+
+The AES campus is intended to create an advanced, collaborative environment that aims to identify gaps along the chip design process chain with open source tools. Using the example of the development of an LED driver IC, these are closed and the maturity of the tools for practical application is improved in order to advance and establish mixed signal chip design with open source tools.
+
+The main goal is to extend the open source toolchain of Prof. Pretl's IIC-OSIC-TOOLS with the IHP OpenPDK SG13G2 in such a way that in the first step AES GmbH and in the second step all SMEs can also use this toolchain for future product design and experience. To verify this, an exemplary LED driver is being designed with HSB and AES GmbH.
+
+
+This thesis focuses on the custom design and tapeout of an analog building block intended for integration within a power management IC, specifically for use in a LED driver. The circuit is implemented in the IHP SG13G2 130 nm CMOS process and is designed to meet stringent requirements such as gain, power efficiency, and temperature stability given by Aircraft Electro/Electronic System (AES) GmBH. This thesis work is executed using the IIC-OSIC open-source toolchain. Extensive simulation across process-voltage-temperature (PVT) corners and post-layout extraction ensures that the final GDS is reliable for multi-project wafer (MPW) tapeout. This work contributes a verified, reusable analog IP block to the growing ecosystem of open-source IC design.
 
 # AES Requirements
  

@@ -20,8 +20,8 @@ gantt
     PVT + Monte Carlo      : a4, after a3, 10d
 
     section Layout & Verification
-    Layout        : b1, 2025-07-12, 15d
-    DRC + LVS              : b3, after b1, 10d
+    Layout                 : b1, 2025-06-05, 45d
+    DRC + LVS              : b3, 2025-06-05, 45d
     PEX + Post-Sim         : b4, after b3, 20d
 
     section Tapeout & Packaging
