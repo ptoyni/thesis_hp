@@ -20,17 +20,22 @@ keyword:
     - IC Design 
     - Layout
 abstract: |
-    In ... general ...
+  This master's thesis is part of the AES-Campus project, which main objective is to extend the open source toolchain of
+  Prof. Pretl's IIC-OSIC-TOOLS with the IHP OpenPDK SG13G2 in such a way that AES GmbH as an SME can use this toolchain
+  for future product design. To verify this, an LED driver for AES GmbH's LED lighting systems will be designed together
+  with HSB and AES GmbH under the motto "Just do it!"
+
+  In addition to the technical challenges, such as adapting the 3V to 5V environment of the LED driver to the 18V to 36V
+  of the aircraft cabin power supply, and seat-specific individual control and adjustment, another goal of the project
+  is to develop suitable cooperation structures that enable a wide variety of people to work together efficiently and
+  effectively.
 date: last-modified
-license: "Apache-2.0 license"
 number-sections: true
 bibliography: references.bib
 ---
 
-
 {{< include content/_sec_Requirements_AES.qmd >}}
 {{< include content/_sec_Thesis_HP.qmd >}}
 {{< include content/_sec_roles.qmd >}}
-{{< include content/_sec_IHP-Open-DesignLib.qmd >}}
-
+{{< include content/references.qmd >}}
 
