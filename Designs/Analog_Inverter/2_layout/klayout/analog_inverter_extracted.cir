@@ -1,8 +1,0 @@
-* Extracted by KLayout with SG13G2 LVS runset on : 15/05/2025 11:10
-
-.SUBCKT analog_inverter
-M$1 \$2 \$6 \$3 \$1 sg13_lv_nmos L=0.13u W=1.3u AS=0.442p AD=0.442p PS=3.28u
-+ PD=3.28u
-M$2 \$4 \$6 \$3 \$5 sg13_lv_pmos L=0.13u W=2.6u AS=0.884p AD=0.884p PS=5.88u
-+ PD=5.88u
-.ENDS analog_inverter
