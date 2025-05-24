@@ -84,7 +84,7 @@ C {lab_pin.sym} 810 -440 0 0 {name=p1 sig_type=std_logic lab=v_ss}
 C {devices/vsource.sym} 660 -410 0 0 {name=Vdd value=1.5}
 C {devices/gnd.sym} 660 -360 0 0 {name=l3 lab=GND}
 C {lab_pin.sym} 660 -450 0 0 {name=p2 sig_type=std_logic lab=v_dd}
-C {devices/vsource.sym} 910 -550 0 0 {name=Vin value="dc 0.8 ac 1"}
+C {devices/vsource.sym} 910 -550 0 0 {name=Vin value="dc 0.7 ac 1"}
 C {lab_wire.sym} 970 -670 0 0 {name=p4 sig_type=std_logic lab=v_in}
 C {spice_probe.sym} 1030 -670 0 0 {name=p5 attrs=""}
 C {isource.sym} 1180 -770 0 0 {name=I0 value=6u}
@@ -92,5 +92,5 @@ C {capa.sym} 1680 -570 0 0 {name=C1
 value=5p}
 C {lab_wire.sym} 1680 -640 0 0 {name=p3 sig_type=std_logic lab=v_out}
 C {spice_probe.sym} 1560 -640 0 0 {name=p6 attrs=""}
-C {5t_ota.sym} 1380 -640 0 0 {name=x1}
 C {devices/title.sym} 350 150 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
+C {/foss/designs/thesis/workspace/thesis_hp/designs/5t_ota/5t_ota.sym} 1380 -640 0 0 {name=x1}

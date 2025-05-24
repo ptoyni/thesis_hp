@@ -35,7 +35,7 @@ N 280 -400 280 -310 {lab=Ibias}
 N 280 -140 280 -50 {lab=AVSS}
 N 220 -50 280 -50 {lab=AVSS}
 N 660 -140 660 -50 {lab=AVSS}
-N 730 -50 1030 -50 {lab=AVSS}
+N 940 -50 1030 -50 {lab=AVSS}
 N 930 -290 930 -250 {lab=#net2}
 N 930 -320 1080 -320 {lab=AVSS}
 N 1030 -170 1080 -170 {lab=AVSS}
@@ -64,10 +64,18 @@ N 600 -340 600 -280 {lab=AVDD}
 N 320 -280 600 -280 {lab=AVDD}
 N 600 -340 660 -340 {lab=AVDD}
 N 660 -510 660 -340 {lab=AVDD}
-N 600 -170 600 -110 {lab=#net3}
 N 340 -170 600 -170 {lab=#net3}
-N 600 -110 990 -110 {lab=#net3}
-N 990 -170 990 -110 {lab=#net3}
+N 910 -200 1030 -200 {lab=#net2}
+N 910 -140 910 -50 {lab=AVSS}
+N 730 -50 910 -50 {lab=AVSS}
+N 910 -170 940 -170 {lab=AVSS}
+N 940 -170 940 -50 {lab=AVSS}
+N 910 -50 940 -50 {lab=AVSS}
+N 990 -170 990 -120 {lab=#net3}
+N 870 -120 990 -120 {lab=#net3}
+N 870 -170 870 -120 {lab=#net3}
+N 600 -120 870 -120 {lab=#net3}
+N 600 -170 600 -120 {lab=#net3}
 C {sg13g2_pr/sg13_lv_nmos.sym} 1140 -320 0 1 {name=M1
 l=0.5u
 w=0.27u
@@ -109,7 +117,7 @@ C {ipin.sym} 130 -50 0 0 {name=p5 lab=AVSS}
 C {ipin.sym} 130 -400 0 0 {name=p6 lab=Ibias}
 C {sg13g2_pr/sg13_lv_nmos.sym} 1010 -170 0 0 {name=M6
 l=0.5u
-w=0.54u
+w=0.27u
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -148,3 +156,11 @@ model=sg13_lv_nmos
 spiceprefix=X
 }
 C {devices/title.sym} 180 120 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
+C {sg13g2_pr/sg13_lv_nmos.sym} 890 -170 0 0 {name=M10
+l=0.5u
+w=0.27u
+ng=1
+m=1
+model=sg13_lv_nmos
+spiceprefix=X
+}
