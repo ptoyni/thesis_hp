@@ -8,20 +8,11 @@ mixed-signal LED driver IC, ensuring accurate regulation and stability of the co
 critical building block to the overall ASIC design while also serving as a case study in open-source analog IC design
 workflows.
 
-## Title: Development and Tapeout of an Analog Error Amplifier for LED Driver Control Using Open-Source Tools
-
 This thesis presents the end-to-end custom IC design of a folded cascode error amplifier for integration within a
 voltage-mode buck converter-based LED driver IC. Targeting a 130nm CMOS process (IHP SG13G2), the project covers
 schematic design, simulation, layout, and physical verification using fully open-source tools provided by the IIC-OSIC
 ecosystem. The amplifier is tailored to meet the feedback stability and performance specifications of the LED driver
 system operating within a 5 V output and 18–36 V input range.
-
-
-
-
-
-
-
 
 In the section detailing buck converter control design (especially the voltage-mode control loop), @wicht2020 focuses
 on: 
@@ -36,6 +27,7 @@ on:
 
 - The architectures shown are two-stage OTAs or folded cascode for high PSRR
 
+
 Final Take:
 
 Folded Cascode OTA is very much aligned with @wicht2020 methodology, especially if our focus is on:
@@ -48,7 +40,6 @@ Folded Cascode OTA is very much aligned with @wicht2020 methodology, especially 
 
 - @wicht2020 doesn’t enforce one architecture rigidly, but the characteristics described match folded cascode best.
 
-### Finalised Specifications
 
 | **Parameter**     | **Target Value**          |
 |-------------------|---------------------------|
@@ -60,24 +51,25 @@ Folded Cascode OTA is very much aligned with @wicht2020 methodology, especially 
 | Power Consumption | < 1 mW                    |
 | Input CM Range    | Rail-to-rail or 0.5–2.8 V |
 
-### Design Process Overview
+: Finalised Specifications
+
 
 ![Design Process Flow](figures/IMP.png)
 
-1. **Literature Review** – Study error amplifier architectures, compensation, and integration in PMICs  
-2. **Topology Selection** – Choose folded cascode due to high gain and good output swing  
-3. **Schematic Design** – Build differential input stage, current mirrors, biasing blocks  
-4. **Simulation** – DC, AC, transient, noise, PVT, Monte Carlo  
-5. **Layout** – Apply matching, shielding, dummy devices  
-6. **LVS + DRC** – Ensure physical correctness and rule compliance  
-7. **PEX + Post-Layout Sim** – Verify parasitic-aware performance  
-8. **Tapeout Packaging** – Generate GDSII and tapeout documents  
 
+1. **Literature Review** – Study error amplifier architectures, compensation, and integration in PMICs
+2. **Topology Selection** – Choose folded cascode due to high gain and good output swing
+3. **Schematic Design** – Build differential input stage, current mirrors, biasing blocks
+4. **Simulation** – DC, AC, transient, noise, PVT, Monte Carlo
+5. **Layout** – Apply matching, shielding, dummy devices
+6. **LVS + DRC** – Ensure physical correctness and rule compliance
+7. **PEX + Post-Layout Sim** – Verify parasitic-aware performance
+8. **Tapeout Packaging** – Generate GDSII and tapeout documents
 
-
-# Time Plan
 
 ```{mermaid}
+%%| fig-width: 5.5
+%%| fig-cap: Time Schedule   
 gantt
     title Thesis Project: Time Plan
     dateFormat YYYY-MM-DD

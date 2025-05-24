@@ -1,7 +1,14 @@
-# Roles and Responsibilities
+| Role                   | Name       | Responsibilities                                      |
+|------------------------|------------|-------------------------------------------------------|
+| Analog Design Engineer | Hrishikesh | - Design and simulate folded cascode error  amplifier |
+|                        |            | - Biasing strategy and transistor sizing              |
+|                        |            | - PVT and Monte Carlo simulations                     |
+|                        |            | - Performance optimization and design freeze          |
+| Analog Layout Engineer | Priyanka   | - Layout implementation using Magic and KLayout       |
+|                        |            | - Device matching, symmetry, guard rings              |
+|                        |            | - DRC, LVS, and PEX verification                      |
+|                        |            | - Post-layout simulation and tapeout preparation      |
+| Collaborative Tasks    | Both       | - GDS generation and final tapeout checklist          |
+|                        |            | - Thesis writing, review, and final submission        |
 
-| Role                    | Name            | Responsibilities                                                                                     |
-|-------------------------|-----------------|---------------------------------------------------------------------------------------------------|
-| Analog Design Engineer   | Hrishikesh     | - Design and simulate folded cascode error amplifier<br>- Biasing strategy and transistor sizing<br>- PVT and Monte Carlo simulations<br>- Performance optimization and design freeze |
-| Analog Layout Engineer   | Priyanka | - Layout implementation using Magic and KLayout<br>- Device matching, symmetry, guard rings<br>- DRC, LVS, and PEX verification<br>- Post-layout simulation and tapeout preparation  |
-| Collaborative Tasks     | Both            | - GDS generation and final tapeout checklist<br>- Thesis writing, review, and final submission     |
+: Roles and Responsibilities
