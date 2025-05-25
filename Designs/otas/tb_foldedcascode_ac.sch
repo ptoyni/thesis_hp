@@ -89,7 +89,7 @@ C {lab_wire.sym} 950 -690 0 0 {name=p4 sig_type=std_logic lab=v_in}
 C {spice_probe.sym} 1010 -690 0 0 {name=p5 attrs=""}
 C {isource.sym} 1160 -790 0 0 {name=I0 value=6u}
 C {capa.sym} 1660 -590 0 0 {name=C1
-value=0.1p}
+value=1p}
 C {lab_wire.sym} 1660 -660 0 0 {name=p3 sig_type=std_logic lab=v_out}
 C {spice_probe.sym} 1540 -660 0 0 {name=p6 attrs=""}
 C {devices/title.sym} 330 130 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}

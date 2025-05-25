@@ -93,4 +93,4 @@ value=5p}
 C {lab_wire.sym} 1680 -640 0 0 {name=p3 sig_type=std_logic lab=v_out}
 C {spice_probe.sym} 1560 -640 0 0 {name=p6 attrs=""}
 C {devices/title.sym} 350 150 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
-C {/foss/designs/thesis/workspace/thesis_hp/designs/5t_ota/5t_ota.sym} 1380 -640 0 0 {name=x1}
+C {5t_ota.sym} 1380 -640 0 0 {name=x1}
