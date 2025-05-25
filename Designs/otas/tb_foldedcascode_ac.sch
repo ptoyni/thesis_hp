@@ -93,4 +93,4 @@ value=1p}
 C {lab_wire.sym} 1660 -660 0 0 {name=p3 sig_type=std_logic lab=v_out}
 C {spice_probe.sym} 1540 -660 0 0 {name=p6 attrs=""}
 C {devices/title.sym} 330 130 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
-C {/foss/designs/thesis/workspace/thesis_hp/designs/5t_ota/foldedcascode.sym} 1360 -660 0 0 {name=x1}
+C {foldedcascode.sym} 1360 -660 0 0 {name=x1}
