@@ -1,10 +1,8 @@
-** sch_path: /foss/designs/thesis/workspace/thesis_hp/designs/analog_inverter/1_schematics/Analog_Inverter.sch
-**.subckt Analog_Inverter vdd vin vout vss
-*.ipin vin
-*.iopin vdd
-*.iopin vss
-*.opin vout
-XM1 vout vin vdd vdd sg13_lv_pmos w=2.6u l=0.52u ng=1 m=1
-XM2 vout vin vss vss sg13_lv_nmos w=1.3u l=0.52u ng=1 m=1
-**.ends
-.end
+.subckt analog_inverter VIN VOUT VDD VSS
+*.ipin VIN
+*.iopin VDD
+*.iopin VSS
+*.opin VOUT
+M1 VOUT VIN VDD VDD sg13_lv_pmos w=2.6u l=0.52u ng=1 m=1
+M2 VOUT VIN VSS VSS sg13_lv_nmos w=1.3u l=0.52u ng=1 m=1
+.ends
