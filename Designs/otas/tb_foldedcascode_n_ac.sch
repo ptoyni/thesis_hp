@@ -57,7 +57,7 @@ C {capa.sym} 1730 -330 0 0 {name=C1
 value=2p}
 C {lab_wire.sym} 1730 -400 0 0 {name=p3 sig_type=std_logic lab=v_out}
 C {spice_probe.sym} 1610 -400 0 0 {name=p6 attrs=""}
-C {devices/code_shown.sym} 50 230 0 0 {name=MODEL1 only_toplevel=true
+C {devices/code_shown.sym} 50 -20 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
 "}
@@ -93,3 +93,4 @@ print onoise_total
 .endc
 "}
 C {foldedcascode_nmos.sym} 1430 -400 0 0 {name=x1}
+C {devices/title.sym} 470 60 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}

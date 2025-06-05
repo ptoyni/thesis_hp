@@ -37,5 +37,5 @@ bibliography: references.bib
 {{< include content/_sec_Requirements_AES.qmd >}}
 {{< include content/_sec_Thesis_HP.qmd >}}
 {{< include content/_sec_roles.qmd >}}
-{{< include content/references.qmd >}}
+
 

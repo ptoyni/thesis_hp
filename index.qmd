@@ -1,5 +1,5 @@
 ---
-title: "To what extent, the development and tapeout of an 'Analog Error Amplifier' for 'LED Driver Control' using 'Open-Source Tools' is possible"
+title: "Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS"
 author:
   - name: Priyanka Toyni
     orcid: 
@@ -24,13 +24,16 @@ reader-mode: true
 
 page-footer:
 left: |
-    To what extent, the development and tapeout of an 'Analog Error Amplifier' for 'LED Driver Control' using 'Open-Source Tools' is possible.
+    Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS.
 right: |
     This report was built with <a href="https://quarto.org/">Quarto</a>.
 ---
 
-{{< include content/_sec_Requirements_AES.qmd >}}
+<!-- {{< include content/_sec_Requirements_AES.qmd >}}
 {{< include content/_sec_Thesis_HP.qmd >}}
 {{< include content/_sec_IHP-Open-DesignLib.qmd >}}
 {{< include content/_sec_installation.qmd >}}
-{{< include content/_sec_OpenPoints.qmd >}}
+{{< include content/_sec_OpenPoints.qmd >}} -->
+
+{{< include content/_sec_OTA_design.qmd >}}
+{{< include content/_sec_OTA_layout.qmd >}}
