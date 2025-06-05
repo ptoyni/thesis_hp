@@ -41,7 +41,7 @@ N 910 -440 1330 -440 {lab=v_ss}
 N 1480 -640 1600 -640 {lab=v_out}
 C {devices/code_shown.sym} 60 -50 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
-value=".lib cornerMOSlv.lib mos_tt
+value=".lib cornerMOSlv.lib mos_ss
 "}
 C {devices/code_shown.sym} 60 -130 0 0 {name=MODEL2 only_toplevel=true
 format="tcleval( @value )"
@@ -51,6 +51,7 @@ C {devices/code_shown.sym} 60 -890 0 0 {name=NGSPICE only_toplevel=true
 value="
 
 .control
+.temp -40
 option sparse
 save all
 op
@@ -84,13 +85,13 @@ C {lab_pin.sym} 810 -440 0 0 {name=p1 sig_type=std_logic lab=v_ss}
 C {devices/vsource.sym} 660 -410 0 0 {name=Vdd value=1.5}
 C {devices/gnd.sym} 660 -360 0 0 {name=l3 lab=GND}
 C {lab_pin.sym} 660 -450 0 0 {name=p2 sig_type=std_logic lab=v_dd}
-C {devices/vsource.sym} 910 -550 0 0 {name=Vin value="dc 0.7 ac 1"}
+C {devices/vsource.sym} 910 -550 0 0 {name=Vin value="dc 0.8 ac 1"}
 C {lab_wire.sym} 970 -670 0 0 {name=p4 sig_type=std_logic lab=v_in}
 C {spice_probe.sym} 1030 -670 0 0 {name=p5 attrs=""}
-C {isource.sym} 1180 -770 0 0 {name=I0 value=6u}
+C {isource.sym} 1180 -770 0 0 {name=I0 value=20u}
 C {capa.sym} 1680 -570 0 0 {name=C1
-value=5p}
+value=2p}
 C {lab_wire.sym} 1680 -640 0 0 {name=p3 sig_type=std_logic lab=v_out}
 C {spice_probe.sym} 1560 -640 0 0 {name=p6 attrs=""}
 C {devices/title.sym} 350 150 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
-C {5t_ota.sym} 1380 -640 0 0 {name=x1}
+C {5tota.sym} 1380 -640 0 0 {name=x1}

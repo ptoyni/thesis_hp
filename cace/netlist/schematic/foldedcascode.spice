@@ -1,0 +1,28 @@
+** sch_path: /foss/designs/thesis/workspace/thesis_hp/designs/otas/foldedcascode.sch
+.subckt foldedcascode AVDD Ibias PLUS MINUS Vout AVSS
+*.PININFO PLUS:I MINUS:I Vout:O AVDD:I AVSS:I Ibias:I
+XMt1 net2 net11 AVDD AVDD sg13_lv_pmos w=33.5u l=2u ng=4 m=1
+XM3 net1 PLUS net2 AVDD sg13_lv_pmos w=14u l=1u ng=2 m=1
+XM4 net4 MINUS net2 AVDD sg13_lv_pmos w=14u l=1u ng=2 m=1
+XM5 net3 net9 AVDD AVDD sg13_lv_pmos w=7u l=1u ng=1 m=1
+XM9 Vout net10 net3 AVDD sg13_lv_pmos w=12u l=1u ng=2 m=1
+XM10 net4 net7 AVSS AVSS sg13_lv_nmos w=3.5u l=1u ng=1 m=1
+XM11 Vout Ibias net4 AVSS sg13_lv_nmos w=3.5u l=1u ng=1 m=1
+XM12 net5 Ibias net1 AVSS sg13_lv_nmos w=3.5u l=1u ng=1 m=1
+XM13 net1 net7 AVSS AVSS sg13_lv_nmos w=3.5u l=1u ng=1 m=1
+XM14 net8 net7 AVSS AVSS sg13_lv_nmos w=3.5u l=1u ng=1 m=1
+XM19 net11 Ibias net8 AVSS sg13_lv_nmos w=3.5u l=1u ng=1 m=1
+XM20 Ibias Ibias net7 AVSS sg13_lv_nmos w=3.5u l=1u ng=1 m=1
+XM21 net7 net7 AVSS AVSS sg13_lv_nmos w=3.5u l=1u ng=1 m=1
+XM22 net5 net10 net6 AVDD sg13_lv_pmos w=12u l=1u ng=2 m=1
+XM23 net6 net9 AVDD AVDD sg13_lv_pmos w=7u l=1u ng=1 m=1
+XM24 net10 net7 AVSS AVSS sg13_lv_nmos w=3.5u l=1u ng=1 m=1
+XM25 net10 net10 net9 AVDD sg13_lv_pmos w=12u l=1u ng=2 m=1
+XM26 net9 net9 AVDD AVDD sg13_lv_pmos w=12u l=1u ng=2 m=1
+XMb1 net11 net11 AVDD AVDD sg13_lv_pmos w=32.5u l=2u ng=4 m=1
+XMdecoup6 AVSS net7 AVSS AVSS sg13_lv_nmos w=8u l=1u ng=4 m=1
+XMdecoup7 AVSS Ibias AVSS AVSS sg13_lv_nmos w=8u l=1u ng=4 m=1
+XMdecoup8 AVDD net9 AVDD AVDD sg13_lv_pmos w=12u l=0.5u ng=4 m=1
+XMdecoup9 AVDD net11 AVDD AVDD sg13_lv_pmos w=12u l=0.5u ng=4 m=1
+XMdecoup10 AVDD net10 AVDD AVDD sg13_lv_pmos w=12u l=0.5u ng=4 m=1
+.ends
