@@ -29,7 +29,7 @@ on:
 
 Final Take:
 
-Folded Cascode OTA (see@_fig_foldedcascode_diagram.svg) is very much aligned with @wicht2020 methodology, especially if our focus is on:
+Folded Cascode OTA (see @fig-foldedcascode-diagram) is very much aligned with @wicht2020 methodology, especially if our focus is on:
 
 - A high-gain, linear, feedback-stage amplifier
 
@@ -155,10 +155,10 @@ The situation with the design is summarized in @tbl-voltage-buffer-spec.
 
 | Specification                              |  OTA         | Unit    |
 |:-------------------------------------------|:------------:|:-------:|
-| Output voltage error                       | $<1.2$         | %       |
-| Total output noise (rms)                   | $<0.2$       | mV~rms~ |
+| Output voltage error                       | $<1$         | %       |
+| Total output noise (rms)                   | $<0.16$       | mV~rms~ |
 | Supply current (as low as possible)        | $<10$        | µA      |
-| Turn-on time                               | $<1.4$         | µs      |
+| Turn-on time                               | $<1.5$         | µs      |
 | Externally provided bias current (nominal) | $10$         | µA      |
 
 : Voltage buffer specification {#tbl-voltage-buffer-spec}

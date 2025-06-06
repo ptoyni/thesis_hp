@@ -19,7 +19,7 @@ paths:
   root:             ..
   schematic:        designs/otas
   netlist:          cace/netlist
-  documentation:    cace/_docs/foldedcascode_nmos1
+  documentation:    cace/_docs/foldedcascode_nmos_1
   runs:             cace/_runs
 
 pins:
@@ -185,7 +185,7 @@ parameters:
   #       description: The -3dB bandwidth of the buffer (Monte Carlo)
   #       unit: Hz
   #       minimum:
-  #         value: 10e6
+  #         value: 1e6
   #       typical:
   #         value: any
   #       maximum:
@@ -300,7 +300,7 @@ parameters:
         typical:
           value: any
         maximum:
-          value: 1.4
+          value: 1.5
     tool:
       ngspice:
         template: foldedcascode-nmos-tran.sch

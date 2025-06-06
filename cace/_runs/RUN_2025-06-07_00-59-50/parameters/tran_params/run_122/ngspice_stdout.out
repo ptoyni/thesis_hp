@@ -1,0 +1,27 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: ** sch_path: /foss/designs/thesis/workspace/thesis_hp/cace/_runs/run_2025-06-07_00-59-50/parameters/tran_params/run_122/foldedcascode-nmos-tran.sch
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+Operating point simulation skipped by 'uic',
+  now using transient initial conditions.
+ Reference value :  6.99451e-08
+ Reference value :  1.15191e-06
+ Reference value :  2.09250e-06
+ Reference value :  3.14750e-06
+ Reference value :  4.24250e-06
+ Reference value :  5.33250e-06
+ Reference value :  6.75750e-06
+ Reference value :  8.15250e-06
+ Reference value :  9.29250e-06
+ Reference value :  1.06475e-05
+ Reference value :  1.18125e-05
+ Reference value :  1.31075e-05
+ Reference value :  1.43825e-05
+No. of Data Rows : 3027
+tcross              =  1.349915e-06
+Note: Simulation executed from .control section 

@@ -1,0 +1,44 @@
+** sch_path: /foss/designs/thesis/workspace/thesis_hp/cace/_runs/RUN_2025-06-07_01-33-10/parameters/tran_params/run_076/foldedcascode-nmos-tran.sch
+**.subckt foldedcascode-nmos-tran
+Vss v_ss GND 0
+Vdd v_dd GND 1.5
+Vin v_in v_ss 0.8
+.save v(v_in)
+I0 v_dd net1 dc 0 pwl(0 0 1.1u 0 1.2u 9.999999999999999e-06)
+C1 v_out v_ss 2e-12 m=1
+.save v(v_out)
+x1 v_dd v_in v_out v_out net1 v_ss foldedcascode_nmos
+**** begin user architecture code
+
+
+.include /foss/designs/thesis/workspace/thesis_hp/cace/netlist/schematic/foldedcascode_nmos.spice
+.temp 130
+.param mc_ok = 1
+.option SEED=12345
+
+.ic v(v_out)=0
+.option method=gear
+
+.control
+set num_threads=1
+tran 0.005u 15u uic
+
+let vout_limit=0.8*0.9
+meas tran tcross WHEN v(v_out)=vout_limit
+
+
+let tstart=0
+let tsettle=tcross-tstart
+
+echo $&tsettle > /foss/designs/thesis/workspace/thesis_hp/cace/_runs/RUN_2025-06-07_01-33-10/parameters/tran_params/run_076/foldedcascode-nmos-tran_76.data
+.endc
+
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
