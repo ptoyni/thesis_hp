@@ -20,7 +20,7 @@ paths:
   schematic:        designs/otas
   netlist:          cace/netlist
   documentation:    cace/_docs/foldedcascode_nmos1
-  runs:             _runs
+  runs:             cace/_runs
 
 pins:
   AVDD:

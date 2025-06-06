@@ -1,4 +1,4 @@
-# OTA Design
+
 
 ## Thesis Focus
 
@@ -39,6 +39,8 @@ Folded Cascode OTA (see@_fig_foldedcascode_diagram.svg) is very much aligned wit
 
 - @wicht2020 doesn’t enforce one architecture rigidly, but the characteristics described match folded cascode best.
 
+![Topology](figures/_fig_foldedcascode_diagram.svg){#fig-foldedcascode-diagram}
+
 
 | **Parameter**     | **Target Value**          |
 |-------------------|---------------------------|
@@ -52,16 +54,16 @@ Folded Cascode OTA (see@_fig_foldedcascode_diagram.svg) is very much aligned wit
 
 ## Into the design
 
-As shown in the @_fig_foldedcascode_diagram.svg, $M_1$ and $M_2$ are the input differential pair mosfets with $M_5,_6$ and M_7,_8 as their cascoded mosfets.
+As shown in the @fig-foldedcascode-diagram, $M_1$ and $M_2$ are the input differential pair mosfets with $M_5,_6$ and $M_7,_8$ as their cascoded mosfets.
 
 ::: {.callout-important title="Cascode Bias Voltage Generation"}
 It is critically import for a stable performance across PVT that the bias voltages for the cascode gates are created in a manner that tracks variations with process, temperature, and supply voltage!
 :::
 
-The current mirror constructed out of $M_\mathrm{3,7}$ and $M_\mathrm{4,8}$ is a special kind of **cascode current mirror for low-voltage operation**, also referred to as high-swing cascode current mirror [@Jespers_Murmann_2017]. This type is very often used, as it forces the $VGS$ and $VDS$ of $M_{3,4}$ to be equal, so the current mirror ratio is independent of $g_{ds}$. 
+The current mirror constructed out of $M_\mathrm{3,7}$ and $M_\mathrm{4,8}$ is a special kind of **cascode current mirror for low-voltage operation**, also referred to as high-swing cascode current mirror [@Jespers_Murmann_2017]. This type is very often used, as it forces the $V_{GS}$ and $V_{DS}$ of $M_{3,4}$ to be equal, so the current mirror ratio is independent of $g_{ds}$. 
 
 
-## Sizing using gm over Id method{#sec-gmid-method}
+## Sizing using $g_{m}$ over $I_d$ method{#sec-gmid-method}
 
 In nanometer CMOS, the MOSFET behavior is much more complex than these simple models. Also, this highly simplified derivations introduce concepts like the threshold voltage or the overdrive voltage, which are interesting from a theoretical viewpoint, but bear little practical use. Modern compact MOSFET models (like the PSP model used in SG13G2) use hundreds of parameters and fairly complex equations to somewhat properly describe MOSFET behavior over a wide range of parameters like width, length and temperature. A modern approach to MOSFET sizing is thus based on the thought to use exactly these MOSFET models, characterize them, put the resulting data into tables and charts, and thus learn about the complex MOSFET behavior and use it for MOSFET sizing.
 
@@ -71,7 +73,9 @@ We will be using the [pygmid tool](https://github.com/dreoilin/pygmid) which is 
 
 
 
-A brief is available [here](https://github.com/iic-jku/analog-circuit-design/blob/main/sizing/Ref_Murmann_gmID.pdf)
+A brief implementation of this method is available [here](https://github.com/iic-jku/analog-circuit-design/blob/main/sizing/Ref_Murmann_gmID.pdf)  
+
+Following is the python notebook designed for the sizing of Foldedcascode OTA with nmos differential input pair using $g_{m}$ over $I_d$ method.
 
 
 
@@ -112,7 +116,7 @@ Now that circuit is ready we need to test its ac and transient behaviour as well
 ![Loop Gain](figures/_fig_loopgain.svg){#fig-loopgain-xschem}
 
 The loop gain analysis yeilds the following plots which clarifies that our specifications such as gain and phase margin are met successfully. See @fig-loopgain-magnitude and @fig-loopgain-phase
-
+The plots include both Middlebrook's and Tian's method for loop gain.
 
 ![Magnitude middlebrook vs Tian](figures/_fig_loopgain_magnitude.svg){#fig-loopgain-magnitude}
 
