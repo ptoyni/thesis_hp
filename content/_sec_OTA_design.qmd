@@ -151,10 +151,10 @@ The situation with the design is summarized in @tbl-voltage-buffer-spec.
 
 | Specification                              |  OTA         | Unit    |
 |:-------------------------------------------|:------------:|:-------:|
-| Output voltage error                       | $<2$         | %       |
-| Total output noise (rms)                   | $<0.6$       | mV~rms~ |
+| Output voltage error                       | $<1.2$         | %       |
+| Total output noise (rms)                   | $<0.2$       | mV~rms~ |
 | Supply current (as low as possible)        | $<10$        | µA      |
-| Turn-on time                               | $<1.5$         | µs      |
+| Turn-on time                               | $<1.4$         | µs      |
 | Externally provided bias current (nominal) | $10$         | µA      |
 
 : Voltage buffer specification {#tbl-voltage-buffer-spec}
