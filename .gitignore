@@ -13,3 +13,4 @@ _manuscript
 simulations
 *.raw
 /.quarto/
+_runs
