@@ -1,0 +1,13 @@
+DUT_path: /foss/designs/thesis/workspace/thesis_hp/cace/netlist/schematic/foldedcascode_nmos.spice
+N: 0
+cload: 2e-12
+corner: tt_stat
+filename: foldedcascode-nmos-ac
+ibias: '9.999999999999999e-06'
+iterations: 15
+seed: '12345'
+sigma: '1'
+simpath: /foss/designs/thesis/workspace/thesis_hp/cace/_runs/RUN_2025-06-07_21-51-37/parameters/ac_mc_params/run_0/run_14
+temp: '27'
+vdd: '1.5'
+vin: '0.8'

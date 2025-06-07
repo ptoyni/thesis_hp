@@ -59,11 +59,11 @@ C {lab_wire.sym} 1730 -400 0 0 {name=p3 sig_type=std_logic lab=v_out}
 C {spice_probe.sym} 1610 -400 0 0 {name=p6 attrs=""}
 C {devices/code_shown.sym} 50 -20 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
-value=".lib cornerMOSlv.lib mos_tt
+value=".lib cornerMOSlv.lib mos_ss
 "}
 C {devices/code_shown.sym} 50 -610 0 0 {name=NGSPICE1 only_toplevel=true 
 value="
-.temp 27
+.temp 130
 .control
 option sparse
 save all

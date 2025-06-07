@@ -81,4 +81,4 @@ value="
 .lib cornerMOSlv.lib mos_CACE\{corner_mos\}
 .lib cornerMOShv.lib mos_CACE\{corner_mos\}
 "}
-C {foldedcascode_nmos.sym} 1580 -460 0 0 {name=x1}
+C {/foss/designs/thesis/workspace/thesis_hp/designs/otas/foldedcascode_nmos.sym} 1580 -460 0 0 {name=x1}

@@ -19,7 +19,7 @@ paths:
   root:             ..
   schematic:        designs/otas
   netlist:          cace/netlist
-  documentation:    cace/_docs/foldedcascode_nmos_1
+  documentation:    cace/_docs/foldedcascode_nmos1
   runs:             cace/_runs
 
 pins:
@@ -175,11 +175,11 @@ parameters:
   #       description: Large-signal dc gain (Monte Carlo)
   #       unit: V/V
   #       minimum:
-  #         value: any
+  #         value: 0.98
   #       typical:
   #         value: any
   #       maximum:
-  #         value: any
+  #         value: 1.1
   #     bw_mc:
   #       display: Bandwidth (MC)
   #       description: The -3dB bandwidth of the buffer (Monte Carlo)
