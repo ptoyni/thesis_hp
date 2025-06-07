@@ -1,5 +1,0 @@
-Using run time directory XSCHEM_SHAREDIR = /foss/tools/xschem/share/xschem
-Sourcing /foss/tools/xschem/share/xschem/xschemrc init file
-Sourcing /foss/pdks/ihp-sg13g2/libs.tech/xschem/xschemrc init file
-SG13G2_MODELS: /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models
-SG13G2_MODELS_XYCE: /foss/pdks/ihp-sg13g2/libs.tech/xyce/models

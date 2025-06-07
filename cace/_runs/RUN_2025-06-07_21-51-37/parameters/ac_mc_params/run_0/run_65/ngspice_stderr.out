@@ -1,4 +1,0 @@
-Warning: redefinition of .subckt foldedcascode_nmos, ignored
-
-Error: measure  fbw  when(WHEN) : out of interval
-Error: &fbw: no such variable.
