@@ -175,11 +175,11 @@ parameters:
   #       description: Large-signal dc gain (Monte Carlo)
   #       unit: V/V
   #       minimum:
-  #         value: 0.98
+  #         value: any
   #       typical:
   #         value: any
   #       maximum:
-  #         value: 1.1
+  #         value: any
   #     bw_mc:
   #       display: Bandwidth (MC)
   #       description: The -3dB bandwidth of the buffer (Monte Carlo)

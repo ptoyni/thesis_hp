@@ -33,16 +33,15 @@ lab=v_out}
 N 1200 -370 1280 -370 {lab=v_out}
 N 1200 -370 1200 -290 {lab=v_out}
 N 1200 -290 1650 -290 {lab=v_out}
-N 1370 -580 1370 -450 {lab=v_dd}
-N 1370 -350 1370 -200 {lab=v_ss}
 N 1370 -200 1730 -200 {lab=v_ss}
-N 1230 -580 1370 -580 {lab=v_dd}
-N 960 -200 1370 -200 {lab=v_ss}
-N 1380 -450 1380 -440 {lab=v_dd}
-N 1370 -450 1380 -450 {lab=v_dd}
-N 1380 -360 1380 -350 {lab=v_ss}
-N 1370 -350 1380 -350 {lab=v_ss}
 N 1450 -400 1650 -400 {lab=v_out}
+N 1330 -580 1330 -470 {lab=v_dd}
+N 1230 -580 1330 -580 {lab=v_dd}
+N 1330 -200 1370 -200 {lab=v_ss}
+N 1370 -340 1370 -300 {lab=v_ena}
+N 1370 -240 1370 -200 {lab=v_ss}
+N 1330 -330 1330 -200 {lab=v_ss}
+N 960 -200 1330 -200 {lab=v_ss}
 C {devices/vsource.sym} 860 -150 0 0 {name=Vss value=0}
 C {devices/gnd.sym} 860 -100 0 0 {name=l1 lab=GND}
 C {lab_pin.sym} 860 -200 0 0 {name=p1 sig_type=std_logic lab=v_ss}
@@ -61,19 +60,21 @@ C {devices/code_shown.sym} 50 -20 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_ss
 "}
-C {devices/code_shown.sym} 50 -610 0 0 {name=NGSPICE1 only_toplevel=true 
+C {devices/code_shown.sym} 50 -790 0 0 {name=NGSPICE1 only_toplevel=true 
 value="
 .temp 130
 .control
 option sparse
 save all
 op
-write tb_5t_ota_ac.raw
+write tb_foldedcascode_nmos_ac.raw
 set appendwrite
 
 ac dec 101 1k 1G
-write tb_5t_ota_ac.raw
+write tb_foldedcascode_nmos_ac.raw
 plot 20*log10(v_out)
+
+
 
 meas ac dcgain MAX vmag(v_out) FROM=10 TO=10k
 let f3db = dcgain/sqrt(2)
@@ -92,5 +93,7 @@ print onoise_total
 
 .endc
 "}
-C {foldedcascode_nmos.sym} 1430 -400 0 0 {name=x1}
 C {devices/title.sym} 470 60 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
+C {devices/vsource.sym} 1370 -270 0 0 {name=Venable value=1.5 savecurrent=false}
+C {devices/lab_wire.sym} 1370 -310 0 1 {name=p8 sig_type=std_logic lab=v_ena}
+C {foldedcascode_nmos.sym} 1430 -400 0 0 {name=x1}

@@ -33,16 +33,15 @@ lab=v_out}
 N 1490 -640 1570 -640 {lab=v_out}
 N 1490 -640 1490 -560 {lab=v_out}
 N 1490 -560 1940 -560 {lab=v_out}
-N 1660 -850 1660 -720 {lab=v_dd}
-N 1660 -620 1660 -470 {lab=v_ss}
 N 1660 -470 2020 -470 {lab=v_ss}
-N 1520 -850 1660 -850 {lab=v_dd}
-N 1250 -470 1660 -470 {lab=v_ss}
-N 1670 -720 1670 -710 {lab=v_dd}
-N 1660 -720 1670 -720 {lab=v_dd}
-N 1670 -630 1670 -620 {lab=v_ss}
-N 1660 -620 1670 -620 {lab=v_ss}
 N 1740 -670 1940 -670 {lab=v_out}
+N 1620 -850 1620 -740 {lab=v_dd}
+N 1520 -850 1620 -850 {lab=v_dd}
+N 1620 -600 1620 -470 {lab=v_ss}
+N 1250 -470 1620 -470 {lab=v_ss}
+N 1660 -490 1660 -470 {lab=v_ss}
+N 1620 -470 1660 -470 {lab=v_ss}
+N 1660 -610 1660 -550 {lab=v_ena}
 C {devices/title.sym} 670 150 0 0 {name=l6 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
 C {devices/code_shown.sym} 160 -770 0 0 {name=NGSPICE only_toplevel=true 
 value="
@@ -85,4 +84,7 @@ value="
 .lib cornerMOSlv.lib mos_CACE\{corner_mos\}
 .lib cornerMOShv.lib mos_CACE\{corner_mos\}
 "}
-C {/foss/designs/thesis/workspace/thesis_hp/designs/otas/foldedcascode_nmos.sym} 1720 -670 0 0 {name=x1}
+C {foldedcascode_nmos.sym} 1720 -670 0 0 {name=x1}
+C {vsource.sym} 1660 -520 0 0 {name=Venable value=1.5 savecurrent=false}
+C {spice_probe.sym} 1660 -550 0 0 {name=p7 attrs=""}
+C {lab_wire.sym} 1660 -590 0 1 {name=p8 sig_type=std_logic lab=v_ena}

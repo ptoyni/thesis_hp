@@ -4,11 +4,11 @@ K {}
 V {}
 S {}
 E {}
-N 930 -420 930 -400 {
+N 930 -320 930 -300 {
 lab=GND}
-N 930 -500 930 -480 {
+N 930 -400 930 -380 {
 lab=v_ss}
-N 930 -500 1030 -500 {
+N 1440 -400 1800 -400 {
 lab=v_ss}
 N 780 -440 780 -420 {
 lab=GND}
@@ -17,14 +17,14 @@ lab=v_dd}
 N 1030 -730 1030 -640 {
 lab=v_in}
 N 1030 -730 1350 -730 {lab=v_in}
-N 1030 -580 1030 -500 {lab=v_ss}
+N 1030 -580 1030 -400 {lab=v_ss}
 N 1300 -880 1300 -860 {
 lab=v_dd}
 N 1300 -800 1300 -700 {
 lab=#net1}
 N 1300 -700 1350 -700 {lab=#net1}
 N 780 -880 1300 -880 {lab=v_dd}
-N 1800 -600 1800 -500 {
+N 1800 -600 1800 -400 {
 lab=v_ss}
 N 1720 -700 1800 -700 {lab=v_out}
 N 1800 -700 1800 -660 {lab=v_out}
@@ -33,20 +33,23 @@ lab=v_out}
 N 1270 -670 1350 -670 {lab=v_out}
 N 1270 -670 1270 -590 {lab=v_out}
 N 1270 -590 1720 -590 {lab=v_out}
-N 1440 -880 1440 -750 {lab=v_dd}
-N 1440 -650 1440 -500 {lab=v_ss}
-N 1440 -500 1800 -500 {lab=v_ss}
-N 1300 -880 1440 -880 {lab=v_dd}
-N 1030 -500 1440 -500 {lab=v_ss}
-N 1450 -750 1450 -740 {lab=v_dd}
-N 1440 -750 1450 -750 {lab=v_dd}
-N 1450 -660 1450 -650 {lab=v_ss}
-N 1440 -650 1450 -650 {lab=v_ss}
 N 1520 -700 1720 -700 {lab=v_out}
+N 930 -400 1030 -400 {
+lab=v_ss}
+N 1400 -880 1400 -770 {lab=v_dd}
+N 1300 -880 1400 -880 {lab=v_dd}
+N 1400 -630 1400 -400 {lab=v_ss}
+N 1030 -400 1400 -400 {
+lab=v_ss}
+N 1440 -420 1440 -400 {
+lab=v_ss}
+N 1400 -400 1440 -400 {
+lab=v_ss}
+N 1440 -640 1440 -480 {lab=v_ena}
 C {devices/title.sym} 550 170 0 0 {name=l6 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
-C {devices/vsource.sym} 930 -450 0 0 {name=Vss value=0}
-C {devices/gnd.sym} 930 -400 0 0 {name=l1 lab=GND}
-C {lab_pin.sym} 930 -500 0 0 {name=p1 sig_type=std_logic lab=v_ss}
+C {devices/vsource.sym} 930 -350 0 0 {name=Vss value=0}
+C {devices/gnd.sym} 930 -300 0 0 {name=l1 lab=GND}
+C {lab_pin.sym} 930 -400 0 0 {name=p1 sig_type=std_logic lab=v_ss}
 C {devices/vsource.sym} 780 -470 0 0 {name=Vdd value=CACE\{vdd\}}
 C {devices/gnd.sym} 780 -420 0 0 {name=l3 lab=GND}
 C {lab_pin.sym} 780 -510 0 0 {name=p2 sig_type=std_logic lab=v_dd}
@@ -72,11 +75,10 @@ value="
 set num_threads=1
 tran 0.005u 15u uic
 
-let vout_limit=CACE\{vin\}*0.9
+let vout_limit=CACE\{vin\}*0.99
 meas tran tcross WHEN v(v_out)=vout_limit
-
-
-let tstart=0
+let vena_limit=0.5*CACE\{vdd\}
+meas tran tstart WHEN v(v_ena)=vena_limit
 let tsettle=tcross-tstart
 
 echo $&tsettle > CACE\{simpath\}/CACE\{filename\}_CACE\{N\}.data
@@ -88,4 +90,7 @@ value="
 .lib cornerMOSlv.lib mos_CACE\{corner_mos\}
 .lib cornerMOShv.lib mos_CACE\{corner_mos\}
 "}
-C {/foss/designs/thesis/workspace/thesis_hp/designs/otas/foldedcascode_nmos.sym} 1500 -700 0 0 {name=x1}
+C {foldedcascode_nmos.sym} 1500 -700 0 0 {name=x1}
+C {vsource.sym} 1440 -450 0 0 {name=Venable value="dc 0 pwl(0 0 1u 0 1.1u CACE\{vdd\})" savecurrent=false}
+C {spice_probe.sym} 1440 -480 0 0 {name=p7 attrs=""}
+C {lab_wire.sym} 1440 -550 0 1 {name=p8 sig_type=std_logic lab=v_ena}

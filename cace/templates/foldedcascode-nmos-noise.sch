@@ -33,16 +33,16 @@ lab=v_out}
 N 1350 -430 1430 -430 {lab=v_out}
 N 1350 -430 1350 -350 {lab=v_out}
 N 1350 -350 1800 -350 {lab=v_out}
-N 1520 -640 1520 -510 {lab=v_dd}
-N 1520 -410 1520 -260 {lab=v_ss}
 N 1520 -260 1880 -260 {lab=v_ss}
-N 1380 -640 1520 -640 {lab=v_dd}
-N 1110 -260 1520 -260 {lab=v_ss}
-N 1530 -510 1530 -500 {lab=v_dd}
-N 1520 -510 1530 -510 {lab=v_dd}
-N 1530 -420 1530 -410 {lab=v_ss}
-N 1520 -410 1530 -410 {lab=v_ss}
 N 1600 -460 1800 -460 {lab=v_out}
+N 1480 -640 1480 -530 {lab=v_dd}
+N 1380 -640 1480 -640 {lab=v_dd}
+N 1480 -390 1480 -260 {lab=v_ss}
+N 1110 -260 1480 -260 {lab=v_ss}
+N 1520 -280 1520 -260 {
+lab=v_ss}
+N 1480 -260 1520 -260 {lab=v_ss}
+N 1520 -400 1520 -340 {lab=#net2}
 C {devices/vsource.sym} 1010 -210 0 0 {name=Vss value=0}
 C {devices/gnd.sym} 1010 -160 0 0 {name=l1 lab=GND}
 C {lab_pin.sym} 1010 -260 0 0 {name=p1 sig_type=std_logic lab=v_ss}
@@ -81,4 +81,7 @@ value="
 .lib cornerMOSlv.lib mos_CACE\{corner_mos\}
 .lib cornerMOShv.lib mos_CACE\{corner_mos\}
 "}
-C {/foss/designs/thesis/workspace/thesis_hp/designs/otas/foldedcascode_nmos.sym} 1580 -460 0 0 {name=x1}
+C {foldedcascode_nmos.sym} 1580 -460 0 0 {name=x1}
+C {vsource.sym} 1520 -310 0 0 {name=Venable value=1.5 savecurrent=false}
+C {spice_probe.sym} 1520 -340 0 0 {name=p7 attrs=""}
+C {lab_wire.sym} 1520 -370 0 1 {name=p8 sig_type=std_logic lab=v_ena}

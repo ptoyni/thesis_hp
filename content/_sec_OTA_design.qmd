@@ -158,7 +158,7 @@ The situation with the design is summarized in @tbl-voltage-buffer-spec.
 | Output voltage error                       | $<1$         | %       |
 | Total output noise (rms)                   | $<0.16$       | mV~rms~ |
 | Supply current (as low as possible)        | $<10$        | µA      |
-| Turn-on time                               | $<1.5$         | µs      |
+| Turn-on time                               | $<0.5$         | µs      |
 | Externally provided bias current (nominal) | $10$         | µA      |
 
 : Voltage buffer specification {#tbl-voltage-buffer-spec}
