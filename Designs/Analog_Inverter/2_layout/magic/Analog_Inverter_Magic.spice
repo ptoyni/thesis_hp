@@ -1,9 +1,0 @@
-* NGSPICE file created from Analog_Inverter.ext - technology: ihp-sg13g2
-
-.subckt Analog_Inverter Vdd Vss Vin Vout
-X0 Vout Vin Vdd Vdd sg13_lv_pmos ad=0.52p pd=3.8u as=1.3p ps=4.9u w=1u l=0.15u
-**devattr s=28000,680 d=28000,680
-X1 Vout Vin Vss Vss sg13_lv_nmos ad=0.52p pd=3.8u as=0.96p ps=4u w=1u l=0.15u
-**devattr s=28000,680 d=28000,680
-.ends
-
