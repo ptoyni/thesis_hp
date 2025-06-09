@@ -26,18 +26,18 @@ N 500 -460 660 -460 {lab=Vcomp}
 N 620 -230 620 -210 {lab=Veamp}
 N 360 -410 500 -410 {lab=Vcomp}
 N 500 -460 500 -410 {lab=Vcomp}
-N 180 -360 250 -360 {lab=Vramp}
-N 180 -400 250 -400 {lab=Veamp}
 N 290 -350 290 -330 {lab=GND}
 N 620 -150 620 -130 {lab=GND}
 N 360 -450 360 -410 {lab=Vcomp}
 N 290 -410 360 -410 {lab=Vcomp}
+N 110 -660 110 -620 {lab=Vramp}
+N 110 -560 110 -540 {lab=GND}
 C {devices/vsource.sym} 110 -590 0 0 {name=Vramp value="DC 0 PULSE(0 5 0 1n 1n 5u 10u)" savecurrent=false}
 C {devices/switch_ngspice.sym} 700 -460 0 0 {name=S5 model=mysw}
 C {devices/switch_ngspice.sym} 700 -370 0 0 {name=S1 model=mysw}
 C {ind.sym} 850 -410 1 0 {name=L1
 m=1
-value=10u
+value=72u
 footprint=1206
 device=inductor}
 C {devices/capa.sym} 930 -380 0 0 {name=C7
@@ -63,17 +63,13 @@ device=resistor
 m=1}
 C {devices/gnd.sym} 1000 -60 0 0 {name=l4 lab=GND}
 C {devices/vsource.sym} 390 -590 0 0 {name=Vref value=2.5}
-C {devices/lab_wire.sym} 110 -620 0 0 {name=p1 sig_type=std_logic lab=Vramp
+C {devices/lab_wire.sym} 110 -660 0 0 {name=p1 sig_type=std_logic lab=Vramp
 }
 C {devices/lab_wire.sym} 390 -620 0 0 {name=p2 sig_type=std_logic lab=Vref}
-C {vcvs.sym} 620 -180 0 1 {name=E1 value=1000}
+C {vcvs.sym} 620 -180 0 1 {name=E1 value=1}
 C {devices/lab_wire.sym} 720 -200 0 1 {name=p4 sig_type=std_logic lab=Vref}
 C {sg13g2_stdcells/sg13g2_inv_1.sym} 540 -370 0 0 {name=x2 VDD=1.5 VSS=0 prefix=sg13g2_ }
 C {devices/lab_wire.sym} 620 -230 0 0 {name=p5 sig_type=std_logic lab=Veamp}
-C {vcvs.sym} 290 -380 0 0 {name=E2 value=1000}
-C {devices/lab_wire.sym} 180 -400 0 0 {name=p6 sig_type=std_logic lab=Veamp}
-C {devices/lab_wire.sym} 180 -360 0 0 {name=p7 sig_type=std_logic lab=Vramp
-}
 C {devices/gnd.sym} 290 -330 0 0 {name=l7 lab=GND}
 C {devices/gnd.sym} 620 -130 0 0 {name=l8 lab=GND}
 C {devices/code_shown.sym} 1160 -570 0 0 {name=NGSPICE only_toplevel=true 
@@ -81,18 +77,17 @@ value="
 
 .option method=gear reltol=1e-3
 .param vdd=5
-.model mysw SW vt=\{vdd/2\} ron=10k roff=10g
 
-V_in v_in 0 DC 18
+.model mysw SW vt=2.5 ron=100 roff=10G
+
+Vvin v_in 0 DC 18
 
 .control
 save all
+.ic V(v_out)=2.5 V(Vcomp)=0
 
-*dc v_in 18 36 3
-*plot v(v_out)
-
-tran 10n 200u 
-plot v(v_out) v(v_in)
+tran 10n 200u
+plot v(v_out) v(Veamp) v(Vcomp)
 .endc
 "}
 C {devices/title.sym} 240 90 0 0 {name=l9 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
@@ -108,6 +103,7 @@ value="
 .lib $::SG13G2_MODELS/cornerRES.lib res_typ
 .inc /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
 "}
-C {devices/gnd.sym} 110 -560 0 0 {name=l10 lab=GND}
+C {devices/gnd.sym} 110 -540 0 0 {name=l10 lab=GND}
 C {devices/gnd.sym} 390 -560 0 0 {name=l11 lab=GND}
 C {devices/lab_wire.sym} 360 -450 1 0 {name=p8 sig_type=std_logic lab=Vcomp}
+C {devices/vsource.sym} 290 -380 0 0 {name=E3 value="TABLE \{(V(Veamp)-V(Vramp))\} = (-1 0) (0 1) (1 1)"}

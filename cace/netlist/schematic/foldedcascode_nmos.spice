@@ -16,7 +16,7 @@ XMb Ibias Ibias AVSS AVSS sg13_lv_nmos w=4u l=5u ng=2 m=1
 XM11 net8 net8 net7 AVDD sg13_lv_pmos w=6u l=0.5u ng=2 m=1
 XM12 net7 net7 AVDD AVDD sg13_lv_pmos w=6u l=0.5u ng=2 m=1
 XM13 net12 net7 AVDD AVDD sg13_lv_pmos w=6u l=0.5u ng=2 m=1
-XM14 net9 net9 AVSS AVSS sg13_lv_nmos w=1.5u l=0.5u ng=1 m=1
+XM14 net13 net9 net14 AVSS sg13_lv_nmos w=1.5u l=0.5u ng=1 m=1
 XMb1 net10 Ibias AVSS AVSS sg13_lv_nmos w=4u l=5u ng=2 m=1
 Vmeas net8 net10 0
 .save i(vmeas)
@@ -39,4 +39,7 @@ XMpd8 net8 ena AVDD AVDD sg13_lv_pmos w=1u l=0.13u ng=1 m=1
 XMpd9 net4 ena_n AVSS AVSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
 XMpd10 net9 ena_n AVSS AVSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
 XMpd11 Vout ena_n AVSS AVSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XM10 net9 net9 net13 AVSS sg13_lv_nmos w=1.5u l=0.5u ng=1 m=1
+XM15 net14 net9 net15 AVSS sg13_lv_nmos w=1.5u l=0.5u ng=1 m=1
+XM16 net15 net9 AVSS AVSS sg13_lv_nmos w=1.5u l=0.5u ng=1 m=1
 .ends
