@@ -51,7 +51,7 @@
   + Description: Bias current
   + Display: Ibias
   + Unit: uA
-  + Typical: 10
+  + Typical: 12
 - corner_mos
   + Description: Process corner MOSFET
   + Display: Corner MOSFET
