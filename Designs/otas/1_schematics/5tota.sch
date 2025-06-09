@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.7 file_version=1.2}
 G {}
 K {}
 V {}
@@ -30,7 +30,6 @@ N 1030 -50 1080 -50 {lab=AVSS}
 N 280 -50 660 -50 {lab=AVSS}
 N 280 -230 280 -200 {lab=#net3}
 N 660 -250 660 -200 {lab=#net4}
-N 730 -510 910 -510 {lab=AVDD}
 N 280 -400 280 -310 {lab=Ibias}
 N 280 -140 280 -50 {lab=AVSS}
 N 220 -50 280 -50 {lab=AVSS}
@@ -40,13 +39,10 @@ N 930 -320 1080 -320 {lab=AVSS}
 N 1030 -170 1080 -170 {lab=AVSS}
 N 1080 -320 1080 -170 {lab=AVSS}
 N 660 -340 660 -310 {lab=AVDD}
-N 220 -510 660 -510 {lab=AVDD}
-N 660 -280 730 -280 {lab=AVDD}
-N 730 -510 730 -280 {lab=AVDD}
-N 660 -510 730 -510 {lab=AVDD}
-N 220 -280 280 -280 {lab=AVDD}
-N 220 -510 220 -280 {lab=AVDD}
-N 130 -510 220 -510 {lab=AVDD}
+N 660 -280 730 -280 {lab=AVSS}
+N 660 -510 910 -510 {lab=AVDD}
+N 220 -280 280 -280 {lab=AVSS}
+N 130 -510 660 -510 {lab=AVDD}
 N 220 -170 280 -170 {lab=AVSS}
 N 220 -170 220 -50 {lab=AVSS}
 N 130 -50 220 -50 {lab=AVSS}
@@ -68,6 +64,8 @@ N 730 -50 1030 -50 {lab=AVSS}
 N 990 -170 990 -120 {lab=#net3}
 N 600 -120 990 -120 {lab=#net3}
 N 600 -170 600 -120 {lab=#net3}
+N 220 -280 220 -170 {lab=AVSS}
+N 730 -280 730 -170 {lab=AVSS}
 C {sg13g2_pr/sg13_lv_nmos.sym} 1140 -320 0 1 {name=M1
 l=5u
 w=2u

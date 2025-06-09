@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.7 file_version=1.2}
 G {}
 K {}
 V {}
@@ -83,4 +83,4 @@ print tsettle
 
 .endc
 "}
-C {5t_ota.sym} 1290 -510 0 0 {name=x1}
+C {/foss/designs/thesis_hp/designs/otas/1_schematics/5tota.sym} 1290 -510 0 0 {name=x1}
