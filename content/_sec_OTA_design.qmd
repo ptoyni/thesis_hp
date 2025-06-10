@@ -156,9 +156,9 @@ The situation with the design is summarized in @tbl-voltage-buffer-spec.
 | Specification                              |  OTA         | Unit    |
 |:-------------------------------------------|:------------:|:-------:|
 | Output voltage error                       | $<1$         | %       |
-| Total output noise (rms)                   | $<0.16$       | mV~rms~ |
-| Supply current (as low as possible)        | $<10$        | µA      |
-| Turn-on time                               | $<0.5$         | µs      |
-| Externally provided bias current (nominal) | $10$         | µA      |
+| Total output noise (rms)                   | $<0.15$       | mV~rms~ |
+| Supply current (as low as possible)        | $<12.5$        | µA      |
+| Turn-on time                               | $<0.4$         | µs      |
+| Externally provided bias current (nominal) | $12.5$         | µA      |
 
 : Voltage buffer specification {#tbl-voltage-buffer-spec}
