@@ -345,7 +345,7 @@ C {opin.sym} 3900 -720 0 0 {name=p3 lab=Vout}
 C {ipin.sym} 400 -1190 0 0 {name=p5 lab=AVDD}
 C {sg13g2_pr/sg13_lv_nmos.sym} 2560 -730 0 0 {name=M1
 l=1u
-w=6u
+w=5.5u
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -378,7 +378,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 3010 -730 0 1 {name=M2
 l=1u
-w=6u
+w=5.5u
 ng=1
 m=1
 model=sg13_lv_nmos
