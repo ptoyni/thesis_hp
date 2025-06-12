@@ -12,6 +12,14 @@ T {Modified Wilson's current mirror with
 gain and swing improvisation} 1440 -1640 0 0 0.4 0.4 {}
 T {Modified Wilson's current mirror with 
 gain and swing improvisation} 3600 -1590 0 0 0.4 0.4 {}
+T {0.7 < 0.8(nom) < 0.9V} 2600 -1590 0 0 0.4 0.4 {}
+T {1.45 < 1.5(nom) < 1.55V} 110 -2300 0 0 0.4 0.4 {}
+T {12.5uA} 1180 -880 0 0 0.4 0.4 {}
+T {12.5uA} 1630 -880 0 0 0.4 0.4 {}
+T {12.5uA} 2670 -880 0 0 0.4 0.4 {}
+T {12.5uA} 3920 -2300 0 0 0.4 0.4 {}
+T {6.25uA} 2030 -2300 0 0 0.4 0.4 {}
+T {6.25uA} 3200 -2300 0 0 0.4 0.4 {}
 N 460 -1090 460 -1020 {lab=d_ena}
 N 700 -1090 700 -1020 {lab=ena_n}
 N 620 -1020 620 -900 {lab=AVSS}
