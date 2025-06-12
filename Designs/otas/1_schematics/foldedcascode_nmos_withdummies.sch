@@ -1,9 +1,17 @@
-v {xschem version=3.4.7 file_version=1.2}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
 S {}
 E {}
+P 4 5 1960 -2090 3380 -2090 3380 -1030 1960 -1030 1960 -2090 {dash = 4}
+P 4 5 1440 -2090 1950 -2090 1950 -1640 1440 -1640 1440 -2090 {dash = 4}
+P 4 5 3590 -1540 4100 -1540 4100 -1090 3590 -1090 3590 -1540 {dash = 4}
+T {Main Body} 3120 -2120 0 0 0.4 0.4 {}
+T {Modified Wilson's current mirror with 
+gain and swing improvisation} 1440 -1640 0 0 0.4 0.4 {}
+T {Modified Wilson's current mirror with 
+gain and swing improvisation} 3600 -1590 0 0 0.4 0.4 {}
 N 460 -1090 460 -1020 {lab=d_ena}
 N 700 -1090 700 -1020 {lab=ena_n}
 N 620 -1020 620 -900 {lab=AVSS}
