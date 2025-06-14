@@ -78,7 +78,6 @@ N 2450 -1510 2450 -1440 {lab=AVDD}
 N 1120 -1440 1120 -610 {lab=ena}
 N 2890 -710 2890 -520 {lab=#net7}
 N 2690 -760 2690 -710 {lab=#net7}
-N 3090 -760 3090 -710 {lab=#net7}
 N 2990 -490 2990 -150 {lab=AVSS}
 N 2990 -790 2990 -490 {lab=AVSS}
 N 2890 -460 2890 -150 {lab=AVSS}
@@ -220,11 +219,11 @@ N 2390 -1510 2450 -1510 {lab=AVDD}
 N 1120 -610 1550 -610 {lab=ena}
 N 1120 -1440 1890 -1440 {lab=ena}
 N 2690 -710 2890 -710 {lab=#net7}
-N 2890 -710 3090 -710 {lab=#net7}
+N 2890 -710 3110 -710 {lab=#net7}
 N 2690 -790 2990 -790 {lab=AVSS}
 N 2890 -150 2990 -150 {lab=AVSS}
 N 2890 -490 2990 -490 {lab=AVSS}
-N 2990 -790 3090 -790 {lab=AVSS}
+N 2990 -790 3110 -790 {lab=AVSS}
 N 2610 -790 2650 -790 {lab=PLUS}
 N 3130 -790 3170 -790 {lab=MINUS}
 N 2370 -150 2890 -150 {lab=AVSS}
@@ -235,7 +234,6 @@ N 3430 -1080 3520 -1080 {lab=AVDD}
 N 3430 -1510 3520 -1510 {lab=AVDD}
 N 3020 -1080 3390 -1080 {lab=#net6}
 N 2250 -1150 2690 -1150 {lab=#net5}
-N 3090 -820 3110 -820 {lab=#net8}
 N 3110 -1150 3430 -1150 {lab=#net8}
 N 2370 -1220 2780 -1220 {lab=#net2}
 N 2390 -1080 3020 -1080 {lab=#net6}
@@ -324,6 +322,7 @@ N 1390 -690 1390 -520 {lab=#net16}
 N 1590 -690 1590 -640 {lab=#net16}
 N 1390 -690 1590 -690 {lab=#net16}
 N 1390 -800 1390 -690 {lab=#net16}
+N 3110 -760 3110 -710 {lab=#net7}
 C {devices/title.sym} 1930 140 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
 C {ipin.sym} 270 -150 0 0 {name=p5 lab=AVSS}
 C {ipin.sym} 270 -990 0 0 {name=p1 lab=Ibias}
@@ -459,7 +458,7 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 3110 -790 0 1 {name=M2
+C {sg13g2_pr/sg13_lv_nmos.sym} 3130 -790 0 1 {name=M2
 l=1u
 w=5.5u
 ng=1
