@@ -1,13 +1,18 @@
 ** sch_path: /foss/designs/thesis_hp/designs/otas/1_schematics/5tota.sch
 .SUBCKT 5tota AVDD Vout Ibias PLUS MINUS AVSS
-*.PININFO PLUS:I MINUS:I Vout:O AVDD:I AVSS:I Ibias:I
-M1 Vout MINUS net2 AVSS sg13_lv_nmos w=2u l=5u ng=1 m=1
+*.PININFO PLUS:I AVDD:I Ibias:I AVSS:I MINUS:I Vout:O
 M3 net1 PLUS net2 AVSS sg13_lv_nmos w=2u l=5u ng=1 m=1
 M5 Vout net1 AVDD AVDD sg13_lv_pmos w=1.5u l=5u ng=1 m=1
 M7 net1 net1 AVDD AVDD sg13_lv_pmos w=1.5u l=5u ng=1 m=1
-M6 net2 net3 AVSS AVSS sg13_lv_nmos w=0.5u l=5u ng=1 m=1
-M4 AVDD AVDD net4 AVSS sg13_lv_nmos w=2.5u l=5u ng=1 m=1
-M2 net4 net3 AVSS AVSS sg13_lv_nmos w=2.5u l=5u ng=1 m=1
-M9 net3 net3 AVSS AVSS sg13_lv_nmos w=2.5u l=5u ng=1 m=1
-M8 Ibias AVDD net3 AVSS sg13_lv_nmos w=2.5u l=5u ng=1 m=1
+M9 net1 AVSS AVSS AVSS sg13_lv_nmos w=2u l=5u ng=1 m=1
+M10 net1 AVSS AVSS AVSS sg13_lv_nmos w=2u l=5u ng=1 m=1
+M12 Vout AVDD AVDD AVDD sg13_lv_pmos w=1.5u l=5u ng=1 m=1
+M13 net1 AVDD AVDD AVDD sg13_lv_pmos w=1.5u l=5u ng=1 m=1
+M6 net2 Ibias AVSS AVSS sg13_lv_nmos w=0.5u l=5u ng=1 m=1
+M2 Ibias Ibias AVSS AVSS sg13_lv_nmos w=2.5u l=5u ng=1 m=1
+M11 net2 AVSS AVSS AVSS sg13_lv_nmos w=0.5u l=5u ng=1 m=1
+M1 Vout MINUS net2 AVSS sg13_lv_nmos w=2u l=5u ng=1 m=1
+M4 Vout AVSS AVSS AVSS sg13_lv_nmos w=2u l=5u ng=1 m=1
+M8 Vout AVSS AVSS AVSS sg13_lv_nmos w=2u l=5u ng=1 m=1
+M14 Ibias AVSS AVSS AVSS sg13_lv_nmos w=2.5u l=5u ng=1 m=1
 .ENDS
