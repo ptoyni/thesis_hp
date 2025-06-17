@@ -37,3 +37,4 @@ right: |
 
 {{< include content/_sec_OTA_design.qmd >}}
 {{< include content/_sec_OTA_layout.qmd >}}
+{{< include content/_sec_OTA_pex.qmd >}}
