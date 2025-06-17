@@ -1,0 +1,52 @@
+# PEX
+
+Parasitic Extraction (PEX) is a critical step in analog IC design that occurs **after layout** and **before final verification/tapeout**. It models the unintended resistive and capacitive effects introduced by routing, device placement, and proximity in silicon.
+
+In analog circuits — especially precision blocks like **folded cascode OTAs** — these parasitics significantly affect performance, making PEX-based simulations essential.
+
+## Why Do We Need PEX?
+
+| Reason                          | Description                                                                 |
+|---------------------------------|-----------------------------------------------------------------------------|
+| **Performance Degradation**     | Parasitic capacitance reduces bandwidth and phase margin.                   |
+| **Offset and Mismatch Effects** | Parasitic coupling causes imbalance in differential paths.                  |
+| **Stability Impact**            | Additional phase lag from parasitics can destabilize feedback loops.        |
+| **Post-Layout Verification**    | Confirms that layout did not violate design intent (gain, UGB, PSRR, etc.). |
+| **Tapeout Confidence**          | Ensures high correlation between simulation and silicon behavior.           |
+
+
+
+
+
+For a folded cascode OTA, RC + CC extraction is essential. It ensures layout-induced degradation is captured early in simulation, enabling confident tapeout. Neglecting coupling capacitance or interconnect resistance can lead to significant performance loss or instability in silicon.
+
+## PEX using Klayout-PEX tool
+
+IIC-OSIC-Tools comes with pre-installed tool called as **K-pex**. The current status of [KLayout-PEX](https://martinjankoehler.github.io/klayout-pex-website/doc/doc.html#sec-into-klayout-pex-prototype-status) says as following:
+
+Available KLayout PEX Engines:
+
+| **Engine**         | **PEX Type** | **Status**             | **Description**                                                                 |
+|--------------------|--------------|-------------------------|----------------------------------------------------------------------------------|
+| `KPEX/MAGIC`       | CC, RC       | Usable                  | Wrapper engine, using installed `magic` tool                                     |
+| `KPEX/FasterCap`   | CC           | Usable, *pending QA*    | Field solver engine using `FasterCap`                                            |
+| `KPEX/FastHenry2`  | R, L         | Planned                 | Field solver engine using `FastHenry2`                                           |
+| `KPEX/2.5D`        | CC           | Under construction      | Prototype engine implementing MAGIC concepts/formulas with `KLayout` means       |
+| `KPEX/2.5D`        | R, RC        | Planned                 | Prototype engine implementing MAGIC concepts/formulas with `KLayout` means       |
+
+
+## Running the `KPEX/MAGIC` Engine
+
+
+The magic section of `kpex --help` describes the arguments and their defaults. Important arguments:
+
+- `--magicrc`: specify location of the `magicrc` file  
+- `--gds`: path to the GDS input layout  
+- `--magic`: enable magic engine
+
+### Example Command
+
+```bash
+kpex --pdk ihp_sg13g2 --magic --gds \
+  testdata/designs/ihp_sg13g2/*/cap_vpp_04p4x04p6_m1m1m2_noshield.gds.gz
+```  
