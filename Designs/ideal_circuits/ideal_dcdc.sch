@@ -29,7 +29,7 @@ N 360 -450 360 -410 {lab=Vcomp}
 N 1000 -180 1000 -160 {lab=v_fb}
 N 660 -160 1000 -160 {lab=v_fb}
 N 80 -410 360 -410 {lab=Vcomp}
-C {devices/vsource.sym} 160 -610 0 0 {name=Vramp value="DC 0 PWL(0 0 10u 1 10.1u 0 20u 1 20.1u 0 30u 1 30.1u 0 40u 1 40.1u 0 50u 1 50.1u 0 60u 1 60.1u 0 70u 1 70.1u 0 80u 1 80.1u 0 90u 1 90.1u 0 100u 1 100.1u 0 110u 1 110.1u 0 120u 1 120.1u 0 130u 1 130.1u 0 140u 1 140.1u 0 150u 1 150.1u 0 160u 1 160.1u 0 170u 1 170.1u 0 180u 1 180.1u 0 190u 1 190.1u 0 200u 1)" savecurrent=false}
+C {devices/vsource.sym} 160 -610 0 0 {name=Vramp value="DC 0 PWL(0 0 0u 1 0.1u 0 10u 1 10.1u 0 20u 1 20.1u 0 30u 1 30.1u 0 40u 1 40.1u 0 50u 1 50.1u 0 60u 1 60.1u 0 70u 1 70.1u 0 80u 1 80.1u 0 90u 1 90.1u 0 100u 1 100.1u 0 110u 1 110.1u 0 120u 1 120.1u 0 130u 1 130.1u 0 140u 1 140.1u 0 150u 1 150.1u 0 160u 1 160.1u 0 170u 1 170.1u 0 180u 1 180.1u 0 190u 1 190.1u 0 200u 1 200.1u 0 210u 1 210.1u 0 220u 1 220.1u 0 230u 1 230.1u 0 240u 1 240.1u 0 250u 1 250.1u 0 260u 1 260.1u 0 270u 1 270.1u 0 280u 1 280.1u 0 290u 1 290.1u 0 300u 1)" savecurrent=false}
 C {devices/switch_ngspice.sym} 700 -460 0 0 {name=S5 model=mysw}
 C {devices/switch_ngspice.sym} 700 -370 0 0 {name=S1 model=mysw}
 C {ind.sym} 850 -410 1 0 {name=L1
@@ -71,7 +71,7 @@ value="
 .option method=gear reltol=1e-3
 .param vdd=5
 
-.model mysw SW vt=2.5 ron=1 roff=10G
+.model mysw SW vt=2.5 ron=0.1 roff=10G
 
 
 Vvin v_in 0 DC 18
@@ -106,10 +106,10 @@ value="
 C {devices/gnd.sym} 160 -580 0 0 {name=l10 lab=GND}
 C {devices/gnd.sym} -20 -580 0 0 {name=l11 lab=GND}
 C {devices/lab_wire.sym} 360 -450 1 0 {name=p8 sig_type=std_logic lab=Vcomp}
-C {vcvs.sym} 620 -180 0 1 {name=E1 value=2}
+C {vcvs.sym} 620 -180 0 1 {name=E1 value=100}
 C {lab_wire.sym} 1000 -160 0 1 {name=p9 sig_type=std_logic lab=v_fb}
 C {lab_wire.sym} 740 -410 0 1 {name=p10 sig_type=std_logic lab=v_switch}
 C {devices/gnd.sym} 660 -330 0 0 {name=l6 lab=GND}
 C {devices/gnd.sym} 660 -420 0 0 {name=l12 lab=GND}
-C {devices/vsource.sym} 80 -380 0 0 {name=E2 value="TABLE \{V(Veamp,Vramp)\} = (-0.2, 0V) (0.2, \{vdd\})"}
+C {devices/vsource.sym} 80 -380 0 0 {name=E2 value="TABLE \{V(Veamp,Vramp)\} = (-0.100, 0V) (0.100, \{vdd\})"}
 C {devices/gnd.sym} 80 -350 0 0 {name=l5 lab=GND}
