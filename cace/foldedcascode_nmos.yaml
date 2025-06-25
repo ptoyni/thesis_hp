@@ -33,7 +33,7 @@ pins:
     description: Analog ground
     type: ground
     direction: input
-  Ibias:
+  IBIAS:
     description: Bias current input 5uA (nom)
     type: signal
     direction: input
@@ -45,7 +45,7 @@ pins:
     description: Voltage negative input
     type: signal
     direction: input
-  Vout:
+  VOUT:
     description: Voltage output
     type: signal
     direction: output
@@ -60,7 +60,7 @@ default_conditions:
     description: Bias current
     display: Ibias
     unit: uA
-    typical: 12
+    typical: 12.5
   corner_mos:
     description: Process corner MOSFET
     display: Corner MOSFET
