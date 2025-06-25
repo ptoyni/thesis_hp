@@ -1,0 +1,6 @@
+** sch_path: /foss/designs/thesis_hp/designs/otas/1_schematics/testing_dummies.sch
+.SUBCKT testing_dummies vss vdd in
+*.PININFO vss:I vdd:I in:I
+M2 vdd in vss vss sg13_lv_nmos w=4u l=1u ng=2 m=1
+M1 vdd vss vss vss sg13_lv_nmos w=4u l=1u ng=2 m=1
+.ENDS
