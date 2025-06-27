@@ -1,0 +1,23 @@
+
+Magic 8.3 revision 527 - Compiled on Sat May 24 11:19:49 AM CEST 2025.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+WARNING: RLIMIT_NOFILE is above 1024 and Tcl_Version<9 this may cause runtime issues [rlim_cur=1048576]
+Using NULL graphics device.
+Processing system .magicrc file
+Sourcing design .magicrc for technology ihp-sg13g2 ...
+2 Magic internal units = 1 Lambda
+Input style sg13g2(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    fillfet sealcont difffill nemitter hvnemitter hvisodiffres sealvia1 sealvia2 sealvia3 sealvia4 sealvia5 sealvia6 pad seal thruvia 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading "/foss/designs/thesis/thesis_hp/Designs/Analog_Inverter/3_kpex/analog_inverter__analog_inverter/magic_CC/analog_inverter_MAGIC_CC_Script.tcl" from command line.
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 6.0
+Library name: LIB
+Reading "TEXT".
+Reading "nmos$1".
+Reading "pmos".
+Reading "analog_inverter".
+Extracting analog_inverter into /foss/designs/thesis/thesis_hp/Designs/Analog_Inverter/3_kpex/analog_inverter__analog_inverter/magic_CC/analog_inverter.ext:
+exttospice finished.

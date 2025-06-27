@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.7 file_version=1.2}
 G {}
 K {}
 V {}
@@ -18,6 +18,8 @@ C {devices/lab_wire.sym} 220 -200 1 0 {name=p10 sig_type=std_logic lab=Vdd}
 C {devices/lab_wire.sym} 220 -140 1 1 {name=p11 sig_type=std_logic lab=Vss}
 C {devices/code_shown.sym} 530 -730 0 0 {name=NGSPICE1 only_toplevel=true 
 value="
+.include /foss/designs/thesis/thesis_hp/Designs/Analog_Inverter/3_kpex/analog_inverter/magic_CC/analog_inverter.pex.spice
+
 *Vin v_in 0 dc 0 pulse(0 1.5 0 1n 1n 4n 10n)
 
 .control
@@ -67,4 +69,4 @@ footprint=1206
 device=polarized_capacitor
 }
 C {devices/gnd.sym} 360 -60 0 0 {name=l7 lab=GND}
-C {/foss/designs/thesis/workspace/thesis_hp/designs/analog_inverter/1_schematics/analog_inverter.sym} 280 -170 0 0 {name=x1}
+C {Analog_Inverter.sym} 280 -170 0 0 {name=x1}

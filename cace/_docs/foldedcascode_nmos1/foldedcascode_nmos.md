@@ -23,7 +23,7 @@
   + Description: Analog ground
   + Type: ground
   + Direction: input
-- Ibias
+- IBIAS
   + Description: Bias current input 5uA (nom)
   + Type: signal
   + Direction: input
@@ -35,7 +35,7 @@
   + Description: Voltage negative input
   + Type: signal
   + Direction: input
-- Vout
+- VOUT
   + Description: Voltage output
   + Type: signal
   + Direction: output
@@ -69,7 +69,7 @@
   + Description: Load capacitance
   + Display: Cload
   + Unit: pF
-  + Typical: 2
+  + Typical: 1
 
 ## Symbol
 

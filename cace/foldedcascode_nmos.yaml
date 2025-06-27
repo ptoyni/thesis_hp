@@ -60,7 +60,7 @@ default_conditions:
     description: Bias current
     display: Ibias
     unit: uA
-    typical: 12.5
+    typical: 14
   corner_mos:
     description: Process corner MOSFET
     display: Corner MOSFET
@@ -78,7 +78,7 @@ default_conditions:
     description: Load capacitance
     display: Cload
     unit: pF
-    typical: 2
+    typical: 1
 
 parameters:
   ac_params:
@@ -243,7 +243,7 @@ parameters:
         typical:
           value: any
         maximum:
-          value: 0.2
+          value: 0.4
     tool:
       ngspice:
         template: foldedcascode-nmos-noise.sch

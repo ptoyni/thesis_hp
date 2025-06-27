@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.7 file_version=1.2}
 G {}
 K {}
 V {}
@@ -48,4 +48,4 @@ value=50f
 footprint=1206
 device=polarized_capacitor
 }
-C {/foss/designs/thesis/workspace/thesis_hp/Designs/analog_inverter/Schematics/analog_inverter.sym} -250 -80 0 0 {name=x1}
+C {Analog_Inverter.sym} -250 -80 0 0 {name=x1}

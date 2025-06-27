@@ -5,12 +5,12 @@
 
 |      Parameter       |         Tool         |     Result      | Min Limit  |  Min Value   | Typ Target |  Typ Value   | Max Limit  |  Max Value   |  Status  |
 | :------------------- | :------------------- | :-------------- | ---------: | -----------: | ---------: | -----------: | ---------: | -----------: | :------: |
-| Output voltage ratio | ngspice              | gain                 |        0.98 V/V |  0.996 V/V |          any |  0.999 V/V |      1.1 V/V |  1.000 V/V |   Pass ✅    |
-| Bandwidth            | ngspice              | bw                   |          1e6 Hz | 4056470.000 Hz |          any | 8457160.000 Hz |          any | 14665200.000 Hz |   Pass ✅    |
+| Output voltage ratio | ngspice              | gain                 |        0.98 V/V |  0.993 V/V |          any |  0.999 V/V |      1.1 V/V |  1.000 V/V |   Pass ✅    |
+| Bandwidth            | ngspice              | bw                   |          1e6 Hz | 11285400.000 Hz |          any | 22825500.000 Hz |          any | 33412900.000 Hz |   Pass ✅    |
 | Output voltage ratio (MC) | ngspice              | gain_mc              |             any |  0.998 V/V |          any |  0.999 V/V |          any |  1.000 V/V |   Pass ✅    |
-| Bandwidth (MC)       | ngspice              | bw_mc                |          1e6 Hz | 8014060.000 Hz |          any | 8425735.000 Hz |          any | 9289120.000 Hz |   Pass ✅    |
-| Output noise         | ngspice              | noise                |             any |   0.065 mV |          any |   0.101 mV |       0.2 mV |   0.136 mV |   Pass ✅    |
-| Settling time        | ngspice              | tsettle              |             any |   0.234 us |          any |   0.258 us |       1.5 us |   0.286 us |   Pass ✅    |
+| Bandwidth (MC)       | ngspice              | bw_mc                |          1e6 Hz | 22261000.000 Hz |          any | 26479750.000 Hz |          any | 27318800.000 Hz |   Pass ✅    |
+| Output noise         | ngspice              | noise                |             any |   0.122 mV |          any |   0.163 mV |       0.4 mV |   0.316 mV |   Pass ✅    |
+| Settling time        | ngspice              | tsettle              |             any |   0.172 us |          any |   0.191 us |       1.5 us |   0.219 us |   Pass ✅    |
 
 
 ## Plots
