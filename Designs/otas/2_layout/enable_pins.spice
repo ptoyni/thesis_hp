@@ -1,0 +1,8 @@
+** sch_path: /foss/designs/thesis_hp/designs/otas/1_schematics/enable_pins.sch
+.SUBCKT enable_pins AVSS AVDD D_ENA
+*.PININFO AVSS:I AVDD:I D_ENA:I
+Mpd2 net1 D_ENA AVDD AVDD sg13_lv_pmos w=1u l=0.13u ng=1 m=1
+Mpd3 net2 net1 AVDD AVDD sg13_lv_pmos w=1u l=0.13u ng=1 m=1
+Mpd1 net1 D_ENA AVSS AVSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+Mpd4 net2 net1 AVSS AVSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+.ENDS
