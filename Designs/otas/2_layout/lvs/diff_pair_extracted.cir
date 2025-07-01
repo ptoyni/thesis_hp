@@ -1,0 +1,12 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 01/07/2025 10:04
+
+.SUBCKT diff_pair AVSS MINUS PLUS Drain_plus Drain_minus
+M$1 AVSS AVSS MINUS AVSS sg13_lv_nmos L=1u W=6u AS=1.59p AD=1.59p PS=10.06u
++ PD=10.06u
+M$2 MINUS Drain_minus \$6 AVSS sg13_lv_nmos L=1u W=6u AS=1.14p AD=1.14p
++ PS=6.76u PD=6.76u
+M$3 \$6 Drain_plus PLUS AVSS sg13_lv_nmos L=1u W=6u AS=1.14p AD=1.14p PS=6.76u
++ PD=6.76u
+M$4 PLUS AVSS AVSS AVSS sg13_lv_nmos L=1u W=6u AS=1.59p AD=1.59p PS=10.06u
++ PD=10.06u
+.ENDS diff_pair

@@ -36,7 +36,7 @@ def parse_drc_errors_new():
             break
         lines.append(line)
     
-    print("\n⚠️ Rules with errors (≥ 1):")
+    print("\n⚠️ Rules with errors :")
     i=0
     for line in lines:
         if "error(s)" in line:

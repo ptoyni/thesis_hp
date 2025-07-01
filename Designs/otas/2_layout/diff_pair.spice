@@ -1,0 +1,8 @@
+** sch_path: /foss/designs/thesis_hp/designs/otas/1_schematics/diff_pair.sch
+.SUBCKT diff_pair PLUS MINUS AVSS Drain_plus Drain_minus source
+*.PININFO PLUS:I MINUS:I AVSS:I Drain_plus:I Drain_minus:I source:I
+M1 Drain_plus PLUS source AVSS sg13_lv_nmos w=6u l=1u ng=2 m=1
+M2 Drain_minus MINUS source AVSS sg13_lv_nmos w=6u l=1u ng=2 m=1
+Md2 Drain_minus AVSS AVSS AVSS sg13_lv_nmos w=6u l=1u ng=2 m=1
+Md1 Drain_plus AVSS AVSS AVSS sg13_lv_nmos w=6u l=1u ng=2 m=1
+.ENDS
