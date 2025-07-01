@@ -1,8 +1,8 @@
-# PEX
+# Klayout-PEX (KPEX)
 
-Parasitic Extraction (PEX) is a critical step in analog IC design that occurs **after layout** and **before final verification/tapeout**. It models the unintended resistive and capacitive effects introduced by routing, device placement, and proximity in silicon.
+While in the schematic, a connection between device terminals is seen as an equipotential, the stacked geometries in a specific layout introduce parasitic effects, which can be thought of additional resistors, capacitors (and inductors), not modeled by and missing in the original schematic.
 
-In analog circuits — especially precision blocks like **folded cascode OTAs** — these parasitics significantly affect performance, making PEX-based simulations essential.
+To be able to simulate these effects, a parasitic extraction tool (PEX) is used, to extract a netlist from the layout, which represents the original schematic (created from the layout active and passive elements) augmented with the additional parasitic devices.
 
 ## Why Do We Need PEX?
 
@@ -15,10 +15,11 @@ In analog circuits — especially precision blocks like **folded cascode OTAs** 
 | **Tapeout Confidence**          | Ensures high correlation between simulation and silicon behavior.           |
 
 
+IIC-OSIC-Tools offers [KPEX](https://martinjankoehler.github.io/klayout-pex-website/doc/doc.html) for this purpose which is a tool, well integrated with Klayout by using its API. 
 
 
 
-For a folded cascode OTA, RC + CC extraction is essential. It ensures layout-induced degradation is captured early in simulation, enabling confident tapeout. Neglecting coupling capacitance or interconnect resistance can lead to significant performance loss or instability in silicon.
+
 
 ## PEX using Klayout-PEX tool
 
@@ -43,9 +44,9 @@ The magic section of `kpex --help` describes the arguments and their defaults. I
 - `--magicrc`: specify location of the `magicrc` file  
 - `--gds`: path to the GDS input layout  
 - `--magic`: enable magic engine
+- `--out_dir` : set the output directory
 
 ### Example Command
-
 
 ```bash
 kpex --pdk ihp_sg13g2 --magic --gds GDS_PATH --out_dir OUTPUT_DIR_PATH
@@ -206,3 +207,29 @@ Environmental variables:
 
 ```
 Once PEX is succesfully done, the extracted netlist SPICE file will be generated in the provided output path, which consists of extracted parasitics which can be further used to do post layout simulations and verify whether the design layout satisfies the design specifications or not.
+
+
+![Extracted Spice file](figures/_fig_pex_outputdir.png){#fig-output-dir}
+
+## Post layout simulation.
+
+We have established testbenches for DC, AC, and transient analysis using the symbol of the designed inverter as a subcircuit. The next step is to perform post-layout simulation by replacing the schematic netlist with the extracted layout netlist (PEX), in order to verify whether the performance remains consistent after layout parasitics are included.
+
+Firstly we need to open the symbol file in Xschem, edit the properties of the symbol See @fig-primitive. Change from `subcircuit` to `primitive`.
+
+![Primitive](figures/_fig_primitive.png){#fig-primitive}
+
+Once changed to primitive, now we can include the `.spice` file from PEX to the testbench. See @fig-include
+
+
+![Include](figures/_fig_include.png){#fig-include}
+
+## Results 
+
+![Result](figures/_fig_pex_output.png){#fig-result}
+
+@fig-result shows that the response is as same as we expected from our schematic.
+
+
+
+
