@@ -31,5 +31,6 @@ bibliography: references.bib
 {{< include content/_sec_Intro.qmd >}}
 {{< include content/_sec_Tools.qmd >}}
 {{< include content/_sec_layout.qmd >}}
+{{< include content/_sec_kpex.qmd >}}
 {{< include content/_sec_xschem_shortcuts.qmd >}}
 {{< include content/_sec_ngspice_shortcuts.qmd >}}
