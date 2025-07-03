@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.7 file_version=1.2}
 G {}
 K {}
 V {}
@@ -51,7 +51,7 @@ C {lab_pin.sym} 710 -210 0 0 {name=p2 sig_type=std_logic lab=v_dd}
 C {devices/vsource.sym} 960 -310 0 0 {name=Vin value="dc 0.7 ac 1"}
 C {lab_wire.sym} 1020 -430 0 0 {name=p4 sig_type=std_logic lab=v_in}
 C {spice_probe.sym} 1080 -430 0 0 {name=p5 attrs=""}
-C {isource.sym} 1230 -530 0 0 {name=I0 value=12.5u}
+C {isource.sym} 1230 -530 0 0 {name=I0 value=14u}
 C {capa.sym} 1730 -330 0 0 {name=C1
 value=2p}
 C {lab_wire.sym} 1730 -400 0 0 {name=p3 sig_type=std_logic lab=v_out}
