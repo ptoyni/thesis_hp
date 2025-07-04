@@ -19,7 +19,7 @@ driver IC, particularly in ensuring reliable performance across varying input co
 
 ## Block Diagram
 
-![Block Diagram](figures/_fig_BlockDiagram.png){#fig-block-diagram}
+![Block Diagram](../figures/_fig_BlockDiagram.png){#fig-block-diagram}
 
 | Block                                          | Function                                              |
 |------------------------------------------------|-------------------------------------------------------|

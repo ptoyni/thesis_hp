@@ -1,19 +1,67 @@
 project:
-  type: manuscript
+  type: book
+  output-dir: _book
 
-manuscript:
-  article: index.qmd
+book:
+  title: "Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS"
+  author:
+    - name: Priyanka Toyni
+      orcid: 
+      email: ptoyni@hs-bremen.de
+      corresponding: true
+      roles: "Lead author"
+      affiliation:
+        - name: Hochschule Bremen - City University of Applied Sciences (HSB)
+          city: Bremen
+          state: Germany
+          url: https://www.hs-bremen.de  
+    - name: Hrishikesh Pangavhane
+      orcid: 
+      email: hpangavhane@hs-bremen.de
+      corresponding: true
+      roles: "Lead author"
+  date: last-modified
+  license: "Apache-2.0 license"
 
-execute:
-  freeze: auto
+  reader-mode: true
+
+  page-footer:
+    left: |
+      Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS.
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+  # cover-image: images/hsb-logo.png
+  # favicon: images/hsb-logo.png
+  # site-url: https://mimeiners.github.io/gel2/
+  # repo-url: https://github.com/mimeiners/gel2/
+  # repo-branch: main
+  # repo-actions: [edit,issue]
+  downloads: [pdf,epub]
+
+  chapters:
+    - index.qmd
+    - part: System
+      chapters:
+        - content/_sec_Requirements_AES.qmd
+    - part: Circuit Design
+      chapters:
+        - content/_sec_OTA_design.qmd
+        - content/_sec_OTA_pex.qmd
+    - part: Physical Design 
+      chapters:
+        - content/_sec_OTA_layout.qmd
+    - references.qmd
+    
+bibliography: _bibliography/references.bib
 
 format:
   html:
     theme: flatly
+    # default-image-extension: svg
   pdf:
-    documentclass: scrreprt
-#    lof: true
-#    lot: true
+    documentclass: scrbook 
+    lof: true
+    # lot: true
     toc: true    
     geometry:
       - top=30mm
@@ -23,11 +71,18 @@ format:
       - linktoc=all
     colorlinks: true
     linkcolor: "blue"
-    biblio-style: ieee
-    #    keep-tex: true
-    output-file: thesis_hp 
-#  epub:
-#    theme: flatly
-#    output-file: thesis_hp
+    biblio-style: "ieee"
+    highlight-style: "github"
+    mainfont: "Calibri"
+    # keep-tex: true
+    # default-image-extension: tex
+    output-file: thesis_hp
+  epub:
+    theme: flatly
+    # default-image-extension: svg
+    output-file: thesis_hp
+  
+execute:
+  freeze: auto
 
 
