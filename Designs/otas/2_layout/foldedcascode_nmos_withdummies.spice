@@ -1,0 +1,47 @@
+** sch_path: /foss/designs/thesis_hp/designs/otas/1_schematics/foldedcascode_nmos_withdummies.sch
+.SUBCKT foldedcascode_nmos_withdummies AVSS IBIAS AVDD PLUS MINUS VOUT D_ENA
+*.PININFO AVSS:I IBIAS:I AVDD:I PLUS:I MINUS:I VOUT:O D_ENA:I
+M19 net10 net1 AVSS AVSS sg13_lv_nmos w=8.5u l=5u ng=4 m=1
+M20 net10 ena net1 AVSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+M21 net8 net1 AVSS AVSS sg13_lv_nmos w=8.5u l=5u ng=4 m=1
+M11 net9 net3 net2 AVDD sg13_lv_pmos w=14u l=2u ng=4 m=1
+M12 net2 net2 AVDD AVDD sg13_lv_pmos w=14u l=2u ng=4 m=1
+M18 AVSS net3 net6 AVDD sg13_lv_pmos w=14u l=0.5u ng=4 m=1
+M17 net6 net2 AVDD AVDD sg13_lv_pmos w=14u l=2u ng=4 m=1
+M9 net5 net2 AVDD AVDD sg13_lv_pmos w=14u l=2u ng=4 m=1
+M5 net3 net6 net5 AVDD sg13_lv_pmos w=14u l=2u ng=4 m=1
+M7 net3 net15 net4 AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+M3 net4 net3 AVSS AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+M21 net7 net1 AVSS AVSS sg13_lv_nmos w=8.5u l=5u ng=4 m=1
+M1 net5 PLUS net7 AVSS sg13_lv_nmos w=6u l=1u ng=2 m=1
+M2 net11 MINUS net7 AVSS sg13_lv_nmos w=6u l=1u ng=2 m=1
+M22 AVDD net2 AVDD AVDD sg13_lv_pmos w=12u l=0.5u ng=4 m=1
+M23 AVDD net6 AVDD AVDD sg13_lv_pmos w=12u l=0.5u ng=4 m=1
+M24 AVSS net1 AVSS AVSS sg13_lv_nmos w=8u l=1u ng=4 m=1
+M25 ena_n D_ENA AVDD AVDD sg13_lv_pmos w=1u l=0.13u ng=1 m=1
+M26 ena ena_n AVDD AVDD sg13_lv_pmos w=1u l=0.13u ng=1 m=1
+M27 ena_n D_ENA AVSS AVSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+M28 ena ena_n AVSS AVSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+M29 net11 AVSS AVSS AVSS sg13_lv_nmos w=6u l=1u ng=2 m=1
+M6 VOUT net6 net11 AVDD sg13_lv_pmos w=14u l=2u ng=4 m=1
+M0 net11 net2 AVDD AVDD sg13_lv_pmos w=14u l=2u ng=4 m=1
+M8 VOUT net15 net12 AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+M4 net12 net3 AVSS AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+M30 net12 AVSS AVSS AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+M31 VOUT AVSS AVSS AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+M32 net11 AVDD AVDD AVDD sg13_lv_pmos w=14u l=2u ng=4 m=1
+M33 VOUT AVDD AVDD AVDD sg13_lv_pmos w=7u l=2u ng=2 m=1
+M13 net13 net2 AVDD AVDD sg13_lv_pmos w=14u l=2u ng=4 m=1
+M15 net16 VOUT net14 AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+M16 net14 net14 AVSS AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+M14 net15 net14 AVSS AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+M10 AVDD VOUT net15 AVSS sg13_lv_nmos w=15u l=0.5u ng=4 m=1
+M34 AVSS net15 AVSS AVSS sg13_lv_nmos w=8u l=1u ng=4 m=1
+M35 net3 ena_n AVSS AVSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+M36 net5 AVSS AVSS AVSS sg13_lv_nmos w=6u l=1u ng=2 m=1
+M37 net3 AVDD AVDD AVDD sg13_lv_pmos w=7u l=2u ng=2 m=1
+M38 net4 AVSS AVSS AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+M39 net3 AVSS AVSS AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+Md7 net2 AVDD AVDD AVDD sg13_lv_pmos w=7u l=2u ng=2 m=1
+Md11 net14 AVSS AVSS AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+.ENDS
