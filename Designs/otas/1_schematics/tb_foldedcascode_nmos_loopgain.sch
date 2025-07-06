@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.7 file_version=1.2}
 G {}
 K {}
 V {}
@@ -132,6 +132,10 @@ value="
 C {devices/code_shown.sym} 90 -1090 0 0 {name=NGSPICE
 only_toplevel=true
 value="
+
+.include /foss/designs/thesis/thesis_hp/designs/otas/3_kpex/magic_CC/foldedcascode_nmos_withdummies.pex.spice
+
+
 .param temp=27
 .options savecurrents reltol=1e-3 abstol=1e-12 gmin=1e-15
 .control
@@ -192,7 +196,7 @@ C {devices/lab_pin.sym} 1410 -140 0 0 {name=p6 sig_type=std_logic lab=v_ss}
 C {devices/capa.sym} 1650 -230 0 0 {name=C2
 value=2p}
 C {devices/lab_wire.sym} 1170 -350 0 0 {name=p9 sig_type=std_logic lab=v_in}
-C {devices/isource.sym} 1450 -450 0 0 {name=I1 value=40u pwl(0 0 10u 0 11u 40u)"}
+C {devices/isource.sym} 1450 -450 0 0 {name=I1 value=14u pwl(0 0 10u 0 11u 14u)"}
 C {devices/lab_pin.sym} 790 -220 0 0 {name=p11 sig_type=std_logic lab=v_ss}
 C {devices/vsource.sym} 1280 -200 3 0 {name=Vtest1 value="dc 0 ac 1"}
 C {devices/lab_wire.sym} 1210 -200 0 0 {name=p3 sig_type=std_logic lab=vf1}
@@ -202,7 +206,7 @@ C {devices/lab_pin.sym} 2170 -140 0 0 {name=p15 sig_type=std_logic lab=v_ss}
 C {devices/capa.sym} 2410 -230 0 0 {name=C1
 value=2p}
 C {devices/lab_wire.sym} 1930 -350 0 0 {name=p17 sig_type=std_logic lab=v_in}
-C {devices/isource.sym} 2210 -450 0 0 {name=I2 value=40u pwl(0 0 10u 0 11u 40u)"}
+C {devices/isource.sym} 2210 -450 0 0 {name=I2 value=14u pwl(0 0 10u 0 11u 14u)"}
 C {devices/ammeter.sym} 2100 -200 1 0 {name=Vir1 savecurrent=true spice_ignore=0}
 C {devices/ammeter.sym} 2000 -200 1 0 {name=Vif1 savecurrent=true spice_ignore=0}
 C {devices/isource.sym} 2050 -130 2 0 {name=Itest1 value="dc 0 ac 1"}
@@ -211,13 +215,13 @@ C {devices/lab_pin.sym} 1410 -700 0 0 {name=p20 sig_type=std_logic lab=v_ss}
 C {devices/capa.sym} 1650 -790 0 0 {name=C3
 value=2p}
 C {devices/lab_wire.sym} 1170 -910 0 0 {name=p22 sig_type=std_logic lab=v_in}
-C {devices/isource.sym} 1450 -1010 0 0 {name=I3 value=40u pwl(0 0 10u 0 11u 40u)"}
+C {devices/isource.sym} 1450 -1010 0 0 {name=I3 value=14u pwl(0 0 10u 0 11u 14u)"}
 C {devices/lab_pin.sym} 2140 -1060 0 0 {name=p26 sig_type=std_logic lab=v_dd}
 C {devices/lab_pin.sym} 2170 -700 0 0 {name=p27 sig_type=std_logic lab=v_ss}
 C {devices/capa.sym} 2410 -790 0 0 {name=C4
 value=2p}
 C {devices/lab_wire.sym} 1930 -910 0 0 {name=p29 sig_type=std_logic lab=v_in}
-C {devices/isource.sym} 2210 -1010 0 0 {name=I4 value=40u pwl(0 0 10u 0 11u 40u)"}
+C {devices/isource.sym} 2210 -1010 0 0 {name=I4 value=14u pwl(0 0 10u 0 11u 14u)"}
 C {devices/isource.sym} 1170 -670 2 1 {name=Itest3 value="dc 0 ac 0"}
 C {devices/vsource.sym} 1240 -760 3 0 {name=Vtest2 value="dc 0 ac 1"}
 C {devices/lab_wire.sym} 1210 -720 2 0 {name=p24 sig_type=std_logic lab=vmeas1}

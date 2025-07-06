@@ -58,11 +58,15 @@ C {lab_wire.sym} 1730 -400 0 0 {name=p3 sig_type=std_logic lab=v_out}
 C {spice_probe.sym} 1610 -400 0 0 {name=p6 attrs=""}
 C {devices/code_shown.sym} 50 -20 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
-value=".lib cornerMOSlv.lib mos_ss
+value=".lib cornerMOSlv.lib mos_tt
 "}
 C {devices/code_shown.sym} 50 -790 0 0 {name=NGSPICE1 only_toplevel=true 
 value="
-.temp -40
+
+*.include /foss/designs/thesis/thesis_hp/designs/otas/3_kpex/magic_CC/foldedcascode_nmos_withdummies.pex.spice
+
+
+.temp 27
 .control
 option sparse
 save all

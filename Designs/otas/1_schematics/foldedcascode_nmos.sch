@@ -4,483 +4,388 @@ K {}
 V {}
 S {}
 E {}
-P 4 5 3010 770 5590 770 5590 1830 3010 1830 3010 770 {dash = 4}
-P 4 5 1940 750 2450 750 2450 1200 1940 1200 1940 750 {dash = 4}
-P 4 5 5820 1320 6330 1320 6330 1770 5820 1770 5820 1320 {dash = 4}
+P 4 5 4470 1520 8150 1520 8150 3100 4470 3100 4470 1520 {dash = 4}
+P 4 5 3470 2370 3980 2370 3980 2820 3470 2820 3470 2370 {dash = 4}
+P 4 5 1770 1800 2280 1800 2280 2250 1770 2250 1770 1800 {dash = 4}
+T {0.7 < 0.8(nom) < 0.9V} 5190 2290 0 0 0.4 0.4 {}
+T {12.5uA} 5270 3030 0 0 0.4 0.4 {}
+T {6.25uA} 5930 1610 0 0 0.4 0.4 {}
+T {6.25uA} 7420 1610 0 0 0.4 0.4 {}
+T {Main Body} 4470 1440 0 0 1 1 {}
+T {12.5uA} 3800 1610 0 0 0.4 0.4 {}
 T {Modified Wilson's current mirror with 
-gain and swing improvisation} 1940 1200 0 0 0.4 0.4 {}
-T {0.7 < 0.8(nom) < 0.9V} 4510 1240 0 0 0.4 0.4 {}
-T {1.45 < 1.5(nom) < 1.55V} 550 560 0 0 0.4 0.4 {}
-T {12.5uA} 1620 1980 0 0 0.4 0.4 {}
-T {12.5uA} 2070 1980 0 0 0.4 0.4 {}
-T {12.5uA} 4590 1980 0 0 0.4 0.4 {}
-T {12.5uA} 6150 560 0 0 0.4 0.4 {}
-T {6.25uA} 3800 560 0 0 0.4 0.4 {}
-T {6.25uA} 5290 560 0 0 0.4 0.4 {}
-T {Main Body} 5210 740 0 0 0.4 0.4 {}
+gain and swing improvisation} 3480 2320 0 0 0.4 0.4 {}
 T {Modified Wilson's current mirror with 
-gain and swing improvisation} 5830 1270 0 0 0.4 0.4 {}
-N 900 1770 900 1840 {lab=D_ENA}
-N 1060 1840 1060 1960 {lab=AVSS}
-N 960 1870 960 1960 {lab=AVSS}
-N 960 1750 960 1810 {lab=ena_n}
-N 960 1710 960 1750 {lab=ena_n}
-N 1140 1680 1140 1750 {lab=ena_n}
-N 1200 1740 1200 1810 {lab=ena}
-N 1200 1870 1200 1960 {lab=AVSS}
-N 1140 1750 1140 1840 {lab=ena_n}
-N 1200 1710 1200 1740 {lab=ena}
-N 1300 1840 1300 1960 {lab=AVSS}
-N 960 600 960 1650 {lab=AVDD}
-N 1200 600 1200 1650 {lab=AVDD}
-N 1540 1620 1540 1960 {lab=AVSS}
-N 1940 1500 1940 1960 {lab=AVSS}
-N 1840 1530 1840 1620 {lab=#net1}
-N 1370 1500 1370 1740 {lab=ena}
-N 1640 1650 1640 1960 {lab=AVSS}
-N 2100 1650 2100 1960 {lab=AVSS}
-N 2190 1620 2190 1960 {lab=AVSS}
-N 2100 600 2100 860 {lab=AVDD}
-N 2100 960 2100 1000 {lab=#net2}
-N 2180 890 2180 960 {lab=#net2}
-N 2200 1030 2200 1120 {lab=#net3}
-N 2300 1150 2300 1960 {lab=AVSS}
-N 3830 1420 3830 1470 {lab=#net3}
-N 3830 1530 3830 1590 {lab=#net4}
-N 3830 1650 3830 1960 {lab=AVSS}
-N 2200 1120 2200 1180 {lab=#net3}
-N 3830 1060 3830 1180 {lab=#net3}
-N 3830 960 3830 1000 {lab=#net5}
-N 2300 1040 2300 1090 {lab=#net6}
-N 2850 1040 2850 1100 {lab=#net6}
-N 3950 1030 3950 1100 {lab=#net6}
-N 4630 1400 4630 1710 {lab=#net7}
-N 3830 600 3830 860 {lab=AVDD}
-N 3830 920 3830 960 {lab=#net5}
-N 4360 660 4360 890 {lab=#net2}
-N 4600 660 4600 1030 {lab=#net6}
-N 4330 600 4330 620 {lab=AVDD}
-N 4360 600 4360 620 {lab=AVDD}
-N 4390 600 4390 620 {lab=AVDD}
-N 4570 600 4570 620 {lab=AVDD}
-N 4600 600 4600 620 {lab=AVDD}
-N 4630 600 4630 620 {lab=AVDD}
-N 3830 1180 3830 1420 {lab=#net3}
-N 2040 1620 2040 1740 {lab=#net1}
-N 3920 1740 3920 1900 {lab=#net1}
-N 3890 1940 3890 1960 {lab=AVSS}
-N 3920 1940 3920 1960 {lab=AVSS}
-N 3950 1940 3950 1960 {lab=AVSS}
-N 900 1680 900 1770 {lab=D_ENA}
-N 2100 1350 2100 1590 {lab=#net8}
-N 2100 920 2100 960 {lab=#net2}
-N 2100 1060 2100 1290 {lab=#net9}
-N 900 1680 920 1680 {lab=D_ENA}
-N 900 1840 920 1840 {lab=D_ENA}
-N 1140 1680 1160 1680 {lab=ena_n}
-N 1140 1840 1160 1840 {lab=ena_n}
-N 960 1680 1060 1680 {lab=AVDD}
-N 960 1960 1060 1960 {lab=AVSS}
-N 520 1960 960 1960 {lab=AVSS}
-N 960 1750 1140 1750 {lab=ena_n}
-N 1060 1960 1200 1960 {lab=AVSS}
-N 1200 1740 1370 1740 {lab=ena}
-N 1200 1960 1300 1960 {lab=AVSS}
-N 520 600 960 600 {lab=AVDD}
-N 1060 600 1200 600 {lab=AVDD}
-N 1300 1960 1540 1960 {lab=AVSS}
-N 1840 1500 1940 1500 {lab=AVSS}
-N 1640 1960 1940 1960 {lab=AVSS}
-N 1680 1620 1840 1620 {lab=#net1}
-N 1540 1960 1640 1960 {lab=AVSS}
-N 520 1120 1640 1120 {lab=IBIAS}
-N 1940 1960 2100 1960 {lab=AVSS}
-N 2100 1620 2190 1620 {lab=AVSS}
-N 2100 1960 2190 1960 {lab=AVSS}
-N 2040 1620 2060 1620 {lab=#net1}
-N 2300 1120 2370 1120 {lab=AVDD}
-N 2140 890 2180 890 {lab=#net2}
-N 3870 890 3950 890 {lab=#net2}
-N 2180 890 2260 890 {lab=#net2}
-N 2200 1120 2260 1120 {lab=#net3}
-N 2140 1030 2200 1030 {lab=#net3}
-N 2190 1960 2300 1960 {lab=AVSS}
-N 2300 1040 2850 1040 {lab=#net6}
-N 3870 1030 3950 1030 {lab=#net6}
-N 2010 600 2100 600 {lab=AVDD}
-N 3830 600 4330 600 {lab=AVDD}
-N 3950 1030 4600 1030 {lab=#net6}
-N 2370 600 3560 600 {lab=AVDD}
-N 1370 1500 1800 1500 {lab=ena}
-N 4240 1320 4280 1320 {lab=PLUS}
-N 4970 1320 5010 1320 {lab=MINUS}
-N 4700 1960 4830 1960 {lab=AVSS}
-N 5970 600 6120 600 {lab=AVDD}
-N 4600 1030 5290 1030 {lab=#net6}
-N 3950 890 4360 890 {lab=#net2}
-N 4330 600 4360 600 {lab=AVDD}
-N 4360 600 4390 600 {lab=AVDD}
-N 4390 600 4570 600 {lab=AVDD}
-N 4570 600 4600 600 {lab=AVDD}
-N 4600 600 4630 600 {lab=AVDD}
-N 3830 1420 4060 1420 {lab=#net3}
-N 3870 1620 4060 1620 {lab=#net3}
-N 1840 1620 2040 1620 {lab=#net1}
-N 3920 1740 4590 1740 {lab=#net1}
-N 3830 1960 3890 1960 {lab=AVSS}
-N 3890 1960 3920 1960 {lab=AVSS}
-N 3920 1960 3950 1960 {lab=AVSS}
-N 510 1770 900 1770 {lab=D_ENA}
-N 2100 960 2180 960 {lab=#net2}
-N 2010 1030 2100 1030 {lab=AVDD}
-N 2010 890 2010 1030 {lab=AVDD}
-N 1880 600 2010 600 {lab=AVDD}
-N 2010 890 2100 890 {lab=AVDD}
-N 2010 600 2010 890 {lab=AVDD}
-N 1060 600 1060 1680 {lab=AVDD}
-N 960 600 1060 600 {lab=AVDD}
-N 1300 600 1300 1680 {lab=AVDD}
-N 1200 600 1300 600 {lab=AVDD}
-N 1640 1120 1640 1250 {lab=IBIAS}
-N 1200 1680 1300 1680 {lab=AVDD}
-N 960 1840 1060 1840 {lab=AVSS}
-N 1200 1840 1300 1840 {lab=AVSS}
-N 1540 1620 1640 1620 {lab=AVSS}
-N 1640 1420 1640 1590 {lab=#net10}
-N 1840 1420 1840 1470 {lab=#net10}
-N 1640 1420 1840 1420 {lab=#net10}
-N 1640 1310 1640 1420 {lab=#net10}
-N 4930 960 5330 960 {lab=#net11}
-N 4630 1400 4930 1400 {lab=#net7}
-N 4770 1260 4770 1290 {lab=#net11}
-N 4770 1260 4930 1260 {lab=#net11}
-N 4770 1380 4830 1380 {lab=AVSS}
-N 4770 1350 4770 1380 {lab=AVSS}
-N 4730 1320 4770 1320 {lab=AVSS}
-N 4730 1320 4730 1380 {lab=AVSS}
-N 4730 1380 4770 1380 {lab=AVSS}
-N 4830 1320 4830 1380 {lab=AVSS}
-N 4830 1380 4830 1960 {lab=AVSS}
-N 5420 890 5420 1030 {lab=AVDD}
-N 5330 960 5330 1000 {lab=#net11}
-N 5330 1530 5330 1590 {lab=#net12}
-N 5420 1530 5420 1620 {lab=AVSS}
-N 5050 1620 5050 1890 {lab=#net3}
-N 5330 1380 5330 1470 {lab=VOUT}
-N 5330 890 5420 890 {lab=AVDD}
-N 5330 1030 5420 1030 {lab=AVDD}
-N 5330 1500 5420 1500 {lab=AVSS}
-N 5330 1620 5420 1620 {lab=AVSS}
-N 5330 920 5330 960 {lab=#net11}
-N 5420 600 5420 890 {lab=AVDD}
-N 5330 600 5420 600 {lab=AVDD}
-N 5330 1650 5330 1960 {lab=AVSS}
-N 5420 1650 5420 1960 {lab=AVSS}
-N 5330 1960 5420 1960 {lab=AVSS}
-N 5330 1590 5460 1590 {lab=#net12}
-N 5330 1470 5460 1470 {lab=VOUT}
-N 5420 1530 5460 1530 {lab=AVSS}
-N 5420 1500 5420 1530 {lab=AVSS}
-N 5420 1650 5460 1650 {lab=AVSS}
-N 5420 1620 5420 1650 {lab=AVSS}
-N 5330 600 5330 860 {lab=AVDD}
-N 4630 600 5330 600 {lab=AVDD}
-N 5330 920 5460 920 {lab=#net11}
-N 5330 1060 5460 1060 {lab=VOUT}
-N 5520 1000 5520 1030 {lab=AVDD}
-N 5460 890 5520 890 {lab=AVDD}
-N 5520 860 5520 890 {lab=AVDD}
-N 5420 600 5520 600 {lab=AVDD}
-N 5460 1000 5520 1000 {lab=AVDD}
-N 5520 890 5520 1000 {lab=AVDD}
-N 5460 860 5520 860 {lab=AVDD}
-N 5520 600 5520 860 {lab=AVDD}
-N 5170 890 5290 890 {lab=#net2}
-N 6230 890 6250 890 {lab=#net2}
-N 6120 600 6120 890 {lab=AVDD}
-N 6190 600 6190 860 {lab=AVDD}
-N 6120 600 6190 600 {lab=AVDD}
-N 6190 920 6190 980 {lab=#net13}
-N 6190 1560 6190 1590 {lab=#net14}
-N 6280 1500 6280 1620 {lab=AVSS}
-N 6090 1430 6090 1500 {lab=VOUT}
-N 6090 1560 6090 1620 {lab=#net14}
-N 5880 1430 5880 1620 {lab=AVSS}
-N 6090 1380 6090 1430 {lab=VOUT}
-N 6190 1530 6190 1560 {lab=#net14}
-N 5970 1560 5970 1590 {lab=#net15}
-N 6190 1500 6280 1500 {lab=AVSS}
-N 6190 1620 6280 1620 {lab=AVSS}
-N 6090 1500 6150 1500 {lab=VOUT}
-N 6010 1430 6090 1430 {lab=VOUT}
-N 6010 1620 6090 1620 {lab=#net14}
-N 6090 1620 6150 1620 {lab=#net14}
-N 5880 1430 5970 1430 {lab=AVSS}
-N 5880 1620 5970 1620 {lab=AVSS}
-N 6090 1560 6190 1560 {lab=#net14}
-N 6190 1040 6190 1470 {lab=#net16}
-N 6280 1620 6280 1960 {lab=AVSS}
-N 6190 1960 6280 1960 {lab=AVSS}
-N 5970 600 5970 1400 {lab=AVDD}
-N 5520 600 5970 600 {lab=AVDD}
-N 5970 1960 6190 1960 {lab=AVSS}
-N 5330 1380 6090 1380 {lab=VOUT}
-N 5330 1190 5330 1380 {lab=VOUT}
-N 5170 1500 5170 1560 {lab=#net15}
-N 5170 1500 5290 1500 {lab=#net15}
-N 5720 1560 5970 1560 {lab=#net15}
-N 5970 1460 5970 1560 {lab=#net15}
-N 5330 1060 5330 1190 {lab=VOUT}
-N 6190 1650 6190 1960 {lab=AVSS}
-N 5330 1190 6570 1190 {lab=VOUT}
-N 4970 1920 5010 1920 {lab=ena_n}
-N 5050 1950 5050 1960 {lab=AVSS}
-N 4830 1960 5050 1960 {lab=AVSS}
-N 5100 1960 5330 1960 {lab=AVSS}
-N 5050 1920 5100 1920 {lab=AVSS}
-N 5100 1920 5100 1960 {lab=AVSS}
-N 5050 1960 5100 1960 {lab=AVSS}
-N 5050 1620 5290 1620 {lab=#net3}
-N 5690 1940 5690 1960 {lab=AVSS}
-N 5520 1960 5690 1960 {lab=AVSS}
-N 5720 1940 5720 1960 {lab=AVSS}
-N 5690 1960 5720 1960 {lab=AVSS}
-N 5750 1940 5750 1960 {lab=AVSS}
-N 5720 1960 5750 1960 {lab=AVSS}
-N 5720 1560 5720 1900 {lab=#net15}
-N 3760 600 3830 600 {lab=AVDD}
-N 3760 1960 3830 1960 {lab=AVSS}
-N 2200 1180 3830 1180 {lab=#net3}
-N 2850 1100 3950 1100 {lab=#net6}
-N 2180 800 3950 800 {lab=#net2}
-N 2040 1740 3920 1740 {lab=#net1}
-N 3760 1030 3830 1030 {lab=AVDD}
-N 3760 890 3830 890 {lab=AVDD}
-N 3760 890 3760 1030 {lab=AVDD}
-N 3760 600 3760 890 {lab=AVDD}
-N 4630 1740 4700 1740 {lab=AVSS}
-N 4410 1380 4410 1960 {lab=AVSS}
-N 3950 1960 4410 1960 {lab=AVSS}
-N 4410 1320 4430 1320 {lab=AVSS}
-N 4470 1320 4530 1320 {lab=AVSS}
-N 4530 1320 4530 1380 {lab=AVSS}
-N 4470 1380 4530 1380 {lab=AVSS}
-N 4470 1350 4470 1380 {lab=AVSS}
-N 4410 1380 4470 1380 {lab=AVSS}
-N 4410 1320 4410 1380 {lab=AVSS}
-N 4470 1260 4470 1290 {lab=#net5}
-N 3760 1500 3830 1500 {lab=AVSS}
-N 3760 1620 3830 1620 {lab=AVSS}
-N 3760 1500 3760 1620 {lab=AVSS}
-N 3680 1960 3760 1960 {lab=AVSS}
-N 5460 1500 5520 1500 {lab=AVSS}
-N 5520 1620 5520 1960 {lab=AVSS}
-N 5420 1960 5520 1960 {lab=AVSS}
-N 5460 1620 5520 1620 {lab=AVSS}
-N 5520 1500 5520 1620 {lab=AVSS}
-N 4810 1320 4830 1320 {lab=AVSS}
-N 4930 1350 4930 1400 {lab=#net7}
-N 4830 1320 4930 1320 {lab=AVSS}
-N 4930 1260 4930 1290 {lab=#net11}
-N 4930 960 4930 1260 {lab=#net11}
-N 4320 1320 4410 1320 {lab=AVSS}
-N 4320 1260 4320 1290 {lab=#net5}
-N 3830 960 4320 960 {lab=#net5}
-N 4320 1260 4470 1260 {lab=#net5}
-N 4320 960 4320 1260 {lab=#net5}
-N 4320 1350 4320 1400 {lab=#net7}
-N 4320 1400 4630 1400 {lab=#net7}
-N 5460 1030 5520 1030 {lab=AVDD}
-N 6120 890 6190 890 {lab=AVDD}
-N 1140 1750 1370 1750 {lab=ena_n}
-N 1370 1750 1370 1770 {lab=ena_n}
-N 3620 1060 3830 1060 {lab=#net3}
-N 3560 1000 3560 1030 {lab=AVDD}
-N 3560 1000 3620 1000 {lab=AVDD}
-N 3560 1030 3620 1030 {lab=AVDD}
-N 3560 600 3560 1000 {lab=AVDD}
-N 3660 1030 3760 1030 {lab=AVDD}
-N 3560 600 3760 600 {lab=AVDD}
-N 3620 1470 3830 1470 {lab=#net3}
-N 3620 1590 3830 1590 {lab=#net4}
-N 3530 1500 3620 1500 {lab=AVSS}
-N 2300 1960 3530 1960 {lab=AVSS}
-N 3530 1620 3620 1620 {lab=AVSS}
-N 3530 1500 3530 1620 {lab=AVSS}
-N 3530 1620 3530 1960 {lab=AVSS}
-N 3760 1620 3760 1960 {lab=AVSS}
-N 3660 1500 3680 1500 {lab=AVSS}
-N 3680 1530 3680 1620 {lab=AVSS}
-N 3660 1620 3680 1620 {lab=AVSS}
-N 3680 1650 3680 1960 {lab=AVSS}
-N 3530 1960 3680 1960 {lab=AVSS}
-N 3620 1530 3680 1530 {lab=AVSS}
-N 3680 1500 3680 1530 {lab=AVSS}
-N 3620 1650 3680 1650 {lab=AVSS}
-N 3680 1620 3680 1650 {lab=AVSS}
-N 5970 1650 5970 1960 {lab=AVSS}
-N 5880 1960 5970 1960 {lab=AVSS}
-N 5880 1620 5880 1960 {lab=AVSS}
-N 5750 1960 5880 1960 {lab=AVSS}
-N 3870 1500 5170 1500 {lab=#net15}
-N 5170 1560 5720 1560 {lab=#net15}
-N 4360 890 5170 890 {lab=#net2}
-N 5170 800 6250 800 {lab=#net2}
-N 4700 1740 4700 1960 {lab=AVSS}
-N 4630 1960 4700 1960 {lab=AVSS}
-N 4630 1770 4630 1960 {lab=AVSS}
-N 4410 1960 4630 1960 {lab=AVSS}
-N 4060 1420 4060 1620 {lab=#net3}
-N 4060 1620 5050 1620 {lab=#net3}
-N 2300 920 2300 1040 {lab=#net6}
-N 2180 800 2180 890 {lab=#net2}
-N 2300 600 2300 860 {lab=AVDD}
-N 2100 600 2300 600 {lab=AVDD}
-N 2300 890 2370 890 {lab=AVDD}
-N 2370 600 2370 890 {lab=AVDD}
-N 2300 600 2370 600 {lab=AVDD}
-N 2370 890 2370 1120 {lab=AVDD}
-N 3950 800 3950 890 {lab=#net2}
-N 5170 800 5170 890 {lab=#net2}
-N 6250 800 6250 890 {lab=#net2}
-N 1880 600 1880 860 {lab=AVDD}
-N 1780 600 1880 600 {lab=AVDD}
-N 1920 890 2010 890 {lab=AVDD}
-N 1880 960 2100 960 {lab=#net2}
-N 1880 920 1880 960 {lab=#net2}
-N 1780 890 1880 890 {lab=AVDD}
-N 1780 600 1780 890 {lab=AVDD}
-N 1300 600 1780 600 {lab=AVDD}
-N 6280 1620 6350 1620 {lab=AVSS}
-N 6390 1560 6390 1590 {lab=#net14}
-N 6190 1560 6390 1560 {lab=#net14}
-N 6390 1650 6390 1960 {lab=AVSS}
-N 6280 1960 6390 1960 {lab=AVSS}
-N 6390 1620 6470 1620 {lab=AVSS}
-N 6470 1620 6470 1960 {lab=AVSS}
-N 6390 1960 6470 1960 {lab=AVSS}
-C {ipin.sym} 520 1960 0 0 {name=p5 lab=AVSS}
-C {ipin.sym} 520 1120 0 0 {name=p1 lab=IBIAS}
-C {ipin.sym} 520 600 0 0 {name=p2 lab=AVDD}
-C {devices/lab_wire.sym} 1370 1740 0 0 {name=p15 sig_type=std_logic lab=ena}
-C {devices/lab_wire.sym} 1370 1770 0 0 {name=p6 sig_type=std_logic lab=ena_n}
-C {sg13g2_pr/sg13_lv_nmos.sym} 1660 1620 0 1 {name=Mb
-l=5u
-w=8.5u
-ng=4
+gain and swing improvisation} 1770 2250 0 0 0.4 0.4 {}
+T {1.45 < 1.5(nom) < 1.55V} 380 1610 0 0 0.4 0.4 {}
+T {12.5uA} 1450 3030 0 0 0.4 0.4 {}
+T {12.5uA} 1900 3030 0 0 0.4 0.4 {}
+N 5960 2470 5960 2520 {lab=vd5}
+N 5960 2580 5960 2640 {lab=#net1}
+N 5960 2700 5960 3010 {lab=AVSS}
+N 7340 2080 7340 2160 {lab=vb5}
+N 5310 2450 5310 2640 {lab=#net2}
+N 5310 2700 5310 3010 {lab=AVSS}
+N 5960 1650 5960 1910 {lab=AVDD}
+N 5960 1990 5960 2050 {lab=#net3}
+N 6490 1710 6490 1940 {lab=vb9}
+N 6730 1710 6730 2080 {lab=vb5}
+N 6460 1650 6460 1670 {lab=AVDD}
+N 6490 1650 6490 1670 {lab=AVDD}
+N 6520 1650 6520 1670 {lab=AVDD}
+N 6700 1650 6700 1670 {lab=AVDD}
+N 6730 1650 6730 1670 {lab=AVDD}
+N 6760 1650 6760 1670 {lab=AVDD}
+N 6000 2670 6000 2750 {lab=vd5}
+N 6190 2470 6190 2750 {lab=vd5}
+N 6000 1940 6490 1940 {lab=vb9}
+N 6000 2080 6730 2080 {lab=vb5}
+N 5960 1650 6460 1650 {lab=AVDD}
+N 5380 3010 5510 3010 {lab=AVSS}
+N 4920 2370 4960 2370 {lab=PLUS}
+N 5650 2370 5690 2370 {lab=MINUS}
+N 5090 3010 5310 3010 {lab=AVSS}
+N 7340 2080 7420 2080 {lab=vb5}
+N 6460 1650 6490 1650 {lab=AVDD}
+N 6490 1650 6520 1650 {lab=AVDD}
+N 6520 1650 6700 1650 {lab=AVDD}
+N 6700 1650 6730 1650 {lab=AVDD}
+N 6730 1650 6760 1650 {lab=AVDD}
+N 5960 2470 6190 2470 {lab=vd5}
+N 6000 2750 6190 2750 {lab=vd5}
+N 5960 3010 7180 3010 {lab=AVSS}
+N 7380 2550 7420 2550 {lab=vb7}
+N 7180 2750 7420 2750 {lab=vd5}
+N 5310 2450 5610 2450 {lab=#net2}
+N 5450 2310 5450 2340 {lab=#net4}
+N 5450 2310 5610 2310 {lab=#net4}
+N 5450 2430 5510 2430 {lab=AVSS}
+N 5450 2400 5450 2430 {lab=AVSS}
+N 5410 2370 5450 2370 {lab=AVSS}
+N 5410 2370 5410 2430 {lab=AVSS}
+N 5410 2430 5450 2430 {lab=AVSS}
+N 5510 2370 5510 2430 {lab=AVSS}
+N 5510 2430 5510 3010 {lab=AVSS}
+N 7550 1940 7550 2080 {lab=AVDD}
+N 7460 2010 7460 2050 {lab=#net4}
+N 7460 2580 7460 2640 {lab=#net5}
+N 7550 2580 7550 2670 {lab=AVSS}
+N 7420 2670 7420 2750 {lab=vd5}
+N 7460 1940 7550 1940 {lab=AVDD}
+N 7460 2080 7550 2080 {lab=AVDD}
+N 7460 2550 7550 2550 {lab=AVSS}
+N 7460 2670 7550 2670 {lab=AVSS}
+N 7460 1970 7460 2010 {lab=#net4}
+N 7550 1650 7550 1940 {lab=AVDD}
+N 7460 1650 7550 1650 {lab=AVDD}
+N 7460 2700 7460 3010 {lab=AVSS}
+N 7550 2700 7550 3010 {lab=AVSS}
+N 7460 3010 7550 3010 {lab=AVSS}
+N 7460 2640 7590 2640 {lab=#net5}
+N 7460 2520 7590 2520 {lab=VOUT}
+N 7550 2580 7590 2580 {lab=AVSS}
+N 7550 2550 7550 2580 {lab=AVSS}
+N 7550 2700 7590 2700 {lab=AVSS}
+N 7550 2670 7550 2700 {lab=AVSS}
+N 7460 1650 7460 1910 {lab=AVDD}
+N 6760 1650 7460 1650 {lab=AVDD}
+N 7460 1970 7590 1970 {lab=#net4}
+N 7460 2110 7590 2110 {lab=VOUT}
+N 7650 2050 7650 2080 {lab=AVDD}
+N 7590 1940 7650 1940 {lab=AVDD}
+N 7650 1910 7650 1940 {lab=AVDD}
+N 7550 1650 7650 1650 {lab=AVDD}
+N 7590 2050 7650 2050 {lab=AVDD}
+N 7650 1940 7650 2050 {lab=AVDD}
+N 7590 1910 7650 1910 {lab=AVDD}
+N 7650 1650 7650 1910 {lab=AVDD}
+N 7340 1940 7420 1940 {lab=vb9}
+N 7380 2550 7380 2950 {lab=vb7}
+N 7460 2480 7460 2520 {lab=VOUT}
+N 7100 2970 7140 2970 {lab=ena_n}
+N 7180 3000 7180 3010 {lab=AVSS}
+N 7410 3010 7460 3010 {lab=AVSS}
+N 7180 2970 7230 2970 {lab=AVSS}
+N 7230 2970 7230 3010 {lab=AVSS}
+N 7180 3010 7230 3010 {lab=AVSS}
+N 7180 2750 7180 2940 {lab=vd5}
+N 6190 2750 7180 2750 {lab=vd5}
+N 5890 1650 5960 1650 {lab=AVDD}
+N 5890 3010 5960 3010 {lab=AVSS}
+N 5890 2080 5960 2080 {lab=AVDD}
+N 5890 1940 5960 1940 {lab=AVDD}
+N 5890 1940 5890 2080 {lab=AVDD}
+N 5890 1650 5890 1940 {lab=AVDD}
+N 5310 2670 5380 2670 {lab=AVSS}
+N 5380 2670 5380 3010 {lab=AVSS}
+N 5310 3010 5380 3010 {lab=AVSS}
+N 5090 2430 5090 3010 {lab=AVSS}
+N 5090 2370 5110 2370 {lab=AVSS}
+N 5150 2370 5210 2370 {lab=AVSS}
+N 5210 2370 5210 2430 {lab=AVSS}
+N 5150 2430 5210 2430 {lab=AVSS}
+N 5150 2400 5150 2430 {lab=AVSS}
+N 5090 2430 5150 2430 {lab=AVSS}
+N 5090 2370 5090 2430 {lab=AVSS}
+N 5150 2310 5150 2340 {lab=#net3}
+N 5890 2550 5960 2550 {lab=AVSS}
+N 5890 2670 5960 2670 {lab=AVSS}
+N 5890 2550 5890 2670 {lab=AVSS}
+N 5890 2670 5890 3010 {lab=AVSS}
+N 7590 2550 7650 2550 {lab=AVSS}
+N 7650 2670 7650 3010 {lab=AVSS}
+N 7550 3010 7650 3010 {lab=AVSS}
+N 7590 2670 7650 2670 {lab=AVSS}
+N 7650 2550 7650 2670 {lab=AVSS}
+N 5490 2370 5510 2370 {lab=AVSS}
+N 5610 2400 5610 2450 {lab=#net2}
+N 5510 2370 5610 2370 {lab=AVSS}
+N 5610 2310 5610 2340 {lab=#net4}
+N 5610 2010 5610 2310 {lab=#net4}
+N 5000 2370 5090 2370 {lab=AVSS}
+N 5000 2310 5150 2310 {lab=#net3}
+N 5000 2310 5000 2340 {lab=#net3}
+N 5000 2400 5000 2450 {lab=#net2}
+N 5000 2450 5310 2450 {lab=#net2}
+N 7590 2080 7650 2080 {lab=AVDD}
+N 7350 2990 7350 3010 {lab=AVSS}
+N 7230 3010 7350 3010 {lab=AVSS}
+N 7380 2990 7380 3010 {lab=AVSS}
+N 7350 3010 7380 3010 {lab=AVSS}
+N 7410 2990 7410 3010 {lab=AVSS}
+N 7380 3010 7410 3010 {lab=AVSS}
+N 7460 2330 7980 2330 {lab=VOUT}
+N 7460 2110 7460 2330 {lab=VOUT}
+N 4980 2670 5270 2670 {lab=vbtail}
+N 7340 2550 7380 2550 {lab=vb7}
+N 3620 1650 3770 1650 {lab=AVDD}
+N 3880 1940 3900 1940 {lab=vb9}
+N 3770 1650 3770 1940 {lab=AVDD}
+N 3840 1650 3840 1910 {lab=AVDD}
+N 3770 1650 3840 1650 {lab=AVDD}
+N 3840 1970 3840 2030 {lab=#net6}
+N 3840 2610 3840 2640 {lab=#net7}
+N 3930 2550 3930 2670 {lab=AVSS}
+N 3740 2480 3740 2550 {lab=VOUT}
+N 3740 2610 3740 2670 {lab=#net7}
+N 3530 2480 3530 2610 {lab=AVSS}
+N 3740 2430 3740 2480 {lab=VOUT}
+N 3840 2580 3840 2610 {lab=#net7}
+N 3620 2550 3620 2580 {lab=vb7}
+N 3840 2550 3930 2550 {lab=AVSS}
+N 3840 2670 3930 2670 {lab=AVSS}
+N 3740 2550 3800 2550 {lab=VOUT}
+N 3660 2480 3740 2480 {lab=VOUT}
+N 3660 2610 3740 2610 {lab=#net7}
+N 3740 2670 3800 2670 {lab=#net7}
+N 3530 2480 3620 2480 {lab=AVSS}
+N 3530 2610 3620 2610 {lab=AVSS}
+N 3740 2610 3840 2610 {lab=#net7}
+N 3840 2090 3840 2520 {lab=#net8}
+N 3930 2670 3930 3010 {lab=AVSS}
+N 3840 3010 3930 3010 {lab=AVSS}
+N 3620 1650 3620 2450 {lab=AVDD}
+N 3620 2640 3620 3010 {lab=AVSS}
+N 3530 3010 3620 3010 {lab=AVSS}
+N 3530 2610 3530 3010 {lab=AVSS}
+N 3370 2550 3620 2550 {lab=vb7}
+N 3620 2510 3620 2550 {lab=vb7}
+N 3840 2700 3840 3010 {lab=AVSS}
+N 3620 3010 3840 3010 {lab=AVSS}
+N 3770 1940 3840 1940 {lab=AVDD}
+N 730 2820 730 2890 {lab=D_ENA}
+N 890 2890 890 3010 {lab=AVSS}
+N 790 2920 790 3010 {lab=AVSS}
+N 790 2800 790 2860 {lab=ena_n}
+N 790 2760 790 2800 {lab=ena_n}
+N 970 2730 970 2800 {lab=ena_n}
+N 1030 2790 1030 2860 {lab=ena}
+N 1030 2920 1030 3010 {lab=AVSS}
+N 970 2800 970 2890 {lab=ena_n}
+N 1030 2760 1030 2790 {lab=ena}
+N 1130 2890 1130 3010 {lab=AVSS}
+N 1370 2670 1370 3010 {lab=AVSS}
+N 1770 2550 1770 3010 {lab=AVSS}
+N 1670 2580 1670 2670 {lab=vbtail}
+N 1200 2550 1200 2790 {lab=ena}
+N 1470 2700 1470 3010 {lab=AVSS}
+N 1930 2700 1930 3010 {lab=AVSS}
+N 2020 2670 2020 3010 {lab=AVSS}
+N 1930 1650 1930 1910 {lab=AVDD}
+N 2130 1650 2130 1980 {lab=AVDD}
+N 2200 1650 2200 2010 {lab=AVDD}
+N 2200 2010 2200 2170 {lab=AVDD}
+N 1930 2010 1930 2050 {lab=vb9}
+N 2010 1940 2010 2010 {lab=vb9}
+N 2030 2080 2030 2170 {lab=vd5}
+N 2130 2200 2130 3010 {lab=AVSS}
+N 2030 2170 2030 2230 {lab=vd5}
+N 2130 2090 2130 2140 {lab=vb5}
+N 2130 2040 2130 2090 {lab=vb5}
+N 2010 1890 2010 1940 {lab=vb9}
+N 1870 2670 1870 2790 {lab=vbtail}
+N 730 2730 730 2820 {lab=D_ENA}
+N 1930 2400 1930 2640 {lab=#net9}
+N 1930 1970 1930 2010 {lab=vb9}
+N 1930 2110 1930 2340 {lab=#net10}
+N 730 2730 750 2730 {lab=D_ENA}
+N 730 2890 750 2890 {lab=D_ENA}
+N 970 2730 990 2730 {lab=ena_n}
+N 970 2890 990 2890 {lab=ena_n}
+N 790 2730 890 2730 {lab=D_ENA}
+N 790 3010 890 3010 {lab=AVSS}
+N 350 3010 790 3010 {lab=AVSS}
+N 790 2800 970 2800 {lab=ena_n}
+N 890 3010 1030 3010 {lab=AVSS}
+N 1030 2790 1200 2790 {lab=ena}
+N 1030 3010 1130 3010 {lab=AVSS}
+N 350 1650 1840 1650 {lab=AVDD}
+N 1130 3010 1370 3010 {lab=AVSS}
+N 1670 2550 1770 2550 {lab=AVSS}
+N 1470 3010 1770 3010 {lab=AVSS}
+N 1510 2670 1670 2670 {lab=vbtail}
+N 1370 3010 1470 3010 {lab=AVSS}
+N 350 2170 1470 2170 {lab=IBIAS}
+N 1770 3010 1930 3010 {lab=AVSS}
+N 1930 2670 2020 2670 {lab=AVSS}
+N 1930 3010 2020 3010 {lab=AVSS}
+N 1870 2670 1890 2670 {lab=vbtail}
+N 2130 2010 2200 2010 {lab=AVDD}
+N 2130 1650 2200 1650 {lab=AVDD}
+N 2130 2170 2200 2170 {lab=AVDD}
+N 1970 1940 2010 1940 {lab=vb9}
+N 2010 2010 2090 2010 {lab=vb9}
+N 2030 2170 2090 2170 {lab=vd5}
+N 1970 2080 2030 2080 {lab=vd5}
+N 2020 3010 2130 3010 {lab=AVSS}
+N 2130 2090 2420 2090 {lab=vb5}
+N 1840 1650 1930 1650 {lab=AVDD}
+N 1930 1650 2130 1650 {lab=AVDD}
+N 1200 2550 1630 2550 {lab=ena}
+N 1670 2670 1870 2670 {lab=vbtail}
+N 580 2820 730 2820 {lab=D_ENA}
+N 1930 2010 2010 2010 {lab=vb9}
+N 1840 2080 1930 2080 {lab=AVDD}
+N 1840 1940 1840 2080 {lab=AVDD}
+N 1840 1940 1930 1940 {lab=AVDD}
+N 1840 1650 1840 1940 {lab=AVDD}
+N 1470 2170 1470 2300 {lab=IBIAS}
+N 1030 2730 1130 2730 {lab=D_ENA}
+N 790 2890 890 2890 {lab=AVSS}
+N 1030 2890 1130 2890 {lab=AVSS}
+N 1370 2670 1470 2670 {lab=AVSS}
+N 1470 2470 1470 2640 {lab=#net11}
+N 1670 2470 1670 2520 {lab=#net11}
+N 1470 2470 1670 2470 {lab=#net11}
+N 1470 2360 1470 2470 {lab=#net11}
+N 970 2800 1200 2800 {lab=ena_n}
+N 1200 2800 1200 2820 {lab=ena_n}
+N 2030 2230 2420 2230 {lab=vd5}
+N 2010 1890 2420 1890 {lab=vb9}
+N 2200 1650 3620 1650 {lab=AVDD}
+N 1870 2790 2420 2790 {lab=vbtail}
+N 5960 2230 5960 2470 {lab=vd5}
+N 7460 2480 7830 2480 {lab=VOUT}
+N 7460 2330 7460 2480 {lab=VOUT}
+N 3740 2430 4170 2430 {lab=VOUT}
+N 3840 1650 5890 1650 {lab=AVDD}
+N 5510 3010 5890 3010 {lab=AVSS}
+N 2130 3010 3530 3010 {lab=AVSS}
+N 4950 2970 4950 3010 {lab=AVSS}
+N 3930 3010 4950 3010 {lab=AVSS}
+N 4980 2970 4980 3010 {lab=AVSS}
+N 4950 3010 4980 3010 {lab=AVSS}
+N 5010 2970 5010 3010 {lab=AVSS}
+N 4980 3010 5010 3010 {lab=AVSS}
+N 5010 3010 5090 3010 {lab=AVSS}
+N 4980 2670 4980 2930 {lab=vbtail}
+N 4630 2670 4980 2670 {lab=vbtail}
+N 5000 1990 5960 1990 {lab=#net3}
+N 5610 2010 7460 2010 {lab=#net4}
+N 6490 1940 7340 1940 {lab=vb9}
+N 6730 2080 7340 2080 {lab=vb5}
+N 6000 2550 7340 2550 {lab=vb7}
+N 7340 2410 7340 2550 {lab=vb7}
+N 7340 2410 7830 2410 {lab=vb7}
+N 7340 1870 7340 1940 {lab=vb9}
+N 7340 1870 7830 1870 {lab=vb9}
+N 7340 2160 7830 2160 {lab=vb5}
+N 5960 2230 7830 2230 {lab=vd5}
+N 5960 2110 5960 2230 {lab=vd5}
+N 5960 1970 5960 1990 {lab=#net3}
+N 5000 1990 5000 2310 {lab=#net3}
+N 1130 2310 1130 2730 {lab=D_ENA}
+N 1030 2310 1030 2700 {lab=D_ENA}
+N 890 2310 1030 2310 {lab=D_ENA}
+N 580 2310 580 2820 {lab=D_ENA}
+N 340 2820 580 2820 {lab=D_ENA}
+N 1030 2310 1130 2310 {lab=D_ENA}
+N 790 2310 790 2700 {lab=D_ENA}
+N 580 2310 790 2310 {lab=D_ENA}
+N 890 2310 890 2730 {lab=D_ENA}
+N 790 2310 890 2310 {lab=D_ENA}
+C {devices/title.sym} 2360 4300 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
+C {opin.sym} 7980 2330 0 0 {name=p7 lab=VOUT}
+C {sg13g2_pr/sg13_lv_pmos.sym} 5980 1940 0 1 {name=M9
+l=2u
+w=14u
+ng=2
 m=1
-model=sg13_lv_nmos
+model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 1820 1500 0 0 {name=Mpd6
-l=0.13u
-w=1u
+C {sg13g2_pr/sg13_lv_pmos.sym} 5980 2080 0 1 {name=M5
+l=2u
+w=14u
+ng=2
+m=1
+model=sg13_lv_pmos
+spiceprefix=X
+}
+C {sg13g2_pr/sg13_lv_nmos.sym} 5980 2550 0 1 {name=M7
+l=2u
+w=3u
 ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 2080 1620 0 0 {name=Mb1
-l=5u
-w=8.5u
-ng=4
-m=1
-model=sg13_lv_nmos
-spiceprefix=X
-}
-C {devices/ammeter.sym} 2100 1320 0 1 {name=Vmeas savecurrent=true spice_ignore=0}
-C {sg13g2_pr/sg13_lv_pmos.sym} 2120 1030 0 1 {name=M11
-l=2u
-w=14u
-ng=4
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_pmos.sym} 2120 890 0 1 {name=M12
-l=2u
-w=14u
-ng=4
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_pmos.sym} 2280 1120 0 0 {name=M18
-l=0.5u
-w=14u
-ng=4
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_pmos.sym} 2280 890 0 0 {name=M17
-l=2u
-w=14u
-ng=4
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_pmos.sym} 3850 890 0 1 {name=M9
-l=2u
-w=14u
-ng=4
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_pmos.sym} 3850 1030 0 1 {name=M5
-l=2u
-w=14u
-ng=4
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_nmos.sym} 3850 1500 0 1 {name=M7
+C {sg13g2_pr/sg13_lv_nmos.sym} 5980 2670 0 1 {name=M3
 l=2u
 w=3u
-ng=2
+ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 3850 1620 0 1 {name=M3
-l=2u
-w=3u
-ng=2
-m=1
-model=sg13_lv_nmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_nmos.sym} 4610 1740 0 0 {name=Mt
+C {sg13g2_pr/sg13_lv_nmos.sym} 5290 2670 0 0 {name=Mt
 l=5u
 w=8.5u
-ng=4
+ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 4300 1320 0 0 {name=M1
+C {sg13g2_pr/sg13_lv_nmos.sym} 4980 2370 0 0 {name=M1
 l=1u
 w=6u
-ng=2
+ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 4950 1320 0 1 {name=M2
+C {sg13g2_pr/sg13_lv_nmos.sym} 5630 2370 0 1 {name=M2
 l=1u
 w=6u
-ng=2
+ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {ipin.sym} 4240 1320 0 0 {name=p3 lab=PLUS}
-C {ipin.sym} 5010 1320 0 1 {name=p4 lab=MINUS
+C {ipin.sym} 4920 2370 0 0 {name=p10 lab=PLUS}
+C {ipin.sym} 5690 2370 0 1 {name=p11 lab=MINUS
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 4360 640 1 1 {name=Mdecoup3
+C {sg13g2_pr/sg13_lv_pmos.sym} 6490 1690 1 1 {name=Mdecoup5
 l=0.5u
 w=12u
 ng=4
@@ -488,7 +393,7 @@ m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 4600 640 1 1 {name=Mdecoup4
+C {sg13g2_pr/sg13_lv_pmos.sym} 6730 1690 1 1 {name=Mdecoup6
 l=0.5u
 w=12u
 ng=4
@@ -496,7 +401,7 @@ m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 3920 1920 3 1 {name=Mdecoup1
+C {sg13g2_pr/sg13_lv_nmos.sym} 4980 2950 3 1 {name=Mdecoup7
 l=1u
 w=8u
 ng=4
@@ -504,124 +409,117 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {opin.sym} 6570 1190 0 0 {name=p7 lab=VOUT}
-C {devices/ipin.sym} 510 1770 0 0 {name=p9 lab=D_ENA}
-C {sg13g2_pr/sg13_lv_pmos.sym} 940 1680 0 0 {name=Mpd2
-l=0.13u
-w=1u
-ng=1
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {devices/ammeter.sym} 1640 1280 0 1 {name=Vmeas1 savecurrent=true spice_ignore=0}
-C {sg13g2_pr/sg13_lv_pmos.sym} 1180 1680 0 0 {name=Mpd3
-l=0.13u
-w=1u
-ng=1
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_nmos.sym} 940 1840 0 0 {name=Mpd1
-l=0.13u
-w=1u
-ng=1
-m=1
-model=sg13_lv_nmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_nmos.sym} 1180 1840 0 0 {name=Mpd4
-l=0.13u
-w=1u
-ng=1
-m=1
-model=sg13_lv_nmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_nmos.sym} 4790 1320 0 1 {name=Md2
+C {sg13g2_pr/sg13_lv_nmos.sym} 5470 2370 0 1 {name=Md7
 l=1u
 w=6u
-ng=2
+ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 5310 1030 0 0 {name=M6
+C {sg13g2_pr/sg13_lv_pmos.sym} 7440 2080 0 0 {name=M6
 l=2u
 w=14u
-ng=4
+ng=2
 m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 5310 890 0 0 {name=M0
+C {sg13g2_pr/sg13_lv_pmos.sym} 7440 1940 0 0 {name=M0
 l=2u
 w=14u
-ng=4
+ng=2
 m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 5310 1500 0 0 {name=M8
+C {sg13g2_pr/sg13_lv_nmos.sym} 7440 2550 0 0 {name=M8
 l=2u
 w=3u
-ng=2
+ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 5310 1620 0 0 {name=M4
+C {sg13g2_pr/sg13_lv_nmos.sym} 7440 2670 0 0 {name=M4
 l=2u
 w=3u
-ng=2
+ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 5440 1620 0 0 {name=Md4
+C {sg13g2_pr/sg13_lv_nmos.sym} 7570 2670 0 0 {name=Md8
 l=2u
 w=3u
-ng=2
+ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 5440 1500 0 0 {name=Md3
+C {sg13g2_pr/sg13_lv_nmos.sym} 7570 2550 0 0 {name=Md9
 l=2u
 w=3u
-ng=2
+ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 5440 890 0 0 {name=Md6
+C {sg13g2_pr/sg13_lv_pmos.sym} 7570 1940 0 0 {name=Md10
 l=2u
 w=14u
-ng=4
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_pmos.sym} 5440 1030 0 0 {name=Md5
-l=2u
-w=7u
 ng=2
 m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {devices/title.sym} 3160 2290 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
-C {sg13g2_pr/sg13_lv_pmos.sym} 6210 890 0 1 {name=M13
+C {sg13g2_pr/sg13_lv_pmos.sym} 7570 2080 0 0 {name=Md11
 l=2u
 w=14u
-ng=4
+ng=2
 m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {devices/ammeter.sym} 6190 1010 0 1 {name=Vmeas2 savecurrent=true spice_ignore=0}
-C {sg13g2_pr/sg13_lv_nmos.sym} 6170 1500 0 0 {name=M15
+C {sg13g2_pr/sg13_lv_nmos.sym} 7160 2970 0 0 {name=Mpd5
+l=0.13u
+w=1u
+ng=1
+m=1
+model=sg13_lv_nmos
+spiceprefix=X
+}
+C {devices/lab_wire.sym} 7100 2970 0 0 {name=p12 sig_type=std_logic lab=ena_n}
+C {sg13g2_pr/sg13_lv_nmos.sym} 5130 2370 0 0 {name=Md12
+l=1u
+w=6u
+ng=1
+m=1
+model=sg13_lv_nmos
+spiceprefix=X
+}
+C {sg13g2_pr/sg13_lv_nmos.sym} 7380 2970 3 1 {name=Mdecoup8
+l=1u
+w=8u
+ng=4
+m=1
+model=sg13_lv_nmos
+spiceprefix=X
+}
+C {lab_pin.sym} 7830 2410 0 1 {name=p13 sig_type=std_logic lab=vb7}
+C {lab_pin.sym} 7830 2160 0 1 {name=p14 sig_type=std_logic lab=vb5}
+C {lab_pin.sym} 7830 1870 0 1 {name=p16 sig_type=std_logic lab=vb9}
+C {lab_pin.sym} 4630 2670 0 0 {name=p17 sig_type=std_logic lab=vbtail}
+C {sg13g2_pr/sg13_lv_pmos.sym} 3860 1940 0 1 {name=M13
+l=2u
+w=14u
+ng=2
+m=1
+model=sg13_lv_pmos
+spiceprefix=X
+}
+C {devices/ammeter.sym} 3840 2060 0 1 {name=Vmeas2 savecurrent=true spice_ignore=0}
+C {sg13g2_pr/sg13_lv_nmos.sym} 3820 2550 0 0 {name=M15
 l=2u
 w=3u
 ng=2
@@ -629,7 +527,7 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 6170 1620 0 0 {name=M16
+C {sg13g2_pr/sg13_lv_nmos.sym} 3820 2670 0 0 {name=M16
 l=2u
 w=3u
 ng=2
@@ -637,7 +535,7 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 5990 1620 0 1 {name=M14
+C {sg13g2_pr/sg13_lv_nmos.sym} 3640 2610 0 1 {name=M14
 l=2u
 w=3u
 ng=2
@@ -645,23 +543,28 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 5990 1430 0 1 {name=M10
+C {sg13g2_pr/sg13_lv_nmos.sym} 3640 2480 0 1 {name=M10
 l=0.5u
 w=15u
-ng=4
+ng=5
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 5720 1920 3 1 {name=Mdecoup2
-l=1u
-w=8u
-ng=4
+C {ipin.sym} 350 3010 0 0 {name=p5 lab=AVSS}
+C {ipin.sym} 350 2170 0 0 {name=p1 lab=IBIAS}
+C {ipin.sym} 350 1650 0 0 {name=p2 lab=AVDD}
+C {devices/lab_wire.sym} 1200 2790 0 0 {name=p15 sig_type=std_logic lab=ena}
+C {devices/lab_wire.sym} 1200 2820 0 0 {name=p6 sig_type=std_logic lab=ena_n}
+C {sg13g2_pr/sg13_lv_nmos.sym} 1490 2670 0 1 {name=Mb
+l=5u
+w=8.5u
+ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 5030 1920 0 0 {name=Mpd9
+C {sg13g2_pr/sg13_lv_nmos.sym} 1650 2550 0 0 {name=Mpd6
 l=0.13u
 w=1u
 ng=1
@@ -669,52 +572,87 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {devices/lab_wire.sym} 4970 1920 0 0 {name=p8 sig_type=std_logic lab=ena_n}
-C {sg13g2_pr/sg13_lv_nmos.sym} 4450 1320 0 0 {name=Md1
-l=1u
-w=6u
-ng=2
+C {sg13g2_pr/sg13_lv_nmos.sym} 1910 2670 0 0 {name=Mb1
+l=5u
+w=8.5u
+ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 3640 1030 0 1 {name=Md8
+C {devices/ammeter.sym} 1930 2370 0 1 {name=Vmeas savecurrent=true spice_ignore=0}
+C {sg13g2_pr/sg13_lv_pmos.sym} 1950 2080 0 1 {name=M11
 l=2u
-w=7u
+w=14u
 ng=2
 m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 3640 1620 0 1 {name=Md9
+C {sg13g2_pr/sg13_lv_pmos.sym} 1950 1940 0 1 {name=M12
 l=2u
-w=3u
-ng=2
-m=1
-model=sg13_lv_nmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_nmos.sym} 3640 1500 0 1 {name=Md10
-l=2u
-w=3u
-ng=2
-m=1
-model=sg13_lv_nmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_pmos.sym} 1900 890 0 1 {name=Md7
-l=2u
-w=7u
+w=14u
 ng=2
 m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 6370 1620 0 0 {name=Md11
-l=2u
-w=3u
+C {sg13g2_pr/sg13_lv_pmos.sym} 2110 2170 0 0 {name=M18
+l=0.5u
+w=14u
 ng=2
+m=1
+model=sg13_lv_pmos
+spiceprefix=X
+}
+C {sg13g2_pr/sg13_lv_pmos.sym} 2110 2010 0 0 {name=M17
+l=2u
+w=14u
+ng=2
+m=1
+model=sg13_lv_pmos
+spiceprefix=X
+}
+C {devices/ipin.sym} 340 2820 0 0 {name=p9 lab=D_ENA}
+C {sg13g2_pr/sg13_lv_pmos.sym} 770 2730 0 0 {name=Mpd2
+l=0.13u
+w=1u
+ng=1
+m=1
+model=sg13_lv_pmos
+spiceprefix=X
+}
+C {devices/ammeter.sym} 1470 2330 0 1 {name=Vmeas1 savecurrent=true spice_ignore=0}
+C {sg13g2_pr/sg13_lv_pmos.sym} 1010 2730 0 0 {name=Mpd3
+l=0.13u
+w=1u
+ng=1
+m=1
+model=sg13_lv_pmos
+spiceprefix=X
+}
+C {sg13g2_pr/sg13_lv_nmos.sym} 770 2890 0 0 {name=Mpd1
+l=0.13u
+w=1u
+ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
+C {sg13g2_pr/sg13_lv_nmos.sym} 1010 2890 0 0 {name=Mpd4
+l=0.13u
+w=1u
+ng=1
+m=1
+model=sg13_lv_nmos
+spiceprefix=X
+}
+C {lab_pin.sym} 2420 1890 0 1 {name=p3 sig_type=std_logic lab=vb9}
+C {lab_pin.sym} 2420 2090 0 1 {name=p4 sig_type=std_logic lab=vb5}
+C {lab_pin.sym} 2420 2230 0 1 {name=p8 sig_type=std_logic lab=vd5}
+C {lab_pin.sym} 7830 2230 0 1 {name=p18 sig_type=std_logic lab=vd5}
+C {lab_pin.sym} 3370 2550 0 0 {name=p19 sig_type=std_logic lab=vb7}
+C {lab_pin.sym} 7830 2480 0 1 {name=p20 sig_type=std_logic lab=VOUT}
+C {lab_pin.sym} 4170 2430 0 1 {name=p21 sig_type=std_logic lab=VOUT}
+C {lab_pin.sym} 3900 1940 0 1 {name=p22 sig_type=std_logic lab=vb9}
+C {lab_pin.sym} 2420 2790 0 1 {name=p23 sig_type=std_logic lab=vbtail}

@@ -1,0 +1,3 @@
+.subckt foldedcascode_nmos_withdummies VDD VSS
+.ends
+.end

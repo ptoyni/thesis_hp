@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.7 file_version=1.2}
 G {}
 K {}
 V {}
@@ -87,8 +87,8 @@ print tsettle
 .endc
 "}
 C {devices/title.sym} 310 50 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
-C {foldedcascode_nmos.sym} 1140 -430 0 0 {name=x1}
 C {devices/lab_wire.sym} 1080 -320 0 1 {name=p8 sig_type=std_logic lab=v_ena}
 C {devices/vsource.sym} 1080 -270 0 0 {name=Venable value="dc 0 pwl(0 0 1u 0 1.1u 1.5)" savecurrent=false}
 C {spice_probe.sym} 1080 -340 0 0 {name=p7 attrs=""}
-C {devices/isource.sym} 920 -540 0 0 {name=I0 value="dc 0 pwl(0 0 1.1u 0 1.2u 10u)"}
+C {devices/isource.sym} 920 -540 0 0 {name=I0 value="dc 0 pwl(0 0 1.1u 0 1.2u 14u)"}
+C {foldedcascode_nmos.sym} 1140 -430 0 0 {name=x1}
