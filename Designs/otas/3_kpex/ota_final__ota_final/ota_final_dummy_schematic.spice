@@ -1,0 +1,3 @@
+.subckt ota_final VDD VSS
+.ends
+.end

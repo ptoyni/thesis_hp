@@ -45,7 +45,7 @@ N 960 -200 1330 -200 {lab=v_ss}
 C {devices/vsource.sym} 860 -150 0 0 {name=Vss value=0}
 C {devices/gnd.sym} 860 -100 0 0 {name=l1 lab=GND}
 C {lab_pin.sym} 860 -200 0 0 {name=p1 sig_type=std_logic lab=v_ss}
-C {devices/vsource.sym} 710 -170 0 0 {name=Vdd value=1.55}
+C {devices/vsource.sym} 710 -170 0 0 {name=Vdd value=1.5}
 C {devices/gnd.sym} 710 -120 0 0 {name=l3 lab=GND}
 C {lab_pin.sym} 710 -210 0 0 {name=p2 sig_type=std_logic lab=v_dd}
 C {devices/vsource.sym} 960 -310 0 0 {name=Vin value="dc 0.7 ac 1"}
@@ -63,8 +63,12 @@ value=".lib cornerMOSlv.lib mos_tt
 C {devices/code_shown.sym} 50 -790 0 0 {name=NGSPICE1 only_toplevel=true 
 value="
 
-*.include /foss/designs/thesis/thesis_hp/designs/otas/3_kpex/magic_CC/foldedcascode_nmos_withdummies.pex.spice
+.include /foss/designs/thesis/thesis_hp/designs/otas/3_kpex/ota_final__ota_final/magic_CC/ota_final.pex.spice
 
+*.include /foss/designs/thesis/thesis_hp/Designs/otas/1_schematics/simulations/foldedcascode_nmos.spice
+
+*.include /foss/designs/thesis/thesis_hp/Designs/otas/2_layout/lvs/foldedcascode_nmos_withdummies_extracted.cir
+            
 
 .temp 27
 .control

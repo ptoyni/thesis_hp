@@ -60,8 +60,9 @@ value=".lib cornerMOSlv.lib mos_tt
 C {devices/code_shown.sym} 230 -700 0 0 {name=NGSPICE1 only_toplevel=true 
 value="
 
-*.include /foss/designs/thesis/thesis_hp/designs/otas/3_kpex/magic_CC/foldedcascode_nmos_withdummies.pex.spice
+*.include /foss/designs/thesis/thesis_hp/designs/otas/3_kpex/ota_final__ota_final/magic_cc/ota_final.pex.spice
 
+.include /foss/designs/thesis/thesis_hp/Designs/otas/2_layout/lvs/ota_final_extracted.cir
 
 .temp 27
 .control

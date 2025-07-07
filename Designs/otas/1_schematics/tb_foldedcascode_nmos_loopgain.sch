@@ -133,7 +133,7 @@ C {devices/code_shown.sym} 90 -1090 0 0 {name=NGSPICE
 only_toplevel=true
 value="
 
-.include /foss/designs/thesis/thesis_hp/designs/otas/3_kpex/magic_CC/foldedcascode_nmos_withdummies.pex.spice
+*.include /foss/designs/thesis/thesis_hp/designs/otas/3_kpex/foldedcascode_nmos_withdummies__foldedcascode_nmos_withdummies/magic_CC/foldedcascode_nmos_withdummies.pex.spice
 
 
 .param temp=27

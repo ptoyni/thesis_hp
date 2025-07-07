@@ -1,0 +1,196 @@
+* NGSPICE file created from ota_final.ext - technology: ihp-sg13g2
+
+.subckt ota_final AVDD IBIAS VOUT MINUS PLUS AVSS
+X0 AVSS IBIAS a_n9134_n1298# AVSS sg13_lv_nmos ad=0.7225p pd=4.93u as=0.40375p ps=2.505u w=2.125u l=5u
+X1 AVSS AVSS a_n686_n3376# AVSS sg13_lv_nmos ad=0.51p pd=3.68u as=0.285p ps=1.88u w=1.5u l=2u
+X2 a_492_n6342# AVSS AVSS AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.51p ps=3.68u w=1.5u l=2u
+X3 a_7669_2986# a_n1791_7045# AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X4 a_n1791_7045# a_n2191_3729# a_n9134_n2395# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=1.19p ps=7.68u w=3.5u l=2u
+X5 AVSS AVSS a_n686_n5390# AVSS sg13_lv_nmos ad=0.51p pd=3.68u as=0.285p ps=1.88u w=1.5u l=2u
+X6 a_n9134_n1298# PLUS a_n1391_7081# AVSS sg13_lv_nmos ad=0.57p pd=3.38u as=0.57p ps=3.38u w=3u l=1u
+X7 a_7669_5842# a_n1791_7045# AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X8 AVDD a_n1791_7045# a_n2343_7081# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X9 AVDD a_n1791_7045# a_n2343_7081# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X10 a_n2343_7081# MINUS a_n9134_n1298# AVSS sg13_lv_nmos ad=0.57p pd=3.38u as=0.57p ps=3.38u w=3u l=1u
+X11 a_n722_n4252# VOUT AVDD AVSS sg13_lv_nmos ad=0.7125p pd=4.13u as=0.7125p ps=4.13u w=3.75u l=0.5u
+X12 a_n722_n4252# VOUT AVDD AVSS sg13_lv_nmos ad=0.7125p pd=4.13u as=1.275p ps=8.18u w=3.75u l=0.5u
+X13 a_7669_1082# AVDD AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=1.19p ps=7.68u w=3.5u l=2u
+X14 a_7578_n5569# AVSS AVSS AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.51p ps=3.68u w=1.5u l=2u
+X15 a_n686_n6342# AVSS AVSS AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.51p ps=3.68u w=1.5u l=2u
+X16 a_7669_3938# a_n1791_7045# AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X17 AVSS a_n2191_3729# a_n2227_3805# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=0.5u
+X18 IBIAS IBIAS AVSS AVSS sg13_lv_nmos ad=0.40375p pd=2.505u as=0.7225p ps=4.93u w=2.125u l=5u
+X19 a_1623_5158# a_n2227_3805# a_1623_4682# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X20 AVDD AVDD a_7669_6794# AVDD sg13_lv_pmos ad=1.19p pd=7.68u as=0.665p ps=3.88u w=3.5u l=2u
+X21 AVSS IBIAS IBIAS AVSS sg13_lv_nmos ad=0.40375p pd=2.505u as=0.40375p ps=2.505u w=2.125u l=5u
+X22 AVSS AVSS a_7578_n5569# AVSS sg13_lv_nmos ad=0.51p pd=3.68u as=0.285p ps=1.88u w=1.5u l=2u
+X23 a_n2343_7081# a_n1791_7045# AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X24 AVDD AVDD a_n2343_7081# AVDD sg13_lv_pmos ad=1.19p pd=7.68u as=0.665p ps=3.88u w=3.5u l=2u
+X25 a_n2191_4681# a_n2227_3805# a_n2191_4205# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X26 a_n2191_4205# a_n2227_3805# a_n2191_3729# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X27 a_n9134_n1298# IBIAS AVSS AVSS sg13_lv_nmos ad=0.40375p pd=2.505u as=0.40375p ps=2.505u w=2.125u l=5u
+X28 a_n2343_7081# AVDD AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=1.19p ps=7.68u w=3.5u l=2u
+X29 a_n9134_n2395# a_n2191_3729# a_n1791_7045# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X30 AVSS IBIAS IBIAS AVSS sg13_lv_nmos ad=0.7225p pd=4.93u as=0.40375p ps=2.505u w=2.125u l=5u
+X31 a_492_n5866# a_n2191_3729# a_492_n6342# AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.285p ps=1.88u w=1.5u l=2u
+X32 AVDD a_n1791_7045# a_7669_4890# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X33 a_492_n3852# a_n722_n4252# a_492_n4328# AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.285p ps=1.88u w=1.5u l=2u
+X34 AVDD a_n1791_7045# a_n1391_7081# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X35 a_n1391_7081# a_n1791_7045# AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X36 VOUT AVDD AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=1.19p ps=7.68u w=3.5u l=2u
+X37 AVDD a_n1791_7045# a_7669_2034# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X38 a_n1791_7045# a_n2191_3729# a_n9134_n2395# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X39 AVSS a_7578_n5569# a_7578_n5569# AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.285p ps=1.88u w=1.5u l=2u
+X40 a_n2191_3729# a_n2227_3805# a_n2191_5157# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X41 a_n2343_7081# AVSS AVSS AVSS sg13_lv_nmos ad=0.57p pd=3.38u as=1.02p ps=6.68u w=3u l=1u
+X42 a_n2227_3805# a_n2191_3729# AVSS AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=1.19p ps=7.68u w=3.5u l=0.5u
+X43 AVSS a_n2191_3729# a_n2227_3805# AVDD sg13_lv_pmos ad=1.19p pd=7.68u as=0.665p ps=3.88u w=3.5u l=0.5u
+X44 a_n686_n5866# a_n2191_3729# a_n686_n6342# AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.285p ps=1.88u w=1.5u l=2u
+X45 a_n686_n3852# a_n722_n4252# a_n686_n4328# AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.285p ps=1.88u w=1.5u l=2u
+X46 a_7578_n5569# VOUT a_9374_n4648# AVSS sg13_lv_nmos ad=0.51p pd=3.68u as=0.285p ps=1.88u w=1.5u l=2u
+X47 a_7669_6794# a_n1791_7045# AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X48 AVDD a_n1791_7045# a_7669_5842# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X49 a_n9134_n1298# MINUS a_n2343_7081# AVSS sg13_lv_nmos ad=0.57p pd=3.38u as=0.57p ps=3.38u w=3u l=1u
+X50 a_n1391_7081# PLUS a_n9134_n1298# AVSS sg13_lv_nmos ad=0.57p pd=3.38u as=0.57p ps=3.38u w=3u l=1u
+X51 IBIAS IBIAS AVSS AVSS sg13_lv_nmos ad=0.40375p pd=2.505u as=0.40375p ps=2.505u w=2.125u l=5u
+X52 a_8530_n5569# a_7578_n5569# AVSS AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.285p ps=1.88u w=1.5u l=2u
+X53 a_n2191_3729# AVDD AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=1.19p ps=7.68u w=3.5u l=2u
+X54 a_n9134_n2395# a_n2191_3729# a_n1791_7045# AVDD sg13_lv_pmos ad=1.19p pd=7.68u as=0.665p ps=3.88u w=3.5u l=2u
+X55 a_492_n3376# a_n722_n4252# a_492_n3852# AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.285p ps=1.88u w=1.5u l=2u
+X56 a_492_n5390# a_n2191_3729# a_492_n5866# AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.285p ps=1.88u w=1.5u l=2u
+X57 a_n9134_n2395# IBIAS AVSS AVSS sg13_lv_nmos ad=0.40375p pd=2.505u as=0.7225p ps=4.93u w=2.125u l=5u
+X58 AVDD VOUT a_n722_n4252# AVSS sg13_lv_nmos ad=1.275p pd=8.18u as=0.7125p ps=4.13u w=3.75u l=0.5u
+X59 a_n2343_7081# AVDD AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X60 a_7669_2034# a_n1791_7045# AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X61 AVSS IBIAS a_n9134_n2395# AVSS sg13_lv_nmos ad=0.40375p pd=2.505u as=0.40375p ps=2.505u w=2.125u l=5u
+X62 a_n2191_5157# a_n2227_3805# a_n2191_4681# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X63 AVSS AVSS a_n2343_7081# AVSS sg13_lv_nmos ad=1.02p pd=6.68u as=0.57p ps=3.38u w=3u l=1u
+X64 AVSS IBIAS a_n9134_n2395# AVSS sg13_lv_nmos ad=0.7225p pd=4.93u as=0.40375p ps=2.505u w=2.125u l=5u
+X65 AVDD AVDD VOUT AVDD sg13_lv_pmos ad=1.19p pd=7.68u as=0.665p ps=3.88u w=3.5u l=2u
+X66 a_n2227_3805# a_n2191_3729# AVSS AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=0.5u
+X67 a_n686_n3376# a_n722_n4252# a_n686_n3852# AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.285p ps=1.88u w=1.5u l=2u
+X68 a_n686_n5390# a_n2191_3729# a_n686_n5866# AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.285p ps=1.88u w=1.5u l=2u
+X69 AVDD a_n1791_7045# a_n1391_7081# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X70 a_n2343_7081# a_n1791_7045# AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X71 AVSS AVSS a_n1391_7081# AVSS sg13_lv_nmos ad=1.02p pd=6.68u as=0.57p ps=3.38u w=3u l=1u
+X72 a_492_n4328# AVSS AVSS AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.51p ps=3.68u w=1.5u l=2u
+X73 a_7578_n5569# a_7578_n5569# AVSS AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.285p ps=1.88u w=1.5u l=2u
+X74 a_1623_4682# a_n2227_3805# a_1623_4206# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X75 a_1623_4206# a_n2227_3805# VOUT AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X76 AVDD a_n1791_7045# a_7669_2986# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X77 AVDD VOUT a_n722_n4252# AVSS sg13_lv_nmos ad=0.7125p pd=4.13u as=0.7125p ps=4.13u w=3.75u l=0.5u
+X78 AVDD AVDD a_n2191_3729# AVDD sg13_lv_pmos ad=1.19p pd=7.68u as=0.665p ps=3.88u w=3.5u l=2u
+X79 AVSS AVSS a_492_n3376# AVSS sg13_lv_nmos ad=0.51p pd=3.68u as=0.285p ps=1.88u w=1.5u l=2u
+X80 AVDD AVDD a_n2343_7081# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X81 AVDD a_n1791_7045# a_7669_1082# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X82 a_n9134_n2395# IBIAS AVSS AVSS sg13_lv_nmos ad=0.40375p pd=2.505u as=0.40375p ps=2.505u w=2.125u l=5u
+X83 a_n686_n4328# AVSS AVSS AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.51p ps=3.68u w=1.5u l=2u
+X84 AVSS AVSS a_492_n5390# AVSS sg13_lv_nmos ad=0.51p pd=3.68u as=0.285p ps=1.88u w=1.5u l=2u
+X85 a_7669_4890# a_n1791_7045# AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X86 a_n1391_7081# a_n1791_7045# AVDD AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X87 a_n9134_n1298# IBIAS AVSS AVSS sg13_lv_nmos ad=0.40375p pd=2.505u as=0.7225p ps=4.93u w=2.125u l=5u
+X88 AVSS IBIAS a_n9134_n1298# AVSS sg13_lv_nmos ad=0.40375p pd=2.505u as=0.40375p ps=2.505u w=2.125u l=5u
+X89 a_9374_n4648# VOUT a_7578_n5569# AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.51p ps=3.68u w=1.5u l=2u
+X90 VOUT a_n2227_3805# a_1623_5158# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X91 AVDD a_n1791_7045# a_7669_3938# AVDD sg13_lv_pmos ad=0.665p pd=3.88u as=0.665p ps=3.88u w=3.5u l=2u
+X92 a_n1391_7081# AVSS AVSS AVSS sg13_lv_nmos ad=0.57p pd=3.38u as=1.02p ps=6.68u w=3u l=1u
+X93 AVSS a_7578_n5569# a_8530_n5569# AVSS sg13_lv_nmos ad=0.285p pd=1.88u as=0.285p ps=1.88u w=1.5u l=2u
+C0 AVDD a_n2227_3805# 11.6174f
+C1 a_n2343_7081# AVDD 3.58868f
+C2 a_n2343_7081# a_n2227_3805# 1.09032f
+C3 a_7578_n5569# VOUT 0.33361f
+C4 a_n686_n5390# m1_n686_n6334# 0.03177f
+C5 a_n9134_n2395# a_n9134_n1298# 0.0392f
+C6 a_n1791_7045# a_n9134_n2395# 0.25761f
+C7 a_n9134_n2395# a_n2191_3729# 1.17252f
+C8 VOUT a_1623_4682# 0.07308f
+C9 a_n2343_7081# PLUS 0.11802f
+C10 a_n686_n3376# a_n2191_3729# 0.03238f
+C11 m1_n686_n6334# a_n2191_3729# 0.42462f
+C12 a_7578_n5569# a_9374_n4648# 0.11814f
+C13 VOUT a_9374_n4648# 0.2918f
+C14 a_n9134_n1298# a_n1391_7081# 0.31971f
+C15 a_n1791_7045# a_n1391_7081# 0.95151f
+C16 m1_492_n6334# a_492_n3852# 0.03122f
+C17 AVDD a_n722_n4252# 0.91757f
+C18 a_n2191_3729# a_n1391_7081# 0.25109f
+C19 a_7669_4890# a_9374_n4648# 0.06998f
+C20 a_n1791_7045# a_7669_6794# 0.06988f
+C21 a_n2191_4681# a_n2191_3729# 0.07259f
+C22 a_n686_n6342# m1_n686_n6334# 0.03135f
+C23 MINUS a_n1391_7081# 0.13859f
+C24 a_n1791_7045# a_7669_1082# 0.0746f
+C25 a_n2191_4205# a_n1391_7081# 0.07238f
+C26 VOUT a_n2191_3729# 0.24731f
+C27 AVDD a_n9134_n2395# 2.10566f
+C28 a_n9134_n2395# a_n2227_3805# 0.05824f
+C29 a_n2343_7081# a_n9134_n2395# 0.06236f
+C30 m1_492_n6334# a_n722_n4252# 0.30261f
+C31 a_492_n4328# VOUT 0.03151f
+C32 m1_492_n6334# a_492_n5390# 0.03183f
+C33 a_n1791_7045# a_9374_n4648# 0.83984f
+C34 a_9374_n4648# a_n2191_3729# 0.01919f
+C35 IBIAS a_n9134_n1298# 1.39083f
+C36 VOUT a_492_n3376# 0.03213f
+C37 AVDD a_n1391_7081# 2.17357f
+C38 a_n2227_3805# a_n1391_7081# 1.01797f
+C39 a_n2343_7081# a_n1391_7081# 0.4225f
+C40 IBIAS a_n2191_3729# 0.01539f
+C41 a_n2191_5157# a_n1391_7081# 0.07207f
+C42 a_n9134_n1298# a_n2191_3729# 0.09829f
+C43 PLUS a_n1391_7081# 0.24792f
+C44 a_n1791_7045# a_n2191_3729# 0.95077f
+C45 a_8530_n5569# a_n722_n4252# 0.03137f
+C46 AVDD VOUT 2.72586f
+C47 VOUT a_n2227_3805# 0.98654f
+C48 a_n2343_7081# VOUT 0.24917f
+C49 a_n722_n4252# m1_n686_n6334# 0.23704f
+C50 a_n2343_7081# a_1623_4206# 0.07245f
+C51 MINUS a_n9134_n1298# 0.26483f
+C52 a_7669_5842# a_n2227_3805# 0.06914f
+C53 AVDD a_9374_n4648# 1.21514f
+C54 a_9374_n4648# a_n2227_3805# 0.10225f
+C55 m1_492_n6334# VOUT 0.10634f
+C56 a_7578_n5569# a_n722_n4252# 0.27985f
+C57 a_7669_2034# a_n2227_3805# 0.07179f
+C58 a_7669_3938# a_n1791_7045# 0.07097f
+C59 a_n722_n4252# VOUT 1.05064f
+C60 a_n9134_n2395# a_n1391_7081# 0.06215f
+C61 a_n1791_7045# AVDD 26.1116f
+C62 a_n2343_7081# a_n9134_n1298# 0.25346f
+C63 a_n1791_7045# a_n2227_3805# 1.26555f
+C64 a_n1791_7045# a_n2343_7081# 1.2779f
+C65 AVDD a_n2191_3729# 7.09445f
+C66 a_n2227_3805# a_n2191_3729# 1.43165f
+C67 a_9374_n4648# a_7669_2986# 0.06823f
+C68 a_n686_n4328# a_n2191_3729# 0.03197f
+C69 m1_n686_n6334# a_n686_n3852# 0.03124f
+C70 VOUT a_n9134_n2395# 0.20826f
+C71 PLUS a_n9134_n1298# 0.36931f
+C72 a_n2343_7081# MINUS 0.26316f
+C73 MINUS PLUS 0.11845f
+C74 m1_492_n6334# a_n2191_3729# 0.28459f
+C75 a_n722_n4252# a_n2191_3729# 0.47362f
+C76 a_492_n6342# m1_492_n6334# 0.03137f
+C77 IBIAS a_n9134_n2395# 1.35032f
+C78 a_n2343_7081# a_1623_5158# 0.07222f
+C79 IBIAS AVSS 29.6059f
+C80 PLUS AVSS 2.25335f
+C81 MINUS AVSS 3.79398f
+C82 VOUT AVSS 14.0317f
+C83 AVDD AVSS 14.1769f
+C84 m1_492_n6334# AVSS 1.43219f
+C85 m1_n686_n6334# AVSS 1.40255f
+C86 a_492_n5866# AVSS 0.03034f $ **FLOATING
+C87 a_n686_n5866# AVSS 0.03052f $ **FLOATING
+C88 a_9374_n4648# AVSS 4.05771f $ **FLOATING
+C89 a_7578_n5569# AVSS 4.70811f $ **FLOATING
+C90 a_n722_n4252# AVSS 6.75552f $ **FLOATING
+C91 a_n9134_n2395# AVSS 7.01144f $ **FLOATING
+C92 a_n9134_n1298# AVSS 3.50569f $ **FLOATING
+C93 a_n2227_3805# AVSS 6.76537f $ **FLOATING
+C94 a_n2191_3729# AVSS 16.07f $ **FLOATING
+C95 a_n1391_7081# AVSS 3.14053f $ **FLOATING
+C96 a_n2343_7081# AVSS 2.55297f $ **FLOATING
+C97 a_n1791_7045# AVSS 9.8153f $ **FLOATING
+.ends
