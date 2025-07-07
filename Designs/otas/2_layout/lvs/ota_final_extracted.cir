@@ -1,17 +1,17 @@
-* Extracted by KLayout with SG13G2 LVS runset on : 07/07/2025 02:35
+* Extracted by KLayout with SG13G2 LVS runset on : 07/07/2025 03:23
 
-.SUBCKT ota_final AVSS AVDD VOUT IBIAS PLUS MINUS
-M$1 AVSS IBIAS \$54 AVSS sg13_lv_nmos L=5u W=8.5u AS=1.93375p AD=1.93375p
+.SUBCKT ota_final AVSS AVDD VOUT IBIAS MINUS PLUS
+M$1 AVSS AVSS \$58 AVSS sg13_lv_nmos L=1u W=6u AS=1.59p AD=1.59p PS=10.06u
++ PD=10.06u
+M$2 \$58 PLUS \$53 AVSS sg13_lv_nmos L=1u W=6u AS=1.14p AD=1.14p PS=6.76u
++ PD=6.76u
+M$3 \$53 MINUS \$61 AVSS sg13_lv_nmos L=1u W=6u AS=1.14p AD=1.14p PS=6.76u
++ PD=6.76u
+M$4 \$61 AVSS AVSS AVSS sg13_lv_nmos L=1u W=6u AS=1.59p AD=1.59p PS=10.06u
++ PD=10.06u
+M$5 AVSS IBIAS IBIAS AVSS sg13_lv_nmos L=5u W=8.5u AS=1.93375p AD=1.93375p
 + PS=12.445u PD=12.445u
-M$5 AVSS AVSS \$63 AVSS sg13_lv_nmos L=1u W=6u AS=1.59p AD=1.59p PS=10.06u
-+ PD=10.06u
-M$6 \$63 PLUS \$53 AVSS sg13_lv_nmos L=1u W=6u AS=1.14p AD=1.14p PS=6.76u
-+ PD=6.76u
-M$7 \$53 MINUS \$65 AVSS sg13_lv_nmos L=1u W=6u AS=1.14p AD=1.14p PS=6.76u
-+ PD=6.76u
-M$8 \$65 AVSS AVSS AVSS sg13_lv_nmos L=1u W=6u AS=1.59p AD=1.59p PS=10.06u
-+ PD=10.06u
-M$9 AVSS IBIAS IBIAS AVSS sg13_lv_nmos L=5u W=8.5u AS=1.93375p AD=1.93375p
+M$13 AVSS IBIAS \$54 AVSS sg13_lv_nmos L=5u W=8.5u AS=1.93375p AD=1.93375p
 + PS=12.445u PD=12.445u
 M$17 AVDD VOUT \$17 AVSS sg13_lv_nmos L=0.5u W=15u AS=3.4125p AD=3.4125p
 + PS=20.57u PD=20.57u
@@ -55,16 +55,16 @@ M$61 AVDD \$56 \$24 AVDD sg13_lv_pmos L=2u W=14u AS=2.66p AD=2.66p PS=15.52u
 + PD=15.52u
 M$71 AVDD AVDD \$47 AVDD sg13_lv_pmos L=2u W=7u AS=1.855p AD=1.855p PS=11.56u
 + PD=11.56u
-M$72 \$47 \$57 \$65 AVDD sg13_lv_pmos L=2u W=14u AS=2.66p AD=2.66p PS=15.52u
+M$72 \$47 \$57 \$58 AVDD sg13_lv_pmos L=2u W=14u AS=2.66p AD=2.66p PS=15.52u
 + PD=15.52u
 M$77 AVDD AVDD VOUT AVDD sg13_lv_pmos L=2u W=7u AS=1.855p AD=1.855p PS=11.56u
 + PD=11.56u
-M$78 VOUT \$57 \$63 AVDD sg13_lv_pmos L=2u W=14u AS=2.66p AD=2.66p PS=15.52u
+M$78 VOUT \$57 \$61 AVDD sg13_lv_pmos L=2u W=14u AS=2.66p AD=2.66p PS=15.52u
 + PD=15.52u
-M$83 AVDD AVDD \$63 AVDD sg13_lv_pmos L=2u W=14u AS=3.185p AD=3.185p PS=19.32u
+M$83 AVDD AVDD \$61 AVDD sg13_lv_pmos L=2u W=14u AS=3.185p AD=3.185p PS=19.32u
 + PD=19.32u
-M$85 AVDD \$56 \$65 AVDD sg13_lv_pmos L=2u W=14u AS=2.66p AD=2.66p PS=15.52u
+M$85 AVDD \$56 \$58 AVDD sg13_lv_pmos L=2u W=14u AS=2.66p AD=2.66p PS=15.52u
 + PD=15.52u
-M$87 AVDD \$56 \$63 AVDD sg13_lv_pmos L=2u W=14u AS=2.66p AD=2.66p PS=15.52u
+M$87 AVDD \$56 \$61 AVDD sg13_lv_pmos L=2u W=14u AS=2.66p AD=2.66p PS=15.52u
 + PD=15.52u
 .ENDS ota_final
