@@ -1,0 +1,3 @@
+.subckt full_bandgap VDD VSS
+.ends
+.end

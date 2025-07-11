@@ -19,27 +19,29 @@ Warning: Calma reading is not undoable!  I hope that's OK.
 Library written using GDS-II Release 6.0
 Library name: LIB
 Reading "$$$CONTEXT_INFO$$$".
-Reading "sg13_lv_pmos_LSWSJR$1".
-Reading "sg13_lv_pmos_LSWSJR".
-Reading "sg13_lv_nmos_MRDHTG$1".
-Reading "sg13_lv_nmos_MRDHTG".
-Reading "pmos$1".
-Reading "pmos$2".
-Reading "nmos$1$1".
-Reading "nmos$1$2".
 Reading "pmos$1$2".
+Reading "nmos$1$2".
+Reading "nmos$1$1".
+Reading "pmos$2".
+Reading "pmos$1".
+Reading "sealring".
+Reading "TM2_FILL_CELL".
+Reading "TM1_FILL_CELL".
+Reading "Met1_FILL_CELL$4".
+Reading "Met1_FILL_CELL$3".
+Reading "Met1_FILL_CELL$2".
+Reading "Met1_FILL_CELL$1".
+Reading "Met1_FILL_CELL".
+Reading "GatP_FILL_CELL".
+Reading "Act_FILL_CELL".
 Reading "nmos$3".
-Reading "decoupling_pmos$1".
-Reading "decoupling_pmos".
-Reading "decoupling_nmos$1".
-Reading "decoupling_nmos".
-Reading "enable_pins".
-Reading "pmos_cascode_both".
-CIF file read warning: CIF style sg13g2(): units rescaled by factor of 5 / 1
-Reading "nmos_cascode".
-Reading "wilson_nmos_half".
 Reading "wilson_pmos_half".
 Warning: direction reversal in path.
+Reading "wilson_nmos_half".
+Reading "nmos_cascode".
+Reading "pmos_cascode_both".
+CIF file read warning: CIF style sg13g2(): units rescaled by factor of 5 / 1
+Reading "bond_pads_ring".
 Reading "ota_final".
 Extracting ota_final into /foss/designs/thesis/thesis_hp/Designs/otas/3_kpex/ota_final__ota_final/magic_CC/ota_final.ext:
 exttospice finished.
