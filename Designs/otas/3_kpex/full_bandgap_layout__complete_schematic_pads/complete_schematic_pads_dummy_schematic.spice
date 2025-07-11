@@ -1,0 +1,3 @@
+.subckt complete_schematic_pads VDD VSS
+.ends
+.end
