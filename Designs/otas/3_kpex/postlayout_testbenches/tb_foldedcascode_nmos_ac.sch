@@ -50,7 +50,7 @@ C {lab_wire.sym} 1020 -430 0 0 {name=p4 sig_type=std_logic lab=v_in}
 C {spice_probe.sym} 1080 -430 0 0 {name=p5 attrs=""}
 C {isource.sym} 1230 -530 0 0 {name=I0 value=14u}
 C {capa.sym} 1730 -330 0 0 {name=C1
-value=1p}
+value=2p}
 C {lab_wire.sym} 1730 -400 0 0 {name=p3 sig_type=std_logic lab=v_out}
 C {spice_probe.sym} 1610 -400 0 0 {name=p6 attrs=""}
 C {devices/code_shown.sym} 50 -20 0 0 {name=MODEL1 only_toplevel=true
@@ -60,11 +60,11 @@ value=".lib cornerMOSlv.lib mos_tt
 C {devices/code_shown.sym} 50 -790 0 0 {name=NGSPICE1 only_toplevel=true 
 value="
 
-.include /foss/designs/thesis/thesis_hp/designs/otas/3_kpex/ota_final__ota_final/magic_CC/ota_final.pex.spice
+*.include /foss/designs/thesis/thesis_hp/designs/otas/3_kpex/ota_final__ota_final/magic_CC/ota_final.pex.spice
 
 *.include /foss/designs/thesis/thesis_hp/Designs/otas/1_schematics/simulations/ota_final.spice
 
-*.include /foss/designs/thesis/thesis_hp/Designs/otas/2_layout/lvs/ota_final_extracted.cir
+.include /foss/designs/thesis/thesis_hp/Designs/otas/2_layout/lvs/ota_final_extracted.cir
             
 
 .temp 27
