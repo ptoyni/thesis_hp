@@ -547,5 +547,9 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {capa.sym} 6620 -2870 0 0 {name=C1
-value=2p}
+C {sg13g2_pr/cap_cmim.sym} 6620 -2870 0 0 {name=C2
+model=cap_cmim
+w=25.82e-6
+l=25.82e-6
+m=1
+spiceprefix=X}
