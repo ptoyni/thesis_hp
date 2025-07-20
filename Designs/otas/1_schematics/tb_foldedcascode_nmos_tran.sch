@@ -47,7 +47,7 @@ N 540 -570 1040 -570 {lab=v_dd}
 N 920 -510 920 -430 {lab=#net1}
 C {devices/code_shown.sym} 70 -90 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
-value=".lib cornerMOSlv.lib mos_ss
+value=".lib cornerMOSlv.lib mos_tt
 "}
 C {devices/vsource.sym} 540 -130 0 0 {name=Vdd value=1.45
 }
@@ -65,7 +65,7 @@ C {spice_probe.sym} 840 -460 0 0 {name=p5 attrs=""}
 C {spice_probe.sym} 1340 -430 0 0 {name=p6 attrs=""}
 C {devices/code_shown.sym} 70 -570 0 0 {name=NGSPICE1 only_toplevel=true 
 value="
-.temp -40
+.temp 27
 
 .ic v(v_out)=0
 .option method=gear
