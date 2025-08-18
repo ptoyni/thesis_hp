@@ -89,4 +89,6 @@ format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
 .lib $::SG13G2_MODELS/cornerRES.lib res_typ
 .lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
+.include $::SG13G2_MODELS/sg13g2_bondpad.lib
+.include $::SG13G2_MODELS/sg13g2_esd.lib
 "}

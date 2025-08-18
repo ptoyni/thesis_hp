@@ -10,7 +10,7 @@ P 4 5 5570 -760 6080 -760 6080 -310 5570 -310 5570 -760 {dash = 4}
 T {Modified Wilson's current mirror with 
 gain and swing improvisation} 1690 -880 0 0 0.4 0.4 {}
 T {0.7 < 0.8(nom) < 0.9V} 4260 -840 0 0 0.4 0.4 {}
-T {1.45 < 1.5(nom) < 1.55V} 300 -1520 0 0 0.4 0.4 {}
+T {1.45 < 1.5(nom) < 1.55V} 880 -1520 0 0 0.4 0.4 {}
 T {12.5uA} 1370 -100 0 0 0.4 0.4 {}
 T {12.5uA} 1820 -100 0 0 0.4 0.4 {}
 T {12.5uA} 4340 -100 0 0 0.4 0.4 {}
@@ -45,12 +45,10 @@ N 3580 -900 3580 -660 {lab=#net2}
 N 1790 -460 1790 -340 {lab=IBIAS}
 N 1850 -1160 1850 -1120 {lab=#net1}
 N 1850 -1020 1850 -490 {lab=#net7}
-N 270 -120 1290 -120 {lab=AVSS}
 N 270 -1480 1530 -1480 {lab=AVDD}
 N 1390 -120 1850 -120 {lab=AVSS}
 N 1530 -460 1790 -460 {lab=IBIAS}
 N 1290 -120 1390 -120 {lab=AVSS}
-N 270 -960 1390 -960 {lab=IBIAS}
 N 1850 -460 1940 -460 {lab=AVSS}
 N 1850 -120 1940 -120 {lab=AVSS}
 N 1790 -460 1810 -460 {lab=IBIAS}
@@ -64,11 +62,10 @@ N 1940 -120 2050 -120 {lab=AVSS}
 N 2050 -1040 2600 -1040 {lab=#net5}
 N 3620 -1050 3700 -1050 {lab=#net5}
 N 1760 -1480 1850 -1480 {lab=AVDD}
-N 4360 -1480 5080 -1480 {lab=AVDD}
+N 4380 -1480 5080 -1480 {lab=AVDD}
 N 4330 -1050 5040 -1050 {lab=#net5}
 N 2120 -1480 3310 -1480 {lab=AVDD}
-N 3990 -760 4030 -760 {lab=PLUS}
-N 4720 -760 4760 -760 {lab=MINUS}
+N 4950 -760 4980 -760 {lab=MINUS}
 N 4450 -120 4580 -120 {lab=AVSS}
 N 5720 -1480 5870 -1480 {lab=AVDD}
 N 3700 -1190 5040 -1190 {lab=#net1}
@@ -160,7 +157,6 @@ N 4920 -580 5040 -580 {lab=#net12}
 N 5720 -620 5720 -520 {lab=#net12}
 N 5080 -1020 5080 -890 {lab=VOUT}
 N 5940 -430 5940 -120 {lab=AVSS}
-N 6490 -890 6640 -890 {lab=VOUT}
 N 4580 -120 5080 -120 {lab=AVSS}
 N 5460 -120 5630 -120 {lab=AVSS}
 N 3510 -1480 3580 -1480 {lab=AVDD}
@@ -272,9 +268,9 @@ N 1430 -460 1530 -460 {lab=IBIAS}
 N 1390 -600 1530 -600 {lab=IBIAS}
 N 1390 -960 1390 -600 {lab=IBIAS}
 N 6490 -890 6490 -680 {lab=VOUT}
-N 5080 -890 6490 -890 {lab=VOUT}
+N 6340 -890 6490 -890 {lab=VOUT}
 N 6490 -620 6490 -120 {lab=AVSS}
-N 6220 -120 6490 -120 {lab=AVSS}
+N 6340 -120 6490 -120 {lab=AVSS}
 N 5400 -140 5400 -120 {lab=AVSS}
 N 5270 -120 5400 -120 {lab=AVSS}
 N 5430 -140 5430 -120 {lab=AVSS}
@@ -307,9 +303,105 @@ N 4210 -1480 4210 -1460 {lab=AVDD}
 N 4180 -1480 4210 -1480 {lab=AVDD}
 N 4180 -1480 4180 -1460 {lab=AVDD}
 N 3580 -1480 4180 -1480 {lab=AVDD}
-C {ipin.sym} 270 -120 0 0 {name=p5 lab=AVSS}
-C {ipin.sym} 270 -960 0 0 {name=p1 lab=IBIAS}
-C {ipin.sym} 270 -1480 0 0 {name=p2 lab=AVDD}
+N 100 -1620 100 -1580 {lab=AVDD}
+N 30 -1550 70 -1550 {lab=AVSS}
+N 30 -1550 30 -1340 {lab=AVSS}
+N 30 -1340 100 -1340 {lab=AVSS}
+N 100 -1360 100 -1340 {lab=AVSS}
+N 0 -1620 100 -1620 {lab=AVDD}
+N 0 -1620 0 -1480 {lab=AVDD}
+N -40 -1480 0 -1480 {lab=AVDD}
+N 0 -1480 0 -1390 {lab=AVDD}
+N 0 -1390 70 -1390 {lab=AVDD}
+N 100 -830 100 -210 {lab=AVSS}
+N 170 -280 170 -240 {lab=AVDD}
+N 90 -50 140 -50 {lab=AVDD}
+N 90 -280 90 -50 {lab=AVDD}
+N 90 -280 170 -280 {lab=AVDD}
+N 100 -210 140 -210 {lab=AVSS}
+N 100 0 170 0 {lab=AVSS}
+N 170 -20 170 0 {lab=AVSS}
+N 100 -210 100 -120 {lab=AVSS}
+N 20 -120 100 -120 {lab=AVSS}
+N 100 -120 100 0 {lab=AVSS}
+N 0 -1110 0 -280 {lab=AVDD}
+N 0 -280 90 -280 {lab=AVDD}
+N 20 -130 20 -120 {lab=AVSS}
+N -40 -120 20 -120 {lab=AVSS}
+N 270 -1500 270 -1480 {lab=AVDD}
+N 100 -1480 270 -1480 {lab=AVDD}
+N 260 -1110 260 -1070 {lab=AVDD}
+N 180 -880 230 -880 {lab=AVDD}
+N 180 -1110 180 -880 {lab=AVDD}
+N 180 -1110 260 -1110 {lab=AVDD}
+N 190 -1040 230 -1040 {lab=AVSS}
+N 190 -830 260 -830 {lab=AVSS}
+N 260 -850 260 -830 {lab=AVSS}
+N 190 -1040 190 -830 {lab=AVSS}
+N 50 -970 50 -960 {lab=IBIAS}
+N -40 -960 50 -960 {lab=IBIAS}
+N 260 -1010 260 -960 {lab=IBIAS}
+N 50 -960 260 -960 {lab=IBIAS}
+N 260 -960 260 -910 {lab=IBIAS}
+N 100 -1520 100 -1480 {lab=AVDD}
+N 0 -1480 100 -1480 {lab=AVDD}
+N 100 -1480 100 -1420 {lab=AVDD}
+N 170 -180 170 -120 {lab=AVSS}
+N 100 -120 170 -120 {lab=AVSS}
+N 170 -120 170 -80 {lab=AVSS}
+N 100 -830 190 -830 {lab=AVSS}
+N 100 -1340 100 -830 {lab=AVSS}
+N 0 -1110 180 -1110 {lab=AVDD}
+N 0 -1390 0 -1110 {lab=AVDD}
+N 260 -960 1390 -960 {lab=IBIAS}
+N 170 -120 1290 -120 {lab=AVSS}
+N 6490 -940 6490 -890 {lab=VOUT}
+N 6340 -1050 6340 -1010 {lab=AVDD}
+N 6260 -820 6310 -820 {lab=AVDD}
+N 6260 -1050 6260 -820 {lab=AVDD}
+N 6260 -1050 6340 -1050 {lab=AVDD}
+N 6270 -980 6310 -980 {lab=AVSS}
+N 6270 -980 6270 -770 {lab=AVSS}
+N 6270 -770 6340 -770 {lab=AVSS}
+N 6340 -790 6340 -770 {lab=AVSS}
+N 6490 -890 6640 -890 {lab=VOUT}
+N 6340 -950 6340 -890 {lab=VOUT}
+N 5080 -890 6340 -890 {lab=VOUT}
+N 6340 -890 6340 -850 {lab=VOUT}
+N 5940 -1480 6340 -1480 {lab=AVDD}
+N 6340 -1480 6340 -1050 {lab=AVDD}
+N 6340 -770 6340 -120 {lab=AVSS}
+N 6220 -120 6340 -120 {lab=AVSS}
+N 4830 -810 4830 -710 {lab=#net13}
+N 4830 -910 4830 -870 {lab=AVDD}
+N 4750 -680 4800 -680 {lab=AVDD}
+N 4750 -910 4750 -680 {lab=AVDD}
+N 4750 -910 4830 -910 {lab=AVDD}
+N 4760 -840 4800 -840 {lab=AVSS}
+N 4760 -840 4760 -630 {lab=AVSS}
+N 4760 -630 4830 -630 {lab=AVSS}
+N 4830 -650 4830 -630 {lab=AVSS}
+N 3920 -810 3920 -710 {lab=#net14}
+N 3920 -910 3920 -870 {lab=AVDD}
+N 3840 -680 3890 -680 {lab=AVDD}
+N 3840 -910 3840 -680 {lab=AVDD}
+N 3840 -910 3920 -910 {lab=AVDD}
+N 3850 -840 3890 -840 {lab=AVSS}
+N 3850 -840 3850 -630 {lab=AVSS}
+N 3850 -630 3920 -630 {lab=AVSS}
+N 3920 -650 3920 -630 {lab=AVSS}
+N 3700 -760 4030 -760 {lab=PLUS}
+N 3700 -770 3700 -760 {lab=PLUS}
+N 3660 -760 3700 -760 {lab=PLUS}
+N 4950 -770 4950 -760 {lab=MINUS}
+N 4720 -760 4950 -760 {lab=MINUS}
+N 4380 -910 4750 -910 {lab=AVDD}
+N 4450 -630 4760 -630 {lab=AVSS}
+N 4380 -1480 4380 -910 {lab=AVDD}
+N 4360 -1480 4380 -1480 {lab=AVDD}
+N 3920 -910 4380 -910 {lab=AVDD}
+N 4450 -630 4450 -340 {lab=AVSS}
+N 3920 -630 4450 -630 {lab=AVSS}
 C {sg13g2_pr/sg13_lv_nmos.sym} 1410 -460 0 1 {name=M23
 l=5u
 w=8.5u
@@ -414,8 +506,8 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {ipin.sym} 3990 -760 0 0 {name=p3 lab=PLUS}
-C {ipin.sym} 4760 -760 0 1 {name=p4 lab=MINUS
+C {ipin.sym} 3660 -760 0 0 {name=p3 lab=PLUS}
+C {ipin.sym} 4980 -760 0 1 {name=p4 lab=MINUS
 }
 C {opin.sym} 6640 -890 0 0 {name=p7 lab=VOUT}
 C {sg13g2_pr/sg13_lv_nmos.sym} 4540 -760 0 1 {name=M37
@@ -616,4 +708,109 @@ ng=4
 m=1
 model=sg13_lv_pmos
 spiceprefix=X
+}
+C {ipin.sym} -40 -120 0 0 {name=p5 lab=AVSS}
+C {ipin.sym} -40 -960 0 0 {name=p1 lab=IBIAS}
+C {ipin.sym} -40 -1480 0 0 {name=p2 lab=AVDD}
+C {sg13g2_pr/diodevdd_2kv.sym} 100 -1550 0 0 {name=D3
+model=diodevdd_2kv
+m=1
+spiceprefix=X
+}
+C {sg13g2_pr/diodevss_2kv.sym} 100 -1390 0 0 {name=D4
+model=diodevss_2kv
+spiceprefix=X
+m=1
+}
+C {sg13g2_pr/diodevdd_2kv.sym} 170 -210 0 0 {name=D5
+model=diodevdd_2kv
+m=1
+spiceprefix=X
+}
+C {sg13g2_pr/diodevss_2kv.sym} 170 -50 0 0 {name=D6
+model=diodevss_2kv
+spiceprefix=X
+m=1
+}
+C {sg13g2_pr/bondpad.sym} 20 -170 0 0 {name=X2
+model=bondpad
+spiceprefix=X
+size=80u
+shape=0
+padtype=0
+}
+C {sg13g2_pr/bondpad.sym} 270 -1540 0 0 {name=X3
+model=bondpad
+spiceprefix=X
+size=80u
+shape=0
+padtype=0
+}
+C {sg13g2_pr/diodevdd_2kv.sym} 260 -1040 0 0 {name=D7
+model=diodevdd_2kv
+m=1
+spiceprefix=X
+}
+C {sg13g2_pr/diodevss_2kv.sym} 260 -880 0 0 {name=D8
+model=diodevss_2kv
+spiceprefix=X
+m=1
+}
+C {sg13g2_pr/bondpad.sym} 50 -1010 0 0 {name=X4
+model=bondpad
+spiceprefix=X
+size=80u
+shape=0
+padtype=0
+}
+C {sg13g2_pr/bondpad.sym} 6490 -980 0 0 {name=X1
+model=bondpad
+spiceprefix=X
+size=80u
+shape=0
+padtype=0
+}
+C {sg13g2_pr/diodevdd_2kv.sym} 6340 -980 0 0 {name=D1
+model=diodevdd_2kv
+m=1
+spiceprefix=X
+}
+C {sg13g2_pr/diodevss_2kv.sym} 6340 -820 0 0 {name=D2
+model=diodevss_2kv
+spiceprefix=X
+m=1
+}
+C {sg13g2_pr/bondpad.sym} 3700 -810 0 0 {name=X5
+model=bondpad
+spiceprefix=X
+size=80u
+shape=0
+padtype=0
+}
+C {sg13g2_pr/diodevdd_2kv.sym} 4830 -840 0 0 {name=D9
+model=diodevdd_2kv
+m=1
+spiceprefix=X
+}
+C {sg13g2_pr/diodevss_2kv.sym} 4830 -680 0 0 {name=D10
+model=diodevss_2kv
+spiceprefix=X
+m=1
+}
+C {sg13g2_pr/bondpad.sym} 4950 -810 0 0 {name=X6
+model=bondpad
+spiceprefix=X
+size=80u
+shape=0
+padtype=0
+}
+C {sg13g2_pr/diodevdd_2kv.sym} 3920 -840 0 0 {name=D11
+model=diodevdd_2kv
+m=1
+spiceprefix=X
+}
+C {sg13g2_pr/diodevss_2kv.sym} 3920 -680 0 0 {name=D12
+model=diodevss_2kv
+spiceprefix=X
+m=1
 }

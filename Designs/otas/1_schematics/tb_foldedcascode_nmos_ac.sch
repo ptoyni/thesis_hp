@@ -67,7 +67,7 @@ value="
 
 *.include /foss/designs/thesis/thesis_hp/Designs/otas/1_schematics/simulations/foldedcascode_nmos.spice
 
-.include /foss/designs/thesis/thesis_hp/Designs/otas/2_layout/lvs/foldedcascode_nmos_withdummies_extracted.cir
+*.include /foss/designs/thesis/thesis_hp/Designs/otas/2_layout/lvs/foldedcascode_nmos_withdummies_extracted.cir
             
 
 .temp 27
@@ -104,4 +104,4 @@ print onoise_total
 C {devices/title.sym} 470 60 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
 C {devices/vsource.sym} 1370 -270 0 0 {name=Venable value=1.5 savecurrent=false}
 C {devices/lab_wire.sym} 1370 -310 0 1 {name=p8 sig_type=std_logic lab=v_ena}
-C {foldedcascode_nmos.sym} 1430 -400 0 0 {name=x1}
+C {/foss/designs/thesis/thesis_hp/Designs/otas/1_schematics/foldedcascode_nmos.sym} 1430 -400 0 0 {name=x1}

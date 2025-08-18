@@ -24,10 +24,7 @@ N 1230 -500 1230 -400 {
 lab=#net1}
 N 1230 -400 1280 -400 {lab=#net1}
 N 710 -580 1230 -580 {lab=v_dd}
-N 1730 -300 1730 -200 {
-lab=v_ss}
 N 1650 -400 1730 -400 {lab=v_out}
-N 1730 -400 1730 -360 {lab=v_out}
 N 1650 -400 1650 -290 {
 lab=v_out}
 N 1200 -370 1280 -370 {lab=v_out}
@@ -36,7 +33,6 @@ N 1200 -290 1650 -290 {lab=v_out}
 N 1450 -400 1650 -400 {lab=v_out}
 N 1330 -580 1330 -460 {lab=v_dd}
 N 1230 -580 1330 -580 {lab=v_dd}
-N 1330 -200 1730 -200 {lab=v_ss}
 N 960 -200 1330 -200 {lab=v_ss}
 N 1330 -340 1330 -200 {lab=v_ss}
 C {devices/vsource.sym} 860 -150 0 0 {name=Vss value=0}
@@ -49,13 +45,12 @@ C {devices/vsource.sym} 960 -310 0 0 {name=Vin value="dc 0.7 ac 1"}
 C {lab_wire.sym} 1020 -430 0 0 {name=p4 sig_type=std_logic lab=v_in}
 C {spice_probe.sym} 1080 -430 0 0 {name=p5 attrs=""}
 C {isource.sym} 1230 -530 0 0 {name=I0 value=14u}
-C {capa.sym} 1730 -330 0 0 {name=C1
-value=2p}
 C {lab_wire.sym} 1730 -400 0 0 {name=p3 sig_type=std_logic lab=v_out}
 C {spice_probe.sym} 1610 -400 0 0 {name=p6 attrs=""}
 C {devices/code_shown.sym} 50 -20 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
+.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
 "}
 C {devices/code_shown.sym} 50 -790 0 0 {name=NGSPICE1 only_toplevel=true 
 value="
@@ -64,7 +59,7 @@ value="
 
 *.include /foss/designs/thesis/thesis_hp/Designs/otas/1_schematics/simulations/ota_final.spice
 
-.include /foss/designs/thesis/thesis_hp/Designs/otas/2_layout/lvs/ota_final_extracted.cir
+.include /foss/designs/thesis/thesis_hp/Designs/otas/2_layout/ota_with_CMIM/lvs/ota_final_decoup_extracted.cir
             
 
 .temp 27
