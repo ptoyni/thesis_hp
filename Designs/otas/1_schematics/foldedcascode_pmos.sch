@@ -244,7 +244,7 @@ model=sg13_lv_nmos
 spiceprefix=X
 }
 C {ipin.sym} -2970 680 0 0 {name=p1 lab=AVSS}
-C {sg13g2_pr/sg13_lv_pmos.sym} -20 -380 0 0 {name=M10
+C {sg13g2_pr/sg13_lv_pmos.sym} -20 -380 0 0 {name=Mt
 l=5u
 w=32u
 ng=4
@@ -253,7 +253,7 @@ model=sg13_lv_pmos
 spiceprefix=X
 }
 C {ipin.sym} -2970 0 0 0 {name=p25 lab=IBIAS}
-C {sg13g2_pr/sg13_lv_nmos.sym} -1670 270 0 1 {name=M50
+C {sg13g2_pr/sg13_lv_nmos.sym} -1670 270 0 1 {name=M13
 l=2u
 w=4u
 ng=2
@@ -261,7 +261,7 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} -1670 390 0 1 {name=M51
+C {sg13g2_pr/sg13_lv_nmos.sym} -1670 390 0 1 {name=M15
 l=2u
 w=4u
 ng=2
@@ -269,7 +269,7 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} -1490 390 0 0 {name=M52
+C {sg13g2_pr/sg13_lv_nmos.sym} -1490 390 0 0 {name=M16
 l=2u
 w=4u
 ng=2
@@ -277,7 +277,7 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} -1490 200 0 0 {name=M53
+C {sg13g2_pr/sg13_lv_nmos.sym} -1490 200 0 0 {name=M14
 l=0.5u
 w=15u
 ng=4
@@ -293,7 +293,7 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 740 -280 0 0 {name=M13
+C {sg13g2_pr/sg13_lv_pmos.sym} 740 -280 0 0 {name=M10
 l=2u
 w=8u
 ng=4
@@ -309,7 +309,7 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 990 -380 0 0 {name=M14
+C {sg13g2_pr/sg13_lv_pmos.sym} 990 -380 0 0 {name=Mtb
 l=5u
 w=28u
 ng=4
