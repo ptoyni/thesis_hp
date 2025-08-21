@@ -85,10 +85,12 @@ print onoise_total
 .endc
 "}
 C {devices/title.sym} 630 50 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
-C {devices/code_shown.sym} 200 -80 0 0 {name=MODEL1 only_toplevel=true
+C {foldedcascode_pmos.sym} 1590 -410 0 0 {name=x1}
+C {devices/code_shown.sym} 210 -100 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
 .lib $::SG13G2_MODELS/cornerRES.lib res_typ
 .lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
+.include $::SG13G2_MODELS/sg13g2_bondpad.lib
+.include $::SG13G2_MODELS/sg13g2_esd.lib
 "}
-C {foldedcascode_pmos.sym} 1590 -410 0 0 {name=x1}
