@@ -20,8 +20,7 @@ M12 net9 net8 AVSS AVSS sg13_lv_nmos w=2u l=2u ng=1 m=1
 M10 net9 net9 AVDD AVDD sg13_lv_pmos w=8u l=2u ng=2 m=1
 M11 net10 net5 AVSS AVSS sg13_lv_nmos w=4u l=2u ng=1 m=1
 Mtb net10 net10 AVDD AVDD sg13_lv_pmos w=28u l=5u ng=4 m=1
-M17 IBIAS AVSS AVSS AVSS sg13_lv_nmos w=4u l=2u ng=2 m=1
-M18 net5 AVSS AVSS AVSS sg13_lv_nmos w=8u l=2u ng=2 m=1
+M18 net5 AVSS AVSS AVSS sg13_lv_nmos w=4u l=2u ng=1 m=1
 M19 AVDD AVSS AVSS AVSS sg13_lv_nmos w=15u l=0.5u ng=2 m=1
 M20 net4 AVSS AVSS AVSS sg13_lv_nmos w=4u l=2u ng=2 m=1
 M21 net7 AVSS AVSS AVSS sg13_lv_nmos w=4u l=2u ng=2 m=1
@@ -54,4 +53,5 @@ D11 AVDD PLUS AVSS diodevdd_2kv m=1
 D9 AVDD MINUS AVSS diodevdd_2kv m=1
 D12 AVDD PLUS AVSS diodevss_2kv m=1
 D10 AVDD MINUS AVSS diodevss_2kv m=1
+M30 net8 AVSS AVSS AVSS sg13_lv_nmos w=4u l=2u ng=1 m=1
 .ENDS
