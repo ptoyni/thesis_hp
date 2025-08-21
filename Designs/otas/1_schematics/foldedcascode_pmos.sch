@@ -429,7 +429,7 @@ spiceprefix=X
 C {sg13g2_pr/sg13_lv_nmos.sym} -1670 270 0 1 {name=M13
 l=2u
 w=4u
-ng=1
+ng=2
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
@@ -495,7 +495,7 @@ C {ipin.sym} 620 80 0 1 {name=p28 lab=MINUS
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} -1840 270 0 1 {name=M17
 l=2u
-w=8u
+w=4u
 ng=2
 m=1
 model=sg13_lv_nmos
