@@ -2,13 +2,13 @@
 .SUBCKT foldedcascode_pmos AVDD IBIAS PLUS MINUS VOUT AVSS
 *.PININFO PLUS:I MINUS:I AVSS:I IBIAS:I AVDD:I VOUT:O
 M1 net6 MINUS net1 AVDD sg13_lv_pmos w=20u l=2u ng=4 m=1
-M5 net7 net8 net4 AVSS sg13_lv_nmos w=2u l=2u ng=1 m=1
+M5 net7 net8 net4 AVSS sg13_lv_nmos w=2u l=2u ng=2 m=1
 M2 net4 PLUS net1 AVDD sg13_lv_pmos w=20u l=2u ng=4 m=1
 M3 net2 net7 AVDD AVDD sg13_lv_pmos w=13u l=2u ng=2 m=1
 M4 net3 net7 AVDD AVDD sg13_lv_pmos w=13u l=2u ng=2 m=1
 M7 net7 net9 net2 AVDD sg13_lv_pmos w=8u l=2u ng=4 m=1
 M8 VOUT net9 net3 AVDD sg13_lv_pmos w=8u l=2u ng=4 m=1
-M6 VOUT net8 net6 AVSS sg13_lv_nmos w=2u l=2u ng=4 m=1
+M6 VOUT net8 net6 AVSS sg13_lv_nmos w=2u l=2u ng=2 m=1
 M9 net4 net5 AVSS AVSS sg13_lv_nmos w=4u l=2u ng=2 m=1
 M0 net6 net5 AVSS AVSS sg13_lv_nmos w=4u l=2u ng=2 m=1
 Mt net1 net10 AVDD AVDD sg13_lv_pmos w=32u l=5u ng=4 m=1
@@ -23,8 +23,8 @@ Mtb net10 net10 AVDD AVDD sg13_lv_pmos w=28u l=5u ng=4 m=1
 M18 net5 AVSS AVSS AVSS sg13_lv_nmos w=4u l=2u ng=1 m=1
 M19 AVDD AVSS AVSS AVSS sg13_lv_nmos w=15u l=0.5u ng=2 m=1
 M20 net4 AVSS AVSS AVSS sg13_lv_nmos w=4u l=2u ng=2 m=1
-M21 net7 AVSS AVSS AVSS sg13_lv_nmos w=4u l=2u ng=2 m=1
-M22 VOUT AVSS AVSS AVSS sg13_lv_nmos w=4u l=2u ng=2 m=1
+M21 net7 AVSS AVSS AVSS sg13_lv_nmos w=2u l=2u ng=2 m=1
+M22 VOUT AVSS AVSS AVSS sg13_lv_nmos w=2u l=2u ng=2 m=1
 M23 AVDD AVDD net1 AVDD sg13_lv_pmos w=10u l=2u ng=2 m=1
 M24 AVDD AVDD net1 AVDD sg13_lv_pmos w=10u l=2u ng=2 m=1
 M25 net10 AVSS AVSS AVSS sg13_lv_nmos w=8u l=2u ng=2 m=1
