@@ -1,3 +1,147 @@
-# Layout
+# Introduction to Layout 
 
-To Be Updated
+Once, schematic in **Xschem** is finished, what we have is only the functional intent of the circuit. At this stage the devices are ideal: transistors have exactly the width and length we assign, wires have zero resistance, and parasitics like source/drain capacitances or coupling between metals are invisible. The layout stage is where this abstraction becomes **real silicon geometry**. Here, every transistor must be drawn in the technology’s layers, with actual fingers, source/drain contacts, guard rings and no component is ideal anymore.
+
+For analog circuits, this step is critical. Small layout choices — for example, placing two input devices slightly asymmetrically, or routing one input longer than the other — can directly show up as offset voltage or degraded common-mode rejection. In digital design, such effects are often absorbed by logic thresholds, but in analog design they decide whether the OTA meets its simulated gain or not.
+
+In other words, schematic defines *“what we want”*, layout decides *“what we actually get”*. This chapter focuses on showing how a *folded-cascode OTA* in **IHP-SG13G2** was translated from a verified schematic into a manufacturable layout that still respects matching, symmetry, and parasitic limits.
+
+
+## Layout Toolchain: KLayout
+
+For the layout implementation, we relied on *KLayout*. It is a free, scriptable editor that is already integrated with the **IHP-SG13G2 open-source PDK** and provided in the **IIC-OSIC toolchain**. This makes it possible to perform layout tasks without the need for commercial software.  
+
+All necessary files — such as **Design Rule Checks (DRC)**,  **LVS comparison setups**, and **Parameterized cells (PCells)** — are directly accessible and supported within KLayout. This allows devices to be generated, verified, and extracted in a reproducible way.  
+
+For further details, see the [KLayout website](https://www.klayout.de/).
+
+::: {.callout-note title="Using KLayout: Docker vs. Source Build" collapse=true}
+
+Our layout work was carried out using **KLayout v0.30.1**, provided within the **IIC-OSIC Docker image**. Since this image is a prebuilt package, some advanced KLayout or Qt features may not function as expected.  
+
+If KLayout is build from source on your system, most of these limitations disappear, but in that case **IHP-SG13G2 technology files and libraries** must be manually integrated the into your local setup.  
+
+For guidance on this process, a useful resource is this [Efabless tutorial (second section by Thomas Perry)](https://www.youtube.com/watch?v=CSZm3q4rUBg&list=LL&index=24&t=1181s).
+:::
+
+# Device-Level Layout Concepts
+
+Integrated circuit layout translates the schematic into **physical layers** on silicon.  
+The IHP-SG13G2 process provides numerous layers such as active/diffusion regions, poly gates, contacts, multiple metal levels, and passivation. [@IHP_PDK_2024].  
+Each of these layers plays a role in forming MOSFETs, capacitors, resistors, and interconnects, further layer specific description for the IHP PDK can be found on Layout Rules [@IHP_PDK_2024].  
+
+Unlike digital design, where the goal is mainly connectivity, analog layout must ensure **matching, symmetry, and parasitic control**.  
+This is particularly critical in our **folded-cascode OTA**, where the differential input pair, current mirrors, and cascode devices dominate the overall gain, offset, and common-mode rejection ratio (CMRR) [@baker2010][@lienig2020].  
+
+The following subsections describe the major device-level layout techniques used in this work, with examples and figures suggested for illustration.
+
+---
+
+## 1. Matching & Symmetry
+
+- **Orientation rules (rotation, mirroring).**  
+  In analog layout, device orientation determines how well two nominally identical devices behave in silicon.  
+  If one transistor is rotated by 90° while its pair is not, the diffusion and well-edge proximity effects will differ, introducing systematic mismatch.  
+  Therefore, in our OTA differential pair, all input transistors were placed in the same orientation, with mirroring used only across the symmetry axis when diffusion orientation was preserved.  
+
+- **Symmetry in placement.**  
+  The OTA’s differential pair and current mirrors were placed symmetrically around a central axis.  
+  This ensures that any process gradient (e.g., across-die doping or oxide thickness variation) affects both devices equally.  
+  Such symmetry reduces systematic mismatch and improves input offset and CMRR @baker2010.  
+
+- **Routing symmetry.**  
+  Symmetry must extend beyond device placement to the interconnects.  
+  In our OTA, gate routing for the differential pair was balanced in length and via count to minimize resistance and capacitance mismatches.  
+  Even a small routing imbalance can translate into measurable offset in high-gain analog designs.  
+
+**Figures to include:**  
+- Layout snapshot of OTA differential pair showing axis of symmetry.  
+- Diagram contrasting symmetric vs. asymmetric routing (adapted from @baker2010, Ch. 22 *Differential Amplifiers*).  
+
+---
+
+## 2. Common-Centroid Layout
+
+- **Gradient cancellation.**  
+  When matching is required across larger device arrays, common-centroid layout is preferred.  
+  Devices are interdigitated in patterns such as ABBA or A–B–B–A.  
+  This arrangement cancels first-order linear gradients across the die, such as temperature or oxide thickness variations.  
+
+- **Application in OTA.**  
+  Current mirrors in the folded-cascode OTA were laid out in common-centroid form.  
+  Since current mirrors directly determine gain and output swing, even small mismatches degrade performance.  
+  Using ABBA arrangements ensured that across-die gradients did not bias one side more than the other.  
+
+- **Routing considerations.**  
+  The interconnect to common-centroid devices must also be balanced.  
+  Unequal routing may reintroduce asymmetry, defeating the purpose of the layout pattern.  
+
+**Figures to include:**  
+- Stick diagram of ABBA vs. simple AB layout (@baker2010, Ch. 5).  
+- Annotated layout of current mirror array in this OTA.  
+
+---
+
+## 3. Multi-Fingering
+
+- **Why multi-fingering is used.**  
+  - **Reduce gate resistance:** Splitting a wide MOSFET into fingers shortens the poly gate segments, lowering their resistance.  
+  - **Reduce diffusion parasitics:** Each source/drain diffusion area becomes smaller, reducing junction capacitances.  
+  - **Improve matching:** Smaller identical units are easier to match statistically than one large device.  
+
+  In our OTA, the tail current source (32 µm wide) was implemented as eight fingers of 4 µm each, balancing parasitics and routability.  
+
+- **Trade-offs of multi-fingering.**  
+  - Larger routing overhead, since all fingers must be connected correctly.  
+  - More junction perimeters if not optimized, which can increase capacitance.  
+  - Requires careful via placement; otherwise, via resistance and electromigration limits may dominate @lienig2020.  
+
+- **Combination with other techniques.**  
+  Multi-fingering is often combined with **dummies** (to shield edge fingers) and **common-centroid arrangements** (for gradient cancellation).  
+  In our OTA, this combination was applied to cascode devices to ensure both low capacitance and robust matching.  
+
+**Figures to include:**  
+- Single wide MOSFET vs. multi-finger layout comparison (@baker2010, Ch. 5).  
+- Annotated OTA tail transistor layout.  
+
+---
+
+## 4. Dummy Devices
+
+- **Purpose of dummies.**  
+  Dummy devices are placed at the ends of arrays to absorb **edge effects**, where diffusion and poly regions do not have the same environment as inner devices.  
+  Without dummies, edge devices show systematic mismatch in threshold voltage and mobility @baker2010.  
+
+- **Connection options.**  
+  In some flows, dummy gates are left floating. In others, they are tied to supply rails to prevent LVS errors.  
+
+::: callout-note
+## Important Implementation Note  
+
+In our OTA layout, dummy devices were implemented as **complete MOSFETs** with their gates explicitly tied to **AVDD** or **AVSS**.  
+
+This was necessary because in **KLayout**, adding an extra finger with an unconnected gate is not recognized as a dummy.  
+LVS then fails due to netlist mismatches.  
+
+To ensure **LVS clean results**, we:  
+- Added dummy devices explicitly in the schematic.  
+- Connected their gates to valid nets (AVDD/AVSS).  
+- Replicated the same connections in layout.  
+:::
+
+- **OTA application.**  
+  Dummy transistors were added at the ends of the differential input pair and current mirrors to ensure uniform device environments.  
+
+**Figures to include:**  
+- Annotated OTA input pair layout with dummy devices highlighted.  
+- LVS schematic vs. layout view illustrating dummy device recognition.  
+
+---
+
+## Figure Placement Guide
+- **Matching & Symmetry** → Differential pair layout (with axis).  
+- **Common-Centroid** → Stick diagram of ABBA arrangement.  
+- **Multi-Fingering** → Comparison of single vs. multi-finger layout.  
+- **Dummy Devices** → Annotated screenshot from this project’s OTA layout.  
+
+Add more details here
