@@ -30,8 +30,7 @@ Integrated circuit layout translates the schematic into **physical layers** on s
 The IHP-SG13G2 process provides numerous layers such as active/diffusion regions, poly gates, contacts, multiple metal levels, and passivation. [@IHP_PDK_2024].  
 Each of these layers plays a role in forming MOSFETs, capacitors, resistors, and interconnects, further layer specific description for the IHP PDK can be found on Layout Rules [@IHP_PDK_2024].  
 
-Unlike digital design, where the goal is mainly connectivity, analog layout must ensure **matching, symmetry, and parasitic control**.  
-This is particularly critical in our **folded-cascode OTA**, where the differential input pair, current mirrors, and cascode devices dominate the overall gain, offset, and common-mode rejection ratio (CMRR) [@baker2010][@lienig2020].  
+Unlike digital design, where the goal is mainly connectivity, analog layout must ensure **matching, symmetry, and parasitic control**. This is particularly critical in our **folded-cascode OTA**, where the differential input pair, current mirrors, and cascode devices dominate the overall gain, offset, and common-mode rejection ratio (CMRR) [@baker2010][@lienig2020].  
 
 The following subsections describe the major device-level layout techniques used in this work, with examples and figures suggested for illustration.
 
@@ -39,81 +38,82 @@ The following subsections describe the major device-level layout techniques used
 
 ## 1. Matching & Symmetry
 
-- **Orientation rules (rotation, mirroring).**  
-  In analog layout, device orientation determines how well two nominally identical devices behave in silicon.  
-  If one transistor is rotated by 90° while its pair is not, the diffusion and well-edge proximity effects will differ, introducing systematic mismatch.  
-  Therefore, in our OTA differential pair, all input transistors were placed in the same orientation, with mirroring used only across the symmetry axis when diffusion orientation was preserved.  
+In real silicon, device characteristics are never perfectly uniform across the die.  
+**Process gradients** arise during fabrication due to variations in temperature, pressure, and material distribution. These gradients can be visualized using concepts similar to **isobars** (lines of equal pressure) or **isotherms** (lines of equal temperature), where physical properties gradually shift across the wafer surface [@lienig2020].  
 
-- **Symmetry in placement.**  
-  The OTA’s differential pair and current mirrors were placed symmetrically around a central axis.  
-  This ensures that any process gradient (e.g., across-die doping or oxide thickness variation) affects both devices equally.  
-  Such symmetry reduces systematic mismatch and improves input offset and CMRR @baker2010.  
+Such gradients directly affect threshold voltage, mobility, and oxide thickness. As a result, two transistors with identical schematic dimensions may behave differently if placed at different positions on the chip. For analog circuits like OTAs, these mismatches degrade input offset, gain, and common-mode rejection ratio (CMRR).  
 
-- **Routing symmetry.**  
-  Symmetry must extend beyond device placement to the interconnects.  
-  In our OTA, gate routing for the differential pair was balanced in length and via count to minimize resistance and capacitance mismatches.  
-  Even a small routing imbalance can translate into measurable offset in high-gain analog designs.  
+To minimize this, layout must enforce **symmetry**:
+
+- **Symmetry around an axis.**  
+  Devices intended to operate as pairs, such as the OTA differential input transistors, are placed symmetrically about a central axis. This ensures that any linear process gradient affects both devices equally, preserving balance in their electrical behavior.  
+
+- **Symmetry in current flow.**  
+  Symmetry is not only geometrical but also electrical. The orientation of source, drain, and gate terminals is arranged so that current flows through matched devices in identical directions. This prevents systematic mismatches introduced by unequal diffusion edge proximity or channel orientation.  
+
+Together, these forms of symmetry improve **matching** — the ability of two devices to exhibit nearly identical electrical performance. Accurate matching is critical in the OTA’s input stage, where small imbalances directly appear as input offset voltages.  
+
+Finally, symmetry must extend to the **routing**. Interconnect lengths, widths, and via stacks must be balanced on both sides of the differential pair. Even with well-matched devices, asymmetric wiring can introduce additional resistance and capacitance, which shows up as systematic offset or degraded bandwidth [@lienig2020; @baker2010].  
+In our OTA layout, routing symmetry was not only maintained in terms of path length and via balance, but also extended to the **choice of metal layers**. Long interconnects were assigned to **higher metal layers** with lower sheet resistance, while short local connections remained on **lower metals** for compact access.  
+This combination of length balancing, via symmetry, and layer assignment ensured that both differential branches exhibited comparable parasitic resistance and capacitance, preserving matching despite unavoidable topological constraints.  
+
+
+## 2. Multi-Fingering
+
+When MOSFETs are designed with very wide channel widths, implementing them as a single continuous device introduces several problems. A long, uninterrupted polysilicon gate line introduces significant **polysilicon gate resistance**, which degrades high-frequency behavior and increases phase delay. At the same time, the enlarged diffusion regions lead to higher source and drain junction capacitances, creating substantial loading on sensitive circuit nodes. Finally, wide monolithic devices suffer in terms of matching: process gradients across the active area are no longer averaged, making these devices more vulnerable to systematic variation and random mismatch effects [@baker2010; @lienig2020].  
+
+The solution is **multi-fingering**: dividing the wide transistor into several narrower, identical fingers that are connected in parallel. This segmentation reduces gate resistance (shorter poly stripes), distributes junction capacitances more evenly, and improves statistical matching by averaging across multiple smaller units.  
+
+In our OTA, the **tail current source** required a total width of 32 µm. Instead of realizing it as a single device, it was split into **eight fingers of 4 µm each**. This reduced the effective capacitance at the high-impedance tail node while keeping the layout compact and routable.  
+Similarly, majority of transistors were implemented in multi-finger form to balance parasitic capacitances and maintain symmetry across branches.
+
+Despite its benefits, multi-fingering comes with trade-offs:  
+- **Increased routing overhead**, since all fingers must be tied together with well-balanced interconnect.  
+- **Extra junction perimeters**, which can increase total parasitic capacitance if the layout is not compacted carefully.  
+- **Via placement sensitivity**, as each finger requires source/drain contacts and vias; poor via distribution can lead to resistance mismatches or electromigration concerns.  
+
+For this reason, multi-fingering is often combined with other layout strategies.  
+**Dummies** are placed at the array edges to shield active fingers, while **common-centroid arrangements** may be used for further gradient cancellation. This combined approach was applied in our OTA’s diffpair, ensuring both parasitic reduction and high matching fidelity.
 
 **Figures to include:**  
-- Layout snapshot of OTA differential pair showing axis of symmetry.  
-- Diagram contrasting symmetric vs. asymmetric routing (adapted from @baker2010, Ch. 22 *Differential Amplifiers*).  
+- Comparison of a single wide MOSFET vs. multi-finger implementation (adapted from @baker2010, Ch. 5).  
+- Annotated OTA tail transistor layout showing finger distribution.  
+
+**Also, add note here refering to the sub topic how to calculate minimum number of fingers later on**
 
 ---
 
-## 2. Common-Centroid Layout
+## 3. Dummy Devices
 
-- **Gradient cancellation.**  
-  When matching is required across larger device arrays, common-centroid layout is preferred.  
-  Devices are interdigitated in patterns such as ABBA or A–B–B–A.  
-  This arrangement cancels first-order linear gradients across the die, such as temperature or oxide thickness variations.  
+Even when multi-fingering is used, the **edge fingers** of a device array experience different fabrication conditions compared to the inner fingers. At the boundary between active diffusion and isolation (STI), variations in oxide growth, stress, and implant profiles create **edge effects** that change threshold voltage, carrier mobility, and junction capacitance [@baker2010].  
+If left unaddressed, these systematic differences degrade device matching, particularly in sensitive analog structures such as the OTA input pair or current mirrors.  
 
-- **Application in OTA.**  
-  Current mirrors in the folded-cascode OTA were laid out in common-centroid form.  
-  Since current mirrors directly determine gain and output swing, even small mismatches degrade performance.  
-  Using ABBA arrangements ensured that across-die gradients did not bias one side more than the other.  
+To eliminate this, **dummy devices** are placed at the ends of transistor arrays. They act as sacrificial neighbors, ensuring that all *active* devices are surrounded by identical environments.  
+This makes the inner devices more uniform, effectively shielding them from edge-related mismatches.  
 
-- **Routing considerations.**  
-  The interconnect to common-centroid devices must also be balanced.  
-  Unequal routing may reintroduce asymmetry, defeating the purpose of the layout pattern.  
+Connection of dummy devices can vary across design flows:  
+- In some methodologies, dummy gates are left **floating**, since their only role is geometric.  
+- In others, dummies are **tied to supply rails** (AVDD or AVSS) to avoid LVS errors and ensure consistent recognition by verification tools.  
+
+**OTA application:**  
+Dummy devices were placed at the edges of the differential input pair and at the current mirror arrays.  
+This ensured that all active transistors within the OTA operated in well-matched environments, minimizing systematic offset.
 
 **Figures to include:**  
-- Stick diagram of ABBA vs. simple AB layout (@baker2010, Ch. 5).  
-- Annotated layout of current mirror array in this OTA.  
+- Annotated OTA differential input pair layout highlighting dummy devices.  
+- LVS schematic vs. layout comparison demonstrating explicit dummy recognition.  
+
+
+**Figures to include:**  
+- Illustration of process gradients across a wafer (adapted from @lienig2020).  
+  
+- Diagram comparing symmetric vs. asymmetric current flow in matched devices.  
+- Example of routing balance in the differential pair (adapted from @baker2010, Ch. 22 *Differential Amplifiers*).  
+
 
 ---
 
-## 3. Multi-Fingering
 
-- **Why multi-fingering is used.**  
-  - **Reduce gate resistance:** Splitting a wide MOSFET into fingers shortens the poly gate segments, lowering their resistance.  
-  - **Reduce diffusion parasitics:** Each source/drain diffusion area becomes smaller, reducing junction capacitances.  
-  - **Improve matching:** Smaller identical units are easier to match statistically than one large device.  
-
-  In our OTA, the tail current source (32 µm wide) was implemented as eight fingers of 4 µm each, balancing parasitics and routability.  
-
-- **Trade-offs of multi-fingering.**  
-  - Larger routing overhead, since all fingers must be connected correctly.  
-  - More junction perimeters if not optimized, which can increase capacitance.  
-  - Requires careful via placement; otherwise, via resistance and electromigration limits may dominate @lienig2020.  
-
-- **Combination with other techniques.**  
-  Multi-fingering is often combined with **dummies** (to shield edge fingers) and **common-centroid arrangements** (for gradient cancellation).  
-  In our OTA, this combination was applied to cascode devices to ensure both low capacitance and robust matching.  
-
-**Figures to include:**  
-- Single wide MOSFET vs. multi-finger layout comparison (@baker2010, Ch. 5).  
-- Annotated OTA tail transistor layout.  
-
----
-
-## 4. Dummy Devices
-
-- **Purpose of dummies.**  
-  Dummy devices are placed at the ends of arrays to absorb **edge effects**, where diffusion and poly regions do not have the same environment as inner devices.  
-  Without dummies, edge devices show systematic mismatch in threshold voltage and mobility @baker2010.  
-
-- **Connection options.**  
-  In some flows, dummy gates are left floating. In others, they are tied to supply rails to prevent LVS errors.  
 
 ::: callout-note
 ## Important Implementation Note  
@@ -129,19 +129,6 @@ To ensure **LVS clean results**, we:
 - Replicated the same connections in layout.  
 :::
 
-- **OTA application.**  
-  Dummy transistors were added at the ends of the differential input pair and current mirrors to ensure uniform device environments.  
 
-**Figures to include:**  
-- Annotated OTA input pair layout with dummy devices highlighted.  
-- LVS schematic vs. layout view illustrating dummy device recognition.  
-
----
-
-## Figure Placement Guide
-- **Matching & Symmetry** → Differential pair layout (with axis).  
-- **Common-Centroid** → Stick diagram of ABBA arrangement.  
-- **Multi-Fingering** → Comparison of single vs. multi-finger layout.  
-- **Dummy Devices** → Annotated screenshot from this project’s OTA layout.  
 
 Add more details here
