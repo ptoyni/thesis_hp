@@ -95,9 +95,7 @@ Connection of dummy devices can vary across design flows:
 - In some methodologies, dummy gates are left **floating**, since their only role is geometric.  
 - In others, dummies are **tied to supply rails** (AVDD or AVSS) to avoid LVS errors and ensure consistent recognition by verification tools.  
 
-**OTA application:**  
-Dummy devices were placed at the edges of the differential input pair and at the current mirror arrays.  
-This ensured that all active transistors within the OTA operated in well-matched environments, minimizing systematic offset.
+In our OTA, Dummy devices were placed at the edges of all the MOSFET's. This ensured that all transistors within the OTA operated in well-matched environments, minimizing systematic offset.
 
 **Figures to include:**  
 - Annotated OTA differential input pair layout highlighting dummy devices.  
@@ -105,14 +103,10 @@ This ensured that all active transistors within the OTA operated in well-matched
 
 
 **Figures to include:**  
-- Illustration of process gradients across a wafer (adapted from @lienig2020).  
+- Illustration of process gradients across a wafer .  
   
 - Diagram comparing symmetric vs. asymmetric current flow in matched devices.  
-- Example of routing balance in the differential pair (adapted from @baker2010, Ch. 22 *Differential Amplifiers*).  
-
-
----
-
+- Example of routing balance in the differential pair.
 
 
 ::: callout-note
@@ -130,5 +124,60 @@ To ensure **LVS clean results**, we:
 :::
 
 
+---
 
-Add more details here
+## 4. Interdigitated Layout
+
+When two matched transistors are placed adjacent to each other but in separate diffusion regions, each device is exposed to a slightly different portion of the process gradient across the chip. As a result, parameters such as threshold voltage, carrier mobility, and oxide thickness vary between them, leading to a systematic mismatch even though both devices have identical drawn dimensions.  
+
+The **interdigitated layout technique** addresses this issue by physically alternating the unit devices of a matched pair or array. Instead of grouping devices as AA–BB, the transistors are arranged in an alternating or mirrored pattern such as **ABAB** or **A–B–B–A**, where *A* and *B* represent identical unit devices belonging to two matched elements.  
+Through this alternating placement, each device is spatially distributed across the gradient, allowing it to experience regions of both higher and lower process variations. As a result, the local fabrication differences are **averaged** out across all unit fingers, and the two devices become physically and electrically better matched under real process conditions.
+
+This concept can be visualized by imagining a linear gradient across the x-axis of the die. If one device occupies the left region and the other the right, they sample distinct gradient values. However, when their unit fingers are interleaved, each device occupies multiple local regions along the gradient, resulting in matched *average parameters*.
+
+Mathematically, the effective property \( P \) (e.g., threshold voltage or current factor) for device A becomes:
+\[
+\overline{P_A} = \frac{1}{n} \sum_{i=1}^{n} P(x_i)
+\]
+where \( x_i \) are the local positions of the A-type unit devices.  
+When the interdigitated pattern is symmetric, the mean values \( \overline{P_A} \) and \( \overline{P_B} \) become equal, cancelling first-order spatial variation.
+
+In practice, interdigitation is most effective for **linear process gradients** along one direction and is often used for **matched transistor pairs, current mirrors, or differential input stages**.  
+For two-dimensional gradients or more complex variations, this technique is typically extended using **common-centroid placement** (discussed in the next section).
+
+In the folded-cascode OTA, **interdigitation** was applied to the active loads and bias current mirrors. This layout ensured that each mirrored transistor experienced an equivalent average doping and oxide thickness, resulting in better current matching, symmetrical output swing, and reduced systematic offset in bias generation.
+
+**Figures to include:**  
+- Stick diagram of ABBA and A–B–B–A patterns   
+- Simplified OTA layout snippet showing interdigitated differential pair.  
+
+---
+
+## 5. Common-Centroid Layout
+
+While interdigitation cancels **first-order linear gradients** along a single direction, it cannot fully correct for **two-dimensional or higher-order variations** such as diagonal gradients or wafer-level curvature. For more advanced matching requirements—such as in precision current mirrors or differential pairs in high-gain OTAs—the **common-centroid layout** is used.
+
+In a common-centroid configuration, matched devices are arranged so that their geometric centers, or **centroids**, coincide. Each device is distributed symmetrically around a central point such that any gradient—whether horizontal, vertical, or diagonal—affects both devices equally when averaged over their area. This approach effectively cancels first-order gradient components in both axes and reduces second-order effects as well [@lienig2020].
+
+Conceptually, the centroid layout extends the interdigitated approach into two dimensions. For example, four identical transistors can be arranged symmetrically around a central point in an ABBA pattern, forming what is effectively a square or cross-shaped configuration.
+Although each individual finger occupies a slightly different position on the chip—and therefore a slightly different local environment—the geometric center (centroid) of all devices coincides. This ensures that the averaged electrical properties of each device are identical, effectively cancelling first-order process gradients across both axes.
+
+In mathematical terms, if the gradient is expressed as \( P(x, y) = P_0 + a x + b y \), then the centroid placement ensures that:
+\[
+\sum_i (a x_i + b y_i) = 0
+\]
+for each matched device, thus cancelling first-order gradient terms.
+
+In our folded-cascode OTA, the **diff pair** were laid out using a **common-centroid pattern** derived from the ABBA principle. This was essential to maintain current accuracy and minimize systematic gain variation.  
+The layout ensured that matched transistors experienced a balanced environment, even in the presence of lateral thermal gradients or stress gradients from nearby metal density variations.
+
+**Routing Considerations:**  
+As with other symmetry-based techniques, routing must be performed with identical path lengths, metal layers, and via distributions.  
+Any asymmetry in interconnect can reintroduce mismatch.  
+In our OTA, gate and drain connections were mirrored geometrically, using identical layer transitions and via stacks.  
+Where routing overlap was unavoidable, orthogonal layer separation was employed to maintain isolation and prevent parasitic imbalance.
+
+**Figures to include:**  
+- Common-centroid ABBA layout pattern illustration.  
+- Annotated OTA current mirror layout highlighting centroid alignment.  
+- Comparative figure: linear vs. 2D gradient compensation.
