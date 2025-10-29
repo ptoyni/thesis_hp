@@ -128,15 +128,6 @@ Through this alternating placement, each device is spatially distributed across 
 
 This concept can be visualized by imagining a linear gradient across the x-axis of the die. If one device occupies the left region and the other the right, they sample distinct gradient values. However, when their unit fingers are interleaved, each device occupies multiple local regions along the gradient, resulting in matched *average parameters*.
 
-Mathematically, the effective property $P$ (e.g., threshold voltage or current factor) for device A can be expressed as:
-
-$$
-\overline{P_A} = \frac{1}{n} \sum_{i=1}^{n} P(x_i)
-$$
-
-where $x_i$ are the local positions of the A-type unit devices.  
-When the interdigitated pattern is symmetric, the mean values $\overline{P_A}$ and $\overline{P_B}$ become equal, effectively cancelling first-order spatial variation.
-
 
 In practice, interdigitation is most effective for **linear process gradients** along one direction and is often used for **matched transistor pairs, current mirrors, or differential input stages**.  
 For two-dimensional gradients or more complex variations, this technique is typically extended using **common-centroid placement** (discussed in the next section).
@@ -186,3 +177,187 @@ Where routing overlap was unavoidable, orthogonal layer separation was employed 
 - Common-centroid ABBA layout pattern illustration.  
 - Annotated OTA current mirror layout highlighting centroid alignment.  
 - Comparative figure: linear vs. 2D gradient compensation.
+
+## 6. Finger Count Estimation (Minimum Number of Fingers)
+
+This section presents a procedural method to estimate the **minimum number of fingers** \(N_f\) for a wide MOSFET such that  
+(i) the **gate resistance** remains within target limits, and  
+(ii) the **junction capacitance** growth stays acceptable.  
+The approach follows the standard treatment of **distributed gate resistance** and **junction-capacitance scaling** as described in classical analog IC design (book by Prof. Razavi).
+
+---
+
+### 6.1 Problem Setup
+
+Given a device with total drawn width \(W_tot\) and channel length \(L\), we split it into \(N_f\) identical fingers of width
+
+$$
+W_f = \frac{W_{\text{tot}}}{N_f}.
+$$
+
+We impose two considerations:
+
+1. **Gate-resistance**  
+   $$
+   R_g(N_f) \le R_{g,\text{max}}
+   $$
+   where \(R_{g,\text{max}}\) is derived from the bandwidth or phase-margin budget  
+   (e.g., \(R_g C_{\text{gate}} \ll 1/\omega_{\text{UGB}}\)).
+
+2. **Junction-capacitance**  
+   $$
+   C_{j,\text{sw}}(N_f) \le C_{\text{par},\text{max}}
+   $$
+   where \(C_{\text{par},\text{max}}\) is the allowable parasitic capacitance at that node.
+
+The **minimum feasible number of fingers** is the smallest integer \(N_f\) that satisfies both conditions.
+
+---
+
+### 6.2 Gate Resistance Model
+
+For a multi-finger MOSFET, the gate behaves as a distributed RC network.  
+With **double-ended gate contacts**, the effective gate resistance per finger is approximated as:
+
+$$
+R_{g,\text{per-finger}} \approx \kappa \frac{R_{\text{sh,g}} L}{W_f},
+$$
+
+where:
+
+- \(R_{\text{sh,g}}\) — gate (poly) sheet resistance  
+- \(L\) — channel length  
+- \(W_f\) — finger width  
+- \(\kappa\) — contact geometry factor (≈ 1/3 for double-ended gates)
+
+Since the \(N_f\) fingers are connected in parallel at the gate:
+
+$$
+R_g(N_f) \approx \frac{R_{g,\text{per-finger}}}{N_f}
+= \frac{\kappa R_{\text{sh,g}} L}{W_f N_f}
+= \frac{\kappa R_{\text{sh,g}} L}{(W_{\text{tot}}/N_f) N_f}
+= \frac{\kappa R_{\text{sh,g}} L}{W_{\text{tot}}}.
+$$
+
+> **Note:**  
+> With ideal double-ended contacts, \(R_g\) becomes nearly **independent of \(N_f\)**.  
+> In practice, non-ideal feed resistance and layout effects introduce a weak dependence.
+
+The design condition becomes:
+
+$$
+R_g \le R_{g,\text{max}} \quad \Rightarrow \quad
+\frac{\kappa R_{\text{sh,g}} L}{W_{\text{tot}}} \le R_{g,\text{max}}.
+$$
+
+---
+
+### 6.3 Junction Capacitance Model
+
+For one finger, the junction capacitance can be expressed as:
+
+$$
+C_{j,\text{finger}} \approx C_{j0} A_f + C_{j,\text{sw0}} P_f,
+$$
+
+where:
+
+- \(C_{j0}\) — area capacitance per unit area  
+- \(C_{j,\text{sw0}}\) — sidewall capacitance per unit length  
+- \(A_f \approx W_f L_{\text{diff}}\) — diffusion area  
+- \(P_f \approx 2 (W_f + L_{\text{diff}})\) — diffusion perimeter  
+- \(L_{\text{diff}}\) — effective diffusion length
+
+For \(N_f\) identical fingers:
+
+$$
+\begin{aligned}
+C_{j,\text{total}}(N_f)
+&= N_f (C_{j0} A_f + C_{j,\text{sw0}} P_f) \\
+&\approx N_f \big(C_{j0} W_f L_{\text{diff}} + 2 C_{j,\text{sw0}} (W_f + L_{\text{diff}})\big).
+\end{aligned}
+$$
+
+Substituting \(W_f = W_{\text{tot}}/N_f\):
+
+$$
+C_{j,\text{total}}(N_f)
+\approx
+C_{j0} W_{\text{tot}} L_{\text{diff}}
++ 2 C_{j,\text{sw0}} W_{\text{tot}}
++ 2 C_{j,\text{sw0}} N_f L_{\text{diff}}.
+$$
+
+- The **area term** is independent of \(N_f\).  
+- The **sidewall term** increases linearly with \(N_f\).
+
+To keep junction parasitics within budget:
+
+$$
+C_{j,\text{total}}(N_f) \le C_{\text{par},\text{max}}
+\Rightarrow
+N_f \le
+\frac{
+C_{\text{par},\text{max}}
+- (C_{j0} W_{\text{tot}} L_{\text{diff}} + 2 C_{j,\text{sw0}} W_{\text{tot}})
+}{
+2 C_{j,\text{sw0}} L_{\text{diff}}
+}.
+$$
+
+Round down to the nearest integer to obtain \(N_{f,\text{max}}^{(C)}\).
+
+---
+
+### 6.4 Selection Procedure
+
+1. **Inputs:**  
+   \(W_{\text{tot}}, L, R_{\text{sh,g}}, C_{j0}, C_{j,\text{sw0}}, L_{\text{diff}}, C_{\text{par},\text{max}}, R_{g,\text{max}}\).
+
+2. **Gate resistance check:**  
+   Compute \(R_g = \dfrac{\kappa R_{\text{sh,g}} L}{W_{\text{tot}}}\).  
+   - If \(R_g \le R_{g,\text{max}}\): acceptable.  
+   - Otherwise: increase \(W_{\text{tot}}\) or use double-ended gate contacts.
+
+3. **Sidewall capacitance limit:**  
+   Evaluate \(N_{f,\text{max}}^{(C)}\) from the inequality above.
+
+4. **Layout practical bound:**  
+   Define a minimum practical finger width (\(W_f\) ≈ 2–5 µm, depending on design rules).  
+   Include requirements for **interdigitation**, **dummies**, and **via redundancy** to determine \(N_{f,\text{min}}^{(\text{layout})}\).
+
+5. **Choose final \(N_f\):**
+
+$$
+N_f = \max(N_{f,\text{min}}^{(\text{layout})})
+\quad \text{subject to} \quad
+N_f \le N_{f,\text{max}}^{(C)}.
+$$
+
+If no solution satisfies both, adjust \(C_{\text{par},\text{max}}\) or device dimensions.
+
+---
+
+### 6.5 Example (OTA Tail Transistor)
+
+Given:  
+\(W_{\text{tot}} = 32\,\mu\text{m}\), \(L = 0.13\,\mu\text{m}\), and process parameters from the SG13G2 PDK.  
+For \(C_{\text{par},\text{max}}\) derived from node bandwidth and \(R_{g,\text{max}}\) from gain-phase margin analysis,  
+the calculated range of feasible finger counts typically lies between **6 and 10**.  
+A choice of **8 fingers** provided the optimal trade-off between parasitics, matching, and layout density.
+
+**Figures to include:**  
+- Plot of \(C_{j,\text{total}}(N_f)\): constant area term vs. linear sidewall growth.  
+- Gate contact scheme: single-ended vs. double-ended.  
+- Annotated MOS layout showing definitions of \(W_f\), \(L_{\text{diff}}\), and perimeter components.
+
+> **Note:**  
+> Ensure that the chosen \(N_f\) aligns with the dummy-device strategy (explicit schematic inclusion)  
+> and supports interdigitated or centroided patterns used for matching.  
+> This guarantees LVS-clean results and consistent parasitic extraction.
+
+
+::: {.callout-note title="Number of fingers Calculation using Python Script" collapse="true"}
+{{< embed ../layout_scripts/cal_min_fingers_ng.py echo=true >}}
+:::
+
