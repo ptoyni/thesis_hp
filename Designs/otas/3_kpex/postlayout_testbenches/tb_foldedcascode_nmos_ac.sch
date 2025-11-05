@@ -54,9 +54,9 @@ value="
 
 *.include /foss/designs/thesis/thesis_hp/Designs/otas/1_schematics/simulations/ota_final.spice
 
-*.include /foss/designs/thesis/thesis_hp/Designs/otas/2_layout/ota_with_CMIM/lvs/ota_final_decoup_extracted.cir
+.include /foss/designs/Hrishi_Analog_Journey/Designs/Analog_Inverter/3_kpex/output/FMD_QNC_ota_decoup__FMD_QNC_ota_decoup/magic_cc/FMD_QNC_ota_decoup.pex.spice
             
-.include /foss/designs/thesis/TO_July2025_OTALED/OTALED/design_data/lvs/foldedcascode_pmos_extracted1.cir
+*.include /foss/designs/thesis/TO_July2025_OTALED/OTALED/design_data/lvs/foldedcascode_pmos_extracted.cir
             
 
 
@@ -94,7 +94,6 @@ print onoise_total
 .endc
 "}
 C {devices/title.sym} 660 120 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
-C {ota_final.sym} 1430 -400 0 0 {name=x1}
 C {devices/code_shown.sym} 10 -130 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
@@ -103,3 +102,4 @@ value=".lib cornerMOSlv.lib mos_tt
 .include $::SG13G2_MODELS/sg13g2_bondpad.lib
 .include $::SG13G2_MODELS/sg13g2_esd.lib
 "}
+C {/foss/designs/thesis/thesis_hp/Designs/otas/1_schematics/ota_final.sym} 1430 -400 0 0 {name=x1}

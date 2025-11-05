@@ -1,0 +1,82 @@
+v {xschem version=3.4.7 file_version=1.2}
+G {}
+K {}
+V {}
+S {}
+E {}
+N 1150 -390 1150 -370 {
+lab=GND}
+N 1150 -470 1150 -450 {
+lab=v_ss}
+N 1150 -470 1250 -470 {
+lab=v_ss}
+N 1000 -410 1000 -390 {
+lab=GND}
+N 1000 -850 1000 -470 {
+lab=v_dd}
+N 1250 -700 1250 -610 {
+lab=v_in}
+N 1250 -700 1570 -700 {lab=v_in}
+N 1250 -550 1250 -470 {lab=v_ss}
+N 1520 -850 1520 -830 {
+lab=v_dd}
+N 1520 -770 1520 -670 {
+lab=#net1}
+N 1520 -670 1570 -670 {lab=#net1}
+N 1000 -850 1520 -850 {lab=v_dd}
+N 1940 -670 2020 -670 {lab=v_out}
+N 1940 -670 1940 -560 {
+lab=v_out}
+N 1490 -640 1570 -640 {lab=v_out}
+N 1490 -640 1490 -560 {lab=v_out}
+N 1490 -560 1940 -560 {lab=v_out}
+N 1740 -670 1940 -670 {lab=v_out}
+N 1620 -850 1620 -730 {lab=v_dd}
+N 1520 -850 1620 -850 {lab=v_dd}
+N 1250 -470 1620 -470 {lab=v_ss}
+N 1620 -610 1620 -470 {lab=v_ss}
+C {devices/title.sym} 670 150 0 0 {name=l6 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
+C {devices/code_shown.sym} 270 -930 0 0 {name=NGSPICE only_toplevel=true 
+value="
+
+.include /foss/designs/thesis/thesis_hp/postlayout_simulations/gds/ota_final.cir
+
+.include CACE\{DUT_path\}
+.temp CACE\{temp\}
+.param mc_ok = CACE\{sigma=1\}
+.option SEED=CACE[CACE\{seed=12345\} + CACE\{iterations=0\}]
+
+.control
+set num_threads=1
+
+op
+let dcgain=v(v_out)/v(v_in)
+
+ac dec 101 10 100MEG
+meas ac acgain MAX vmag(v_out) FROM=10 TO=100
+let f3db = acgain/sqrt(2)
+meas ac fbw WHEN vmag(v_out)=f3db FALL=1
+
+echo $&op1.dcgain $&fbw > CACE\{simpath\}/CACE\{filename\}_CACE\{N\}.data
+.endc
+"}
+C {devices/vsource.sym} 1150 -420 0 0 {name=Vss value=0}
+C {devices/gnd.sym} 1150 -370 0 0 {name=l1 lab=GND}
+C {lab_pin.sym} 1150 -470 0 0 {name=p1 sig_type=std_logic lab=v_ss}
+C {devices/vsource.sym} 1000 -440 0 0 {name=Vdd value=CACE\{vdd\}}
+C {devices/gnd.sym} 1000 -390 0 0 {name=l3 lab=GND}
+C {lab_pin.sym} 1000 -480 0 0 {name=p2 sig_type=std_logic lab=v_dd}
+C {devices/vsource.sym} 1250 -580 0 0 {name=Vin value="dc CACE\{vin\} ac 1"}
+C {lab_wire.sym} 1310 -700 0 0 {name=p4 sig_type=std_logic lab=v_in}
+C {spice_probe.sym} 1370 -700 0 0 {name=p5 attrs=""}
+C {isource.sym} 1520 -800 0 0 {name=I0 value=CACE\{ibias\}}
+C {lab_wire.sym} 2020 -670 0 0 {name=p3 sig_type=std_logic lab=v_out}
+C {spice_probe.sym} 1900 -670 0 0 {name=p6 attrs=""}
+C {devices/code_shown.sym} 270 -460 0 0 {name=MODEL only_toplevel=true
+format="tcleval( @value )"
+value="
+.lib cornerMOSlv.lib mos_CACE\{corner_mos\}
+.lib cornerMOShv.lib mos_CACE\{corner_mos\}
+.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
+"}
+C {/foss/designs/thesis/thesis_hp/postlayout_simulations/templates/ota_final.sym} 1720 -670 0 0 {name=x1}

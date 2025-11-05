@@ -1,0 +1,48 @@
+** sch_path: /foss/designs/thesis/thesis_hp/designs/otas/1_schematics/foldedcascode_nmos.sch
+.subckt foldedcascode_nmos AVDD IBIAS VOUT MINUS PLUS D_ENA AVSS
+*.PININFO AVSS:I IBIAS:I AVDD:I PLUS:I MINUS:I VOUT:O D_ENA:I
+XMb net11 net1 AVSS AVSS sg13_lv_nmos w=8.5u l=5u ng=1 m=1
+XMpd6 net11 ena net1 AVSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XMb1 net8 net1 AVSS AVSS sg13_lv_nmos w=8.5u l=5u ng=1 m=1
+Vmeas net9 net8 0
+.save i(vmeas)
+XM11 net9 net3 net2 AVDD sg13_lv_pmos w=14u l=2u ng=2 m=1
+XM12 net2 net2 AVDD AVDD sg13_lv_pmos w=14u l=2u ng=2 m=1
+XM18 AVSS net3 net6 AVDD sg13_lv_pmos w=14u l=0.5u ng=2 m=1
+XM17 net6 net2 AVDD AVDD sg13_lv_pmos w=14u l=2u ng=2 m=1
+XM9 net5 net2 AVDD AVDD sg13_lv_pmos w=14u l=2u ng=2 m=1
+XM5 net3 net6 net5 AVDD sg13_lv_pmos w=14u l=2u ng=2 m=1
+XM7 net3 net10 net4 AVSS sg13_lv_nmos w=3u l=2u ng=1 m=1
+XM3 net4 net3 AVSS AVSS sg13_lv_nmos w=3u l=2u ng=1 m=1
+XMt net7 net1 AVSS AVSS sg13_lv_nmos w=8.5u l=5u ng=1 m=1
+XM1 net5 PLUS net7 AVSS sg13_lv_nmos w=6u l=1u ng=1 m=1
+XM2 net12 MINUS net7 AVSS sg13_lv_nmos w=6u l=1u ng=1 m=1
+XMdecoup3 AVDD net2 AVDD AVDD sg13_lv_pmos w=12u l=0.5u ng=4 m=1
+XMdecoup4 AVDD net6 AVDD AVDD sg13_lv_pmos w=12u l=0.5u ng=4 m=1
+XMdecoup1 AVSS net1 AVSS AVSS sg13_lv_nmos w=8u l=1u ng=4 m=1
+XMpd2 ena_n D_ENA AVDD AVDD sg13_lv_pmos w=1u l=0.13u ng=1 m=1
+Vmeas1 IBIAS net11 0
+.save i(vmeas1)
+XMpd3 ena ena_n AVDD AVDD sg13_lv_pmos w=1u l=0.13u ng=1 m=1
+XMpd1 ena_n D_ENA AVSS AVSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XMpd4 ena ena_n AVSS AVSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XMd2 net12 AVSS AVSS AVSS sg13_lv_nmos w=6u l=1u ng=1 m=1
+XM6 VOUT net6 net12 AVDD sg13_lv_pmos w=14u l=2u ng=2 m=1
+XM0 net12 net2 AVDD AVDD sg13_lv_pmos w=14u l=2u ng=2 m=1
+XM8 VOUT net10 net13 AVSS sg13_lv_nmos w=3u l=2u ng=1 m=1
+XM4 net13 net3 AVSS AVSS sg13_lv_nmos w=3u l=2u ng=1 m=1
+XMd4 net13 AVSS AVSS AVSS sg13_lv_nmos w=3u l=2u ng=1 m=1
+XMd3 VOUT AVSS AVSS AVSS sg13_lv_nmos w=3u l=2u ng=1 m=1
+XMd6 net12 AVDD AVDD AVDD sg13_lv_pmos w=14u l=2u ng=2 m=1
+XMd5 VOUT AVDD AVDD AVDD sg13_lv_pmos w=14u l=2u ng=2 m=1
+XM13 net14 net2 AVDD AVDD sg13_lv_pmos w=14u l=2u ng=2 m=1
+Vmeas2 net14 net16 0
+.save i(vmeas2)
+XM15 net16 VOUT net15 AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+XM16 net15 net15 AVSS AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+XM14 net10 net15 AVSS AVSS sg13_lv_nmos w=3u l=2u ng=2 m=1
+XM10 AVDD VOUT net10 AVSS sg13_lv_nmos w=15u l=0.5u ng=5 m=1
+XMdecoup2 AVSS net10 AVSS AVSS sg13_lv_nmos w=8u l=1u ng=4 m=1
+XMpd9 net3 ena_n AVSS AVSS sg13_lv_nmos w=1u l=0.13u ng=1 m=1
+XMd1 net5 AVSS AVSS AVSS sg13_lv_nmos w=6u l=1u ng=1 m=1
+.ends
