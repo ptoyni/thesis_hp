@@ -9,6 +9,7 @@ _build
 _book
 _manuscript
 .quarto
+.html
 *.tex
 simulations
 *.raw
