@@ -1,6 +1,8 @@
 import re
 import math
 
+# this file is incomplete or too time consuming, please refer to cal_min_fingers for corect cal
+
 # Constants
 R_sheet = 7          # Ohm/square
 Lmin_um = 0.13        # µm

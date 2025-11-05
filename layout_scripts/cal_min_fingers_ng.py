@@ -1,6 +1,6 @@
 import math
 
-# --- helpers ---
+
 def parse_val(s: str) -> float:
     """
     Parse a numeric string with optional unit suffix:
