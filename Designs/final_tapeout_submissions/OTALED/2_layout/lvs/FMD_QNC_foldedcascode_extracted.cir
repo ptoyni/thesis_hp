@@ -1,0 +1,73 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 29/08/2025 11:12
+
+.SUBCKT FMD_QNC_foldedcascode AVSS AVDD IBIAS VOUT PLUS MINUS
+C$1 VOUT AVSS cap_cmim w=25.82u l=25.82u A=666.6724p P=103.28u m=1
+M$2 IBIAS \$41 \$19 AVSS sg13_lv_nmos L=2u W=4u AS=1.36p AD=1.36p PS=8.68u
++ PD=8.68u
+M$3 AVSS AVSS AVDD AVSS sg13_lv_nmos L=0.5u W=15u AS=3.975p AD=3.975p PS=23.56u
++ PD=23.56u
+M$4 AVDD \$41 \$24 AVSS sg13_lv_nmos L=0.5u W=15u AS=2.85p AD=2.85p PS=15.76u
++ PD=15.76u
+M$7 AVSS AVSS \$55 AVSS sg13_lv_nmos L=2u W=8u AS=2.12p AD=2.12p PS=13.06u
++ PD=13.06u
+M$8 \$55 \$19 AVSS AVSS sg13_lv_nmos L=2u W=4u AS=0.76p AD=0.76p PS=4.38u
++ PD=4.38u
+M$10 AVSS AVSS \$22 AVSS sg13_lv_nmos L=2u W=4u AS=1.06p AD=1.06p PS=7.06u
++ PD=7.06u
+M$11 \$22 \$24 AVSS AVSS sg13_lv_nmos L=2u W=2u AS=0.38p AD=0.38p PS=2.38u
++ PD=2.38u
+M$13 AVSS AVSS \$35 AVSS sg13_lv_nmos L=2u W=4u AS=1.06p AD=1.06p PS=7.06u
++ PD=7.06u
+M$14 \$35 \$19 AVSS AVSS sg13_lv_nmos L=2u W=4u AS=0.76p AD=0.76p PS=4.76u
++ PD=4.76u
+M$15 AVSS \$19 \$36 AVSS sg13_lv_nmos L=2u W=4u AS=0.76p AD=0.76p PS=4.76u
++ PD=4.76u
+M$19 AVSS AVSS \$41 AVSS sg13_lv_nmos L=2u W=2u AS=0.53p AD=0.53p PS=4.06u
++ PD=4.06u
+M$20 \$41 \$24 \$35 AVSS sg13_lv_nmos L=2u W=2u AS=0.38p AD=0.38p PS=2.76u
++ PD=2.76u
+M$23 AVSS AVSS VOUT AVSS sg13_lv_nmos L=2u W=2u AS=0.53p AD=0.53p PS=4.06u
++ PD=4.06u
+M$24 VOUT \$24 \$36 AVSS sg13_lv_nmos L=2u W=2u AS=0.38p AD=0.38p PS=2.76u
++ PD=2.76u
+M$27 AVSS AVSS \$19 AVSS sg13_lv_nmos L=2u W=4u AS=1.36p AD=0.76p PS=8.68u
++ PD=4.38u
+M$28 \$19 \$19 AVSS AVSS sg13_lv_nmos L=2u W=4u AS=0.76p AD=0.76p PS=4.38u
++ PD=4.38u
+M$29 AVSS \$19 \$24 AVSS sg13_lv_nmos L=2u W=4u AS=0.76p AD=0.76p PS=4.38u
++ PD=4.38u
+M$30 \$24 AVSS AVSS AVSS sg13_lv_nmos L=2u W=4u AS=0.76p AD=1.36p PS=4.38u
++ PD=8.68u
+D$31 AVSS AVDD IBIAS diodevdd_2kv m=1
+D$32 AVSS AVDD AVSS diodevdd_2kv m=1
+D$33 AVSS AVDD AVDD diodevdd_2kv m=1
+M$34 AVDD AVDD \$75 AVDD sg13_lv_pmos L=2u W=20u AS=5.3p AD=5.3p PS=32.12u
++ PD=32.12u
+M$35 \$75 PLUS \$35 AVDD sg13_lv_pmos L=2u W=20u AS=3.8p AD=3.8p PS=21.52u
++ PD=21.52u
+M$37 \$75 MINUS \$36 AVDD sg13_lv_pmos L=2u W=20u AS=3.8p AD=3.8p PS=21.52u
++ PD=21.52u
+M$46 AVDD AVDD \$75 AVDD sg13_lv_pmos L=5u W=16u AS=4.24p AD=4.24p PS=25.06u
++ PD=25.06u
+M$47 \$75 \$55 AVDD AVDD sg13_lv_pmos L=5u W=32u AS=6.08p AD=6.08p PS=33.52u
++ PD=33.52u
+M$52 AVDD AVDD \$55 AVDD sg13_lv_pmos L=5u W=14u AS=3.71p AD=3.71p PS=22.06u
++ PD=22.06u
+M$53 \$55 \$55 AVDD AVDD sg13_lv_pmos L=5u W=28u AS=5.32p AD=5.32p PS=29.52u
++ PD=29.52u
+D$58 AVDD AVSS IBIAS diodevss_2kv m=1
+D$59 AVDD AVSS AVSS diodevss_2kv m=1
+D$60 AVDD AVSS AVDD diodevss_2kv m=1
+M$61 AVDD AVDD \$22 AVDD sg13_lv_pmos L=2u W=8u AS=2.12p AD=2.12p PS=13.06u
++ PD=13.06u
+M$62 \$22 \$22 AVDD AVDD sg13_lv_pmos L=2u W=8u AS=1.52p AD=1.52p PS=8.76u
++ PD=8.76u
+M$65 AVDD \$41 \$80 AVDD sg13_lv_pmos L=2u W=13u AS=3.445p AD=2.47p PS=20.56u
++ PD=13.76u
+M$67 AVDD \$41 \$79 AVDD sg13_lv_pmos L=2u W=13u AS=2.47p AD=3.445p PS=13.76u
++ PD=20.56u
+M$69 \$41 \$22 \$80 AVDD sg13_lv_pmos L=2u W=8u AS=2.72p AD=2.72p PS=16.68u
++ PD=16.68u
+M$70 \$79 \$22 VOUT AVDD sg13_lv_pmos L=2u W=8u AS=2.72p AD=2.72p PS=16.68u
++ PD=16.68u
+.ENDS FMD_QNC_foldedcascode

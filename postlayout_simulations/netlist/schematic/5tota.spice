@@ -1,0 +1,13 @@
+** sch_path: /foss/designs/thesis/workspace/thesis_hp/designs/otas/5tota.sch
+.subckt 5tota AVDD Vout Ibias PLUS MINUS AVSS
+*.PININFO PLUS:I MINUS:I Vout:O AVDD:I AVSS:I Ibias:I
+XM1 Vout MINUS net2 AVSS sg13_lv_nmos w=2u l=5u ng=1 m=1
+XM3 net1 PLUS net2 AVSS sg13_lv_nmos w=2u l=5u ng=1 m=1
+XM5 Vout net1 AVDD AVDD sg13_lv_pmos w=1.5u l=5u ng=1 m=1
+XM7 net1 net1 AVDD AVDD sg13_lv_pmos w=1.5u l=5u ng=1 m=1
+XM6 net2 net3 AVSS AVSS sg13_lv_nmos w=0.5u l=5u ng=1 m=1
+XM4 AVDD AVDD net4 AVDD sg13_lv_nmos w=2.5u l=5u ng=1 m=1
+XM2 net4 net3 AVSS AVSS sg13_lv_nmos w=2.5u l=5u ng=1 m=1
+XM9 net3 net3 AVSS AVSS sg13_lv_nmos w=2.5u l=5u ng=1 m=1
+XM8 Ibias AVDD net3 AVDD sg13_lv_nmos w=2.5u l=5u ng=1 m=1
+.ends
