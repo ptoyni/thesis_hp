@@ -85,6 +85,11 @@ For this reason, multi-fingering is often combined with other layout strategies.
 
 **Also, add note here refering to the sub topic how to calculate minimum number of fingers later on**
 
+::: callout-note 
+# How to calculate minimum number of fingers
+
+In   
+:::
 
 ## Dummy Devices
 
@@ -152,7 +157,7 @@ The layout ensured that matched transistors experienced a balanced environment, 
 **Routing Considerations:**  
 As with other symmetry-based techniques, routing must be performed with identical path lengths, metal layers, and via distributions.  
 Any asymmetry in interconnect can reintroduce mismatch.  
-In our OTA, gate and drain connections were mirrored geometrically, using identical layer transitions and via stacks.  
+In our OTA, gate and source/drain connections were mirrored geometrically, using identical layer transitions and via stacks.  
 Where routing overlap was unavoidable, orthogonal layer separation was employed to maintain isolation and prevent parasitic imbalance.
 
 **Figures to include:**  
@@ -177,157 +182,12 @@ $$
 W_f = \frac{W_{\text{tot}}}{N_f}.
 $$
 
-We impose two considerations:
 
-1. **Gate-resistance**  
-   $$
-   R_g(N_f) \le R_{g,\text{max}}
-   $$
-   where \(R_{g,\text{max}}\) is derived from the bandwidth or phase-margin budget  
-   (e.g., \(R_g C_{\text{gate}} \ll 1/\omega_{\text{UGB}}\)).
-
-2. **Junction-capacitance**  
-   $$
-   C_{j,\text{sw}}(N_f) \le C_{\text{par},\text{max}}
-   $$
-   where \(C_{\text{par},\text{max}}\) is the allowable parasitic capacitance at that node.
 
 The **minimum feasible number of fingers** is the smallest integer \(N_f\) that satisfies both conditions.
 
 
-### Gate Resistance Model
 
-For a multi-finger MOSFET, the gate behaves as a distributed RC network.  
-With **double-ended gate contacts**, the effective gate resistance per finger is approximated as:
-
-$$
-R_{g,\text{per-finger}} \approx \kappa \frac{R_{\text{sh,g}} L}{W_f},
-$$
-
-where:
-
-- \(R_{\text{sh,g}}\) — gate (poly) sheet resistance  
-- \(L\) — channel length  
-- \(W_f\) — finger width  
-- \(\kappa\) — contact geometry factor (≈ 1/3 for double-ended gates)
-
-Since the \(N_f\) fingers are connected in parallel at the gate:
-
-$$
-R_g(N_f) \approx \frac{R_{g,\text{per-finger}}}{N_f}
-= \frac{\kappa R_{\text{sh,g}} L}{W_f N_f}
-= \frac{\kappa R_{\text{sh,g}} L}{(W_{\text{tot}}/N_f) N_f}
-= \frac{\kappa R_{\text{sh,g}} L}{W_{\text{tot}}}.
-$$
-
-> **Note:**  
-> With ideal double-ended contacts, \(R_g\) becomes nearly **independent of \(N_f\)**.  
-> In practice, non-ideal feed resistance and layout effects introduce a weak dependence.
-
-The design condition becomes:
-
-$$
-R_g \le R_{g,\text{max}} \quad \Rightarrow \quad
-\frac{\kappa R_{\text{sh,g}} L}{W_{\text{tot}}} \le R_{g,\text{max}}.
-$$
-
-
-### Junction Capacitance Model
-
-For one finger, the junction capacitance can be expressed as:
-
-$$
-C_{j,\text{finger}} \approx C_{j0} A_f + C_{j,\text{sw0}} P_f,
-$$
-
-where:
-
-- \(C_{j0}\) — area capacitance per unit area  
-- \(C_{j,\text{sw0}}\) — sidewall capacitance per unit length  
-- \(A_f \approx W_f L_{\text{diff}}\) — diffusion area  
-- \(P_f \approx 2 (W_f + L_{\text{diff}})\) — diffusion perimeter  
-- \(L_{\text{diff}}\) — effective diffusion length
-
-For \(N_f\) identical fingers:
-
-$$
-\begin{aligned}
-C_{j,\text{total}}(N_f)
-&= N_f (C_{j0} A_f + C_{j,\text{sw0}} P_f) \\
-&\approx N_f \big(C_{j0} W_f L_{\text{diff}} + 2 C_{j,\text{sw0}} (W_f + L_{\text{diff}})\big).
-\end{aligned}
-$$
-
-Substituting \(W_f = W_{\text{tot}}/N_f\):
-
-$$
-C_{j,\text{total}}(N_f)
-\approx
-C_{j0} W_{\text{tot}} L_{\text{diff}}
-+ 2 C_{j,\text{sw0}} W_{\text{tot}}
-+ 2 C_{j,\text{sw0}} N_f L_{\text{diff}}.
-$$
-
-- The **area term** is independent of \(N_f\).  
-- The **sidewall term** increases linearly with \(N_f\).
-
-To keep junction parasitics within budget:
-
-$$
-C_{j,\text{total}}(N_f) \le C_{\text{par},\text{max}}
-\Rightarrow
-N_f \le
-\frac{
-C_{\text{par},\text{max}}
-- (C_{j0} W_{\text{tot}} L_{\text{diff}} + 2 C_{j,\text{sw0}} W_{\text{tot}})
-}{
-2 C_{j,\text{sw0}} L_{\text{diff}}
-}.
-$$
-
-Round down to the nearest integer to obtain \(N_{f,\text{max}}^{(C)}\).
-
-
-### Selection Procedure
-
-1. **Inputs:**  
-   \(W_{\text{tot}}, L, R_{\text{sh,g}}, C_{j0}, C_{j,\text{sw0}}, L_{\text{diff}}, C_{\text{par},\text{max}}, R_{g,\text{max}}\).
-
-2. **Gate resistance check:**  
-   Compute \(R_g = \dfrac{\kappa R_{\text{sh,g}} L}{W_{\text{tot}}}\).  
-   - If \(R_g \le R_{g,\text{max}}\): acceptable.  
-   - Otherwise: increase \(W_{\text{tot}}\) or use double-ended gate contacts.
-
-3. **Sidewall capacitance limit:**  
-   Evaluate \(N_{f,\text{max}}^{(C)}\) from the inequality above.
-
-4. **Layout practical bound:**  
-   Define a minimum practical finger width (\(W_f\) ≈ 2–5 µm, depending on design rules).  
-   Include requirements for **interdigitation**, **dummies**, and **via redundancy** to determine \(N_{f,\text{min}}^{(\text{layout})}\).
-
-5. **Choose final \(N_f\):**
-
-$$
-N_f = \max(N_{f,\text{min}}^{(\text{layout})})
-\quad \text{subject to} \quad
-N_f \le N_{f,\text{max}}^{(C)}.
-$$
-
-If no solution satisfies both, adjust \(C_{\text{par},\text{max}}\) or device dimensions.
-
-
-### Example (OTA Tail Transistor)
-
-Given:  
-\(W_{\text{tot}} = 32\,\mu\text{m}\), \(L = 0.13\,\mu\text{m}\), and process parameters from the SG13G2 PDK.  
-For \(C_{\text{par},\text{max}}\) derived from node bandwidth and \(R_{g,\text{max}}\) from gain-phase margin analysis,  
-the calculated range of feasible finger counts typically lies between **6 and 10**.  
-A choice of **8 fingers** provided the optimal trade-off between parasitics, matching, and layout density.
-
-**Figures to include:**  
-- Plot of \(C_{j,\text{total}}(N_f)\): constant area term vs. linear sidewall growth.  
-- Gate contact scheme: single-ended vs. double-ended.  
-- Annotated MOS layout showing definitions of \(W_f\), \(L_{\text{diff}}\), and perimeter components.
 
 > **Note:**  
 > Ensure that the chosen \(N_f\) aligns with the dummy-device strategy (explicit schematic inclusion)  
