@@ -24,6 +24,7 @@ If KLayout is build from source on your system, most of these limitations disapp
 For guidance on this process, a useful resource is this [Efabless tutorial (second section by Thomas Perry)](https://www.youtube.com/watch?v=CSZm3q4rUBg&list=LL&index=24&t=1181s).
 :::
 
+
 # Device-Level Layout Concepts
 
 Integrated circuit layout translates the schematic into **physical layers** on silicon.  
@@ -34,7 +35,6 @@ Unlike digital design, where the goal is mainly connectivity, analog layout must
 
 The following subsections describe the major device-level layout techniques used in this work, with examples and figures suggested for illustration.
 
----
 
 ## Matching & Symmetry
 
@@ -61,6 +61,7 @@ This combination of length balancing, via symmetry, and layer assignment ensured
 - Illustration of process gradients across a wafer .  
 - Diagram comparing symmetric vs. asymmetric current flow in matched devices.
 
+
 ## Multi-Fingering
 
 When MOSFETs are designed with very wide channel widths, implementing them as a single continuous device introduces several problems. A long, uninterrupted polysilicon gate line introduces significant **polysilicon gate resistance**, which degrades high-frequency behavior and increases phase delay. At the same time, the enlarged diffusion regions lead to higher source and drain junction capacitances, creating substantial loading on sensitive circuit nodes. Finally, wide monolithic devices suffer in terms of matching: process gradients across the active area are no longer averaged, making these devices more vulnerable to systematic variation and random mismatch effects [@baker2010; @lienig2020].  
@@ -84,7 +85,6 @@ For this reason, multi-fingering is often combined with other layout strategies.
 
 **Also, add note here refering to the sub topic how to calculate minimum number of fingers later on**
 
----
 
 ## Dummy Devices
 
@@ -117,8 +117,6 @@ To ensure **LVS clean results**, we:
 :::
 
 
----
-
 ## Interdigitated Layout
 
 When two matched transistors are placed adjacent to each other but in separate diffusion regions, each device is exposed to a slightly different portion of the process gradient across the chip. As a result, parameters such as threshold voltage, carrier mobility, and oxide thickness vary between them, leading to a systematic mismatch even though both devices have identical drawn dimensions.  
@@ -138,7 +136,6 @@ In the folded-cascode OTA, **interdigitation** was applied to the active loads a
 - Stick diagram of ABBA and A–B–B–A patterns   
 - Simplified OTA layout snippet showing interdigitated differential pair.  
 
----
 
 ## Common-Centroid Layout
 
@@ -163,6 +160,7 @@ Where routing overlap was unavoidable, orthogonal layer separation was employed 
 - Annotated OTA current mirror layout highlighting centroid alignment.  
 - Comparative figure: linear vs. 2D gradient compensation.
 
+
 ## Finger Count Estimation (Minimum Number of Fingers)
 
 This section presents a procedural method to estimate the **minimum number of fingers** \(N_f\) for a wide MOSFET such that  
@@ -170,7 +168,6 @@ This section presents a procedural method to estimate the **minimum number of fi
 (ii) the **junction capacitance** growth stays acceptable.  
 The approach follows the standard treatment of **distributed gate resistance** and **junction-capacitance scaling** as described in classical analog IC design (book by Prof. Razavi).
 
----
 
 ### Problem Setup
 
@@ -197,7 +194,6 @@ We impose two considerations:
 
 The **minimum feasible number of fingers** is the smallest integer \(N_f\) that satisfies both conditions.
 
----
 
 ### Gate Resistance Model
 
@@ -235,7 +231,6 @@ R_g \le R_{g,\text{max}} \quad \Rightarrow \quad
 \frac{\kappa R_{\text{sh,g}} L}{W_{\text{tot}}} \le R_{g,\text{max}}.
 $$
 
----
 
 ### Junction Capacitance Model
 
@@ -292,7 +287,6 @@ $$
 
 Round down to the nearest integer to obtain \(N_{f,\text{max}}^{(C)}\).
 
----
 
 ### Selection Procedure
 
@@ -321,7 +315,6 @@ $$
 
 If no solution satisfies both, adjust \(C_{\text{par},\text{max}}\) or device dimensions.
 
----
 
 ### Example (OTA Tail Transistor)
 

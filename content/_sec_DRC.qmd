@@ -3,11 +3,10 @@
 The transition from an electrical schematic to a manufacturable integrated circuit relies on the integrity of the **layout**, which represents the true physical interface between design and fabrication. While schematic-level verification ensures functional correctness and circuit performance, it is the layout that determines whether the circuit can be fabricated reliably within the limits of the chosen process.  
 To formalize and automate this verification, the semiconductor industry have **Design Rule Checking (DRC)**—a systematic comparison of the layout geometry against a set of process-specific constraints provided by the foundry or technology provider (in our case IHP-PDK Authors).  
 
----
 
 ## Fundamentals of DRC
 
-Design Rule Checking is a geometric and topological verification step that ensures a layout adheres to the **minimum/maximum feature sizes, spacings, enclosures, and overlaps** defined by the fabrication process.  
+Design Rule Checking is a geometric verification step that ensures a layout adheres to the **minimum/maximum feature sizes, spacings, enclosures, and overlaps** defined by the fabrication process.  
 Each layer in a modern BiCMOS process (e.g. diffusion, polysilicon, metal interconnects, and vias) is subject to numerous rules derived from the physical limitations of photolithography, etching, and deposition steps.  
 Violating these constraints can lead to a spectrum of manufacturing defects: short-circuits due to over-etching, open connections caused by lithographic line thinning, or parametric variations resulting from disuniform film growth.  
 Thus, DRC forms the **first line of defense** against non-manufacturable or yield-critical layouts.  
@@ -15,22 +14,20 @@ Thus, DRC forms the **first line of defense** against non-manufacturable or yiel
 The design rules themselves originate from **process specifications**. Foundries experimentally determine the tolerances of their technology through test structures that measure lithographic resolution, etch bias, and alignment accuracy between layers. From these experiments, statistical margins are extracted and translated into deterministic layout constraints—expressed as rules such as *minimum Active width = 0.15 µm* or *minimum spacing between Metal1 lines = 0.18 µm*. [@IHP_PDK_2024] 
 As discussed in @lienig2020, these rules balance manufacturability with design density: tighter rules enable compact designs but raise the risk of yield loss, while relaxed rules increase process robustness at the expense of silicon area.  
 
----
 
 ## Technology Dependence and Process Node
 
 Every **technology node**—for instance, 130 nm, 65 nm, or 28 nm—defines its own set of DRC parameters. These parameters evolve with advances in lithographic precision, material systems, and transistor architecture. At older nodes such as **0.35 µm or 0.25 µm**, DRC rules mainly governed planar dimensions and spacing; however, in sub-100 nm processes, additional considerations such as **antennas, stress effects, and metal density gradients** are incorporated. Consequently, the complexity of DRC rules increases exponentially as the process geometry scales down.[@baker2010]
 
 The **Process Design Kit (PDK)** serves as the bridge between the foundry and the design environment.  
-It encapsulates all technology-specific information—design rules, layer definitions, device models, parasitic extraction parameters, and layout-versus-schematic (LVS) configurations—into a single framework usable by EDA tools.  
-The DRC deck, which is a formalized file (often written in languages such as SVRF or Python-based scripts for tools like KLayout), encodes these geometric constraints in machine-readable form.  
-When the layout is processed through the DRC engine, each polygon and layer is algorithmically compared against the rule database to identify violations.
+It encapsulates all technology-specific information—design rules, layer definitions, device models, parasitic extraction parameters, and layout-Vs-schematic (LVS) configurations—into a single framework usable by EDA tools.  
+The DRC deck, which is a formalized file (often written in languages such as SVRF or Python-based scripts for tools like KLayout), encodes these geometric constraints in machine-readable form. When the layout is processed through the DRC engine, each polygon and layer is algorithmically compared against the rule database to identify violations.
  
 In the case of the **IHP SG13G2 130 nm BiCMOS process**, used throughout this work, the *IHP-PDK* provides a comprehensive DRC rule set defining all critical geometrical limits—from diffusion-to-diffusion spacing and via enclosures to hierarchical density checks of upper metal layers, @IHP_PDK_2024. The *IHP-PDK* also supplies detailed technology definition files that can be manually integrated into layout tools such as KLayout. However, since the *IHP-PDK* is part of the *IIC-OSIC* open-source toolchain, these technology files and rule decks are already pre-configured within the provided Docker image, offering an optimized and reproducible setup for DRC verification.
 
 In addition, the PDK documentation includes a complete layer table defining all process layers, along with descriptions of forbidden layers reserved for internal fabrication use, grid rules, and the full list of DRC constraints illustrations. This document has served as the primary reference for understanding the process and implementing all layout structures in this work.
 Hence, even within an open-source environment, the design remains **foundry-compliant**, physically realizable, and fully aligned with the manufacturing specifications of the SG13G2 process.
----
+
 
 ## Importance in the Design Flow
 
@@ -38,12 +35,10 @@ DRC plays a pivotal role in ensuring that the **layout is not only electrically 
 As mentioned before, an unverified layout might pass all functional and electrical simulations yet still fail in fabrication because certain features violate lithographic limits or introduce yield-limiting defects. Typical examples include insufficient metal spacing leading to shorts, or inadequate enclosure of contacts resulting in open circuits after etching.  
 By enforcing DRC compliance before tape-out, the designer ensures that the design adheres to the **design-for-manufacturability (DFM)** principles required for reproducible production.  
 
-Furthermore, DRC compliance is not merely a binary condition of “pass or fail.”  
-It also acts as a **metric of process awareness**: a DRC-clean layout demonstrates the designer’s adherence to technology constraints and reflects a realistic understanding of fabrication tolerances.  
-In professional design flows, foundries refuse to fabricate any layout that fails DRC, as doing so would waste mask costs and process time.  
+Furthermore, DRC compliance is not merely a binary condition of “pass or fail.” It also acts as a **metric of process awareness**: a DRC-clean layout demonstrates the designer’s adherence to technology constraints and reflects a realistic understanding of fabrication tolerances. In professional design flows, foundries refuse to fabricate any layout that fails DRC, as doing so would waste mask costs and process time.  
+
 Therefore, DRC stands as the final checkpoint between design creativity and physical implementation—a gate that ensures the **logical intent of the schematic can manifest in silicon without violation of the underlying physics**.  
 
----
 
 ## Practical Implementation of Design Rule Checking
 
@@ -55,6 +50,7 @@ DRC ensures that this correctness is quantifiable and verifiable—it enforces t
 In this work, all DRC verification was performed using **KLayout** as part of the **IIC-OSIC open-source toolchain**, which integrates the **IHP SG13G2 130 nm BiCMOS process**. The PDK provides complete DRC rule decks in the form of Python-based macros that systematically check every process layer and layer combination—diffusion overlaps, via enclosures, contact spacings, metal width and density requirements, and top-metal clearance to the passivation opening.
 
 The DRC engine performs a hierarchical scan of the layout, flags any violations, and displays annotated markers directly within the KLayout interface for review. Each violation encountered during the layout phase was analyzed and corrected at either the device or routing level until the design achieved a fully **DRC-clean status**. This verified layout therefore not only satisfies the intended schematic connectivity but also conforms to every **physical constraint required for successful fabrication**. Through this process, DRC validation in KLayout establishes the final and most critical bridge between the abstract world of circuit design and the tangible reality of silicon manufacturing—where compliance with foundry rules ensures that what is drawn can, indeed, be built.
+
 
 ### Types of DRC Scripts in the IHP SG13G2 Process
 
@@ -73,6 +69,7 @@ Once the check is complete, the list of errors appears in the **output console**
 
 To address this limitation, a **custom Python script** was developed in this work to automate the error-handling process. The script parses the raw DRC output copied from the KLayout console and filters the messages to produce a clean, structured list of all raised violations that require manual correction. This greatly simplifies the debugging workflow by identifying unique errors and mapping them to their respective layer categories.
 
+
 ### DRC Automation Script
 
 This is the automation script used for processing DRC results: 
@@ -88,7 +85,7 @@ To use the script, simply copy the DRC console output from KLayout, paste it int
 
 It is strongly recommended to run DRC checks **after every 5–6 layout modifications**, even for small routing or placement changes. This practice prevents the accumulation of undetected violations that can take hours to debug later. Running DRC frequently not only saves significant time but also prevents accidental geometry overlaps or spacing errors that could compromise the layout structure and require extensive rework.
 :::
----
+
 
 **Figures to include:**  
 - Illustration of typical DRC violation categories (spacing, enclosure, overlap).  
