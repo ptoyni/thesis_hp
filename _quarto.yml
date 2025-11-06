@@ -51,7 +51,7 @@ book:
       chapters:
         - content/_sec_OTA_layout.qmd
         - content/_sec_DRC.qmd
-    # - references.qmd
+    - references.qmd
     
 bibliography: _bibliography/references.bib
 
@@ -74,8 +74,8 @@ format:
     linkcolor: "blue"
     biblio-style: "ieee"
     highlight-style: "github"
-    mainfont: "Calibri"
-    # keep-tex: true
+    # mainfont: "Calibri"
+    keep-tex: true
     # default-image-extension: tex
     output-file: thesis_hp
   epub:
