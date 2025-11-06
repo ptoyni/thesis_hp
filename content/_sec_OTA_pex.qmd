@@ -206,3 +206,16 @@ Environmental variables:
 
 ```
 Once PEX is succesfully done, the extracted netlist SPICE file will be generated in the provided output path, which consists of extracted parasitics which can be further used to do post layout simulations and verify whether the design layout satisfies the design specifications or not.
+
+
+## Observations and Practical Results
+
+During this work, the 2025.05 Docker release of IIC-OSIC-Tools was used, since the design was submitted on 21 August 2025, and subsequent debugging was performed in that version.
+When running the FasterCap engine, the process executed successfully; however, the generated `.pex.spice` file was empty, indicating that no valid parasitic data were written.
+Conversely, when using the MAGIC engine, a `.pex.spice` file was generated but contained improperly scaled parameters, leading to simulation inconsistencies.
+
+
+Upon investigation of the official [IIC-OSIC-Tools release notes](), it was confirmed that in the `2025.07` update, the developers temporarily removed klayout-pex due to incompatibility with several dependencies. 
+
+This subsequent removal confirms that the encountered issues in the 2025.05 environment were indeed genuine tool-level compatibility problems, not user-level errors.
+Therefore, for this design, PEX-based post-layout simulations were omitted, and circuit validation was based on pre-layout verification complemented by manual parasitic estimation from layout dimensions.
