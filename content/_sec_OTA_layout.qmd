@@ -173,16 +173,13 @@ This section presents a procedural method to estimate the **minimum number of fi
 (ii) the **junction capacitance** growth stays acceptable.  
 The approach follows the standard treatment of **distributed gate resistance** and **junction-capacitance scaling** as described in classical analog IC design (book by Prof. Razavi).
 
-
-### Problem Setup
-
 Given a device with total drawn width \(W_tot\) and channel length \(L\), we split it into \(N_f\) identical fingers of width
 
 $$
 W_f = \frac{W_{\text{tot}}}{N_f}.
 $$
 
-
+**Add here the problem and thumb rule**
 
 The **minimum feasible number of fingers** is the smallest integer \(N_f\) that satisfies both conditions.
 

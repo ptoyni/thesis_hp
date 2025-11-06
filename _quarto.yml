@@ -45,12 +45,17 @@ book:
         - content/_sec_Requirements_AES.qmd
     - part: Circuit Design
       chapters:
-        - content/_sec_OTA_design.qmd
-        - content/_sec_OTA_pex.qmd
+        - content/_sec_OTA_design.qmd      
     - part: Physical Design 
       chapters:
         - content/_sec_OTA_layout.qmd
         - content/_sec_DRC.qmd
+        - content/_sec_LVS.qmd
+        - content/_sec_parasitics_prevention.qmd
+    - part: Post-Layout Simulation
+      chapters:
+        - content/_sec_OTA_pex.qmd
+        - content/_sec_postlayout_simulation.qmd
     - references.qmd
     
 bibliography: _bibliography/references.bib
