@@ -1,0 +1,26 @@
+# Post layout simulation.
+
+We have established testbenches for DC, AC, and transient analysis using the symbol of the designed inverter as a subcircuit. The next step is to perform post-layout simulation by replacing the schematic netlist with the extracted layout netlist (PEX), in order to verify whether the performance remains consistent after layout parasitics are included.
+
+Firstly we need to open the symbol file in Xschem, edit the properties of the symbol See @fig-primitive. Change from `subcircuit` to `primitive`.
+
+![Primitive](figures/_fig_primitive.png){#fig-primitive}
+
+Once changed to primitive, now we can include the `.spice` file or `.cir` file from layout to the testbench. See @fig-include
+
+
+![Include](figures/_fig_include.png){#fig-include}
+
+
+Once the file is declared, we can run the testbench. 
+
+::: {.callout-important title="Correct pin order"}
+It is critically important to match the order of pins and their names. The pin order and names in the `.cir` files need to be exact same as included in the testbench. See @fig-correctmatchingxschem and @fig-correctmatchingcir
+:::
+
+
+![Include](figures/_fig_correct_matching_xschem.png){#fig-correctmatchingxschem}
+![Include](figures/_fig_correct_matching_cir.png){#@fig-correctmatchingcir}
+
+
+***Post layout and prelayout graphs to be added here as results***

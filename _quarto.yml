@@ -50,6 +50,7 @@ book:
     - part: Physical Design 
       chapters:
         - content/_sec_OTA_layout.qmd
+        - content/_sec_DRC.qmd
     # - references.qmd
     
 bibliography: _bibliography/references.bib
