@@ -57,17 +57,35 @@ book:
         - content/_sec_OTA_pex.qmd
         - content/_sec_postlayout_simulation.qmd
     - references.qmd
-    
+  appendices:
+    - content/_appendix_A.qmd
+    - content/_appendix_B.qmd
+    - content/_appendix_C.qmd
+
+  output-file: "thesis_hp"
+
+# Bibliography
 bibliography: _bibliography/references.bib
+
+csl: _bibliography/ieee.csl
+number-sections: true
+highlight-style: github
+
 
 format:
   html:
     theme: flatly
+  
   pdf:
-    documentclass: scrbook 
+    documentclass: scrbook
+    keep-tex: true
+
+    # Table of Contents
+    toc: true
     lof: true
-    # lot: true
-    toc: true    
+    lot: true
+    
+    # Setup page layout
     geometry:
       - top=30mm
       - left=20mm
@@ -77,16 +95,10 @@ format:
     colorlinks: true
     linkcolor: "blue"
     biblio-style: "ieee"
-    highlight-style: "github"
-    # mainfont: "Calibri"
-    keep-tex: true
-    output-file: thesis_hp
-  # epub:
-    # theme: flatly
-    # default-image-extension: svg
-    # output-file: thesis_hp
+    
+    # Fonts
+    mainfont: "Calibri"
   
-execute:
-  freeze: auto
-
-
+  epub:
+    theme: flatly
+  
