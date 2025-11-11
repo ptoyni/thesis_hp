@@ -56,7 +56,7 @@ book:
       chapters:
         - content/_sec_OTA_pex.qmd
         - content/_sec_postlayout_simulation.qmd
-    - references.qmd
+    
   appendices:
     - content/_appendix_A.qmd
     - content/_appendix_B.qmd
@@ -67,7 +67,7 @@ book:
 # Bibliography
 bibliography: _bibliography/references.bib
 
-csl: _bibliography/ieee.csl
+# csl: _bibliography/ieee.csl
 number-sections: true
 highlight-style: github
 
