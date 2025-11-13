@@ -20,7 +20,10 @@ It is critically important to match the order of pins and their names. The pin o
 
 
 ![Include](figures/_fig_correct_matching_xschem.png){#fig-correctmatchingxschem}
-![Include](figures/_fig_correct_matching_cir.png){#@fig-correctmatchingcir}
+![Include](figures/_fig_correct_matching_cir.png){#fig-correctmatchingcir}
 
 
 ***Post layout and prelayout graphs to be added here as results***
+
+
+![Postlayout Results](figures/_fig_foldedcascode_ac_bode_postlayout.svg){#fig-postlayout-output}
