@@ -32,10 +32,10 @@ book:
       This book was built with <a href="https://quarto.org/">Quarto</a>.
   # cover-image: images/hsb-logo.png
   # favicon: images/hsb-logo.png
-  # site-url: https://mimeiners.github.io/gel2/
-  # repo-url: https://github.com/mimeiners/gel2/
-  # repo-branch: main
-  # repo-actions: [edit,issue]
+  site-url: https://ptoyni.github.io/thesis_hp/
+  repo-url: https://github.com/ptoyni/thesis_hp
+  repo-branch: main
+  repo-actions: [edit,issue]
   downloads: [pdf,epub]
 
   chapters:
@@ -57,6 +57,7 @@ book:
       chapters:
         - content/_sec_OTA_pex.qmd
         - content/_sec_postlayout_simulation.qmd
+    - references.qmd
     
   appendices:
     - content/_appendix_A.qmd
@@ -67,8 +68,8 @@ book:
 
 # Bibliography
 bibliography: _bibliography/references.bib
+csl: _bibliography/ieee.csl
 
-# csl: _bibliography/ieee.csl
 number-sections: true
 highlight-style: github
 
@@ -77,29 +78,28 @@ format:
   html:
     theme: flatly
   
-  pdf:
-    documentclass: scrbook
-    keep-tex: true
+  # pdf:
+  #   documentclass: scrbook
+  #   keep-tex: true
 
-    # Table of Contents
-    toc: true
-    lof: true
-    lot: true
+  #   # Table of Contents
+  #   toc: true
+  #   lof: true
+  #   lot: true
     
-    # Setup page layout
-    geometry:
-      - top=30mm
-      - left=20mm
-      - heightrounded
-    hyperrefoptions:
-      - linktoc=all
-    colorlinks: true
-    linkcolor: "blue"
-    biblio-style: "ieee"
+  #   # Setup page layout
+  #   geometry:
+  #     - top=30mm
+  #     - left=20mm
+  #     - heightrounded
+  #   hyperrefoptions:
+  #     - linktoc=all
+  #   colorlinks: true
+  #   linkcolor: "blue"
     
-    # Fonts
-    mainfont: "Calibri"
+  #   # Fonts
+  #   mainfont: "Calibri"
   
-  epub:
-    theme: flatly
+  # epub:
+  #   theme: flatly
   
