@@ -134,7 +134,7 @@ and Tian's method as mention in @fig-ac-xschem, @fig-tran-xschem, @fig-loopgain-
 
 ![AC Analysis Setup](../figures/_fig_ac.svg){#fig-ac-xschem}
 
-![AC Analysis Output](../figures/_fig_foldedcascode_ac_bode.svg.svg){#fig-ac-output-xschem}
+![AC Analysis Output](../figures/_fig_foldedcascode_ac_bode.svg){#fig-ac-output-xschem}
 
 
 
