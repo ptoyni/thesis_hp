@@ -32,14 +32,16 @@ book:
       This book was built with <a href="https://quarto.org/">Quarto</a>.
   # cover-image: images/hsb-logo.png
   # favicon: images/hsb-logo.png
-  # site-url: https://mimeiners.github.io/gel2/
-  # repo-url: https://github.com/mimeiners/gel2/
-  # repo-branch: main
-  # repo-actions: [edit,issue]
+  site-url: https://ptoyni.github.io/thesis_hp/
+  repo-url: https://github.com/ptoyni/thesis_hp
+  repo-branch: main
+  repo-actions: [edit,issue]
   downloads: [pdf,epub]
 
   chapters:
     - index.qmd
+    - content/Abstract.qmd
+    - content/Declaration_of_Authorship.qmd
     - part: System
       chapters:
         - content/_sec_Requirements_AES.qmd
@@ -57,6 +59,7 @@ book:
       chapters:
         - content/_sec_OTA_pex.qmd
         - content/_sec_postlayout_simulation.qmd
+    - references.qmd
     
   appendices:
     - content/_appendix_A.qmd
@@ -67,8 +70,8 @@ book:
 
 # Bibliography
 bibliography: _bibliography/references.bib
+csl: _bibliography/ieee.csl
 
-# csl: _bibliography/ieee.csl
 number-sections: true
 highlight-style: github
 
@@ -95,7 +98,6 @@ format:
       - linktoc=all
     colorlinks: true
     linkcolor: "blue"
-    biblio-style: "ieee"
     
     # Fonts
     mainfont: "Calibri"
