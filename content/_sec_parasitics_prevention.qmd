@@ -12,7 +12,7 @@ Key vulnerabilities arise because analog circuits operate on continuous voltage 
 1. High-impedance nodes, such as the inputs of operational transconductance amplifiers (OTAs), are particularly sensitive because they cannot source or sink significant current. Any parasitic capacitance — whether from junction diffusion, metal-to-substrate coupling, or fringe fields from nearby interconnects — directly loads these nodes. This loading introduces unwanted poles, reduces input resistance, and increases thermal noise coupling. In precision amplifiers, such parasitic capacitances can also create signal-dependent charge storage, causing distortion or phase lag at higher frequencies.
 
 2. Bias networks and current mirrors are another vulnerable class. These circuits rely on exact matching of device characteristics and stable well or substrate potentials to maintain bias accuracy. Substrate noise or potential fluctuations, often injected from digital switching activity or supply ripple, modulate the body voltage of transistors.
-This alters their threshold voltage and transconductance (gm), leading to current imbalance, gain drift, and degraded common-mode rejection. In deep-submicron processes with thin oxides and shallow wells, such coupling becomes even more significant.
+This alters their threshold voltage and transconductance ($g_m$), leading to current imbalance, gain drift, and degraded common-mode rejection. In deep-submicron processes with thin oxides and shallow wells, such coupling becomes even more significant.
 
 3. Feedback paths in analog systems — particularly those forming loops for gain control, regulation, or filtering — are strongly influenced by parasitic-induced poles and zeros.
 Capacitances at feedback nodes or unintended inductive loops in routing can introduce additional frequency-dependent elements into the loop transfer function.
@@ -26,7 +26,7 @@ Therefore, parasitics must be **anticipated and shaped**—not merely checked—
 
 ### Metal and Coupling Capacitances
 Parallel conductors form **inter-wire capacitances**; long, co-planar runs also couple substrate noise through capacitance to ground.  
-In our layout, we **avoid long same-layer parallel routing** on sensitive nets. Where proximity is unavoidable, we prefer **layer staggering** (e.g., route one net on Mn and the other on Mn+2), maintain generous spacing, and, when beneficial, add **symmetric ground shields**. Orthogonal routing between adjacent layers (Manhattan style) further reduces broadside coupling @lienig2020.
+In our layout, we **avoid long same-layer parallel routing** on sensitive nets. Where proximity is unavoidable, we prefer **layer staggering** (e.g., route one net on $M_n$ and the other on $M_{n+2}$), maintain generous spacing, and, when beneficial, add **symmetric ground shields**. Orthogonal routing between adjacent layers (Manhattan style) further reduces broadside coupling @lienig2020.
 
 ### Via and Contact Parasitics
 Vias introduce **series resistance** and small fringing capacitances; unbalanced via stacks can create gain/offset asymmetry. 
@@ -37,54 +37,9 @@ Source/drain junction areas and perimeters add capacitance that **loads high-imp
 We mitigate this by **multi-fingering** large devices (controlling diffusion area/perimeter) and by **dummy fingers** to regularize edge effects, as detailed earlier. Device segmentation is paired with **balanced routing and via symmetry** to preserve matching.
 
 
-## Substrate Coupling and Isolation
-
-### Guard Rings (Local Substrate Sinks)
-
-Guard rings are a fundamental structural element for **substrate noise suppression** and **latch-up prevention** in analog and mixed-signal IC layouts.  
-They consist of **diffusion regions tied to power rails** that form a **low-impedance sink** for substrate currents and injected minority carriers.  
-When nearby transistors switch, charge is injected into the substrate or well regions, creating potential fluctuations that can couple into sensitive nodes.  
-Guard rings intercept these currents and route them to a stable potential (AVDD or AVSS), thereby **reducing parasitic coupling, improving device reliability, and stabilizing substrate potentials** @lienig2020.
-
-In physical terms, the substrate and well behave as resistive media represented by **Rsub** (substrate resistance) and **Rwell** (well resistance).  
-Both parameters define the degree of electrical isolation between neighboring devices.  
-A high \( R_{\text{sub}} \) or \( R_{\text{well}} \) increases the voltage drop caused by substrate or well currents, thereby amplifying potential modulation and noise coupling.  
-Guard rings **effectively lower these resistances** by providing parallel, low-resistance paths to the respective power rails.  
-This ensures that any injected charge is quickly dissipated, keeping local substrate potentials nearly constant.  
-Reducing \( R_{\text{sub}} \) and \( R_{\text{well}} \) is therefore essential not only for **latch-up prevention**, but also for **matching accuracy** in precision analog circuits, where small potential gradients can alter threshold voltages and current ratios.
-
-In this work, **every sensitive device group**—including the differential input pair, active loads, and current mirrors—is enclosed by **fully closed rectangular guard rings**.  
-For NMOS devices placed in the p-substrate region, **p⁺ guard rings** are tied to **AVSS (analog ground)**, while for PMOS devices inside n-wells, **n⁺ guard rings** are connected to **AVDD**.  
-This configuration ensures that both substrate and well domains have **firm voltage references**, minimizing variations in local body potential and suppressing latch-up triggering paths.  
-Contacts are inserted at **regular pitch** along the ring, effectively reducing the sheet resistance of the ring and enhancing current collection efficiency.
-
-From a design standpoint, several parameters determine guard-ring effectiveness:  
-- **Ring width** — Wider guard rings exhibit lower resistance and better current collection but consume additional layout area.  
-- **Contact density** — A higher number of substrate or well contacts per unit length lowers \(R_{\text{sub}}\) and \(R_{\text{well}}\), improving isolation.  
-- **Continuity** — Continuous guard rings provide stronger confinement of the local substrate potential, while segmented ones trade isolation for area and routing flexibility.
-
-Two topological categories are widely used:
-
-- **Continuous Guard Rings**  
-  These structures **completely enclose** the protected device region without any breaks.  
-  They offer **maximum isolation**, **lowest effective substrate resistance**, and **best protection against latch-up and substrate noise**.  
-  Continuous rings are preferred in **high-precision analog blocks** where low \(R_{\text{sub}}\) and \(R_{\text{well}}\) are crucial for stable operation.  
-  In our OTA layout, every critical block—especially the differential pair—is enclosed by **continuous rectangular guard rings**, chosen for their strong isolation and reliability.
-
-- **Segmented Guard Rings**  
-  These are composed of **discrete diffusion segments** separated by intentional openings to accommodate routing or area constraints.  
-  While they exhibit **higher \(R_{\text{sub}}\)** and **reduced isolation** compared to continuous rings, properly designed segmented rings can still prevent latch-up and effectively attenuate substrate coupling.  
-  They are often used in moderately sensitive or space-limited blocks.
-
-In conclusion, the guard-ring network in this layout not only suppresses substrate coupling and latch-up but also **reduces Rsub and Rwell**, anchoring the local substrate and well potentials to fixed references.  
-This ensures stable device behavior across temperature and process variations and significantly enhances long-term reliability of the analog core.
-
-
-
 ## Critical Parasitics Mechanisms and Mitigation Strategies
 
-Even when a layout satisfies all geometric design rules, the physical behavior of the silicon can still be compromised by secondary effects arising from the interaction between devices, interconnects, and the fabrication process itself.  
-These parasitic mechanisms—though invisible in schematic design—can severely degrade performance or even render an integrated circuit non-functional.  
+As discussed above, the physical behavior of the silicon can be compromised by secondary effects. These parasitic mechanisms—though invisible in schematic design—can severely degrade performance or even render an integrated circuit non-functional.  
 The following subsections discuss the most relevant effects for analog circuits and the preventive measures applied in this work.
 
 
@@ -101,70 +56,93 @@ Once triggered, the latch-up state sustains itself through regenerative feedback
 Latch-up prevention requires **breaking the feedback path** and **lowering substrate resistance**.  
 This is achieved by surrounding all active devices with **dense guard rings** and inserting **well and substrate contacts** at regular intervals to provide low-resistance current return paths.  
 Adequate **spacing between n-wells and p-wells** reduces parasitic coupling between complementary transistors.  
-For highly sensitive analog blocks, the **deep-N-well (isolation well)** option provided in the SG13G2 process was employed.  
-This isolation ensures that the substrate region of the analog core is electrically separated from neighboring digital or I/O structures, effectively suppressing latch-up initiation.  
+For highly sensitive analog blocks, the **deep-N-well (isolation well)** option provided in the SG13G2 process was employed. This isolation ensures that the substrate region of the analog core is electrically separated from neighboring digital or I/O structures, effectively suppressing latch-up initiation.  
 Additionally, I/O pads and high-swing nodes are placed away from precision analog circuits to minimize injection of transient substrate currents @lienig2020.
 
 
-### Antenna Effect (Plasma-Induced Charging)
+### Antenna Effect
 
 **Mechanism.**  
-During plasma-based etching and deposition steps in fabrication, unconnected metal or polysilicon features can act as **charge-collecting antennas**.  
+During etching and deposition steps in fabrication, unconnected metal or polysilicon features can act as **charge-collecting antennas**.  
 If a long interconnect is connected to a transistor gate but not yet to a diffusion region, the charge accumulated on the metal surface can discharge through the thin gate oxide once the diffusion is formed.  
 This discharge can permanently **damage or weaken the gate dielectric**, leading to gate leakage or early breakdown.  
 The risk increases with larger metal area and thinner gate oxides, making advanced nodes and precision analog devices particularly susceptible.
 
 **Prevention.**  
-To prevent plasma-induced charging, several **layout-based mitigation strategies** are employed.  
-First, **antenna diodes** are connected between long metal segments and diffusion or supply nodes, providing a safe discharge path during processing.  
-Second, **metal hopping** is applied—routing is divided into shorter segments by inserting vias to higher or lower metal layers, thus reducing the effective exposed area.  
-Finally, wherever possible, gate connections are completed early in the routing sequence by connecting them to diffusion or polysilicon structures before extensive metal routing continues.  
-In this work, both **metal segmentation** and **diode tie-downs** were used for nets identified by the SG13G2 PDK’s antenna check script as having potential plasma-induced charging risk.
+To prevent this, **metal hopping** is applied—routing is divided into shorter segments by inserting vias to higher or lower metal layers, thus reducing the effective exposed area.  
+In this work, **metal segmentation** were used for nets identified by the SG13G2 PDK’s antenna check script as having potential plasma-induced charging risk.
 
 
 ### Interconnecting Vias (Reliability and Noise)
 
 **Mechanism.**  
-Vias are the vertical interconnects that connect one metal layer to another.  
-Each via has a finite **resistance and current-carrying limit**.  
-If a single via is forced to conduct large currents, it experiences localized heating and **electromigration**, which can lead to open circuits or resistance drift over time.  
-Furthermore, any asymmetry in via count or placement between matched branches creates **mismatch in series resistance**, leading to offset in analog differentials or current mirrors.  
+Vias are the vertical interconnects that connect one metal layer to another. Each via has a finite **resistance and current-carrying limit**.  
+If a single via is forced to conduct large currents, it experiences localized heating and **electromigration**, which can lead to open circuits or resistance drift over time. Furthermore, any asymmetry in via count or placement between matched branches creates **mismatch in series resistance**, leading to offset in analog differentials or current mirrors.  
 Vias also contribute small fringing capacitances, and an uneven via distribution can slightly distort signal paths, particularly at high frequency.
 
 **Prevention.**  
-To enhance both **reliability and symmetry**, we employ **redundant via arrays**—multiple vias placed in parallel—to reduce resistance and distribute current density evenly.  
-These are used especially on **low-impedance and high-current paths** such as power rails, bias lines, and OTA output nodes.  
-In matched differential structures, **via symmetry** is strictly maintained, meaning identical via count, shape, and placement on both branches.  
-This guarantees balanced parasitic resistance and capacitance, preventing differential offset.  
-Additionally, via placements are optimized for **short, straight current paths** to minimize inductive coupling and IR drops @lienig2020.  
+To enhance both **reliability and symmetry**, we employ **redundant via arrays**—multiple vias placed in parallel—to reduce resistance and distribute current density evenly. These are used especially on **low-impedance and high-current paths** such as power rails, bias lines, and OTA output nodes.  
+In matched differential structures, **via symmetry** is strictly maintained, meaning identical via count, shape, and placement on both branches. This guarantees balanced parasitic resistance and capacitance, preventing differential offset.  
 These measures collectively improve **electromigration margins**, ensuring the long-term reliability of the metal interconnect network.
 
 
 ### Charge Injection and Gate Coupling
 
 **Mechanism.**  
-Charge injection refers to the **unintended transfer of charge** from a switching device’s channel or overlap capacitances into adjacent high-impedance nodes.  
-When a MOSFET gate or drain experiences a fast voltage transition, the associated capacitances (\( C_{gd} \), \( C_{gs} \), and junction capacitances) couple a portion of the transient charge into nearby sensitive nodes.  
-In analog amplifiers or sampling circuits, this causes **voltage transients, bias perturbations, or signal distortion**.  
-The effect is more pronounced in narrow-geometry devices and high-speed circuits, where transitions occur rapidly and charge redistribution is incomplete.
+Charge injection refers to the **unintended transfer of charge** from a switching device’s channel or overlap capacitances into adjacent high-impedance nodes. When a MOSFET gate or drain experiences a fast voltage transition, the associated capacitances ($C_{gd}$, $C_{gs}$, and junction capacitances) couple a portion of the transient charge into nearby sensitive nodes.  
+In analog amplifiers or sampling circuits, this causes **voltage transients, bias perturbations, or signal distortion**. The effect is more pronounced in narrow-geometry devices and high-speed circuits, where transitions occur rapidly and charge redistribution is incomplete.
 
 **Prevention.**  
 The most effective mitigation is **careful routing and shielding**.  
 High-impedance nodes are kept as short as possible, routed away from noisy or switching signals, and, where feasible, enclosed by **ground shields** connected to quiet references (AVSS).  
 In differential circuits, balanced and symmetric routing ensures that any residual injected charge appears as a **common-mode disturbance**, which is then rejected by the amplifier’s differential nature.  
-In networks involving switching (e.g., current-steering DACs or sample-and-hold circuits), **bottom-plate switching** and **complementary transistor pairs** are used to cancel charge injection.  
-In static bias networks, minimizing gate–drain overlap and ensuring sufficient separation from high-slew-rate lines further reduces this parasitic coupling.
+In networks involving switching (e.g., current-steering DACs or sample-and-hold circuits), **bottom-plate switching** and **complementary transistor pairs** are used to cancel charge injection. In static bias networks, minimizing gate–drain overlap and ensuring sufficient separation from high-slew-rate lines further reduces this parasitic coupling.
 
 
-In summary, understanding these parasitic mechanisms is essential for robust analog design.  
-Each represents a different physical coupling path—through the substrate, interconnect, or process environment—and each must be addressed at layout level.  
+In summary, understanding these parasitic mechanisms is essential for robust analog design. Each represents a different physical coupling path—through the substrate, interconnect, or process environment—and each must be addressed at layout level.  
 The preventive strategies applied in this work, derived from the IHP SG13G2 PDK rules and the guidelines in @lienig2020, ensure that the layout not only meets design rules but also preserves **electrical integrity and long-term reliability** in fabrication and operation.
 
+
+## Guard Rings (Local Substrate Sinks) - Saviour
+
+Guard rings are a fundamental structural element for **substrate noise suppression** and **latch-up prevention** in analog and mixed-signal IC layouts.  
+They consist of **diffusion regions tied to power rails** that form a **low-impedance sink** for substrate currents and injected minority carriers. When nearby transistors switch, charge is injected into the substrate or well regions, creating potential fluctuations that can couple into sensitive nodes. Guard rings intercept these currents and route them to a stable potential (AVDD or AVSS), thereby **reducing parasitic coupling, improving device reliability, and stabilizing substrate potentials** @lienig2020.
+
+In physical terms, the substrate and well behave as resistive media represented by **Rsub** (substrate resistance) and **Rwell** (well resistance).  
+Both parameters define the degree of electrical isolation between neighboring devices.  
+A high $R_{\text{sub}}$ or $R_{\text{well}}$ increases the voltage drop caused by substrate or well currents, thereby amplifying potential modulation and noise coupling. Guard rings **effectively lower these resistances** by providing parallel, low-resistance paths to the respective power rails.  
+This ensures that any injected charge is quickly dissipated, keeping local substrate potentials nearly constant.  
+Reducing $R_{\text{sub}}$ and $R_{\text{well}}$ is therefore essential not only for **latch-up prevention**, but also for **matching accuracy** in precision analog circuits, where small potential gradients can alter threshold voltages and current ratios.
+
+In this work, **every sensitive device group**—including the differential input pair, active loads, and current mirrors—is enclosed by **fully closed rectangular guard rings**.  
+
+For NMOS devices placed in the p-substrate region, **p⁺ guard rings** are tied to **AVSS (analog ground)**, while for PMOS devices inside n-wells, **n⁺ guard rings** are connected to **AVDD**.  
+This configuration ensures that both substrate and well domains have **firm voltage references**, minimizing variations in local body potential and suppressing latch-up triggering paths. Contacts are inserted at **regular pitch** along the ring, effectively reducing the sheet resistance of the ring and enhancing current collection efficiency.
+
+From a design standpoint, several parameters determine guard-ring effectiveness:  
+- **Ring width** — Wider guard rings exhibit lower resistance and better current collection but consume additional layout area.  
+- **Contact density** — A higher number of substrate or well contacts per unit length lowers $R_{\text{sub}}$ and $R_{\text{well}}$, improving isolation.  
+- **Continuity** — Continuous guard rings provide stronger confinement of the local substrate potential, while segmented ones trade isolation for area and routing flexibility.
+
+Two topological categories are widely used:
+
+- **Continuous Guard Rings**  
+  These structures **completely enclose** the protected device region without any breaks.  
+  They offer **maximum isolation**, **lowest effective substrate resistance**, and **best protection against latch-up and substrate noise**.  
+  Continuous rings are preferred in **high-precision analog blocks** where low $R_{\text{sub}$ and $R_{\text{well}}$ are crucial for stable operation.  
+  In our OTA layout, every critical block—especially the differential pair—is enclosed by **continuous rectangular guard rings**, chosen for their strong isolation and reliability.
+
+- **Segmented Guard Rings**  
+  These are composed of **discrete diffusion segments** separated by intentional openings to accommodate routing or area constraints.  
+  While they exhibit **higher $R_{\text{sub}}$** and **reduced isolation** compared to continuous rings, properly designed segmented rings can still prevent latch-up and effectively attenuate substrate coupling. They are often used in moderately sensitive or space-limited blocks.
+
+In conclusion, the guard-ring network in this layout not only suppresses substrate coupling and latch-up but also **reduces Rsub and Rwell**, anchoring the local substrate and well potentials to fixed references.  
+This ensures stable device behavior across temperature and process variations and significantly enhances long-term reliability of the analog core.
 
 ## Block-Level Practices Implemented in This Work
 
 - **Per-group isolation.** The **differential pair**, **active load**, and **current-mirror groups** are each enclosed by **complete guard rings** and placed inside **deep N-well/isolation** where available, creating local “quiet islands.”  
-- **Layer strategy.** Sensitive differentials avoid **same-layer, long parallel** runs. When proximity is required, we route on **Mn vs. Mn+2** with adequate spacing; orthogonal adjacency between Mn and Mn+1 is preferred for crossings.  
+- **Layer strategy.** Sensitive differentials avoid **same-layer, long parallel** runs. When proximity is required, we route on **$M_n$ vs. $M_{n+2}$** with adequate spacing; orthogonal adjacency between Mn and Mn+1 is preferred for crossings.  
 - **Decoupling.** **Local decoupling mosfets** (e.g., from AVDD to AVSS) are placed **close to the OTA core**, especially around the **input pair**, with short, wide connections and redundant vias inside the same isolation domain.  
 - **Symmetry.** Wherever matching matters, we keep **equal lengths**, **matched via stacks**, and **balanced shields** on both branches so parasitics affect each side equally.
 
