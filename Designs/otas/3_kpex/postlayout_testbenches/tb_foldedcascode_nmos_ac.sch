@@ -54,9 +54,9 @@ value="
 
 *.include /foss/designs/thesis/thesis_hp/Designs/otas/1_schematics/simulations/ota_final.spice
 
-.include /foss/designs/Hrishi_Analog_Journey/Designs/Analog_Inverter/3_kpex/output/FMD_QNC_ota_decoup__FMD_QNC_ota_decoup/magic_cc/FMD_QNC_ota_decoup.pex.spice
+*.include /foss/designs/Hrishi_Analog_Journey/Designs/Analog_Inverter/3_kpex/output/FMD_QNC_ota_decoup__FMD_QNC_ota_decoup/magic_cc/FMD_QNC_ota_decoup.pex.spice
             
-*.include /foss/designs/thesis/TO_July2025_OTALED/OTALED/design_data/lvs/foldedcascode_pmos_extracted.cir
+.include /foss/designs/thesis/thesis_hp/Designs/final_tapeout_submissions/ledamp/2_layout/lvs/FMD_QNC_ota_decoup_extracted.cir
             
 
 
@@ -66,16 +66,16 @@ value="
 .control
 option sparse
 save all
+
+* ---------- AC analysis ----------
 op
-write tb_foldedcascode_nmos_ac.raw
-set appendwrite
-
 ac dec 101 1k 1G
-write tb_foldedcascode_nmos_ac.raw
-plot 20*log10(v_out)
 
+* Make sure the current plot is the AC plot
+setplot ac1
+remzerovec
 
-
+* Measurements on AC
 meas ac dcgain MAX vmag(v_out) FROM=10 TO=10k
 let f3db = dcgain/sqrt(2)
 meas ac fbw WHEN vmag(v_out)=f3db FALL=1
@@ -84,12 +84,22 @@ print dcgain
 print fbw
 print gainerror
 
-
-
+* (optional) interactive plots inside ngspice
+plot 20*log10(v_out)
 plot 180/pi*ph(v_out) vs frequency
 
+* Write ONLY the AC plot to this file
+write tb_foldedcascode_nmos_ac.raw
+
+* ---------- Noise analysis ----------
 noise v(v_out) Vin dec 101 1k 100MEG
 print onoise_total
+
+* Make sure current plot is the noise plot
+setplot noise1
+
+* Write the noise plot to a separate file
+write tb_foldedcascode_nmos_noise.raw
 
 .endc
 "}
@@ -102,4 +112,4 @@ value=".lib cornerMOSlv.lib mos_tt
 .include $::SG13G2_MODELS/sg13g2_bondpad.lib
 .include $::SG13G2_MODELS/sg13g2_esd.lib
 "}
-C {/foss/designs/thesis/thesis_hp/Designs/otas/1_schematics/ota_final.sym} 1430 -400 0 0 {name=x1}
+C {ota_final.sym} 1430 -400 0 0 {name=x1}

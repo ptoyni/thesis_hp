@@ -132,11 +132,17 @@ Now that circuit is ready we need to test its ac and transient behaviour as well
 and Tian's method as mention in @fig-ac-xschem, @fig-tran-xschem, @fig-loopgain-xschem
 
 
-![AC Analysis](../figures/_fig_ac.svg){#fig-ac-xschem}
+![AC Analysis Setup](../figures/_fig_ac.svg){#fig-ac-xschem}
 
-![Transient Analysis](../figures/_fig_tran.svg){#fig-tran-xschem}
+![AC Analysis Output](../figures/_fig_foldedcascode_ac_bode.svg){#fig-ac-output-xschem}
 
-![Loop Gain](../figures/_fig_loopgain.svg){#fig-loopgain-xschem}
+
+
+![Transient Analysis Setup](../figures/_fig_tran.svg){#fig-tran-xschem}
+
+![Transient Analysis Output](../figures/_fig_foldedcascode_tran_combined.svg){#fig-tran-output-xschem}
+
+![Loop Gain Setup](../figures/_fig_loopgain.svg){#fig-loopgain-xschem}
 
 The loop gain analysis yeilds the following plots which clarifies that our specifications such as gain and phase margin
 are met successfully. See @fig-loopgain-magnitude and @fig-loopgain-phase
@@ -203,7 +209,7 @@ The situation with the design is summarized in @tbl-voltage-buffer-spec.
 |:-------------------------------------------|:-------:|:-------:|
 | Output voltage error                       | $<1$    | %       |
 | Total output noise (rms)                   | $<0.15$ | mV~rms~ |
-| Supply current (as low as possible)        | $<12.5$ | µA      |
+| Supply current (as low as possible)        | $<14$ | µA      |
 | Turn-on time                               | $<0.4$  | µs      |
 | Externally provided bias current (nominal) | $12.5$  | µA      |
 

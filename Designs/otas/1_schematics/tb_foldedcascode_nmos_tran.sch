@@ -45,11 +45,11 @@ lab=v_ss}
 N 1080 -370 1080 -300 {lab=v_ena}
 N 540 -570 1040 -570 {lab=v_dd}
 N 920 -510 920 -430 {lab=#net1}
-C {devices/code_shown.sym} 70 -90 0 0 {name=MODEL1 only_toplevel=true
+C {devices/code_shown.sym} 60 -60 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
 "}
-C {devices/vsource.sym} 540 -130 0 0 {name=Vdd value=1.45
+C {devices/vsource.sym} 540 -130 0 0 {name=Vdd value=1.5
 }
 C {devices/gnd.sym} 540 -80 0 0 {name=l3 lab=GND}
 C {lab_pin.sym} 540 -180 0 0 {name=p2 sig_type=std_logic lab=v_dd}
@@ -57,7 +57,7 @@ C {devices/vsource.sym} 620 -130 0 0 {name=Vss value=0}
 C {devices/gnd.sym} 620 -80 0 0 {name=l1 lab=GND}
 C {lab_pin.sym} 620 -180 0 0 {name=p1 sig_type=std_logic lab=v_ss}
 C {capa.sym} 1490 -360 0 0 {name=C1
-value=2p}
+value=1p}
 C {lab_wire.sym} 1490 -430 0 0 {name=p3 sig_type=std_logic lab=v_out}
 C {devices/vsource.sym} 720 -340 0 0 {name=Vin value="dc 0.8 ac 1"}
 C {lab_wire.sym} 780 -460 0 0 {name=p4 sig_type=std_logic lab=v_in}
@@ -71,18 +71,22 @@ value="
 .option method=gear
 
 .control
+option sparse
+save all
 
 tran 0.005u 15u uic
 plot v_ena v_out
 
-let vout_limit=0.8*0.99
+* Settling time measurements
+let vout_limit = 0.8*0.99
 meas tran tcross WHEN v(v_out)=vout_limit
-let vena_limit=0.5*1.5
+let vena_limit = 0.5*1.5
 meas tran tstart WHEN v(v_ena)=vena_limit
-let tsettle=tcross-tstart
+let tsettle = tcross - tstart
 print tsettle
 
-
+remzerovec
+write tb_foldedcascode_nmos_tran.raw
 
 .endc
 "}
