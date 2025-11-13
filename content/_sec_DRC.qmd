@@ -65,6 +65,8 @@ The **IHP SG13G2 PDK** provides two distinct DRC scripts, each corresponding to 
 
 As mentioned in the *Known Issues* section, DRC cannot be executed in KLayout solely by relying on direct tools or commands. Instead, a specific workflow must be followed. Within the **Macros Development** interface of KLayout, there is a dedicated **DRC section** that lists all available rule scripts for the selected technology. To perform DRC, the user must select the desired rule deck—either *sg13_g2_minimal* or *sg13_g2_maximal*—and then execute the corresponding script.  
 
+![Macro Development interface with DRC Results in Console](../figures/_fig_macro_devs.jpg){#fig-macro-dev}
+
 Once the check is complete, the list of errors appears in the **output console** below the editor window. Unfortunately, due to current tool limitations, KLayout does not automatically generate a separate **DRC report file**. This means that the error list cannot be reloaded, filtered, or revisited directly within the tool after the session ends. Furthermore, some **Qt-based interactive functions** (intended to automatically highlight or open error markers) are not fully supported within the Docker image of the IIC-OSIC toolchain.
 
 To address this limitation, a **custom Python script** was developed in this work to automate the error-handling process. The script parses the raw DRC output copied from the KLayout console and filters the messages to produce a clean, structured list of all raised violations that require manual correction. This greatly simplifies the debugging workflow by identifying unique errors and mapping them to their respective layer categories.
