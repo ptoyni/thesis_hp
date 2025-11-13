@@ -52,6 +52,7 @@ book:
         - content/_sec_DRC.qmd
         - content/_sec_LVS.qmd
         - content/_sec_parasitics_prevention.qmd
+        - content/_sec_layout_finalsteps.qmd
     - part: Post-Layout Simulation
       chapters:
         - content/_sec_OTA_pex.qmd
