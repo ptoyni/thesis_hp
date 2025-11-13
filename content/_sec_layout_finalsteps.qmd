@@ -23,7 +23,7 @@ For this work, we instantiated and customized the provided seal ring PCell and p
 ### 2.1 Purpose and Structure
 Bond pads form the electrical interface between the on-chip metal layers and the external package or measurement environment.  
 Each pad is a large, top-metal landing area with a passivation opening, designed to withstand mechanical bonding forces while maintaining low series resistance.  
-To minimize parasitic disturbance, each functional bond pad was further **surrounded by a dummy pad frame**—a ring of electrically inactive pads. These dummy pads act as protective buffers: if parasitic displacement currents or surface leakage occur near the die edge, they discharge into the dummy pads rather than coupling into the functional I/O pads. This arrangement reduces the susceptibility of the pad ring to noise and preserves the integrity of the sensitive analog connections.
+To minimize parasitic disturbance, each functional bond pad was further **surrounded by a dummy pad frame**—a ring of electrically inactive pads. These dummy pads act as protective buffers: if parasitic displacement currents or surface leakage occur near the die edge, they discharge into the dummy pads rather than coupling into the functional I/O pads. This arrangement reduces the susceptibility of the pad ring to noise and preserves the integrity of the sensitive analog connections.[@Prof_Razavi_2011]
 
 The placement of pads was also optimized to minimize parasitic capacitive coupling to the underlying analog core.  Pads were spaced to avoid long parallel overlaps with internal routing, and their distribution was balanced to avoid asymmetries in substrate stress and top-metal loading.
 

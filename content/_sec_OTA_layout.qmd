@@ -43,6 +43,8 @@ In real silicon, device characteristics are never perfectly uniform across the d
 
 Such gradients directly affect threshold voltage, mobility, and oxide thickness. As a result, two transistors with identical schematic dimensions may behave differently if placed at different positions on the chip. For analog circuits like OTAs, these mismatches degrade input offset, gain, and common-mode rejection ratio (CMRR).  
 
+![Isotherm Process Gradient due to temperature](../figures/_fig_isotherm.jpg){#fig-isotherm}
+
 To minimize this, layout must enforce **symmetry**:
 
 - **Symmetry around an axis.**  
@@ -56,10 +58,6 @@ Together, these forms of symmetry improve **matching** — the ability of two de
 Finally, symmetry must extend to the **routing**. Interconnect lengths, widths, and via stacks must be balanced on both sides of the differential pair. Even with well-matched devices, asymmetric wiring can introduce additional resistance and capacitance, which shows up as systematic offset or degraded bandwidth [@lienig2020; @baker2010].  
 In our OTA layout, routing symmetry was not only maintained in terms of path length and via balance, but also extended to the **choice of metal layers**. Long interconnects were assigned to **higher metal layers** with lower sheet resistance, while short local connections remained on **lower metals** for compact access.  
 This combination of length balancing, via symmetry, and layer assignment ensured that both differential branches exhibited comparable parasitic resistance and capacitance, preserving matching despite unavoidable topological constraints.  
-
-**Figures to include:**  
-- Illustration of process gradients across a wafer .  
-- Diagram comparing symmetric vs. asymmetric current flow in matched devices.
 
 
 ##  Multi-Fingering
@@ -190,7 +188,7 @@ $$
 R_g < \frac{1}{5 g_m} \quad \text{to} \quad R_g < \frac{1}{10 g_m}
 $$
 
-This condition ensures that the **gate thermal noise contribution** remains significantly below the **channel thermal noise**, preventing degradation of input-referred noise or gain.
+This condition ensures that the **gate thermal noise contribution** remains significantly below the **channel thermal noise**, preventing degradation of input-referred noise or gain.[@Prof_Razavi_2011]
 
 Basically, we compare the **channel thermal noise** with the **gate-resistance thermal noise**, and we solve to get the value of $N_f$ ensuring that gate noise remains well below channel noise.
 
@@ -233,7 +231,7 @@ $$
 \frac{W_{\text{tot}}}{N_f} > L_{\min},
 $$
 
-because excessively narrow fingers approach the **minimum manufacturable width** and exhibit strong proximity effects, increased mismatch, and higher perimeter capacitance.  
+because excessively narrow fingers approach the **minimum manufacturable width** and exhibit strong proximity effects, increased mismatch, and higher perimeter capacitance.[@Prof_Razavi_2001]
 For the IHP-SG13G2 130-nm process used here, as the name suggests the minimum channel length is:
 
 $$
