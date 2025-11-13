@@ -1,4 +1,4 @@
-# AES Requirements
+# Requirements
  
 A switch-mode LED driver IC needs to be designed to operate within an 18–36 V input range, support high-resolution
 (16-bit) PWM dimming for at least four RGBW channels with adjustable current control (1–40 mA), integrate protection

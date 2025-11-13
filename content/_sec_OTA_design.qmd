@@ -209,7 +209,7 @@ The situation with the design is summarized in @tbl-voltage-buffer-spec.
 |:-------------------------------------------|:-------:|:-------:|
 | Output voltage error                       | $<1$    | %       |
 | Total output noise (rms)                   | $<0.15$ | mV~rms~ |
-| Supply current (as low as possible)        | $<12.5$ | µA      |
+| Supply current (as low as possible)        | $<14$ | µA      |
 | Turn-on time                               | $<0.4$  | µs      |
 | Externally provided bias current (nominal) | $12.5$  | µA      |
 
