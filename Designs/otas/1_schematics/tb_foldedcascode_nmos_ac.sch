@@ -60,7 +60,7 @@ C {devices/code_shown.sym} 50 -20 0 0 {name=MODEL1 only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
 "}
-C {devices/code_shown.sym} 50 -790 0 0 {name=NGSPICE1 only_toplevel=true 
+C {devices/code_shown.sym} 40 -980 0 0 {name=NGSPICE1 only_toplevel=true 
 value="
 
 *.include /foss/designs/thesis/thesis_hp/designs/otas/3_kpex/ota_final__ota_final/magic_CC/ota_final.pex.spice
@@ -74,16 +74,16 @@ value="
 .control
 option sparse
 save all
+
+* ---------- AC analysis ----------
 op
-write tb_foldedcascode_nmos_ac.raw
-set appendwrite
-
 ac dec 101 1k 1G
-write tb_foldedcascode_nmos_ac.raw
-plot 20*log10(v_out)
 
+* Make sure the current plot is the AC plot
+setplot ac1
+remzerovec
 
-
+* Measurements on AC
 meas ac dcgain MAX vmag(v_out) FROM=10 TO=10k
 let f3db = dcgain/sqrt(2)
 meas ac fbw WHEN vmag(v_out)=f3db FALL=1
@@ -92,16 +92,26 @@ print dcgain
 print fbw
 print gainerror
 
-
-
+* (optional) interactive plots inside ngspice
+plot 20*log10(v_out)
 plot 180/pi*ph(v_out) vs frequency
 
+* Write ONLY the AC plot to this file
+write tb_foldedcascode_nmos_ac.raw
+
+* ---------- Noise analysis ----------
 noise v(v_out) Vin dec 101 1k 100MEG
 print onoise_total
+
+* Make sure current plot is the noise plot
+setplot noise1
+
+* Write the noise plot to a separate file
+write tb_foldedcascode_nmos_noise.raw
 
 .endc
 "}
 C {devices/title.sym} 470 60 0 0 {name=l5 author="(c) 2025 Thesis_HP, Apache-2.0 license"}
 C {devices/vsource.sym} 1370 -270 0 0 {name=Venable value=1.5 savecurrent=false}
 C {devices/lab_wire.sym} 1370 -310 0 1 {name=p8 sig_type=std_logic lab=v_ena}
-C {/foss/designs/thesis/thesis_hp/Designs/otas/1_schematics/foldedcascode_nmos.sym} 1430 -400 0 0 {name=x1}
+C {foldedcascode_nmos.sym} 1430 -400 0 0 {name=x1}

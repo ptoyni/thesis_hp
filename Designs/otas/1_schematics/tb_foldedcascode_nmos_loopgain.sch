@@ -129,60 +129,6 @@ value="
 .lib cornerMOSlv.lib mos_tt
 .lib cornerRES.lib res_typ
 "}
-C {devices/code_shown.sym} 90 -1090 0 0 {name=NGSPICE
-only_toplevel=true
-value="
-
-*.include /foss/designs/thesis/thesis_hp/designs/otas/3_kpex/foldedcascode_nmos_withdummies__foldedcascode_nmos_withdummies/magic_CC/foldedcascode_nmos_withdummies.pex.spice
-
-
-.param temp=27
-.options savecurrents reltol=1e-3 abstol=1e-12 gmin=1e-15
-.control
-save all
-
-* Operating Point Analysis
-op
-remzerovec
-write foldedcascode_nmos_tb-loopgain.raw
-set appendwrite
-
-* AC Analysis
-ac dec 101 1 100G
-remzerovec
-write foldedcascode_nmos_tb-loopgain.raw
-set appendwrite
-
-* Middlebrook's Method
-let tv=-v(vr1)/v(vf1)
-let ti=-i(vir1)/i(vif1)
-let tmb=(tv*ti - 1)/(tv + ti + 2)
-
-plot db(tmb) ylabel 'Magnitude - Middlebrook'
-plot 180/pi*cphase(tmb) ylabel 'Phase - Middlebrook'
-
-* Tian's Method
-* vtest=0, itest=1:
-let A=i(Vimeas2)
-let C=v(vmeas2)
-
-* vtest=1, itest=0:
-let B=i(Vimeas1)
-let D=v(vmeas1)
-let ttian=(A*D-B*C-A)/(2*(B*C-A*D)+A-D+1)
-
-plot db(ttian) ylabel 'Magnitude - Tian'
-plot 180/pi*cphase(ttian) ylabel 'Phase - Tian'
-
-* Middlebrook vs. Tian
-plot db(tmb) db(ttian) ylabel 'Magnitude'
-plot 180/pi*cphase(tmb) 180/pi*cphase(ttian) ylabel 'Phase'
-
-write foldedcascode_nmos_tb-loopgain.raw
-
-*quit
-.endc
-"}
 C {devices/vsource.sym} 790 -110 0 0 {name=Vdd value=1.5}
 C {devices/gnd.sym} 790 -60 0 0 {name=l3 lab=GND}
 C {devices/lab_pin.sym} 790 -160 0 0 {name=p2 sig_type=std_logic lab=v_dd}
@@ -196,7 +142,7 @@ C {devices/lab_pin.sym} 1410 -140 0 0 {name=p6 sig_type=std_logic lab=v_ss}
 C {devices/capa.sym} 1650 -230 0 0 {name=C2
 value=2p}
 C {devices/lab_wire.sym} 1170 -350 0 0 {name=p9 sig_type=std_logic lab=v_in}
-C {devices/isource.sym} 1450 -450 0 0 {name=I1 value=14u pwl(0 0 10u 0 11u 14u)"}
+C {devices/isource.sym} 1450 -450 0 0 {name=I1 value=40u pwl(0 0 10u 0 11u 40u)"}
 C {devices/lab_pin.sym} 790 -220 0 0 {name=p11 sig_type=std_logic lab=v_ss}
 C {devices/vsource.sym} 1280 -200 3 0 {name=Vtest1 value="dc 0 ac 1"}
 C {devices/lab_wire.sym} 1210 -200 0 0 {name=p3 sig_type=std_logic lab=vf1}
@@ -206,7 +152,7 @@ C {devices/lab_pin.sym} 2170 -140 0 0 {name=p15 sig_type=std_logic lab=v_ss}
 C {devices/capa.sym} 2410 -230 0 0 {name=C1
 value=2p}
 C {devices/lab_wire.sym} 1930 -350 0 0 {name=p17 sig_type=std_logic lab=v_in}
-C {devices/isource.sym} 2210 -450 0 0 {name=I2 value=14u pwl(0 0 10u 0 11u 14u)"}
+C {devices/isource.sym} 2210 -450 0 0 {name=I2 value=40u pwl(0 0 10u 0 11u 40u)"}
 C {devices/ammeter.sym} 2100 -200 1 0 {name=Vir1 savecurrent=true spice_ignore=0}
 C {devices/ammeter.sym} 2000 -200 1 0 {name=Vif1 savecurrent=true spice_ignore=0}
 C {devices/isource.sym} 2050 -130 2 0 {name=Itest1 value="dc 0 ac 1"}
@@ -215,13 +161,13 @@ C {devices/lab_pin.sym} 1410 -700 0 0 {name=p20 sig_type=std_logic lab=v_ss}
 C {devices/capa.sym} 1650 -790 0 0 {name=C3
 value=2p}
 C {devices/lab_wire.sym} 1170 -910 0 0 {name=p22 sig_type=std_logic lab=v_in}
-C {devices/isource.sym} 1450 -1010 0 0 {name=I3 value=14u pwl(0 0 10u 0 11u 14u)"}
+C {devices/isource.sym} 1450 -1010 0 0 {name=I3 value=40u pwl(0 0 10u 0 11u 40u)"}
 C {devices/lab_pin.sym} 2140 -1060 0 0 {name=p26 sig_type=std_logic lab=v_dd}
 C {devices/lab_pin.sym} 2170 -700 0 0 {name=p27 sig_type=std_logic lab=v_ss}
 C {devices/capa.sym} 2410 -790 0 0 {name=C4
 value=2p}
 C {devices/lab_wire.sym} 1930 -910 0 0 {name=p29 sig_type=std_logic lab=v_in}
-C {devices/isource.sym} 2210 -1010 0 0 {name=I4 value=14u pwl(0 0 10u 0 11u 14u)"}
+C {devices/isource.sym} 2210 -1010 0 0 {name=I4 value=40u pwl(0 0 10u 0 11u 40u)"}
 C {devices/isource.sym} 1170 -670 2 1 {name=Itest3 value="dc 0 ac 0"}
 C {devices/vsource.sym} 1240 -760 3 0 {name=Vtest2 value="dc 0 ac 1"}
 C {devices/lab_wire.sym} 1210 -720 2 0 {name=p24 sig_type=std_logic lab=vmeas1}
@@ -242,3 +188,50 @@ C {devices/lab_wire.sym} 1420 -820 2 0 {name=p23 sig_type=std_logic lab=v_ena}
 C {devices/lab_wire.sym} 2180 -820 2 0 {name=p7 sig_type=std_logic lab=v_ena}
 C {devices/lab_wire.sym} 1420 -260 1 1 {name=p10 sig_type=std_logic lab=v_ena}
 C {devices/lab_wire.sym} 2180 -260 1 1 {name=p16 sig_type=std_logic lab=v_ena}
+C {devices/code_shown.sym} 60 -1230 0 0 {name=NGSPICE1
+only_toplevel=true
+value="
+
+*.include /foss/designs/thesis/thesis_hp/designs/otas/3_kpex/foldedcascode_nmos_withdummies__foldedcascode_nmos_withdummies/magic_CC/foldedcascode_nmos_withdummies.pex.spice
+
+
+.param temp=27
+.options savecurrents reltol=1e-3 abstol=1e-12 gmin=1e-15
+.control
+save all
+
+* Operating Point Analysis
+op
+
+* AC Analysis
+ac dec 101 1 100G
+remzerovec
+
+* Middlebrook's Method
+let tv  = -v(vr1)/v(vf1)
+let ti  = -i(vir1)/i(vif1)
+let tmb = (tv*ti - 1)/(tv + ti + 2)
+
+* Tian's Method
+* vtest=0, itest=1:
+let A = i(Vimeas2)
+let C = v(vmeas2)
+
+* vtest=1, itest=0:
+let B = i(Vimeas1)
+let D = v(vmeas1)
+let ttian = (A*D - B*C - A)/(2*(B*C - A*D) + A - D + 1)
+
+* optional interactive plots
+* plot db(tmb) ylabel 'Magnitude - Middlebrook'
+* plot 180/pi*cphase(tmb) ylabel 'Phase - Middlebrook'
+* plot db(ttian) ylabel 'Magnitude - Tian'
+* plot 180/pi*cphase(ttian) ylabel 'Phase - Tian'
+*plot db(tmb) db(ttian) ylabel 'Magnitude'
+*plot 180/pi*cphase(tmb) 180/pi*cphase(ttian) ylabel 'Phase'
+
+* SINGLE clean write at the end
+write foldedcascode_nmos_tb-loopgain.raw
+
+.endc
+"}
