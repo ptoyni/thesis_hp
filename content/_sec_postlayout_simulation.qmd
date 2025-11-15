@@ -4,12 +4,12 @@ We have established testbenches for DC, AC, and transient analysis using the sym
 
 Firstly we need to open the symbol file in Xschem, edit the properties of the symbol See @fig-primitive. Change from `subcircuit` to `primitive`.
 
-![Primitive](figures/_fig_primitive.png){#fig-primitive}
+![Primitive](../figures/_fig_primitive.png){#fig-primitive}
 
 Once changed to primitive, now we can include the `.spice` file or `.cir` file from layout to the testbench. See @fig-include
 
 
-![Include](figures/_fig_include.png){#fig-include}
+![Include](../figures/_fig_include.png){#fig-include}
 
 
 Once the file is declared, we can run the testbench. 
@@ -19,11 +19,11 @@ It is critically important to match the order of pins and their names. The pin o
 :::
 
 
-![Include](figures/_fig_correct_matching_xschem.png){#fig-correctmatchingxschem}
-![Include](figures/_fig_correct_matching_cir.png){#fig-correctmatchingcir}
+![Correct Matching](../figures/_fig_correct_matching_xschem.png){#fig-correctmatchingxschem}
+![SS Extracted Layout](../figures/_fig_correct_matching_cir.png){#fig-correctmatchingcir}
 
 
 ***Post layout and prelayout graphs to be added here as results***
 
 
-![Postlayout Results](figures/_fig_foldedcascode_ac_bode_postlayout.svg){#fig-postlayout-output}
+![Postlayout Results](../figures/_fig_foldedcascode_ac_bode_postlayout.svg){#fig-postlayout-output}
