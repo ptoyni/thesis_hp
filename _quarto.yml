@@ -39,8 +39,8 @@ book:
   downloads: [pdf,epub]
 
   chapters:
-    - index.qmd
     - content/Abstract.qmd
+    - content/_sec_introduction.qmd
     - content/Declaration_of_Authorship.qmd
     - part: System
       chapters:
@@ -57,8 +57,8 @@ book:
         - content/_sec_layout_finalsteps.qmd
     - part: Post-Layout Simulation
       chapters:
-        - content/_sec_OTA_pex.qmd
         - content/_sec_postlayout_simulation.qmd
+        - content/_sec_OTA_pex.qmd
     - references.qmd
     
   appendices:
