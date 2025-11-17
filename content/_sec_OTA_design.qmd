@@ -1,4 +1,6 @@
-# Thesis Focus
+
+
+## Thesis Focus
 
 The focus of our thesis is designing and implementating error amplifier block within the selected buck converter
 topology using Open Source Tools. This involves developing the block from initial specification and schematic design
@@ -84,7 +86,7 @@ basically a python version of the gm/Id starter kit from Boris Murmann.
 
 
 A brief implementation of this method is available
-[here](https://github.com/iic-jku/analog-circuit-design/blob/main/sizing/Ref_Murmann_gmID.pdf)
+[here](https://github.com/dreoilin/pygmid)
 
 Following is the python notebook designed for the sizing of Foldedcascode OTA with nmos differential input pair using
 $g_{m}$ over $I_d$ method.
@@ -101,6 +103,8 @@ Based on the sizing procedure in @sec-gmid-method, we are ready with all the $W/
 complete OTA (see @fig-foldedcascode-xschem) 
 
 ![OTA design in Xschem](../figures/_fig_foldedcascode_xschem.svg){#fig-foldedcascode-xschem}
+
+Find the schematic design [here](../Designs/otas/1_schematics/foldedcascode_nmos.sch)
 
 ### Discussion of the OTA Design
 
@@ -184,7 +188,7 @@ There are two options how to tackle this efficiently:
    evaluating the outcome. These frameworks are called simulation runners.
 
 Luckily, there are open-source versions of simulation runners available, and we will use
-[CACE](https://github.com/efabless/cace) in this lecture. CACE is written in Python and allows to setup a datasheet in
+[CACE](https://github.com/efabless/cace). CACE is written in Python and allows to setup a datasheet in
 [YAML](https://yaml.org) which defines the simulation problem and the performance parameters to evaluate against which
 limits. The resulting simulations are then run in parallel and the simulation data is evaluated and summarized in
 various forms.

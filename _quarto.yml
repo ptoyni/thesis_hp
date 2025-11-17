@@ -39,7 +39,8 @@ book:
   downloads: [pdf,epub]
 
   chapters:
-    - content/Abstract.qmd
+    - index.qmd
+    # - content/Abstract.qmd
     - content/_sec_introduction.qmd
     - content/Declaration_of_Authorship.qmd
     - part: System
