@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Parasitics and Prevention – Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
+<title>9&nbsp; Parasitics and Prevention – Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -52,17 +52,15 @@ div.csl-indent {
 <meta name="quarto:offset" content="../">
 <link href="../content/_sec_layout_finalsteps.html" rel="next">
 <link href="../content/_sec_LVS.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7fd0fe4245b865325b8ce8dccb604d59.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cb7011eeb8faf9e577c51abd71603fb6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-98ae64bfd9899f02aacb27a3864e4079.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -105,7 +103,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -123,7 +121,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -132,7 +130,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_OTA_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_parasitics_prevention.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_OTA_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_parasitics_prevention.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -145,9 +143,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -187,7 +183,19 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../content/_sec_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../content/Declaration_of_Authorship.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Declaration of Authorship</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -202,7 +210,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_Requirements_AES.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Requirements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Requirements</span></span></a>
   </div>
 </li>
       </ul>
@@ -219,7 +227,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_OTA_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Thesis Focus</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Thesis Focus</span></span></a>
   </div>
 </li>
       </ul>
@@ -236,31 +244,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_OTA_layout.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to Layout</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Layout</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_DRC.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_LVS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_parasitics_prevention.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_layout_finalsteps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
   </div>
 </li>
       </ul>
@@ -276,14 +284,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/_sec_OTA_pex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">PEX</span></span></a>
+  <a href="../content/_sec_postlayout_simulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Post layout simulation.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/_sec_postlayout_simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Post layout simulation.</span></span></a>
+  <a href="../content/_sec_OTA_pex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">PEX</span></span></a>
   </div>
 </li>
       </ul>
@@ -333,32 +341,32 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-analog-suffers-more-from-parasitics" id="toc-why-analog-suffers-more-from-parasitics" class="nav-link active" data-scroll-target="#why-analog-suffers-more-from-parasitics"><span class="header-section-number">7.1</span> Why Analog Suffers More from Parasitics</a></li>
-  <li><a href="#interconnect-and-device-level-parasitics" id="toc-interconnect-and-device-level-parasitics" class="nav-link" data-scroll-target="#interconnect-and-device-level-parasitics"><span class="header-section-number">7.2</span> Interconnect and Device-Level Parasitics</a>
+  <li><a href="#why-analog-suffers-more-from-parasitics" id="toc-why-analog-suffers-more-from-parasitics" class="nav-link active" data-scroll-target="#why-analog-suffers-more-from-parasitics"><span class="header-section-number">9.1</span> Why Analog Suffers More from Parasitics</a></li>
+  <li><a href="#interconnect-and-device-level-parasitics" id="toc-interconnect-and-device-level-parasitics" class="nav-link" data-scroll-target="#interconnect-and-device-level-parasitics"><span class="header-section-number">9.2</span> Interconnect and Device-Level Parasitics</a>
   <ul class="collapse">
-  <li><a href="#metal-and-coupling-capacitances" id="toc-metal-and-coupling-capacitances" class="nav-link" data-scroll-target="#metal-and-coupling-capacitances"><span class="header-section-number">7.2.1</span> Metal and Coupling Capacitances</a></li>
-  <li><a href="#via-and-contact-parasitics" id="toc-via-and-contact-parasitics" class="nav-link" data-scroll-target="#via-and-contact-parasitics"><span class="header-section-number">7.2.2</span> Via and Contact Parasitics</a></li>
-  <li><a href="#junctionoverlap-capacitances" id="toc-junctionoverlap-capacitances" class="nav-link" data-scroll-target="#junctionoverlap-capacitances"><span class="header-section-number">7.2.3</span> Junction/Overlap Capacitances</a></li>
+  <li><a href="#metal-and-coupling-capacitances" id="toc-metal-and-coupling-capacitances" class="nav-link" data-scroll-target="#metal-and-coupling-capacitances"><span class="header-section-number">9.2.1</span> Metal and Coupling Capacitances</a></li>
+  <li><a href="#via-and-contact-parasitics" id="toc-via-and-contact-parasitics" class="nav-link" data-scroll-target="#via-and-contact-parasitics"><span class="header-section-number">9.2.2</span> Via and Contact Parasitics</a></li>
+  <li><a href="#junctionoverlap-capacitances" id="toc-junctionoverlap-capacitances" class="nav-link" data-scroll-target="#junctionoverlap-capacitances"><span class="header-section-number">9.2.3</span> Junction/Overlap Capacitances</a></li>
   </ul></li>
-  <li><a href="#critical-parasitics-mechanisms-and-mitigation-strategies" id="toc-critical-parasitics-mechanisms-and-mitigation-strategies" class="nav-link" data-scroll-target="#critical-parasitics-mechanisms-and-mitigation-strategies"><span class="header-section-number">7.3</span> Critical Parasitics Mechanisms and Mitigation Strategies</a>
+  <li><a href="#critical-parasitics-mechanisms-and-mitigation-strategies" id="toc-critical-parasitics-mechanisms-and-mitigation-strategies" class="nav-link" data-scroll-target="#critical-parasitics-mechanisms-and-mitigation-strategies"><span class="header-section-number">9.3</span> Critical Parasitics Mechanisms and Mitigation Strategies</a>
   <ul class="collapse">
-  <li><a href="#latch-up" id="toc-latch-up" class="nav-link" data-scroll-target="#latch-up"><span class="header-section-number">7.3.1</span> Latch-Up</a></li>
-  <li><a href="#antenna-effect" id="toc-antenna-effect" class="nav-link" data-scroll-target="#antenna-effect"><span class="header-section-number">7.3.2</span> Antenna Effect</a></li>
-  <li><a href="#interconnecting-vias-reliability-and-noise" id="toc-interconnecting-vias-reliability-and-noise" class="nav-link" data-scroll-target="#interconnecting-vias-reliability-and-noise"><span class="header-section-number">7.3.3</span> Interconnecting Vias (Reliability and Noise)</a></li>
-  <li><a href="#charge-injection-and-gate-coupling" id="toc-charge-injection-and-gate-coupling" class="nav-link" data-scroll-target="#charge-injection-and-gate-coupling"><span class="header-section-number">7.3.4</span> Charge Injection and Gate Coupling</a></li>
+  <li><a href="#latch-up" id="toc-latch-up" class="nav-link" data-scroll-target="#latch-up"><span class="header-section-number">9.3.1</span> Latch-Up</a></li>
+  <li><a href="#antenna-effect" id="toc-antenna-effect" class="nav-link" data-scroll-target="#antenna-effect"><span class="header-section-number">9.3.2</span> Antenna Effect</a></li>
+  <li><a href="#interconnecting-vias-reliability-and-noise" id="toc-interconnecting-vias-reliability-and-noise" class="nav-link" data-scroll-target="#interconnecting-vias-reliability-and-noise"><span class="header-section-number">9.3.3</span> Interconnecting Vias (Reliability and Noise)</a></li>
+  <li><a href="#charge-injection-and-gate-coupling" id="toc-charge-injection-and-gate-coupling" class="nav-link" data-scroll-target="#charge-injection-and-gate-coupling"><span class="header-section-number">9.3.4</span> Charge Injection and Gate Coupling</a></li>
   </ul></li>
-  <li><a href="#guard-rings-local-substrate-sinks---saviour" id="toc-guard-rings-local-substrate-sinks---saviour" class="nav-link" data-scroll-target="#guard-rings-local-substrate-sinks---saviour"><span class="header-section-number">7.4</span> Guard Rings (Local Substrate Sinks) - Saviour</a></li>
-  <li><a href="#block-level-practices-implemented-in-this-work" id="toc-block-level-practices-implemented-in-this-work" class="nav-link" data-scroll-target="#block-level-practices-implemented-in-this-work"><span class="header-section-number">7.5</span> Block-Level Practices Implemented in This Work</a></li>
-  <li><a href="#practical-checklist-analog-focused" id="toc-practical-checklist-analog-focused" class="nav-link" data-scroll-target="#practical-checklist-analog-focused"><span class="header-section-number">7.6</span> Practical Checklist (Analog-Focused)</a></li>
+  <li><a href="#guard-rings-local-substrate-sinks---saviour" id="toc-guard-rings-local-substrate-sinks---saviour" class="nav-link" data-scroll-target="#guard-rings-local-substrate-sinks---saviour"><span class="header-section-number">9.4</span> Guard Rings (Local Substrate Sinks) - Saviour</a></li>
+  <li><a href="#block-level-practices-implemented-in-this-work" id="toc-block-level-practices-implemented-in-this-work" class="nav-link" data-scroll-target="#block-level-practices-implemented-in-this-work"><span class="header-section-number">9.5</span> Block-Level Practices Implemented in This Work</a></li>
+  <li><a href="#practical-checklist-analog-focused" id="toc-practical-checklist-analog-focused" class="nav-link" data-scroll-target="#practical-checklist-analog-focused"><span class="header-section-number">9.6</span> Practical Checklist (Analog-Focused)</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ptoyni/thesis_hp/edit/main/content/_sec_parasitics_prevention.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ptoyni/thesis_hp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_OTA_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_parasitics_prevention.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_OTA_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_parasitics_prevention.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></h1>
 </div>
 
 
@@ -377,8 +385,8 @@ window.Quarto = {
 
 <p>Even though a layout is <strong>DRC- and LVS-clean</strong> but can still fail in silicon if parasitics and noise coupling are ignored.<br>
 This chapter formalizes the main parasitic mechanisms relevant to <strong>analog ICs</strong>, outlines why analog is <strong>more vulnerable than digital</strong>, and documents the concrete prevention measures implemented in our design. The discussion follows the physical reasoning and best-practice guidance in <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[1]</a></span> (Ch. 7), adapted to the SG13G2 context.</p>
-<section id="why-analog-suffers-more-from-parasitics" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="why-analog-suffers-more-from-parasitics"><span class="header-section-number">7.1</span> Why Analog Suffers More from Parasitics</h2>
+<section id="why-analog-suffers-more-from-parasitics" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="why-analog-suffers-more-from-parasitics"><span class="header-section-number">9.1</span> Why Analog Suffers More from Parasitics</h2>
 <p>Digital logic tolerates substantial RC and substrate coupling because functionality is determined by logic thresholds and noise margins. By contrast, <strong>analog circuits</strong> encode information in <strong>amplitude, phase, and continuous bias conditions</strong>. Small parasitic shifts in device parameters or interconnect coupling directly effects gain, offset, bandwidth, and noise.</p>
 <p>Key vulnerabilities arise because analog circuits operate on continuous voltage and current levels, where even small parasitic interactions can shift the operating point or distort the signal. 1. High-impedance nodes, such as the inputs of operational transconductance amplifiers (OTAs), are particularly sensitive because they cannot source or sink significant current. Any parasitic capacitance — whether from junction diffusion, metal-to-substrate coupling, or fringe fields from nearby interconnects — directly loads these nodes. This loading introduces unwanted poles, reduces input resistance, and increases thermal noise coupling. In precision amplifiers, such parasitic capacitances can also create signal-dependent charge storage, causing distortion or phase lag at higher frequencies.</p>
 <ol start="2" type="1">
@@ -387,29 +395,29 @@ This chapter formalizes the main parasitic mechanisms relevant to <strong>analog
 </ol>
 <p>Consequently, the layout must be arranged to minimize parasitic capacitance at high-impedance nodes, isolate bias networks from noisy regions, and maintain compact, symmetrical feedback routing to preserve loop stability. Therefore, parasitics must be <strong>anticipated and shaped</strong>—not merely checked—during layout.</p>
 </section>
-<section id="interconnect-and-device-level-parasitics" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="interconnect-and-device-level-parasitics"><span class="header-section-number">7.2</span> Interconnect and Device-Level Parasitics</h2>
-<section id="metal-and-coupling-capacitances" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="metal-and-coupling-capacitances"><span class="header-section-number">7.2.1</span> Metal and Coupling Capacitances</h3>
+<section id="interconnect-and-device-level-parasitics" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="interconnect-and-device-level-parasitics"><span class="header-section-number">9.2</span> Interconnect and Device-Level Parasitics</h2>
+<section id="metal-and-coupling-capacitances" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="metal-and-coupling-capacitances"><span class="header-section-number">9.2.1</span> Metal and Coupling Capacitances</h3>
 <p>Parallel conductors form <strong>inter-wire capacitances</strong>; long, co-planar runs also couple substrate noise through capacitance to ground.<br>
 In our layout, we <strong>avoid long same-layer parallel routing</strong> on sensitive nets. Where proximity is unavoidable, we prefer <strong>layer staggering</strong> (e.g., route one net on <span class="math inline">\(M_n\)</span> and the other on <span class="math inline">\(M_{n+2}\)</span>), maintain generous spacing, and, when beneficial, add <strong>symmetric ground shields</strong>. Orthogonal routing between adjacent layers (Manhattan style) further reduces broadside coupling <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[1]</a></span>.</p>
 </section>
-<section id="via-and-contact-parasitics" class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="via-and-contact-parasitics"><span class="header-section-number">7.2.2</span> Via and Contact Parasitics</h3>
+<section id="via-and-contact-parasitics" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="via-and-contact-parasitics"><span class="header-section-number">9.2.2</span> Via and Contact Parasitics</h3>
 <p>Vias introduce <strong>series resistance</strong> and small fringing capacitances; unbalanced via stacks can create gain/offset asymmetry. We use <strong>redundant via arrays</strong> on low-impedance and high-current paths, keep <strong>via symmetry</strong> across matched branches, and avoid unnecessary layer hops on high-impedance nodes. This also improves electromigration margins.</p>
 </section>
-<section id="junctionoverlap-capacitances" class="level3" data-number="7.2.3">
-<h3 data-number="7.2.3" class="anchored" data-anchor-id="junctionoverlap-capacitances"><span class="header-section-number">7.2.3</span> Junction/Overlap Capacitances</h3>
+<section id="junctionoverlap-capacitances" class="level3" data-number="9.2.3">
+<h3 data-number="9.2.3" class="anchored" data-anchor-id="junctionoverlap-capacitances"><span class="header-section-number">9.2.3</span> Junction/Overlap Capacitances</h3>
 <p>Source/drain junction areas and perimeters add capacitance that <strong>loads high-impedance nodes</strong> and shifts poles.<br>
 We mitigate this by <strong>multi-fingering</strong> large devices (controlling diffusion area/perimeter) and by <strong>dummy fingers</strong> to regularize edge effects, as detailed earlier. Device segmentation is paired with <strong>balanced routing and via symmetry</strong> to preserve matching.</p>
 </section>
 </section>
-<section id="critical-parasitics-mechanisms-and-mitigation-strategies" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="critical-parasitics-mechanisms-and-mitigation-strategies"><span class="header-section-number">7.3</span> Critical Parasitics Mechanisms and Mitigation Strategies</h2>
+<section id="critical-parasitics-mechanisms-and-mitigation-strategies" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="critical-parasitics-mechanisms-and-mitigation-strategies"><span class="header-section-number">9.3</span> Critical Parasitics Mechanisms and Mitigation Strategies</h2>
 <p>As discussed above, the physical behavior of the silicon can be compromised by secondary effects. These parasitic mechanisms—though invisible in schematic design—can severely degrade performance or even render an integrated circuit non-functional.<br>
 The following subsections discuss the most relevant effects for analog circuits and the preventive measures applied in this work.</p>
-<section id="latch-up" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="latch-up"><span class="header-section-number">7.3.1</span> Latch-Up</h3>
+<section id="latch-up" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="latch-up"><span class="header-section-number">9.3.1</span> Latch-Up</h3>
 <p><strong>Mechanism.</strong><br>
 Latch-up is a destructive parasitic phenomenon that occurs primarily in bulk CMOS and BiCMOS technologies.<br>
 Within the substrate and well structure, every pair of adjacent p–n junctions inherently forms <strong>parasitic bipolar transistors</strong> (pnp and npn).<br>
@@ -423,8 +431,8 @@ Adequate <strong>spacing between n-wells and p-wells</strong> reduces parasitic 
 For highly sensitive analog blocks, the <strong>deep-N-well (isolation well)</strong> option provided in the SG13G2 process was employed. This isolation ensures that the substrate region of the analog core is electrically separated from neighboring digital or I/O structures, effectively suppressing latch-up initiation.<br>
 Additionally, I/O pads and high-swing nodes are placed away from precision analog circuits to minimize injection of transient substrate currents <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[1]</a></span>.</p>
 </section>
-<section id="antenna-effect" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="antenna-effect"><span class="header-section-number">7.3.2</span> Antenna Effect</h3>
+<section id="antenna-effect" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="antenna-effect"><span class="header-section-number">9.3.2</span> Antenna Effect</h3>
 <p><strong>Mechanism.</strong><br>
 During etching and deposition steps in fabrication, unconnected metal or polysilicon features can act as <strong>charge-collecting antennas</strong>.<br>
 If a long interconnect is connected to a transistor gate but not yet to a diffusion region, the charge accumulated on the metal surface can discharge through the thin gate oxide once the diffusion is formed.<br>
@@ -434,8 +442,8 @@ The risk increases with larger metal area and thinner gate oxides, making advanc
 To prevent this, <strong>metal hopping</strong> is applied—routing is divided into shorter segments by inserting vias to higher or lower metal layers, thus reducing the effective exposed area.<br>
 In this work, <strong>metal segmentation</strong> were used for nets identified by the SG13G2 PDK’s antenna check script as having potential plasma-induced charging risk.</p>
 </section>
-<section id="interconnecting-vias-reliability-and-noise" class="level3" data-number="7.3.3">
-<h3 data-number="7.3.3" class="anchored" data-anchor-id="interconnecting-vias-reliability-and-noise"><span class="header-section-number">7.3.3</span> Interconnecting Vias (Reliability and Noise)</h3>
+<section id="interconnecting-vias-reliability-and-noise" class="level3" data-number="9.3.3">
+<h3 data-number="9.3.3" class="anchored" data-anchor-id="interconnecting-vias-reliability-and-noise"><span class="header-section-number">9.3.3</span> Interconnecting Vias (Reliability and Noise)</h3>
 <p><strong>Mechanism.</strong><br>
 Vias are the vertical interconnects that connect one metal layer to another. Each via has a finite <strong>resistance and current-carrying limit</strong>.<br>
 If a single via is forced to conduct large currents, it experiences localized heating and <strong>electromigration</strong>, which can lead to open circuits or resistance drift over time. Furthermore, any asymmetry in via count or placement between matched branches creates <strong>mismatch in series resistance</strong>, leading to offset in analog differentials or current mirrors.<br>
@@ -445,8 +453,8 @@ To enhance both <strong>reliability and symmetry</strong>, we employ <strong>red
 In matched differential structures, <strong>via symmetry</strong> is strictly maintained, meaning identical via count, shape, and placement on both branches. This guarantees balanced parasitic resistance and capacitance, preventing differential offset.<br>
 These measures collectively improve <strong>electromigration margins</strong>, ensuring the long-term reliability of the metal interconnect network.</p>
 </section>
-<section id="charge-injection-and-gate-coupling" class="level3" data-number="7.3.4">
-<h3 data-number="7.3.4" class="anchored" data-anchor-id="charge-injection-and-gate-coupling"><span class="header-section-number">7.3.4</span> Charge Injection and Gate Coupling</h3>
+<section id="charge-injection-and-gate-coupling" class="level3" data-number="9.3.4">
+<h3 data-number="9.3.4" class="anchored" data-anchor-id="charge-injection-and-gate-coupling"><span class="header-section-number">9.3.4</span> Charge Injection and Gate Coupling</h3>
 <p><strong>Mechanism.</strong><br>
 Charge injection refers to the <strong>unintended transfer of charge</strong> from a switching device’s channel or overlap capacitances into adjacent high-impedance nodes. When a MOSFET gate or drain experiences a fast voltage transition, the associated capacitances (<span class="math inline">\(C_{gd}\)</span>, <span class="math inline">\(C_{gs}\)</span>, and junction capacitances) couple a portion of the transient charge into nearby sensitive nodes.<br>
 In analog amplifiers or sampling circuits, this causes <strong>voltage transients, bias perturbations, or signal distortion</strong>. The effect is more pronounced in narrow-geometry devices and high-speed circuits, where transitions occur rapidly and charge redistribution is incomplete.</p>
@@ -459,8 +467,8 @@ In networks involving switching (e.g., current-steering DACs or sample-and-hold 
 The preventive strategies applied in this work, derived from the IHP SG13G2 PDK rules and the guidelines in <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[1]</a></span>, ensure that the layout not only meets design rules but also preserves <strong>electrical integrity and long-term reliability</strong> in fabrication and operation.</p>
 </section>
 </section>
-<section id="guard-rings-local-substrate-sinks---saviour" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="guard-rings-local-substrate-sinks---saviour"><span class="header-section-number">7.4</span> Guard Rings (Local Substrate Sinks) - Saviour</h2>
+<section id="guard-rings-local-substrate-sinks---saviour" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="guard-rings-local-substrate-sinks---saviour"><span class="header-section-number">9.4</span> Guard Rings (Local Substrate Sinks) - Saviour</h2>
 <p>Guard rings are a fundamental structural element for <strong>substrate noise suppression</strong> and <strong>latch-up prevention</strong> in analog and mixed-signal IC layouts.<br>
 They consist of <strong>diffusion regions tied to power rails</strong> that form a <strong>low-impedance sink</strong> for substrate currents and injected minority carriers. When nearby transistors switch, charge is injected into the substrate or well regions, creating potential fluctuations that can couple into sensitive nodes. Guard rings intercept these currents and route them to a stable potential (AVDD or AVSS), thereby <strong>reducing parasitic coupling, improving device reliability, and stabilizing substrate potentials</strong> <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[1]</a></span>.</p>
 <p>In physical terms, the substrate and well behave as resistive media represented by <strong>Rsub</strong> (substrate resistance) and <strong>Rwell</strong> (well resistance).<br>
@@ -480,7 +488,7 @@ This configuration ensures that both substrate and well domains have <strong>fir
 <li><p><strong>Continuous Guard Rings</strong><br>
 These structures <strong>completely enclose</strong> the protected device region without any breaks.<br>
 They offer <strong>maximum isolation</strong>, <strong>lowest effective substrate resistance</strong>, and <strong>best protection against latch-up and substrate noise</strong>.<br>
-Continuous rings are preferred in <strong>high-precision analog blocks</strong> where low <span class="math inline">\(R_{\text{sub}\)</span> and <span class="math inline">\(R_{\text{well}}\)</span> are crucial for stable operation.<br>
+Continuous rings are preferred in <strong>high-precision analog blocks</strong> where low <span class="math inline">\(R_{\text{sub}}\)</span> and <span class="math inline">\(R_{\text{well}}\)</span> are crucial for stable operation.<br>
 In our OTA layout, every critical block—especially the differential pair—is enclosed by <strong>continuous rectangular guard rings</strong>, chosen for their strong isolation and reliability.</p></li>
 <li><p><strong>Segmented Guard Rings</strong><br>
 These are composed of <strong>discrete diffusion segments</strong> separated by intentional openings to accommodate routing or area constraints.<br>
@@ -489,8 +497,8 @@ While they exhibit <strong>higher <span class="math inline">\(R_{\text{sub}}\)</
 <p>In conclusion, the guard-ring network in this layout not only suppresses substrate coupling and latch-up but also <strong>reduces Rsub and Rwell</strong>, anchoring the local substrate and well potentials to fixed references.<br>
 This ensures stable device behavior across temperature and process variations and significantly enhances long-term reliability of the analog core.</p>
 </section>
-<section id="block-level-practices-implemented-in-this-work" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="block-level-practices-implemented-in-this-work"><span class="header-section-number">7.5</span> Block-Level Practices Implemented in This Work</h2>
+<section id="block-level-practices-implemented-in-this-work" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="block-level-practices-implemented-in-this-work"><span class="header-section-number">9.5</span> Block-Level Practices Implemented in This Work</h2>
 <ul>
 <li><strong>Per-group isolation.</strong> The <strong>differential pair</strong>, <strong>active load</strong>, and <strong>current-mirror groups</strong> are each enclosed by <strong>complete guard rings</strong> and placed inside <strong>deep N-well/isolation</strong> where available, creating local “quiet islands.”<br>
 </li>
@@ -501,8 +509,8 @@ This ensures stable device behavior across temperature and process variations an
 <li><strong>Symmetry.</strong> Wherever matching matters, we keep <strong>equal lengths</strong>, <strong>matched via stacks</strong>, and <strong>balanced shields</strong> on both branches so parasitics affect each side equally.</li>
 </ul>
 </section>
-<section id="practical-checklist-analog-focused" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="practical-checklist-analog-focused"><span class="header-section-number">7.6</span> Practical Checklist (Analog-Focused)</h2>
+<section id="practical-checklist-analog-focused" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="practical-checklist-analog-focused"><span class="header-section-number">9.6</span> Practical Checklist (Analog-Focused)</h2>
 <ol type="1">
 <li><strong>Plan isolation first.</strong> Assign deep-N-well/guard-ring envelopes before routing.<br>
 </li>
@@ -522,7 +530,7 @@ This ensures stable device behavior across temperature and process variations an
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Pro Tip — Parasitics Are Design Variables
+Pro Tip — Parasitics Are Design Variables
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -540,243 +548,236 @@ This ensures stable device behavior across temperature and process variations an
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
     }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
     }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ptoyni\.github\.io\/thesis_hp\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/ptoyni\.github\.io\/thesis_hp\/");
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
       }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
     }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
     }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
       } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
           }
         } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
+          // See if we can fetch this
+          fetch(url.split('#')[0])
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
+            const note = htmlDoc.getElementById(id);
             if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
+              const html = processXRef(id, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -784,170 +785,194 @@ This ensures stable device behavior across temperature and process variations an
             instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
       } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
         });
       }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
     }
-  });
-  </script>
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../content/_sec_LVS.html" class="pagination-link" aria-label="Layout Vs Schematic (LVS)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../content/_sec_layout_finalsteps.html" class="pagination-link" aria-label="Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
