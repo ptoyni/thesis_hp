@@ -15,7 +15,7 @@ Once changed to primitive, now we can include the `.spice` file or `.cir` file f
 Once the file is declared, we can run the testbench. 
 
 ::: {.callout-important title="Correct pin order"}
-It is critically important to match the order of pins and their names. The pin order and names in the `.cir` files need to be exact same as included in the testbench. See @fig-correctmatchingxschem and @fig-correctmatchingcir
+It is critically important to match the order of pins and their names. The pin order and names in the `.cir` files need to be exact same as included in the testbench. See the figures mentioned below
 :::
 
 
