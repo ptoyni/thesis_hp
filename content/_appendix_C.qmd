@@ -1,1 +1,34 @@
 # USB-Stick
+
+```t
+thesis_hp/
+├── .gitattributes
+├── .gitignore
+├── _book/
+├── _quarto/
+├── _quarto.yml
+├── _bibliography
+├── _manuscript
+├── appendix.qmd          # The file where this structure will be placed
+├── index.qmd             # Main project page / Introduction
+├── README.md
+├── references.qmd
+├── KNOWN_ISSUES.md
+├── cace/                 # (Folder likely related to CACE/CAD tools)
+├── content/
+├── Designs/              # Top-level Design Folder
+│   ├── foldedcascode_nmos_withdummies.gds   # (GDS file for layout fabrication)
+│   ├── foldedcascode_nmos_withdummies.spice # (SPICE netlist for simulation)
+│   ├── 1_schematics/     # (Design subfolder: Circuit schematics)
+│   ├── 2_layout/         # (Design subfolder: Physical layout files)
+│   └── 3_kpex/           # (Design subfolder: Extracted parasitic netlists)
+├── Expose_HP/            # (Likely High-Power related files/code)
+├── figures/              # Location for generated images and plots
+├── layout_scripts/       # Scripts specific to physical layout generation/checking
+├── Literature/           # References or literature review material
+├── python_codes/         # General scripts for data processing or analysis
+├── sizing/               # Files related to component sizing/calculations
+├── simulations/          # Folder for simulation setup and raw outputs
+└── postlayout_simulations/   # Post-Layout Simulation results/setup
+
+```
