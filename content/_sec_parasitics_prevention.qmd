@@ -129,7 +129,7 @@ Two topological categories are widely used:
 - **Continuous Guard Rings**  
   These structures **completely enclose** the protected device region without any breaks.  
   They offer **maximum isolation**, **lowest effective substrate resistance**, and **best protection against latch-up and substrate noise**.  
-  Continuous rings are preferred in **high-precision analog blocks** where low $R_{\text{sub}$ and $R_{\text{well}}$ are crucial for stable operation.  
+  Continuous rings are preferred in **high-precision analog blocks** where low $R_{\text{sub}}$ and $R_{\text{well}}$ are crucial for stable operation.  
   In our OTA layout, every critical block—especially the differential pair—is enclosed by **continuous rectangular guard rings**, chosen for their strong isolation and reliability.
 
 - **Segmented Guard Rings**  
