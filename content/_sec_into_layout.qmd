@@ -2,7 +2,7 @@
 
 Once, schematic in **Xschem** is finished, what we have is only the functional intent of the circuit. At this stage the devices are ideal: transistors have exactly the width and length we assign, wires have zero resistance, and parasitics like source/drain capacitances or coupling between metals are invisible. The layout stage is where this abstraction becomes **real silicon geometry**. Here, every transistor must be drawn in the technology’s layers, with actual fingers, source/drain contacts, guard rings and no component is ideal anymore.
 
-For analog circuits, this step is critical. Small layout choices — for example, placing two input devices slightly asymmetrically, or routing one input longer than the other — can directly show up as offset voltage or degraded common-mode rejection. In digital design, such effects are often absorbed by logic thresholds, but in analog design they decide whether the OTA meets its simulated gain or not.
+For analog circuits, this step is critical. Small layout choices for example, placing two input devices slightly asymmetrically, or routing one input longer than the other  can directly show up as offset voltage or degraded common-mode rejection. In digital design, such effects are often absorbed by logic thresholds, but in analog design they decide whether the OTA meets its simulated gain or not.
 
 In other words, schematic defines *“what we want”*, layout decides *“what we actually get”*. This chapter focuses on showing how a *folded-cascode OTA* in **IHP-SG13G2** was translated from a verified schematic into a manufacturable layout that still respects matching, symmetry, and parasitic limits.
 
@@ -11,7 +11,7 @@ In other words, schematic defines *“what we want”*, layout decides *“what 
 
 For the layout implementation, we relied on *KLayout*. It is a free, scriptable editor that is already integrated with the **IHP-SG13G2 open-source PDK** and provided in the **IIC-OSIC toolchain**. This makes it possible to perform layout tasks without the need for commercial software.  
 
-All necessary files — such as **Design Rule Checks (DRC)**,  **LVS comparison setups**, and **Parameterized cells (PCells)** — are directly accessible and supported within KLayout. This allows devices to be generated, verified, and extracted in a reproducible way.  
+All necessary files  such as **Design Rule Checks (DRC)**, **LVS comparison setups**, and **Parameterized cells (PCells)** are directly accessible and supported within KLayout. This allows devices to be generated, verified, and extracted in a reproducible way.  
 
 For further details, see the [KLayout website](https://www.klayout.de/).
 
