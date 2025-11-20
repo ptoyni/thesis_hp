@@ -1,0 +1,25 @@
+#  Introduction to Layout 
+
+Once, schematic in **Xschem** is finished, what we have is only the functional intent of the circuit. At this stage the devices are ideal: transistors have exactly the width and length we assign, wires have zero resistance, and parasitics like source/drain capacitances or coupling between metals are invisible. The layout stage is where this abstraction becomes **real silicon geometry**. Here, every transistor must be drawn in the technology’s layers, with actual fingers, source/drain contacts, guard rings and no component is ideal anymore.
+
+For analog circuits, this step is critical. Small layout choices — for example, placing two input devices slightly asymmetrically, or routing one input longer than the other — can directly show up as offset voltage or degraded common-mode rejection. In digital design, such effects are often absorbed by logic thresholds, but in analog design they decide whether the OTA meets its simulated gain or not.
+
+In other words, schematic defines *“what we want”*, layout decides *“what we actually get”*. This chapter focuses on showing how a *folded-cascode OTA* in **IHP-SG13G2** was translated from a verified schematic into a manufacturable layout that still respects matching, symmetry, and parasitic limits.
+
+
+##  Layout Toolchain: KLayout
+
+For the layout implementation, we relied on *KLayout*. It is a free, scriptable editor that is already integrated with the **IHP-SG13G2 open-source PDK** and provided in the **IIC-OSIC toolchain**. This makes it possible to perform layout tasks without the need for commercial software.  
+
+All necessary files — such as **Design Rule Checks (DRC)**,  **LVS comparison setups**, and **Parameterized cells (PCells)** — are directly accessible and supported within KLayout. This allows devices to be generated, verified, and extracted in a reproducible way.  
+
+For further details, see the [KLayout website](https://www.klayout.de/).
+
+::: {.callout-note title="Using KLayout: Docker vs. Source Build" collapse=true}
+
+Our layout work was carried out using **KLayout v0.30.1**, provided within the **IIC-OSIC Docker image**. Since this image is a prebuilt package, some advanced KLayout or Qt features may not function as expected.  
+
+If KLayout is build from source on your system, most of these limitations disappear, but in that case **IHP-SG13G2 technology files and libraries** must be manually integrated the into your local setup.  
+
+For guidance on this process, a useful resource is this [Efabless tutorial (second section by Thomas Perry)](https://www.youtube.com/watch?v=CSZm3q4rUBg&list=LL&index=24&t=1181s).
+:::

@@ -1,30 +1,3 @@
-#  Introduction to Layout 
-
-Once, schematic in **Xschem** is finished, what we have is only the functional intent of the circuit. At this stage the devices are ideal: transistors have exactly the width and length we assign, wires have zero resistance, and parasitics like source/drain capacitances or coupling between metals are invisible. The layout stage is where this abstraction becomes **real silicon geometry**. Here, every transistor must be drawn in the technology’s layers, with actual fingers, source/drain contacts, guard rings and no component is ideal anymore.
-
-For analog circuits, this step is critical. Small layout choices — for example, placing two input devices slightly asymmetrically, or routing one input longer than the other — can directly show up as offset voltage or degraded common-mode rejection. In digital design, such effects are often absorbed by logic thresholds, but in analog design they decide whether the OTA meets its simulated gain or not.
-
-In other words, schematic defines *“what we want”*, layout decides *“what we actually get”*. This chapter focuses on showing how a *folded-cascode OTA* in **IHP-SG13G2** was translated from a verified schematic into a manufacturable layout that still respects matching, symmetry, and parasitic limits.
-
-
-##  Layout Toolchain: KLayout
-
-For the layout implementation, we relied on *KLayout*. It is a free, scriptable editor that is already integrated with the **IHP-SG13G2 open-source PDK** and provided in the **IIC-OSIC toolchain**. This makes it possible to perform layout tasks without the need for commercial software.  
-
-All necessary files — such as **Design Rule Checks (DRC)**,  **LVS comparison setups**, and **Parameterized cells (PCells)** — are directly accessible and supported within KLayout. This allows devices to be generated, verified, and extracted in a reproducible way.  
-
-For further details, see the [KLayout website](https://www.klayout.de/).
-
-::: {.callout-note title="Using KLayout: Docker vs. Source Build" collapse=true}
-
-Our layout work was carried out using **KLayout v0.30.1**, provided within the **IIC-OSIC Docker image**. Since this image is a prebuilt package, some advanced KLayout or Qt features may not function as expected.  
-
-If KLayout is build from source on your system, most of these limitations disappear, but in that case **IHP-SG13G2 technology files and libraries** must be manually integrated the into your local setup.  
-
-For guidance on this process, a useful resource is this [Efabless tutorial (second section by Thomas Perry)](https://www.youtube.com/watch?v=CSZm3q4rUBg&list=LL&index=24&t=1181s).
-:::
-
-
 #  Device-Level Layout Concepts
 
 Integrated circuit layout translates the schematic into **physical layers** on silicon.  
@@ -39,11 +12,22 @@ The following subsections describe the major device-level layout techniques used
 ##  Matching & Symmetry
 
 In real silicon, device characteristics are never perfectly uniform across the die.  
-**Process gradients** arise during fabrication due to variations in temperature, pressure, and material distribution. These gradients can be visualized using concepts similar to **isobars** (lines of equal pressure) or **isotherms** (lines of equal temperature), where physical properties gradually shift across the wafer surface [@lienig2020].  
+**Process gradients** arise during fabrication due to variations in temperature, pressure, and material distribution. These gradients can be visualized using concepts similar to **isobars** (lines with constant mechanical pressure) or **isotherms** (lines with same temperature), where physical properties gradually shift across the wafer surface [@lienig2020].  
 
 Such gradients directly affect threshold voltage, mobility, and oxide thickness. As a result, two transistors with identical schematic dimensions may behave differently if placed at different positions on the chip. For analog circuits like OTAs, these mismatches degrade input offset, gain, and common-mode rejection ratio (CMRR).  
 
-![Isotherm Process Gradient due to temperature](../figures/_fig_isotherm.jpg){#fig-isotherm}
+::: {#fig-isotherm .figure}
+![](../figures/_fig_isotherm.svg)
+
+Thermal gradients caused by non-uniform heat distributtion across the chip area. Best practice is to place the devices along the same isotherm. (adapted from @lienig2020) 
+:::
+
+::: {#fig-isobar .figure}
+![](../figures/_fig_isobar.svg)
+
+Contradictory to above gradient in mechnical stress high gradient area should be avoided such as corners and devices should be placed closer to chip center lines (adapted from @lienig2020). 
+:::
+
 
 To minimize this, layout must enforce **symmetry**:
 
@@ -66,19 +50,21 @@ When MOSFETs are designed with very wide channel widths, implementing them as a 
 
 The solution is **multi-fingering**: dividing the wide transistor into several narrower, identical fingers that are connected in parallel. This segmentation reduces gate resistance (shorter poly stripes), distributes junction capacitances more evenly, and improves statistical matching by averaging across multiple smaller units.  
 
-In our OTA, the **tail current source** required a total width of 32 µm. Instead of realizing it as a single device, it was split into **eight fingers of 4 µm each**. This segmentation reduced the distributed gate resistance, improved current uniformity, and made gate routing more compact and symmetrical, while maintaining acceptable junction capacitance at the high-impedance tail node. Similarly, majority of transistors were implemented in multi-finger form to balance parasitic capacitances and maintain symmetry across branches.
+In our OTA, the **tail current source** required a total width of 8.5 µm. Instead of realizing it as a single device, it was split into **four fingers of 2.125 µm each**. This segmentation reduced the distributed gate resistance, improved current uniformity, and made gate routing more compact and symmetrical, while maintaining acceptable junction capacitance at the high-impedance tail node. Similarly, majority of transistors were implemented in multi-finger form to balance parasitic capacitances and maintain symmetry across branches.
+
+::: {#fig-ota_tail .figure}
+![](../figures/_fig_tail_transistor.png)
+
+Represents the tail transistor in our layout with 4 fingers instead of one huge block lead to well matched layout with other transistors and clean routing. 
+:::
 
 Despite its benefits, multi-fingering comes with trade-offs:  
 - **Increased routing overhead**, since all fingers must be tied together with well-balanced interconnect.  
 - **Extra junction perimeters**, which can increase total parasitic capacitance if the layout is not compacted carefully.  
-- **Via placement sensitivity**, as each finger requires source/drain contacts and vias; poor via distribution can lead to resistance mismatches or electromigration concerns.  
+- **Via placement sensitivity**, as each finger requires source/drain contacts and vias; poor via distribution can lead to resistance mismatches or electromigration concerns. Using 2 vias is always reccommended.[@lienig2020]
 
 For this reason, multi-fingering is often combined with other layout strategies.  
 **Dummies** are placed at the array edges to shield active fingers, while **common-centroid arrangements** may be used for further gradient cancellation. This combined approach was applied in our OTA’s diffpair, ensuring both parasitic reduction and high matching fidelity.
-
-**Figures to include:**  
-- Comparison of a single wide MOSFET vs. multi-finger implementation (adapted from @baker2010, Ch. 5).  
-- Annotated OTA tail transistor layout showing finger distribution.  
 
 ::: callout-note 
 # How to calculate minimum number of fingers
@@ -98,7 +84,7 @@ Even when multi-fingering is used, the **edge fingers** of a device array experi
 If left unaddressed, these systematic differences degrade device matching, particularly in sensitive analog structures such as the OTA input pair or current mirrors.  
 
 To eliminate this, **dummy devices** are placed at the ends of transistor arrays. They act as sacrificial neighbors, ensuring that all *active* devices are surrounded by identical environments.  
-This makes the inner devices more uniform, effectively shielding them from edge-related mismatches.  
+This makes the inner devices more uniform, effectively shielding them from edge-related mismatches.[@lienig2020]  
 
 Connection of dummy devices can vary across design flows:  
 - In some methodologies, dummy gates are left **floating**, since their only role is geometric.  
@@ -125,6 +111,13 @@ When two matched transistors are placed adjacent to each other but in separate d
 The **interdigitated layout technique** addresses this issue by physically alternating the unit devices of a matched pair or array. Instead of grouping devices as AA–BB, the transistors are arranged in an alternating or mirrored pattern such as **ABAB** or **A–B–B–A**, where *A* and *B* represent identical unit devices belonging to two matched elements.  
 Through this alternating placement, each device is spatially distributed across the gradient, allowing it to experience regions of both higher and lower process variations. As a result, the local fabrication differences are **averaged** out across all unit fingers, and the two devices become physically and electrically better matched under real process conditions.
 
+::: {#fig-abba .figure}
+![](../figures/_fig_abba.svg)
+
+Shows the interdigitated layout pattern "ABBA" (right) of current mirror schematic of NMOS-FETs with current ratio 1:1(left). The "D" gates in layout represent the Dummy transistors.[@lienig2020] 
+:::
+
+
 This concept can be visualized by imagining a linear gradient across the x-axis of the die. If one device occupies the left region and the other the right, they sample distinct gradient values. However, when their unit fingers are interleaved, each device occupies multiple local regions along the gradient, resulting in matched *average parameters*.
 
 In practice, interdigitation is most effective for **linear process gradients** along one direction and is often used for **matched transistor pairs, current mirrors, or differential input stages**.  
@@ -140,6 +133,13 @@ While interdigitation cancels **first-order linear gradients** along a single di
 In a common-centroid configuration, matched devices are arranged so that their geometric centers, or **centroids**, coincide. Each device is distributed symmetrically around a central point such that any gradient—whether horizontal, vertical, or diagonal—affects both devices equally when averaged over their area. This approach effectively cancels first-order gradient components in both axes and reduces second-order effects as well [@lienig2020].
 
 Conceptually, the centroid layout extends the interdigitated approach into two dimensions. For example, four identical transistors can be arranged symmetrically around a central point in an AB/BA pattern, forming what is effectively a square or cross-shaped configuration.
+
+::: {#fig-common_centroid.figure}
+![](../figures/_fig_common_centroid.svg)
+
+Illustrates how common centroid configuration can be achieved (right) of current mirror schematic of NMOS-FETs with current ratio 1:1(left). Its clear that devices are extremely symmetrical along X-and Y-axis, however routing always introduces some asymmetry which can be neglected for time being. Here, space is intentionally left between transistors for clear visuals and understanding. The "D" gates in layout represent the Dummy transistors. 
+:::
+
 Although each individual finger occupies a slightly different position on the chip—and therefore a slightly different local environment—the geometric center (centroid) of all devices coincides. This ensures that the averaged electrical properties of each device are identical, effectively cancelling first-order process gradients across both axes.
 
 In our folded-cascode OTA, the **diff pair** were laid out using a **common-centroid pattern** derived from the AB/BA principle. This was essential to maintain current accuracy and minimize systematic gain variation.  
@@ -252,5 +252,7 @@ Choose the **minimum even number of fingers** $N_f$ that satisfies the electrica
 To support the design methodology described above, a dedicated **Python script** has been developed to automatically compute the **minimum number of fingers** required for any given MOSFET width.  
 The script implements the **thumb-rule constraints** introduced above.
 By providing required parameters, the script outputs the **minimum feasible even-valued $N_f$** that satisfies all electrical constraints. 
+
+The script can be found in Appendix C.
 :::
 
