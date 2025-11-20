@@ -51,6 +51,7 @@ book:
         - content/_sec_OTA_design.qmd      
     - part: Physical Design 
       chapters:
+        - content/_sec_into_layout.qmd
         - content/_sec_OTA_layout.qmd
         - content/_sec_DRC.qmd
         - content/_sec_LVS.qmd

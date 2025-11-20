@@ -87,9 +87,3 @@ To use the script, simply copy the DRC console output from KLayout, paste it int
 
 It is strongly recommended to run DRC checks **after every 5–6 layout modifications**, even for small routing or placement changes. This practice prevents the accumulation of undetected violations that can take hours to debug later. Running DRC frequently not only saves significant time but also prevents accidental geometry overlaps or spacing errors that could compromise the layout structure and require extensive rework.
 :::
-
-
-**Figures to include:**  
-- Illustration of typical DRC violation categories (spacing, enclosure, overlap).  
-- Screenshot of DRC results window in KLayout for the OTA layout.  
-- Example cross-section showing how spacing and enclosure rules correspond to physical layers.
