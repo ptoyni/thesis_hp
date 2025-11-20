@@ -8,7 +8,7 @@
 
 <meta name="author" content="Priyanka Toyni">
 <meta name="author" content="Hrishikesh Pangavhane">
-<meta name="dcterms.date" content="2025-11-19">
+<meta name="dcterms.date" content="2025-11-20">
 
 <title>Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
 <style>
@@ -196,32 +196,38 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./content/_sec_OTA_layout.html" class="sidebar-item-text sidebar-link">
+  <a href="./content/_sec_into_layout.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Layout</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./content/_sec_OTA_layout.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Device-Level Layout Concepts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./content/_sec_DRC.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./content/_sec_LVS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./content/_sec_parasitics_prevention.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./content/_sec_layout_finalsteps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
   </div>
 </li>
       </ul>
@@ -238,13 +244,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./content/_sec_postlayout_simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Post layout simulation.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Post layout simulation.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./content/_sec_OTA_pex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">PEX</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">PEX</span></span></a>
   </div>
 </li>
       </ul>
@@ -334,7 +340,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 19, 2025</p>
+      <p class="date">November 20, 2025</p>
     </div>
   </div>
   
@@ -351,7 +357,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Open-source EDA has reached a point where its practical viability for real mixed-signal IC fabrication can be examined on modern semiconductor processes. This thesis evaluates that potential through the design and tape-out of an analog block for LED-driver control using the <strong>IHP OpenPDK SG13G2 a 130 nm SiGe BiCMOS PDK</strong> and the implementation using the <strong>open-source IIC-OSIC-TOOLS</strong> developed by <em>Prof.&nbsp;Pretl (JKU Linz)</em></p>
 <p>The project follows a complete analog design cycle. System requirements are derived from an ideal reference schematic of a DC-DC LED-driver PMIC, modeled following the methodology from Prof.&nbsp;Bernhard Wicht’s book on design of power managemant ICs. From these constraints, we design an operational transconductance amplifier (OTA) intended to drive a specific load extracted from the system-level PMIC model. The electrical design is implemented in Xschem for schematic capture, Ngspice for pre-layout simulation, corner and Monte-Carlo analysis using CACE, and iterative refinement to ensure gain, UGB, phase margin, and output swing meet the load-driving requirements under process and temperature variation.</p>
 <p>The physical design phase is performed entirely in KLayout, following industry-aligned analog layout practices: matching-aware device placement, common-centroid arrays, dummy structures, guard rings, routing strategies, density compliance, pad-frame integration, and the use of IHP-provided seal-ring and ESD p-cells. Parasitics are extracted using KLayout-PEX (KPEX), and post-layout simulations confirm the impact of capacitor/resistor parasitics on stability and dynamic response, validating the design’s robustness across PVT.</p>
-<p>A key contribution of this work is practical verification: both tape-outs were accepted and fabricated in the <strong>IHP Open MPW run of July 2025</strong>. To strengthen cross-disciplinary understanding, the authors executed two complete tape-outs, one for a design of NMOS foldedcascode structure and other for PMOS foldedcascode structure, switching roles one serving as <strong>design engineer</strong> while the other served as <strong>layout engineer</strong> in the first run, and vice versa in the second. This approach revealed workflow bottlenecks, toolchain strengths, and realistic guidance for analog teams adopting open-source EDA.</p>
+<p>A key contribution of this work is practical verification: two tape-outs were accepted and fabricated in the <strong>IHP Open MPW run of July 2025</strong>. To strengthen cross-disciplinary understanding, the authors executed two complete tape-outs, one for a design of NMOS foldedcascode structure and other for PMOS foldedcascode structure, switching roles one serving as <strong>design engineer</strong> while the other served as <strong>layout engineer</strong> in the first run, and vice versa in the second. This approach revealed workflow bottlenecks, toolchain strengths, and realistic guidance for analog teams adopting open-source EDA.</p>
 <p>The results demonstrate that a fully open-source toolchain, combined with an industry-grade SiGe BiCMOS open PDK, can reliably produce manufacturable analog ICs with predictable post-layout performance. This work serves as a practical reference for engineers, researchers, and SMEs evaluating open-source flows for mixed-signal IC development, and provides evidence that democratized, open analog IC design is not only feasible but tape-out proven.</p>
 
 

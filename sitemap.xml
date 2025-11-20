@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ptoyni.github.io/thesis_hp/index.html</loc>
-    <lastmod>2025-11-19T14:14:59.920Z</lastmod>
+    <lastmod>2025-11-20T03:15:39.454Z</lastmod>
   </url>
   <url>
     <loc>https://ptoyni.github.io/thesis_hp/content/_sec_introduction.html</loc>
@@ -21,12 +21,16 @@
     <lastmod>2025-11-17T13:07:15.335Z</lastmod>
   </url>
   <url>
+    <loc>https://ptoyni.github.io/thesis_hp/content/_sec_into_layout.html</loc>
+    <lastmod>2025-11-20T03:14:12.601Z</lastmod>
+  </url>
+  <url>
     <loc>https://ptoyni.github.io/thesis_hp/content/_sec_OTA_layout.html</loc>
-    <lastmod>2025-11-15T06:34:08.989Z</lastmod>
+    <lastmod>2025-11-20T03:14:12.599Z</lastmod>
   </url>
   <url>
     <loc>https://ptoyni.github.io/thesis_hp/content/_sec_DRC.html</loc>
-    <lastmod>2025-11-15T06:34:08.989Z</lastmod>
+    <lastmod>2025-11-20T03:14:12.597Z</lastmod>
   </url>
   <url>
     <loc>https://ptoyni.github.io/thesis_hp/content/_sec_LVS.html</loc>
@@ -34,11 +38,11 @@
   </url>
   <url>
     <loc>https://ptoyni.github.io/thesis_hp/content/_sec_parasitics_prevention.html</loc>
-    <lastmod>2025-11-19T14:12:27.143Z</lastmod>
+    <lastmod>2025-11-20T03:14:12.604Z</lastmod>
   </url>
   <url>
     <loc>https://ptoyni.github.io/thesis_hp/content/_sec_layout_finalsteps.html</loc>
-    <lastmod>2025-11-15T06:34:08.989Z</lastmod>
+    <lastmod>2025-11-20T03:14:12.602Z</lastmod>
   </url>
   <url>
     <loc>https://ptoyni.github.io/thesis_hp/content/_sec_postlayout_simulation.html</loc>
@@ -66,10 +70,10 @@
   </url>
   <url>
     <loc>https://ptoyni.github.io/thesis_hp/thesis_hp.pdf</loc>
-    <lastmod>2025-11-19T15:06:34.006Z</lastmod>
+    <lastmod>2025-11-20T03:22:42.891Z</lastmod>
   </url>
   <url>
     <loc>https://ptoyni.github.io/thesis_hp/thesis_hp.epub</loc>
-    <lastmod>2025-11-19T15:06:39.393Z</lastmod>
+    <lastmod>2025-11-20T03:22:48.348Z</lastmod>
   </url>
 </urlset>

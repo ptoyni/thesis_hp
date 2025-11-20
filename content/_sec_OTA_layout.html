@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Introduction to Layout – Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
+<title>7&nbsp; Device-Level Layout Concepts – Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -51,7 +51,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../content/_sec_DRC.html" rel="next">
-<link href="../content/_sec_OTA_design.html" rel="prev">
+<link href="../content/_sec_into_layout.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -130,7 +130,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_OTA_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_OTA_layout.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Layout</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_into_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_OTA_layout.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Device-Level Layout Concepts</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -243,32 +243,38 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/_sec_OTA_layout.html" class="sidebar-item-text sidebar-link active">
+  <a href="../content/_sec_into_layout.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Layout</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../content/_sec_OTA_layout.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Device-Level Layout Concepts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../content/_sec_DRC.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_LVS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_parasitics_prevention.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_layout_finalsteps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
   </div>
 </li>
       </ul>
@@ -285,13 +291,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_postlayout_simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Post layout simulation.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Post layout simulation.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_OTA_pex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">PEX</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">PEX</span></span></a>
   </div>
 </li>
       </ul>
@@ -341,10 +347,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#layout-toolchain-klayout" id="toc-layout-toolchain-klayout" class="nav-link active" data-scroll-target="#layout-toolchain-klayout"><span class="header-section-number">6.1</span> Layout Toolchain: KLayout</a></li>
-  <li><a href="#device-level-layout-concepts" id="toc-device-level-layout-concepts" class="nav-link" data-scroll-target="#device-level-layout-concepts"><span class="header-section-number">7</span> Device-Level Layout Concepts</a>
-  <ul class="collapse">
-  <li><a href="#matching-symmetry" id="toc-matching-symmetry" class="nav-link" data-scroll-target="#matching-symmetry"><span class="header-section-number">7.1</span> Matching &amp; Symmetry</a></li>
+  <li><a href="#matching-symmetry" id="toc-matching-symmetry" class="nav-link active" data-scroll-target="#matching-symmetry"><span class="header-section-number">7.1</span> Matching &amp; Symmetry</a></li>
   <li><a href="#multi-fingering" id="toc-multi-fingering" class="nav-link" data-scroll-target="#multi-fingering"><span class="header-section-number">7.2</span> Multi-Fingering</a></li>
   <li><a href="#dummy-devices" id="toc-dummy-devices" class="nav-link" data-scroll-target="#dummy-devices"><span class="header-section-number">7.3</span> Dummy Devices</a></li>
   <li><a href="#interdigitated-layout" id="toc-interdigitated-layout" class="nav-link" data-scroll-target="#interdigitated-layout"><span class="header-section-number">7.4</span> Interdigitated Layout</a></li>
@@ -356,16 +359,15 @@ window.Quarto = {
   <li><a href="#minimum-geometry-constraint" id="toc-minimum-geometry-constraint" class="nav-link" data-scroll-target="#minimum-geometry-constraint"><span class="header-section-number">7.6.3</span> <strong>Minimum Geometry Constraint</strong></a></li>
   <li><a href="#even-number-of-fingers-practical-layout-consideration" id="toc-even-number-of-fingers-practical-layout-consideration" class="nav-link" data-scroll-target="#even-number-of-fingers-practical-layout-consideration"><span class="header-section-number">7.6.4</span> <strong>Even Number of Fingers (Practical Layout Consideration)</strong></a></li>
   </ul></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ptoyni/thesis_hp/edit/main/content/_sec_OTA_layout.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ptoyni/thesis_hp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_OTA_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_OTA_layout.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Layout</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_into_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_OTA_layout.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Device-Level Layout Concepts</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Layout</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Device-Level Layout Concepts</span></h1>
 </div>
 
 
@@ -382,35 +384,6 @@ window.Quarto = {
 </header>
 
 
-<p>Once, schematic in <strong>Xschem</strong> is finished, what we have is only the functional intent of the circuit. At this stage the devices are ideal: transistors have exactly the width and length we assign, wires have zero resistance, and parasitics like source/drain capacitances or coupling between metals are invisible. The layout stage is where this abstraction becomes <strong>real silicon geometry</strong>. Here, every transistor must be drawn in the technology’s layers, with actual fingers, source/drain contacts, guard rings and no component is ideal anymore.</p>
-<p>For analog circuits, this step is critical. Small layout choices — for example, placing two input devices slightly asymmetrically, or routing one input longer than the other — can directly show up as offset voltage or degraded common-mode rejection. In digital design, such effects are often absorbed by logic thresholds, but in analog design they decide whether the OTA meets its simulated gain or not.</p>
-<p>In other words, schematic defines <em>“what we want”</em>, layout decides <em>“what we actually get”</em>. This chapter focuses on showing how a <em>folded-cascode OTA</em> in <strong>IHP-SG13G2</strong> was translated from a verified schematic into a manufacturable layout that still respects matching, symmetry, and parasitic limits.</p>
-<section id="layout-toolchain-klayout" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="layout-toolchain-klayout"><span class="header-section-number">6.1</span> Layout Toolchain: KLayout</h2>
-<p>For the layout implementation, we relied on <em>KLayout</em>. It is a free, scriptable editor that is already integrated with the <strong>IHP-SG13G2 open-source PDK</strong> and provided in the <strong>IIC-OSIC toolchain</strong>. This makes it possible to perform layout tasks without the need for commercial software.</p>
-<p>All necessary files — such as <strong>Design Rule Checks (DRC)</strong>, <strong>LVS comparison setups</strong>, and <strong>Parameterized cells (PCells)</strong> — are directly accessible and supported within KLayout. This allows devices to be generated, verified, and extracted in a reproducible way.</p>
-<p>For further details, see the <a href="https://www.klayout.de/">KLayout website</a>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Using KLayout: Docker vs. Source Build">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Using KLayout: Docker vs.&nbsp;Source Build
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Our layout work was carried out using <strong>KLayout v0.30.1</strong>, provided within the <strong>IIC-OSIC Docker image</strong>. Since this image is a prebuilt package, some advanced KLayout or Qt features may not function as expected.</p>
-<p>If KLayout is build from source on your system, most of these limitations disappear, but in that case <strong>IHP-SG13G2 technology files and libraries</strong> must be manually integrated the into your local setup.</p>
-<p>For guidance on this process, a useful resource is this <a href="https://www.youtube.com/watch?v=CSZm3q4rUBg&amp;list=LL&amp;index=24&amp;t=1181s">Efabless tutorial (second section by Thomas Perry)</a>.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="device-level-layout-concepts" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Device-Level Layout Concepts</h1>
 <p>Integrated circuit layout translates the schematic into <strong>physical layers</strong> on silicon.<br>
 The IHP-SG13G2 process provides numerous layers such as active/diffusion regions, poly gates, contacts, multiple metal levels, and passivation. <span class="citation" data-cites="IHP_PDK_2024"><a href="../references.html#ref-IHP_PDK_2024" role="doc-biblioref">[1]</a></span>.<br>
 Each of these layers plays a role in forming MOSFETs, capacitors, resistors, and interconnects, further layer specific description for the IHP PDK can be found on Layout Rules <span class="citation" data-cites="IHP_PDK_2024"><a href="../references.html#ref-IHP_PDK_2024" role="doc-biblioref">[1]</a></span>.</p>
@@ -419,15 +392,25 @@ Each of these layers plays a role in forming MOSFETs, capacitors, resistors, and
 <section id="matching-symmetry" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="matching-symmetry"><span class="header-section-number">7.1</span> Matching &amp; Symmetry</h2>
 <p>In real silicon, device characteristics are never perfectly uniform across the die.<br>
-<strong>Process gradients</strong> arise during fabrication due to variations in temperature, pressure, and material distribution. These gradients can be visualized using concepts similar to <strong>isobars</strong> (lines of equal pressure) or <strong>isotherms</strong> (lines of equal temperature), where physical properties gradually shift across the wafer surface <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>.</p>
+<strong>Process gradients</strong> arise during fabrication due to variations in temperature, pressure, and material distribution. These gradients can be visualized using concepts similar to <strong>isobars</strong> (lines with constant mechanical pressure) or <strong>isotherms</strong> (lines with same temperature), where physical properties gradually shift across the wafer surface <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>.</p>
 <p>Such gradients directly affect threshold voltage, mobility, and oxide thickness. As a result, two transistors with identical schematic dimensions may behave differently if placed at different positions on the chip. For analog circuits like OTAs, these mismatches degrade input offset, gain, and common-mode rejection ratio (CMRR).</p>
-<div id="fig-isotherm" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-isotherm" class="figure quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-isotherm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/_fig_isotherm.jpg" class="img-fluid figure-img">
+<img src="../figures/_fig_isotherm.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-isotherm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.1: Isotherm Process Gradient due to temperature
+Figure&nbsp;7.1: Thermal gradients caused by non-uniform heat distributtion across the chip area. Best practice is to place the devices along the same isotherm. (adapted from <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>)
+</figcaption>
+</figure>
+</div>
+<div id="fig-isobar" class="figure quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-isobar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/_fig_isobar.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-isobar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.2: Contradictory to above gradient in mechnical stress high gradient area should be avoided such as corners and devices should be placed closer to chip center lines (adapted from <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>).
 </figcaption>
 </figure>
 </div>
@@ -447,16 +430,23 @@ This combination of length balancing, via symmetry, and layer assignment ensured
 <h2 data-number="7.2" class="anchored" data-anchor-id="multi-fingering"><span class="header-section-number">7.2</span> Multi-Fingering</h2>
 <p>When MOSFETs are designed with very wide channel widths, implementing them as a single continuous device introduces several problems. A long, uninterrupted polysilicon gate line introduces significant <strong>polysilicon gate resistance</strong>, which degrades high-frequency behavior and increases phase delay. At the same time, the enlarged diffusion regions lead to higher source and drain junction capacitances, creating substantial loading on sensitive circuit nodes. Finally, wide monolithic devices suffer in terms of matching: process gradients across the active area are no longer averaged, making these devices more vulnerable to systematic variation and random mismatch effects <span class="citation" data-cites="baker2010 lienig2020"><a href="../references.html#ref-baker2010" role="doc-biblioref">[2]</a>, <a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>.</p>
 <p>The solution is <strong>multi-fingering</strong>: dividing the wide transistor into several narrower, identical fingers that are connected in parallel. This segmentation reduces gate resistance (shorter poly stripes), distributes junction capacitances more evenly, and improves statistical matching by averaging across multiple smaller units.</p>
-<p>In our OTA, the <strong>tail current source</strong> required a total width of 32 µm. Instead of realizing it as a single device, it was split into <strong>eight fingers of 4 µm each</strong>. This segmentation reduced the distributed gate resistance, improved current uniformity, and made gate routing more compact and symmetrical, while maintaining acceptable junction capacitance at the high-impedance tail node. Similarly, majority of transistors were implemented in multi-finger form to balance parasitic capacitances and maintain symmetry across branches.</p>
+<p>In our OTA, the <strong>tail current source</strong> required a total width of 8.5 µm. Instead of realizing it as a single device, it was split into <strong>four fingers of 2.125 µm each</strong>. This segmentation reduced the distributed gate resistance, improved current uniformity, and made gate routing more compact and symmetrical, while maintaining acceptable junction capacitance at the high-impedance tail node. Similarly, majority of transistors were implemented in multi-finger form to balance parasitic capacitances and maintain symmetry across branches.</p>
+<div id="fig-ota_tail" class="figure quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ota_tail-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/_fig_tail_transistor.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ota_tail-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.3: Represents the tail transistor in our layout with 4 fingers instead of one huge block lead to well matched layout with other transistors and clean routing.
+</figcaption>
+</figure>
+</div>
 <p>Despite its benefits, multi-fingering comes with trade-offs:<br>
 - <strong>Increased routing overhead</strong>, since all fingers must be tied together with well-balanced interconnect.<br>
 - <strong>Extra junction perimeters</strong>, which can increase total parasitic capacitance if the layout is not compacted carefully.<br>
-- <strong>Via placement sensitivity</strong>, as each finger requires source/drain contacts and vias; poor via distribution can lead to resistance mismatches or electromigration concerns.</p>
+- <strong>Via placement sensitivity</strong>, as each finger requires source/drain contacts and vias; poor via distribution can lead to resistance mismatches or electromigration concerns. Using 2 vias is always reccommended.<span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span></p>
 <p>For this reason, multi-fingering is often combined with other layout strategies.<br>
 <strong>Dummies</strong> are placed at the array edges to shield active fingers, while <strong>common-centroid arrangements</strong> may be used for further gradient cancellation. This combined approach was applied in our OTA’s diffpair, ensuring both parasitic reduction and high matching fidelity.</p>
-<p><strong>Figures to include:</strong><br>
-- Comparison of a single wide MOSFET vs.&nbsp;multi-finger implementation (adapted from <span class="citation" data-cites="baker2010"><a href="../references.html#ref-baker2010" role="doc-biblioref">[2]</a></span>, Ch. 5).<br>
-- Annotated OTA tail transistor layout showing finger distribution.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -479,13 +469,13 @@ How to calculate minimum number of fingers
 <p>Even when multi-fingering is used, the <strong>edge fingers</strong> of a device array experience different fabrication conditions compared to the inner fingers. At the boundary between active diffusion and isolation (STI), variations in oxide growth, stress, and implant profiles create <strong>edge effects</strong> that change threshold voltage, carrier mobility, and junction capacitance <span class="citation" data-cites="baker2010"><a href="../references.html#ref-baker2010" role="doc-biblioref">[2]</a></span>.<br>
 If left unaddressed, these systematic differences degrade device matching, particularly in sensitive analog structures such as the OTA input pair or current mirrors.</p>
 <p>To eliminate this, <strong>dummy devices</strong> are placed at the ends of transistor arrays. They act as sacrificial neighbors, ensuring that all <em>active</em> devices are surrounded by identical environments.<br>
-This makes the inner devices more uniform, effectively shielding them from edge-related mismatches.</p>
+This makes the inner devices more uniform, effectively shielding them from edge-related mismatches.<span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span></p>
 <p>Connection of dummy devices can vary across design flows:<br>
 - In some methodologies, dummy gates are left <strong>floating</strong>, since their only role is geometric.<br>
 - In others, dummies are <strong>tied to supply rails</strong> (AVDD or AVSS) to avoid LVS errors and ensure consistent recognition by verification tools.</p>
 <p>In our OTA, Dummy devices were placed at the edges of all the MOSFET’s. This ensured that all transistors within the OTA operated in well-matched environments, minimizing systematic offset.</p>
 <div class="callout callout-style-default callout-important callout-titled" title="Important Implementation Note">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -494,7 +484,7 @@ Important Implementation Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In our OTA layout, dummy devices were implemented as <strong>complete MOSFETs</strong> with their gates explicitly tied to <strong>AVDD</strong> or <strong>AVSS</strong>.<br>
 This was necessary because in <strong>KLayout</strong>, adding an extra finger with an unconnected gate/source/drain is not recognized as a dummy. LVS then fails due to netlist mismatches.</p>
@@ -511,6 +501,16 @@ This was necessary because in <strong>KLayout</strong>, adding an extra finger w
 <p>When two matched transistors are placed adjacent to each other but in separate diffusion regions, each device is exposed to a slightly different portion of the process gradient across the chip. As a result, parameters such as threshold voltage, carrier mobility, and oxide thickness vary between them, leading to a systematic mismatch even though both devices have identical drawn dimensions.</p>
 <p>The <strong>interdigitated layout technique</strong> addresses this issue by physically alternating the unit devices of a matched pair or array. Instead of grouping devices as AA–BB, the transistors are arranged in an alternating or mirrored pattern such as <strong>ABAB</strong> or <strong>A–B–B–A</strong>, where <em>A</em> and <em>B</em> represent identical unit devices belonging to two matched elements.<br>
 Through this alternating placement, each device is spatially distributed across the gradient, allowing it to experience regions of both higher and lower process variations. As a result, the local fabrication differences are <strong>averaged</strong> out across all unit fingers, and the two devices become physically and electrically better matched under real process conditions.</p>
+<div id="fig-abba" class="figure quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-abba-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/_fig_abba.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-abba-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.4: Shows the interdigitated layout pattern “ABBA” (right) of current mirror schematic of NMOS-FETs with current ratio 1:1(left). The “D” gates in layout represent the Dummy transistors.<span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>
+</figcaption>
+</figure>
+</div>
 <p>This concept can be visualized by imagining a linear gradient across the x-axis of the die. If one device occupies the left region and the other the right, they sample distinct gradient values. However, when their unit fingers are interleaved, each device occupies multiple local regions along the gradient, resulting in matched <em>average parameters</em>.</p>
 <p>In practice, interdigitation is most effective for <strong>linear process gradients</strong> along one direction and is often used for <strong>matched transistor pairs, current mirrors, or differential input stages</strong>.<br>
 For two-dimensional gradients or more complex variations, this technique is typically extended using <strong>common-centroid placement</strong> (discussed in the next section).</p>
@@ -520,7 +520,18 @@ For two-dimensional gradients or more complex variations, this technique is typi
 <h2 data-number="7.5" class="anchored" data-anchor-id="common-centroid-layout"><span class="header-section-number">7.5</span> Common-Centroid Layout</h2>
 <p>While interdigitation cancels <strong>first-order linear gradients</strong> along a single direction, it cannot fully correct for <strong>two-dimensional or higher-order variations</strong> such as diagonal gradients or wafer-level curvature. For more advanced matching requirements—such as in precision current mirrors or differential pairs in high-gain OTAs <strong>common-centroid layout</strong> is used.</p>
 <p>In a common-centroid configuration, matched devices are arranged so that their geometric centers, or <strong>centroids</strong>, coincide. Each device is distributed symmetrically around a central point such that any gradient—whether horizontal, vertical, or diagonal—affects both devices equally when averaged over their area. This approach effectively cancels first-order gradient components in both axes and reduces second-order effects as well <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>.</p>
-<p>Conceptually, the centroid layout extends the interdigitated approach into two dimensions. For example, four identical transistors can be arranged symmetrically around a central point in an AB/BA pattern, forming what is effectively a square or cross-shaped configuration. Although each individual finger occupies a slightly different position on the chip—and therefore a slightly different local environment—the geometric center (centroid) of all devices coincides. This ensures that the averaged electrical properties of each device are identical, effectively cancelling first-order process gradients across both axes.</p>
+<p>Conceptually, the centroid layout extends the interdigitated approach into two dimensions. For example, four identical transistors can be arranged symmetrically around a central point in an AB/BA pattern, forming what is effectively a square or cross-shaped configuration.</p>
+<div id="fig-common_centroid.figure" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-common_centroid.figure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/_fig_common_centroid.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-common_centroid.figure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.5: Illustrates how common centroid configuration can be achieved (right) of current mirror schematic of NMOS-FETs with current ratio 1:1(left). Its clear that devices are extremely symmetrical along X-and Y-axis, however routing always introduces some asymmetry which can be neglected for time being. Here, space is intentionally left between transistors for clear visuals and understanding. The “D” gates in layout represent the Dummy transistors.
+</figcaption>
+</figure>
+</div>
+<p>Although each individual finger occupies a slightly different position on the chip—and therefore a slightly different local environment—the geometric center (centroid) of all devices coincides. This ensures that the averaged electrical properties of each device are identical, effectively cancelling first-order process gradients across both axes.</p>
 <p>In our folded-cascode OTA, the <strong>diff pair</strong> were laid out using a <strong>common-centroid pattern</strong> derived from the AB/BA principle. This was essential to maintain current accuracy and minimize systematic gain variation.<br>
 The layout ensured that matched transistors experienced a balanced environment, even in the presence of lateral thermal gradients or stress gradients from nearby metal density variations.</p>
 <p><strong>Routing Considerations:</strong><br>
@@ -602,7 +613,7 @@ L_{\min} = 0.13\,\mu\text{m}.
 But, a practical recommendation particularly in differential or current-mirror structures is:</p>
 <p>Choose the <strong>minimum even number of fingers</strong> <span class="math inline">\(N_f\)</span> that satisfies the electrical and geometrical constraints. Even segmentation simplifies mirrored routing, centroid or interdigitated arrangements, and guard ring alignment.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Number of fingers Calculation using Python Script">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -611,10 +622,11 @@ Number of fingers Calculation using Python Script
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To support the design methodology described above, a dedicated <strong>Python script</strong> has been developed to automatically compute the <strong>minimum number of fingers</strong> required for any given MOSFET width.<br>
 The script implements the <strong>thumb-rule constraints</strong> introduced above. By providing required parameters, the script outputs the <strong>minimum feasible even-valued <span class="math inline">\(N_f\)</span></strong> that satisfies all electrical constraints.</p>
+<p>The script can be found in Appendix C.</p>
 </div>
 </div>
 </div>
@@ -637,7 +649,6 @@ The script implements the <strong>thumb-rule constraints</strong> introduced abo
 <div class="csl-left-margin">[5] </div><div class="csl-right-inline">B. Razavi, <em>Design of analog CMOS integrated circuits</em>. McGraw-Hill, 2001.</div>
 </div>
 </div>
-</section>
 </section>
 </section>
 
@@ -1061,13 +1072,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/_sec_OTA_design.html" class="pagination-link" aria-label="Thesis Focus">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Thesis Focus</span></span>
+      <a href="../content/_sec_into_layout.html" class="pagination-link" aria-label="Introduction to Layout">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Layout</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../content/_sec_DRC.html" class="pagination-link" aria-label="Design Rule Checking (DRC)">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

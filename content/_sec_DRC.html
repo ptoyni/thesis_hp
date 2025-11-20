@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Design Rule Checking (DRC) – Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
+<title>8&nbsp; Design Rule Checking (DRC) – Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -135,7 +135,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_OTA_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_DRC.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_into_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_DRC.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -248,32 +248,38 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/_sec_OTA_layout.html" class="sidebar-item-text sidebar-link">
+  <a href="../content/_sec_into_layout.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Layout</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../content/_sec_OTA_layout.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Device-Level Layout Concepts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../content/_sec_DRC.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_LVS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_parasitics_prevention.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_layout_finalsteps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
   </div>
 </li>
       </ul>
@@ -290,13 +296,13 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_postlayout_simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Post layout simulation.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Post layout simulation.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_OTA_pex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">PEX</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">PEX</span></span></a>
   </div>
 </li>
       </ul>
@@ -346,14 +352,14 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#fundamentals-of-drc" id="toc-fundamentals-of-drc" class="nav-link active" data-scroll-target="#fundamentals-of-drc"><span class="header-section-number">7.1</span> Fundamentals of DRC</a></li>
-  <li><a href="#technology-dependence-and-process-node" id="toc-technology-dependence-and-process-node" class="nav-link" data-scroll-target="#technology-dependence-and-process-node"><span class="header-section-number">7.2</span> Technology Dependence and Process Node</a></li>
-  <li><a href="#importance-in-the-design-flow" id="toc-importance-in-the-design-flow" class="nav-link" data-scroll-target="#importance-in-the-design-flow"><span class="header-section-number">7.3</span> Importance in the Design Flow</a></li>
-  <li><a href="#practical-implementation-of-design-rule-checking" id="toc-practical-implementation-of-design-rule-checking" class="nav-link" data-scroll-target="#practical-implementation-of-design-rule-checking"><span class="header-section-number">7.4</span> Practical Implementation of Design Rule Checking</a>
+  <li><a href="#fundamentals-of-drc" id="toc-fundamentals-of-drc" class="nav-link active" data-scroll-target="#fundamentals-of-drc"><span class="header-section-number">8.1</span> Fundamentals of DRC</a></li>
+  <li><a href="#technology-dependence-and-process-node" id="toc-technology-dependence-and-process-node" class="nav-link" data-scroll-target="#technology-dependence-and-process-node"><span class="header-section-number">8.2</span> Technology Dependence and Process Node</a></li>
+  <li><a href="#importance-in-the-design-flow" id="toc-importance-in-the-design-flow" class="nav-link" data-scroll-target="#importance-in-the-design-flow"><span class="header-section-number">8.3</span> Importance in the Design Flow</a></li>
+  <li><a href="#practical-implementation-of-design-rule-checking" id="toc-practical-implementation-of-design-rule-checking" class="nav-link" data-scroll-target="#practical-implementation-of-design-rule-checking"><span class="header-section-number">8.4</span> Practical Implementation of Design Rule Checking</a>
   <ul class="collapse">
-  <li><a href="#types-of-drc-scripts-in-the-ihp-sg13g2-process" id="toc-types-of-drc-scripts-in-the-ihp-sg13g2-process" class="nav-link" data-scroll-target="#types-of-drc-scripts-in-the-ihp-sg13g2-process"><span class="header-section-number">7.4.1</span> Types of DRC Scripts in the IHP SG13G2 Process</a></li>
-  <li><a href="#performing-drc-in-klayout" id="toc-performing-drc-in-klayout" class="nav-link" data-scroll-target="#performing-drc-in-klayout"><span class="header-section-number">7.4.2</span> Performing DRC in KLayout</a></li>
-  <li><a href="#drc-automation-script" id="toc-drc-automation-script" class="nav-link" data-scroll-target="#drc-automation-script"><span class="header-section-number">7.4.3</span> DRC Automation Script</a></li>
+  <li><a href="#types-of-drc-scripts-in-the-ihp-sg13g2-process" id="toc-types-of-drc-scripts-in-the-ihp-sg13g2-process" class="nav-link" data-scroll-target="#types-of-drc-scripts-in-the-ihp-sg13g2-process"><span class="header-section-number">8.4.1</span> Types of DRC Scripts in the IHP SG13G2 Process</a></li>
+  <li><a href="#performing-drc-in-klayout" id="toc-performing-drc-in-klayout" class="nav-link" data-scroll-target="#performing-drc-in-klayout"><span class="header-section-number">8.4.2</span> Performing DRC in KLayout</a></li>
+  <li><a href="#drc-automation-script" id="toc-drc-automation-script" class="nav-link" data-scroll-target="#drc-automation-script"><span class="header-section-number">8.4.3</span> DRC Automation Script</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ptoyni/thesis_hp/edit/main/content/_sec_DRC.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ptoyni/thesis_hp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -361,9 +367,9 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_OTA_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_DRC.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_into_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_DRC.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></h1>
 </div>
 
 
@@ -382,16 +388,16 @@ div.csl-indent {
 
 <p>The transition from an electrical schematic to a manufacturable integrated circuit relies on the integrity of the <strong>layout</strong>, which represents the true physical interface between design and fabrication. While schematic-level verification ensures functional correctness and circuit performance, it is the layout that determines whether the circuit can be fabricated reliably within the limits of the chosen process.<br>
 To formalize and automate this verification, the semiconductor industry have <strong>Design Rule Checking (DRC)</strong>—a systematic comparison of the layout geometry against a set of process-specific constraints provided by the foundry or technology provider (in our case IHP-PDK Authors).</p>
-<section id="fundamentals-of-drc" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="fundamentals-of-drc"><span class="header-section-number">7.1</span> Fundamentals of DRC</h2>
+<section id="fundamentals-of-drc" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="fundamentals-of-drc"><span class="header-section-number">8.1</span> Fundamentals of DRC</h2>
 <p>Design Rule Checking is a geometric verification step that ensures a layout adheres to the <strong>minimum/maximum feature sizes, spacings, enclosures, and overlaps</strong> defined by the fabrication process.<br>
 Each layer in a modern BiCMOS process (e.g.&nbsp;diffusion, polysilicon, metal interconnects, and vias) is subject to numerous rules derived from the physical limitations of photolithography, etching, and deposition steps.<br>
 Violating these constraints can lead to a spectrum of manufacturing defects: short-circuits due to over-etching, open connections caused by lithographic line thinning, or parametric variations resulting from disuniform film growth.<br>
 Thus, DRC forms the <strong>first line of defense</strong> against non-manufacturable or yield-critical layouts.</p>
 <p>The design rules themselves originate from <strong>process specifications</strong>. Foundries experimentally determine the tolerances of their technology through test structures that measure lithographic resolution, etch bias, and alignment accuracy between layers. From these experiments, statistical margins are extracted and translated into deterministic layout constraints—expressed as rules such as <em>minimum Active width = 0.15 µm</em> or <em>minimum spacing between Metal1 lines = 0.18 µm</em>. <span class="citation" data-cites="IHP_PDK_2024"><a href="../references.html#ref-IHP_PDK_2024" role="doc-biblioref">[1]</a></span> As discussed in <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[2]</a></span>, these rules balance manufacturability with design density: tighter rules enable compact designs but raise the risk of yield loss, while relaxed rules increase process robustness at the expense of silicon area.</p>
 </section>
-<section id="technology-dependence-and-process-node" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="technology-dependence-and-process-node"><span class="header-section-number">7.2</span> Technology Dependence and Process Node</h2>
+<section id="technology-dependence-and-process-node" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="technology-dependence-and-process-node"><span class="header-section-number">8.2</span> Technology Dependence and Process Node</h2>
 <p>Every <strong>technology node</strong>—for instance, 130 nm, 65 nm, or 28 nm—defines its own set of DRC parameters. These parameters evolve with advances in lithographic precision, material systems, and transistor architecture. At older nodes such as <strong>0.35 µm or 0.25 µm</strong>, DRC rules mainly governed planar dimensions and spacing; however, in sub-100 nm processes, additional considerations such as <strong>antennas, stress effects, and metal density gradients</strong> are incorporated. Consequently, the complexity of DRC rules increases exponentially as the process geometry scales down.<span class="citation" data-cites="baker2010"><a href="../references.html#ref-baker2010" role="doc-biblioref">[3]</a></span></p>
 <p>The <strong>Process Design Kit (PDK)</strong> serves as the bridge between the foundry and the design environment.<br>
 It encapsulates all technology-specific information—design rules, layer definitions, device models, parasitic extraction parameters, and layout-Vs-schematic (LVS) configurations—into a single framework usable by EDA tools.<br>
@@ -399,32 +405,32 @@ The DRC deck, which is a formalized file (often written in languages such as SVR
 <p>In the case of the <strong>IHP SG13G2 130 nm BiCMOS process</strong>, used throughout this work, the <em>IHP-PDK</em> provides a comprehensive DRC rule set defining all critical geometrical limits—from diffusion-to-diffusion spacing and via enclosures to hierarchical density checks of upper metal layers, <span class="citation" data-cites="IHP_PDK_2024"><a href="../references.html#ref-IHP_PDK_2024" role="doc-biblioref">[1]</a></span>. The <em>IHP-PDK</em> also supplies detailed technology definition files that can be manually integrated into layout tools such as KLayout. However, since the <em>IHP-PDK</em> is part of the <em>IIC-OSIC</em> open-source toolchain, these technology files and rule decks are already pre-configured within the provided Docker image, offering an optimized and reproducible setup for DRC verification.</p>
 <p>In addition, the PDK documentation includes a complete layer table defining all process layers, along with descriptions of forbidden layers reserved for internal fabrication use, grid rules, and the full list of DRC constraints illustrations. This document has served as the primary reference for understanding the process and implementing all layout structures in this work. Hence, even within an open-source environment, the design remains <strong>foundry-compliant</strong>, physically realizable, and fully aligned with the manufacturing specifications of the SG13G2 process.</p>
 </section>
-<section id="importance-in-the-design-flow" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="importance-in-the-design-flow"><span class="header-section-number">7.3</span> Importance in the Design Flow</h2>
+<section id="importance-in-the-design-flow" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="importance-in-the-design-flow"><span class="header-section-number">8.3</span> Importance in the Design Flow</h2>
 <p>DRC plays a pivotal role in ensuring that the <strong>layout is not only electrically correct but physically manufacturable</strong>.<br>
 As mentioned before, an unverified layout might pass all functional and electrical simulations yet still fail in fabrication because certain features violate lithographic limits or introduce yield-limiting defects. Typical examples include insufficient metal spacing leading to shorts, or inadequate enclosure of contacts resulting in open circuits after etching.<br>
 By enforcing DRC compliance before tape-out, the designer ensures that the design adheres to the <strong>design-for-manufacturability (DFM)</strong> principles required for reproducible production.</p>
 <p>Furthermore, DRC compliance is not merely a binary condition of “pass or fail.” It also acts as a <strong>metric of process awareness</strong>: a DRC-clean layout demonstrates the designer’s adherence to technology constraints and reflects a realistic understanding of fabrication tolerances. In professional design flows, foundries refuse to fabricate any layout that fails DRC, as doing so would waste mask costs and process time.</p>
 <p>Therefore, DRC stands as the final checkpoint between design creativity and physical implementation—a gate that ensures the <strong>logical intent of the schematic can manifest in silicon without violation of the underlying physics</strong>.</p>
 </section>
-<section id="practical-implementation-of-design-rule-checking" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="practical-implementation-of-design-rule-checking"><span class="header-section-number">7.4</span> Practical Implementation of Design Rule Checking</h2>
+<section id="practical-implementation-of-design-rule-checking" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="practical-implementation-of-design-rule-checking"><span class="header-section-number">8.4</span> Practical Implementation of Design Rule Checking</h2>
 <p>As discussed in earlier chapters, the <strong>layout is the sole design entity that directly communicates with fabrication</strong>. Neither schematic diagrams nor behavioral models ever reach the foundry—only the geometric database (typically in GDSII or OASIS format) generated from the layout is delivered for mask generation and processing.<br>
 In this sense, <strong>Design Rule Checking (DRC)</strong> serves as the mechanism through which the <em>language of design</em> is translated into the <em>language of manufacturing</em>. It guarantees that every transistor, interconnect, and via is drawn within the lithographic and etching tolerances established by the process technology. This alignment between layout geometry and process capability is essential to achieving both functional yield and long-term device reliability.<br>
 To borrow the phrasing of <span class="citation" data-cites="baker2010"><a href="../references.html#ref-baker2010" role="doc-biblioref">[3]</a></span>, <em>“a perfect schematic means nothing without a correct layout.”</em><br>
 DRC ensures that this correctness is quantifiable and verifiable—it enforces the discipline that transforms circuit theory into a physically reproducible artifact, one capable of moving confidently from layout database to wafer fabrication.</p>
 <p>In this work, all DRC verification was performed using <strong>KLayout</strong> as part of the <strong>IIC-OSIC open-source toolchain</strong>, which integrates the <strong>IHP SG13G2 130 nm BiCMOS process</strong>. The PDK provides complete DRC rule decks in the form of Python-based macros that systematically check every process layer and layer combination—diffusion overlaps, via enclosures, contact spacings, metal width and density requirements, and top-metal clearance to the passivation opening.</p>
 <p>The DRC engine performs a hierarchical scan of the layout, flags any violations, and displays annotated markers directly within the KLayout interface for review. Each violation encountered during the layout phase was analyzed and corrected at either the device or routing level until the design achieved a fully <strong>DRC-clean status</strong>. This verified layout therefore not only satisfies the intended schematic connectivity but also conforms to every <strong>physical constraint required for successful fabrication</strong>. Through this process, DRC validation in KLayout establishes the final and most critical bridge between the abstract world of circuit design and the tangible reality of silicon manufacturing—where compliance with foundry rules ensures that what is drawn can, indeed, be built.</p>
-<section id="types-of-drc-scripts-in-the-ihp-sg13g2-process" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="types-of-drc-scripts-in-the-ihp-sg13g2-process"><span class="header-section-number">7.4.1</span> Types of DRC Scripts in the IHP SG13G2 Process</h3>
+<section id="types-of-drc-scripts-in-the-ihp-sg13g2-process" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="types-of-drc-scripts-in-the-ihp-sg13g2-process"><span class="header-section-number">8.4.1</span> Types of DRC Scripts in the IHP SG13G2 Process</h3>
 <p>The <strong>IHP SG13G2 PDK</strong> provides two distinct DRC scripts, each corresponding to a specific level of design compliance and verification rigor. These scripts are referred to as <strong>sg13g2_minimal</strong> and <strong>sg13g2_maximal</strong> rule decks. Both are written as Python macros configured within the KLayout environment and can be executed directly from the <em>Macros Development</em> interface.</p>
 <ol type="1">
 <li><p>The <strong>sg13_g2_minimal DRC deck</strong> enforces the <em>standard design rules</em> of the process: These rules define the <strong>mandatory fabrication constraints</strong> that must be satisfied to ensure the layout is physically manufacturable. Violations of these checks typically indicate errors that could prevent successful chip production or cause fatal defects in the fabricated devices. Examples include insufficient metal spacing, missing via enclosures, or incorrect layer overlaps. List of minimal rules can be found <a href="https://github.com/IHP-GmbH/IHP-Open-PDK/blob/main/ihp-sg13g2/libs.tech/klayout/tech/drc/README_minimal.md">here</a>.</p></li>
 <li><p>The <strong>sg13_g2_maximal DRC deck</strong>, in contrast, applies the <em>recommended design rules</em>: These rules contain both <strong>mandatory fabrication constraints</strong> and <strong>non-mandatory</strong> therefore are intended to improve overall <strong>manufacturability, process reliability, and yield consistency</strong>. They provide design hints to minimize parametric variability, such as improving parasitics, preventing latch-ups, or avoiding angles that can introduce stress points during fabrication. While designs that only pass the minimal check are still fabricable, running the sg13_g2_maximal script ensures the layout adheres to <strong>best practices</strong> for long-term robustness and high-yield performance. List for maximal rules can be found <a href="https://github.com/IHP-GmbH/IHP-Open-PDK/blob/main/ihp-sg13g2/libs.tech/klayout/tech/drc/README_maximal.md">here</a>.</p></li>
 </ol>
 </section>
-<section id="performing-drc-in-klayout" class="level3" data-number="7.4.2">
-<h3 data-number="7.4.2" class="anchored" data-anchor-id="performing-drc-in-klayout"><span class="header-section-number">7.4.2</span> Performing DRC in KLayout</h3>
+<section id="performing-drc-in-klayout" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="performing-drc-in-klayout"><span class="header-section-number">8.4.2</span> Performing DRC in KLayout</h3>
 <p>As mentioned in the <em>Known Issues</em> section, DRC cannot be executed in KLayout solely by relying on direct tools or commands. Instead, a specific workflow must be followed. Within the <strong>Macros Development</strong> interface of KLayout, there is a dedicated <strong>DRC section</strong> that lists all available rule scripts for the selected technology. To perform DRC, the user must select the desired rule deck—either <em>sg13_g2_minimal</em> or <em>sg13_g2_maximal</em>—and then execute the corresponding script.</p>
 <div id="fig-macro-dev" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -432,15 +438,15 @@ DRC ensures that this correctness is quantifiable and verifiable—it enforces t
 <img src="../figures/_fig_macro_devs.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-macro-dev-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.1: Macro Development interface with DRC Results in Console
+Figure&nbsp;8.1: Macro Development interface with DRC Results in Console
 </figcaption>
 </figure>
 </div>
 <p>Once the check is complete, the list of errors appears in the <strong>output console</strong> below the editor window. Unfortunately, due to current tool limitations, KLayout does not automatically generate a separate <strong>DRC report file</strong>. This means that the error list cannot be reloaded, filtered, or revisited directly within the tool after the session ends. Furthermore, some <strong>Qt-based interactive functions</strong> (intended to automatically highlight or open error markers) are not fully supported within the Docker image of the IIC-OSIC toolchain.</p>
 <p>To address this limitation, a <strong>custom Python script</strong> was developed in this work to automate the error-handling process. The script parses the raw DRC output copied from the KLayout console and filters the messages to produce a clean, structured list of all raised violations that require manual correction. This greatly simplifies the debugging workflow by identifying unique errors and mapping them to their respective layer categories.</p>
 </section>
-<section id="drc-automation-script" class="level3" data-number="7.4.3">
-<h3 data-number="7.4.3" class="anchored" data-anchor-id="drc-automation-script"><span class="header-section-number">7.4.3</span> DRC Automation Script</h3>
+<section id="drc-automation-script" class="level3" data-number="8.4.3">
+<h3 data-number="8.4.3" class="anchored" data-anchor-id="drc-automation-script"><span class="header-section-number">8.4.3</span> DRC Automation Script</h3>
 <p>This is the automation script used for processing DRC results:</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Script">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -547,10 +553,6 @@ Pro Tip — Run DRC Early and Often
 <p>It is strongly recommended to run DRC checks <strong>after every 5–6 layout modifications</strong>, even for small routing or placement changes. This practice prevents the accumulation of undetected violations that can take hours to debug later. Running DRC frequently not only saves significant time but also prevents accidental geometry overlaps or spacing errors that could compromise the layout structure and require extensive rework.</p>
 </div>
 </div>
-<p><strong>Figures to include:</strong><br>
-- Illustration of typical DRC violation categories (spacing, enclosure, overlap).<br>
-- Screenshot of DRC results window in KLayout for the OTA layout.<br>
-- Example cross-section showing how spacing and enclosure rules correspond to physical layers.</p>
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
@@ -987,13 +989,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/_sec_OTA_layout.html" class="pagination-link" aria-label="Introduction to Layout">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Layout</span></span>
+      <a href="../content/_sec_OTA_layout.html" class="pagination-link" aria-label="Device-Level Layout Concepts">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Device-Level Layout Concepts</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../content/_sec_LVS.html" class="pagination-link" aria-label="Layout Vs Schematic (LVS)">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

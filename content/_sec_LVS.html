@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Layout Vs Schematic (LVS) – Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
+<title>9&nbsp; Layout Vs Schematic (LVS) – Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_OTA_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_LVS.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_into_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_LVS.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -194,32 +194,38 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/_sec_OTA_layout.html" class="sidebar-item-text sidebar-link">
+  <a href="../content/_sec_into_layout.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Layout</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../content/_sec_OTA_layout.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Device-Level Layout Concepts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../content/_sec_DRC.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_LVS.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_parasitics_prevention.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_layout_finalsteps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
   </div>
 </li>
       </ul>
@@ -236,13 +242,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_postlayout_simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Post layout simulation.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Post layout simulation.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_OTA_pex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">PEX</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">PEX</span></span></a>
   </div>
 </li>
       </ul>
@@ -292,19 +298,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#fundamentals-of-lvs" id="toc-fundamentals-of-lvs" class="nav-link active" data-scroll-target="#fundamentals-of-lvs"><span class="header-section-number">8.1</span> Fundamentals of LVS</a></li>
-  <li><a href="#importance-in-the-design-flow" id="toc-importance-in-the-design-flow" class="nav-link" data-scroll-target="#importance-in-the-design-flow"><span class="header-section-number">8.2</span> Importance in the Design Flow</a></li>
-  <li><a href="#practical-implementation" id="toc-practical-implementation" class="nav-link" data-scroll-target="#practical-implementation"><span class="header-section-number">8.3</span> Practical Implementation</a></li>
-  <li><a href="#interpreting-and-visualizing-lvs-results-in-klayout" id="toc-interpreting-and-visualizing-lvs-results-in-klayout" class="nav-link" data-scroll-target="#interpreting-and-visualizing-lvs-results-in-klayout"><span class="header-section-number">8.4</span> Interpreting and Visualizing LVS Results in KLayout</a></li>
+  <li><a href="#fundamentals-of-lvs" id="toc-fundamentals-of-lvs" class="nav-link active" data-scroll-target="#fundamentals-of-lvs"><span class="header-section-number">9.1</span> Fundamentals of LVS</a></li>
+  <li><a href="#importance-in-the-design-flow" id="toc-importance-in-the-design-flow" class="nav-link" data-scroll-target="#importance-in-the-design-flow"><span class="header-section-number">9.2</span> Importance in the Design Flow</a></li>
+  <li><a href="#practical-implementation" id="toc-practical-implementation" class="nav-link" data-scroll-target="#practical-implementation"><span class="header-section-number">9.3</span> Practical Implementation</a></li>
+  <li><a href="#interpreting-and-visualizing-lvs-results-in-klayout" id="toc-interpreting-and-visualizing-lvs-results-in-klayout" class="nav-link" data-scroll-target="#interpreting-and-visualizing-lvs-results-in-klayout"><span class="header-section-number">9.4</span> Interpreting and Visualizing LVS Results in KLayout</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ptoyni/thesis_hp/edit/main/content/_sec_LVS.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ptoyni/thesis_hp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_OTA_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_LVS.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_into_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_LVS.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Layout Vs Schematic (LVS)</span></h1>
 </div>
 
 
@@ -322,8 +328,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>After a layout has been verified for physical manufacturability through Design Rule Checking (DRC), the next essential step is to confirm its <strong>electrical correctness</strong> with respect to the original schematic. This verification step is known as <strong>Layout Vs Schematic (LVS)</strong>. Whereas DRC ensures that the physical geometry can be fabricated, LVS ensures that the fabricated geometry will function as intended by the circuit design. Together, DRC and LVS form the core of the <strong>physical verification</strong> process that bridges the logical and geometric domains of IC design.</p>
-<section id="fundamentals-of-lvs" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="fundamentals-of-lvs"><span class="header-section-number">8.1</span> Fundamentals of LVS</h2>
+<section id="fundamentals-of-lvs" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="fundamentals-of-lvs"><span class="header-section-number">9.1</span> Fundamentals of LVS</h2>
 <p><em>Layout Vs Schematic</em> comparison is a <strong>netlist-based verification process</strong>. It compares the electrical connectivity extracted from the physical layout with that defined in the schematic. During LVS, the tool first performs <strong>netlist extraction</strong> from the layout (parsing all transistors, polygons, capacitors, and interconnects), and then compares this extracted netlist against the schematic netlist. The goal is to verify that both represent the same electrical circuit — that is, the same devices, same connections, and identical hierarchy.</p>
 <p>Typical checks performed during LVS include:<br>
 - <strong>Device recognition</strong>: confirming that every transistor or passive component in the layout corresponds to a schematic element.<br>
@@ -331,14 +337,14 @@ ul.task-list li input[type="checkbox"] {
 - <strong>Parameter equivalence</strong>: verifying that critical parameters such as transistor width, length, and multiplicity match (number of fingers).</p>
 <p>If all devices and nets correspond correctly, the design is said to be <strong>LVS clean</strong>. Otherwise, the LVS report lists mismatches that must be corrected before fabrication.</p>
 </section>
-<section id="importance-in-the-design-flow" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="importance-in-the-design-flow"><span class="header-section-number">8.2</span> Importance in the Design Flow</h2>
+<section id="importance-in-the-design-flow" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="importance-in-the-design-flow"><span class="header-section-number">9.2</span> Importance in the Design Flow</h2>
 <p>While DRC ensures <em>how</em> a design can be fabricated, LVS ensures <em>what</em> will be fabricated. Even a DRC-clean layout can fail to perform correctly if a wire is connected to the wrong node, a transistor terminal is swapped, or a device is missing. Such errors may lead to functional failure, excessive power consumption, or biasing issues that are difficult to detect without LVS.</p>
 <p>Therefore, LVS verification is critical before tape-out because it confirms the <strong>topological equivalence</strong> between the intended circuit (schematic) and its physical realization (layout).<br>
 It ensures that all devices, interconnects, and terminals have been represented faithfully, safeguarding against layout-level errors that could otherwise result in costly re-fabrications.</p>
 </section>
-<section id="practical-implementation" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="practical-implementation"><span class="header-section-number">8.3</span> Practical Implementation</h2>
+<section id="practical-implementation" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="practical-implementation"><span class="header-section-number">9.3</span> Practical Implementation</h2>
 <p>In this work, LVS verification was carried out using <strong>KLayout</strong> in combination with the <strong>IHP SG13G2 PDK</strong> inside the <strong>IIC-OSIC Docker environment</strong>.<br>
 However, due to the known limitation that Qt-based LVS functions do not operate within the Dockerized KLayout interface, LVS must be performed <strong>externally in the Docker terminal</strong> using a <em>Python script provided by the IHP PDK</em>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -385,8 +391,8 @@ If any of these names differ, the Python script will terminate with an unexpecte
 </div>
 </div>
 </section>
-<section id="interpreting-and-visualizing-lvs-results-in-klayout" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="interpreting-and-visualizing-lvs-results-in-klayout"><span class="header-section-number">8.4</span> Interpreting and Visualizing LVS Results in KLayout</h2>
+<section id="interpreting-and-visualizing-lvs-results-in-klayout" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="interpreting-and-visualizing-lvs-results-in-klayout"><span class="header-section-number">9.4</span> Interpreting and Visualizing LVS Results in KLayout</h2>
 <p>After running the LVS script in the terminal, the generated <code>.lvsdb</code> file can be opened in <strong>KLayout</strong> for detailed inspection and mapping. To do this, open the corresponding GDS layout in KLayout, then navigate to:</p>
 <blockquote class="blockquote">
 <p><strong>Tools → Netlist Browser</strong></p>
@@ -398,7 +404,7 @@ If any of these names differ, the Python script will terminate with an unexpecte
 <img src="../figures/_fig_lvs_box.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lvs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.1: Netlist Browser to view LVSDB files and trace nets
+Figure&nbsp;9.1: Netlist Browser to view LVSDB files and trace nets
 </figcaption>
 </figure>
 </div>
@@ -832,12 +838,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../content/_sec_DRC.html" class="pagination-link" aria-label="Design Rule Checking (DRC)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Design Rule Checking (DRC)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../content/_sec_parasitics_prevention.html" class="pagination-link" aria-label="Parasitics and Prevention">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Parasitics and Prevention</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
