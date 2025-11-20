@@ -1,3 +1,16 @@
+"""
+DRC Errors Check 
+
+This script gives 2 functions: 
+1st needs the the errors copied from KLayout to be pasted in drc_log function inside script and than run the script.
+It can be tidious to change script again and again. Therefore, not recommended.
+
+For 2nd function just run the script and paste your errors copied from KLayout in the terminal and press enter and DONE. 
+By default, script uses this function.""" 
+
+# DRC Error Check
+# 1st function
+
 def parse_drc_errors(drc_log: str):
     lines = drc_log.strip().splitlines()
     print("⚠️ Rules with errors:")
@@ -24,7 +37,7 @@ Rule forbidden.ColWind: 0 error(s)
 # If you want to put manually inside script not in terminal than use above function
 
 
-
+# 2nd Funtion
 def parse_drc_errors_new():
     print(" Paste your DRC error log below. Press Enter twice to finish:")
     
