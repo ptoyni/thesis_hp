@@ -37,7 +37,7 @@ To minimize this, layout must enforce **symmetry**:
 - **Symmetry in current flow.**  
   Symmetry is not only geometrical but also electrical. The orientation of source, drain, and gate terminals is arranged so that current flows through matched devices in identical directions. This prevents systematic mismatches introduced by unequal diffusion edge proximity or channel orientation.  
 
-Together, these forms of symmetry improve **matching** — the ability of two devices to exhibit nearly identical electrical performance. Accurate matching is critical in the OTA’s input stage, where small imbalances directly appear as input offset voltages.  
+Together, these forms of symmetry improve **matching**  the ability of two devices to exhibit nearly identical electrical performance. Accurate matching is critical in the OTA’s input stage, where small imbalances directly appear as input offset voltages.  
 
 Finally, symmetry must extend to the **routing**. Interconnect lengths, widths, and via stacks must be balanced on both sides of the differential pair. Even with well-matched devices, asymmetric wiring can introduce additional resistance and capacitance, which shows up as systematic offset or degraded bandwidth [@lienig2020; @baker2010].  
 In our OTA layout, routing symmetry was not only maintained in terms of path length and via balance, but also extended to the **choice of metal layers**. Long interconnects were assigned to **higher metal layers** with lower sheet resistance, while short local connections remained on **lower metals** for compact access.  
@@ -75,7 +75,7 @@ As excessive fingering increases total diffusion perimeter and further elevating
 
 Therefore, selecting the *minimum* number of fingers that satisfies these electrical and physical constraints is essential for achieving optimal analog performance.
 
-A rigorous methodology for estimating this minimum finger count—considering gate resistance limits, diffusion capacitance contributions, layout symmetry, and manufacturability—is presented in **Section 5.6: Finger Count Estimation**, where the all equations and procedures are discussed in detail.
+A rigorous methodology for estimating this minimum finger count considering gate resistance limits, diffusion capacitance contributions, layout symmetry, and manufacturability is presented in **Section 5.6: Finger Count Estimation**, where the all equations and procedures are discussed in detail.
 :::
 
 ##  Dummy Devices
@@ -128,9 +128,9 @@ In the folded cascode OTA, **interdigitation** was applied to the active loads a
 
 ##  Common-Centroid Layout
 
-While interdigitation cancels **first-order linear gradients** along a single direction, it cannot fully correct for **two-dimensional or higher-order variations** such as diagonal gradients or wafer-level curvature. For more advanced matching requirements—such as in precision current mirrors or differential pairs in high-gain OTAs **common-centroid layout** is used.
+While interdigitation cancels **first-order linear gradients** along a single direction, it cannot fully correct for **two-dimensional or higher-order variations** such as diagonal gradients or wafer-level curvature. For more advanced matching requirements such as in precision current mirrors or differential pairs in high-gain OTAs **common-centroid layout** is used.
 
-In a common-centroid configuration, matched devices are arranged so that their geometric centers, or **centroids**, coincide. Each device is distributed symmetrically around a central point such that any gradient—whether horizontal, vertical, or diagonal—affects both devices equally when averaged over their area. This approach effectively cancels first-order gradient components in both axes and reduces second-order effects as well [@lienig2020].
+In a common-centroid configuration, matched devices are arranged so that their geometric centers, or **centroids**, coincide. Each device is distributed symmetrically around a central point such that any gradient whether horizontal, vertical, or diagonal affects both devices equally when averaged over their area. This approach effectively cancels first-order gradient components in both axes and reduces second-order effects as well [@lienig2020].
 
 Conceptually, the centroid layout extends the interdigitated approach into two dimensions. For example, four identical transistors can be arranged symmetrically around a central point in an AB/BA pattern, forming what is effectively a square or cross-shaped configuration.
 
@@ -140,7 +140,7 @@ Conceptually, the centroid layout extends the interdigitated approach into two d
 Illustrates how common centroid configuration can be achieved (right) of current mirror schematic of NMOS-FETs with current ratio 1:1(left). Its clear that devices are extremely symmetrical along X-and Y-axis, however routing always introduces some asymmetry which can be neglected for time being. Here, space is intentionally left between transistors for clear visuals and understanding. The "D" gates in layout represent the Dummy transistors. 
 :::
 
-Although each individual finger occupies a slightly different position on the chip—and therefore a slightly different local environment—the geometric center (centroid) of all devices coincides. This ensures that the averaged electrical properties of each device are identical, effectively cancelling first-order process gradients across both axes.
+Although each individual finger occupies a slightly different position on the chip and therefore a slightly different local environment the geometric center (centroid) of all devices coincides. This ensures that the averaged electrical properties of each device are identical, effectively cancelling first-order process gradients across both axes.
 
 In our folded-cascode OTA, the **diff pair** were laid out using a **common-centroid pattern** derived from the AB/BA principle. This was essential to maintain current accuracy and minimize systematic gain variation.  
 The layout ensured that matched transistors experienced a balanced environment, even in the presence of lateral thermal gradients or stress gradients from nearby metal density variations.
@@ -157,7 +157,7 @@ This parasitic-conscious routing produced a substantial improvement in OTA perfo
 
 These findings highlight that in precision analog layout, **symmetry must be interpreted electrically, not only geometrically**. Effective matching requires an awareness of sheet-resistance gradients, metal-layer coupling, and the spatial distribution of parasitics. 
 
-Meticulous routing decisions—layer staggering, spacing, orthogonality, and controlled via placement—often determine whether a differential structure performs ideally or fails entirely.
+Meticulous routing decisions layer staggering, spacing, orthogonality, and controlled via placement often determine whether a differential structure performs ideally or fails entirely.
 
 
 ##  Finger Count Estimation (Minimum Number of Fingers)

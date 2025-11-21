@@ -1,4 +1,4 @@
-# Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration
+# Final Layout Steps - Bonding, Seal Ring, and Pad-Frame Integration
 
 After completing device-level layout, parasitic-aware routing, and full DRC/LVS verification, the final stage of physical design is the construction of the **pad frame** and the **seal ring**.  
 These structures are the physical interface between the silicon die and the outside world. Although electrically simple, they are mechanically and parasitically critical, as they determine whether the fabricated chip can be safely diced, bonded, packaged, and measured.   
@@ -14,7 +14,7 @@ Beyond its mechanical role, the seal ring also acts as a **low-impedance electri
 - suppression of substrate noise entering from the die periphery,  
 - confinement of parasitic surface currents.
 
-In the SG13G2 PDK, the seal ring is provided as a **P_Cell** (parameterized cell), built from stacked metal layers and dense via walls. Its geometry is fully adjustable—width, margin, and spacing can be tuned—allowing the designer to adapt it to the die dimensions while maintaining foundry compliance.  
+In the SG13G2 PDK, the seal ring is provided as a **P_Cell** (parameterized cell), built from stacked metal layers and dense via walls. Its geometry is fully adjustable width, margin, and spacing can be tuned allowing the designer to adapt it to the die dimensions while maintaining foundry compliance.  
 For this work, we instantiated and customized the provided seal ring PCell and placed it around the complete pad frame, ensuring full mechanical and electrical enclosure of the analog OTA core.
 
 
@@ -23,7 +23,7 @@ For this work, we instantiated and customized the provided seal ring PCell and p
 ###  Purpose and Structure
 Bond pads form the electrical interface between the on-chip metal layers and the external package or measurement environment.  
 Each pad is a large, top-metal landing area with a passivation opening, designed to withstand mechanical bonding forces while maintaining low series resistance.  
-To minimize parasitic disturbance, each functional bond pad was further **surrounded by a dummy pad frame**—a ring of electrically inactive pads. These dummy pads act as protective buffers: if parasitic displacement currents or surface leakage occur near the die edge, they discharge into the dummy pads rather than coupling into the functional I/O pads. This arrangement reduces the susceptibility of the pad ring to noise and preserves the integrity of the sensitive analog connections.[@Prof_Razavi_2011]
+To minimize parasitic disturbance, each functional bond pad was further **surrounded by a dummy pad frame**; a ring of electrically inactive pads. These dummy pads act as protective buffers: if parasitic displacement currents or surface leakage occur near the die edge, they discharge into the dummy pads rather than coupling into the functional I/O pads. This arrangement reduces the susceptibility of the pad ring to noise and preserves the integrity of the sensitive analog connections.[@Prof_Razavi_2011]
 
 The placement of pads was also optimized to minimize parasitic capacitive coupling to the underlying analog core.  Pads were spaced to avoid long parallel overlaps with internal routing, and their distribution was balanced to avoid asymmetries in substrate stress and top-metal loading.
 
@@ -41,7 +41,7 @@ It is widely used for low- to medium-pin-count analog ICs because:
 - the process is accessible and cost-effective,  
 - bare dies can be bonded directly without redistribution layers.
 
-For this project—intended for bare-die evaluation—**wire bonding** was the natural choice and fully supported by the SG13G2 pad library.
+For this project intended for bare-die evaluation **wire bonding** was the natural choice and fully supported by the SG13G2 pad library.
 
 ### **Flip-Chip Bonding**
 Flip-chip uses solder microbumps on the die surface, flipping the die face-down onto the substrate.  
@@ -76,7 +76,7 @@ To prevent this, the SG13G2 PDK provides a series of **ESD protection PCells**, 
 - diode clamps,  
 - grounded-gate NMOS structures  
 
-PCells are invaluable because they embed **foundry-validated device geometries**, with correct well biasing, spacing rules, finger structures, and metal enclosures. Designing ESD structures manually would risk violating subtle DRC rules—particularly those related to well spacing, diffusion density, and metal overlap.  
+PCells are invaluable because they embed **foundry-validated device geometries**, with correct well biasing, spacing rules, finger structures, and metal enclosures. Designing ESD structures manually would risk violating subtle DRC rules particularly those related to well spacing, diffusion density, and metal overlap.  
 By using the PDK-provided PCells, the pad frame automatically complies with:
 
 - ESD breakdown voltage limits,  
@@ -90,12 +90,12 @@ Although not all ESD structures were required for our simple OTA test chip, thei
 
 The final step before tape-out is the insertion of **density fill structures**, often simply referred to as *fillers*. Modern fabrication processes require that each metal, diffusion, and polysilicon layer maintain a specified **pattern density** within every local window of the layout. These density rules prevent issues such as erosion, and non-uniform planarization during CMP (Chemical–Mechanical Polishing), which can adversely affect metal thickness, resistance, and interlayer dielectric integrity.
 
-Fillers are non-functional geometries—typically small, repeatable patterns of **metal**, **active diffusion**, and **gate poly**—that ensure the overall layout meets the foundry’s density requirements without altering circuit behavior.  
+Fillers are non-functional geometries typically small, repeatable patterns of **metal**, **active diffusion**, and **gate poly** that ensure the overall layout meets the foundry’s density requirements without altering circuit behavior.  
 They are deliberately placed far from sensitive analog nodes or designed with grounded landing points so that any residual capacitive effect remains negligible. In analog circuits, filler insertion must be performed carefully to avoid parasitic loading of high-impedance nodes or unintentional coupling to bias networks.
 
 The IHP-SG13G2 PDK provides automated filler-generation utilities that greatly simplify this process.  
 Filling can be performed directly within **KLayout** using built-in irreversible function, or, more robustly, through a **Python script supplied by the PDK**, which analyzes layer densities and inserts the appropriate fill shapes according to process-specific rules.  
-The script outputs a final **GDS2 file** in which all required fills—metal, active, and poly—have been inserted and you have to verify against the SG13G2 density constraints. 
+The script outputs a final **GDS2 file** in which all required fills metal, active, and poly have been inserted and you have to verify against the SG13G2 density constraints. 
 
 This finalized and verified, density-compliant GDS2 file represents the **manufacturing-ready layout**, suitable for submission to the foundry in compliance with all CMP and density specifications.
 
