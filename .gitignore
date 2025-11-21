@@ -11,6 +11,8 @@ _manuscript
 .quarto
 /.html/
 *.tex
+*.html
+*.epub
 simulations
 *.raw
 /.quarto/
