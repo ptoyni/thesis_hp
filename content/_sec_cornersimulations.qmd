@@ -57,13 +57,11 @@ After a successful run, a documentation is automatically generated. The result o
 
 Along with this, all the PVT and MonteCarlo graphs are plotted using python which can be found [here](https://github.com/ptoyni/thesis_hp/tree/main/cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic)
 
-
 Let's take Noise vs Corner for example:
 
 ::: {width=80% .figure}
 ![noise_vs_corner](../figures/_fig_noise_vs_corner.png)
 :::
-
 
 The situation with the design is summarized in @tbl-voltage-buffer-spec.
 

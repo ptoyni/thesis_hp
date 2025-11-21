@@ -94,7 +94,7 @@ $g_{m}$ over $I_d$ method.
 
 
 ::: {.callout-note title="OTA Sizing" collapse="true"}
-{{< embed ../sizing/python/sizing_foldedcascode_nmos.ipynb echo=true >}}
+Detailed python code for sizing can be found [here](https://github.com/ptoyni/thesis_hp/tree/main/sizing/python)
 :::
 
 ## Complete Design and constant $g_m$ biasing using current mirrors
@@ -135,40 +135,35 @@ We will now do an analysis of the circuit design of the OTA including all the co
 Now that circuit is ready we need to test its ac and transient behaviour as well as loop gain using Middlebrook's method
 and Tian's method as mention in @fig-ac-xschem, @fig-tran-xschem, @fig-loopgain-xschem
 
-::: {#fig-ac-xschem .figure}
-![AC Analysis Setup](../figures/_fig_ac.svg)
-:::
 
-::: {#fig-ac-output-xschem .figure}
-![AC Analysis Output](../figures/_fig_foldedcascode_ac_bode.svg)
-:::
 
-::: {#fig-tran-xschem .figure}
-![Transient Analysis Setup](../figures/_fig_tran.svg)
-:::
+![AC Analysis Setup](../figures/_fig_ac.svg){#fig-ac-xschem}
 
-::: {#fig-tran-output-xschem .figure}
-![Transient Analysis Output](../figures/_fig_foldedcascode_tran_combined.svg)
-:::
+![AC Analysis Output](../figures/_fig_foldedcascode_ac_bode.svg){#fig-ac-output-xschem}
 
-::: {#fig-loopgain-xschem .figure}
-![Loop Gain Setup](../figures/_fig_loopgain.svg)
-:::
 
+
+![Transient Analysis Setup](../figures/_fig_tran.svg){#fig-tran-xschem}
+
+![Transient Analysis Output](../figures/_fig_foldedcascode_tran_combined.svg){#fig-tran-output-xschem}
+
+![Loop Gain Setup](../figures/_fig_loopgain.svg){#fig-loopgain-xschem}
 
 The loop gain analysis yeilds the following plots which clarifies that our specifications such as gain and phase margin
 are met successfully. See @fig-loopgain-magnitude and @fig-loopgain-phase
 The plots include both Middlebrook's and Tian's method for loop gain.
 
 
+
 ::: {#fig-loopgain-magnitude .figure}
-![Magnitude middlebrook vs Tian](../figures/_fig_loopgain_magnitude.svg)
+![](../figures/_fig_loopgain_magnitude.svg){width=80%}
+
+MAgnitude middlebrook vs Tian.
 :::
 
 ::: {#fig-loopgain-phase .figure}
-![Phase middlebrook vs Tian](../figures/_fig_loopgain_phase.svg)
+![](../figures/_fig_loopgain_phase.svg)){width=80%}
+
+Phase middlebrook vs Tian.
 :::
-
-
-
 

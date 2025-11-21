@@ -25,7 +25,11 @@ thesis_hp/
 ├── layout_scripts/       # Python scripts specific to physical layout generation/checking
 ├── Literature/           # References or literature review material
 ├── python_codes/         # Python scripts to plot raw data
-├── sizing/               # sizing using pygmid tool and python scripts for sizing
+├── sizing/
+    ├── matlab            # contains matlab codes for lookup tables 
+    ├── python            # sizing using pygmid tool and python scripts for sizing
+    ├── xschem            # contains testbenches on mosfets to Extract data from the mosfets  
+                          # provided by foundry in order to use them for gm id method
 ├── simulations/          # Folder for .spice files and .raw outputs
 └── postlayout_simulations/   # Post-Layout Simulation results/setup
 
