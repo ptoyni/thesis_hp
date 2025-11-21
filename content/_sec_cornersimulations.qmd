@@ -59,8 +59,10 @@ Along with this, all the PVT and MonteCarlo graphs are plotted using python whic
 
 
 Let's take Noise vs Corner for example:
-![noise_vs_corner](../figures/_fig_noise_vs_corner.png){width=80%}
 
+::: {width=80% .figure}
+![noise_vs_corner](../figures/_fig_noise_vs_corner.png)
+:::
 
 
 The situation with the design is summarized in @tbl-voltage-buffer-spec.
