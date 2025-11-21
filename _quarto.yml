@@ -45,7 +45,8 @@ book:
     - content/_sec_Requirements_AES.qmd
     - part: Circuit Design
       chapters:
-        - content/_sec_OTA_design.qmd      
+        - content/_sec_OTA_design.qmd   
+        - content/_sec_cornersimulations.qmd   
     - part: Physical Design 
       chapters:
         - content/_sec_into_layout.qmd
