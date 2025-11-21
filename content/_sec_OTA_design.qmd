@@ -207,12 +207,12 @@ After a successful run, a documentation is automatically generated. The result o
 
 | Parameter                 | Tool    | Result  | Min Limit |      Min Value | Typ Target |      Typ Value | Max Limit |       Max Value | Status  |
 |:--------------------------|:--------|:--------|----------:|---------------:|-----------:|---------------:|----------:|----------------:|:-------:|
-| Output voltage ratio      | ngspice | gain    |  0.98 V/V |      0.996 V/V |        any |      0.999 V/V |   1.1 V/V |       1.000 V/V | Pass ✅ |
-| Bandwidth                 | ngspice | bw      |    1e6 Hz | 5118320.000 Hz |        any | 7827360.000 Hz |       any | 13271000.000 Hz | Pass ✅ |
-| Output voltage ratio (MC) | ngspice | gain_mc |       any |      0.671 V/V |        any |      0.996 V/V |       any |       1.502 V/V | Pass ✅ |
-| Bandwidth (MC)            | ngspice | bw_mc   |    1e6 Hz | 1024950.000 Hz |        any | 7454465.000 Hz |       any | 91913200.000 Hz | Pass ✅ |
-| Output noise              | ngspice | noise   |       any |       0.069 mV |        any |       0.101 mV |    0.2 mV |        0.134 mV | Pass ✅ |
-| Settling time             | ngspice | tsettle |       any |       0.259 us |        any |       0.287 us |    1.5 us |        0.320 us | Pass ✅ |
+| Output voltage ratio      | ngspice | gain    |  0.98 V/V |      0.996 V/V |        any |      0.999 V/V |   1.1 V/V |       1.000 V/V | Pass    |
+| Bandwidth                 | ngspice | bw      |    1e6 Hz | 5118320.000 Hz |        any | 7827360.000 Hz |       any | 13271000.000 Hz | Pass    |
+| Output voltage ratio (MC) | ngspice | gain_mc |       any |      0.671 V/V |        any |      0.996 V/V |       any |       1.502 V/V | Pass    |
+| Bandwidth (MC)            | ngspice | bw_mc   |    1e6 Hz | 1024950.000 Hz |        any | 7454465.000 Hz |       any | 91913200.000 Hz | Pass    |
+| Output noise              | ngspice | noise   |       any |       0.069 mV |        any |       0.101 mV |    0.2 mV |        0.134 mV | Pass    |
+| Settling time             | ngspice | tsettle |       any |       0.259 us |        any |       0.287 us |    1.5 us |        0.320 us | Pass    |
 
 
 
