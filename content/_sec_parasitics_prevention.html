@@ -274,7 +274,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_layout_finalsteps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps - Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
   </div>
 </li>
       </ul>
@@ -394,12 +394,12 @@ This chapter formalizes the main parasitic mechanisms relevant to <strong>analog
 <section id="why-analog-suffers-more-from-parasitics" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="why-analog-suffers-more-from-parasitics"><span class="header-section-number">10.1</span> Why Analog Suffers More from Parasitics</h2>
 <p>Digital logic tolerates substantial RC and substrate coupling because functionality is determined by logic thresholds and noise margins. By contrast, <strong>analog circuits</strong> encode information in <strong>amplitude, phase, and continuous bias conditions</strong>. Small parasitic shifts in device parameters or interconnect coupling directly effects gain, offset, bandwidth, and noise.</p>
-<p>Key vulnerabilities arise because analog circuits operate on continuous voltage and current levels, where even small parasitic interactions can shift the operating point or distort the signal. 1. High-impedance nodes, such as the inputs of operational transconductance amplifiers (OTAs), are particularly sensitive because they cannot source or sink significant current. Any parasitic capacitance — whether from junction diffusion, metal-to-substrate coupling, or fringe fields from nearby interconnects — directly loads these nodes. This loading introduces unwanted poles, reduces input resistance, and increases thermal noise coupling. In precision amplifiers, such parasitic capacitances can also create signal-dependent charge storage, causing distortion or phase lag at higher frequencies.</p>
+<p>Key vulnerabilities arise because analog circuits operate on continuous voltage and current levels, where even small parasitic interactions can shift the operating point or distort the signal. 1. High-impedance nodes, such as the inputs of operational transconductance amplifiers (OTAs), are particularly sensitive because they cannot source or sink significant current. Any parasitic capacitance whether from junction diffusion, metal-to-substrate coupling, or fringe fields from nearby interconnects directly loads these nodes. This loading introduces unwanted poles, reduces input resistance, and increases thermal noise coupling. In precision amplifiers, such parasitic capacitances can also create signal-dependent charge storage, causing distortion or phase lag at higher frequencies.</p>
 <ol start="2" type="1">
 <li><p>Bias networks and current mirrors are another vulnerable class. These circuits rely on exact matching of device characteristics and stable well or substrate potentials to maintain bias accuracy. Substrate noise or potential fluctuations, often injected from digital switching activity or supply ripple, modulate the body voltage of transistors. This alters their threshold voltage and transconductance (<span class="math inline">\(g_m\)</span>), leading to current imbalance, gain drift, and degraded common-mode rejection. In deep-submicron processes with thin oxides and shallow wells, such coupling becomes even more significant.</p></li>
-<li><p>Feedback paths in analog systems — particularly those forming loops for gain control, regulation, or filtering — are strongly influenced by parasitic-induced poles and zeros. Capacitances at feedback nodes or unintended inductive loops in routing can introduce additional frequency-dependent elements into the loop transfer function. These parasitics may reduce phase margin, cause peaking in the frequency response, or even lead to oscillations if uncompensated.</p></li>
+<li><p>Feedback paths in analog systems particularly those forming loops for gain control, regulation, or filtering are strongly influenced by parasitic-induced poles and zeros. Capacitances at feedback nodes or unintended inductive loops in routing can introduce additional frequency-dependent elements into the loop transfer function. These parasitics may reduce phase margin, cause peaking in the frequency response, or even lead to oscillations if uncompensated.</p></li>
 </ol>
-<p>Consequently, the layout must be arranged to minimize parasitic capacitance at high-impedance nodes, isolate bias networks from noisy regions, and maintain compact, symmetrical feedback routing to preserve loop stability. Therefore, parasitics must be <strong>anticipated and shaped</strong>—not merely checked—during layout.</p>
+<p>Consequently, the layout must be arranged to minimize parasitic capacitance at high-impedance nodes, isolate bias networks from noisy regions, and maintain compact, symmetrical feedback routing to preserve loop stability. Therefore, parasitics must be <strong>anticipated and shaped</strong> not merely checked during layout.</p>
 </section>
 <section id="interconnect-and-device-level-parasitics" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="interconnect-and-device-level-parasitics"><span class="header-section-number">10.2</span> Interconnect and Device-Level Parasitics</h2>
@@ -420,14 +420,14 @@ We mitigate this by <strong>multi-fingering</strong> large devices (controlling 
 </section>
 <section id="critical-parasitics-mechanisms-and-mitigation-strategies" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="critical-parasitics-mechanisms-and-mitigation-strategies"><span class="header-section-number">10.3</span> Critical Parasitics Mechanisms and Mitigation Strategies</h2>
-<p>As discussed above, the physical behavior of the silicon can be compromised by secondary effects. These parasitic mechanisms—though invisible in schematic design—can severely degrade performance or even render an integrated circuit non-functional.<br>
+<p>As discussed above, the physical behavior of the silicon can be compromised by secondary effects. These parasitic mechanisms though invisible in schematic design can severely degrade performance or even render an integrated circuit non-functional.<br>
 The following subsections discuss the most relevant effects for analog circuits and the preventive measures applied in this work.</p>
 <section id="latch-up" class="level3" data-number="10.3.1">
 <h3 data-number="10.3.1" class="anchored" data-anchor-id="latch-up"><span class="header-section-number">10.3.1</span> Latch-Up</h3>
 <p>Latch-up is a destructive parasitic phenomenon that occurs primarily in bulk CMOS and BiCMOS technologies.<br>
 Within the substrate and well structure, every pair of adjacent p–n junctions inherently forms <strong>parasitic bipolar transistors</strong> (pnp and npn).<br>
 When certain layout geometries or biasing conditions bring these devices into proximity, they can create an unintended <strong>silicon-controlled rectifier (SCR)</strong> path between the power rails (AVDD and AVSS).<br>
-A transient event—such as an electrostatic discharge, substrate noise spike, or voltage overshoot—can trigger the SCR, producing a <strong>low-impedance short</strong> between supply and ground.<br>
+A transient event such as an electrostatic discharge, substrate noise spike, or voltage overshoot can trigger the SCR, producing a <strong>low-impedance short</strong> between supply and ground.<br>
 Once triggered, the latch-up state sustains itself through regenerative feedback, often leading to local thermal runaway and irreversible damage.</p>
 <p><strong>Prevention:</strong><br>
 Latch-up prevention requires <strong>breaking the feedback path</strong> and <strong>lowering substrate resistance</strong>.<br>
@@ -443,7 +443,7 @@ If a long interconnect is connected to a transistor gate but not yet to a diffus
 This discharge can permanently <strong>damage or weaken the gate dielectric</strong>, leading to gate leakage or early breakdown.<br>
 The risk increases with larger metal area and thinner gate oxides, making advanced nodes and precision analog devices particularly susceptible.</p>
 <p><strong>Prevention:</strong><br>
-To prevent this, <strong>metal hopping</strong> is applied—routing is divided into shorter segments by inserting vias to higher or lower metal layers, thus reducing the effective exposed area.<br>
+To prevent this, <strong>metal hopping</strong> is applied routing is divided into shorter segments by inserting vias to higher or lower metal layers, thus reducing the effective exposed area.<br>
 In this work, <strong>metal segmentation</strong> were used for nets identified by the SG13G2 PDK’s antenna check script as having potential plasma-induced charging risk.</p>
 </section>
 <section id="interconnecting-vias-reliability-and-noise" class="level3" data-number="10.3.3">
@@ -452,7 +452,7 @@ In this work, <strong>metal segmentation</strong> were used for nets identified 
 If a single via is forced to conduct large currents, it experiences localized heating and <strong>electromigration</strong>, which can lead to open circuits or resistance drift over time. Furthermore, any asymmetry in via count or placement between matched branches creates <strong>mismatch in series resistance</strong>, leading to offset in analog differentials or current mirrors.<br>
 Vias also contribute small fringing capacitances, and an uneven via distribution can slightly distort signal paths, particularly at high frequency.</p>
 <p><strong>Prevention:</strong><br>
-To enhance both <strong>reliability and symmetry</strong>, we employ <strong>redundant via arrays</strong>—multiple vias placed in parallel—to reduce resistance and distribute current density evenly. These are used especially on <strong>low-impedance and high-current paths</strong> such as power rails, bias lines, and OTA output nodes.<br>
+To enhance both <strong>reliability and symmetry</strong>, we employ <strong>redundant via arrays</strong> multiple vias placed in parallel to reduce resistance and distribute current density evenly. These are used especially on <strong>low-impedance and high-current paths</strong> such as power rails, bias lines, and OTA output nodes.<br>
 In matched differential structures, <strong>via symmetry</strong> is strictly maintained, meaning identical via count, shape, and placement on both branches. This guarantees balanced parasitic resistance and capacitance, preventing differential offset.<br>
 These measures collectively improve <strong>electromigration margins</strong>, ensuring the long-term reliability of the metal interconnect network.</p>
 </section>
@@ -465,7 +465,7 @@ The most effective mitigation is <strong>careful routing and shielding</strong>.
 High-impedance nodes are kept as short as possible, routed away from noisy or switching signals, and, where feasible, enclosed by <strong>ground shields</strong> connected to quiet references (AVSS).<br>
 In differential circuits, balanced and symmetric routing ensures that any residual injected charge appears as a <strong>common-mode disturbance</strong>, which is then rejected by the amplifier’s differential nature.<br>
 In networks involving switching (e.g., current-steering DACs or sample-and-hold circuits), <strong>bottom-plate switching</strong> and <strong>complementary transistor pairs</strong> are used to cancel charge injection. In static bias networks, minimizing gate–drain overlap and ensuring sufficient separation from high-slew-rate lines further reduces this parasitic coupling.</p>
-<p>In summary, understanding these parasitic mechanisms is essential for robust analog design. Each represents a different physical coupling path—through the substrate, interconnect, or process environment—and each must be addressed at layout level.<br>
+<p>In summary, understanding these parasitic mechanisms is essential for robust analog design. Each represents a different physical coupling path through the substrate, interconnect, or process environment and each must be addressed at layout level.<br>
 The preventive strategies applied in this work, derived from the IHP SG13G2 PDK rules and the guidelines in <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[1]</a></span>, ensure that the layout not only meets design rules but also preserves <strong>electrical integrity and long-term reliability</strong> in fabrication and operation.</p>
 </section>
 </section>
@@ -478,20 +478,20 @@ Both parameters define the degree of electrical isolation between neighboring de
 A high <span class="math inline">\(R_{\text{sub}}\)</span> or <span class="math inline">\(R_{\text{well}}\)</span> increases the voltage drop caused by substrate or well currents, thereby amplifying potential modulation and noise coupling. Guard rings <strong>effectively lower these resistances</strong> by providing parallel, low-resistance paths to the respective power rails.<br>
 This ensures that any injected charge is quickly dissipated, keeping local substrate potentials nearly constant.<br>
 Reducing <span class="math inline">\(R_{\text{sub}}\)</span> and <span class="math inline">\(R_{\text{well}}\)</span> is therefore essential not only for <strong>latch-up prevention</strong>, but also for <strong>matching accuracy</strong> in precision analog circuits, where small potential gradients can alter threshold voltages and current ratios.</p>
-<p>In this work, <strong>every sensitive device group</strong>—including the differential input pair, active loads, and current mirrors—is enclosed by <strong>fully closed rectangular guard rings</strong>.</p>
+<p>In this work, <strong>every sensitive device group</strong> including the differential input pair, active loads, and current mirrors is enclosed by <strong>fully closed rectangular guard rings</strong>.</p>
 <p>For NMOS devices placed in the p-substrate region, <strong>p⁺ guard rings</strong> are tied to <strong>AVSS (analog ground)</strong>, while for PMOS devices inside n-wells, <strong>n⁺ guard rings</strong> are connected to <strong>AVDD</strong>.<br>
 This configuration ensures that both substrate and well domains have <strong>firm voltage references</strong>, minimizing variations in local body potential and suppressing latch-up triggering paths. Contacts are inserted at <strong>regular pitch</strong> along the ring, effectively reducing the sheet resistance of the ring and enhancing current collection efficiency.</p>
 <p>From a design standpoint, several parameters determine guard-ring effectiveness:<br>
-- <strong>Ring width</strong> — Wider guard rings exhibit lower resistance and better current collection but consume additional layout area.<br>
-- <strong>Contact density</strong> — A higher number of substrate or well contacts per unit length lowers <span class="math inline">\(R_{\text{sub}}\)</span> and <span class="math inline">\(R_{\text{well}}\)</span>, improving isolation.<br>
-- <strong>Continuity</strong> — Continuous guard rings provide stronger confinement of the local substrate potential, while segmented ones trade isolation for area and routing flexibility.</p>
+- <strong>Ring width</strong> : Wider guard rings exhibit lower resistance and better current collection but consume additional layout area.<br>
+- <strong>Contact density</strong> : A higher number of substrate or well contacts per unit length lowers <span class="math inline">\(R_{\text{sub}}\)</span> and <span class="math inline">\(R_{\text{well}}\)</span>, improving isolation.<br>
+- <strong>Continuity</strong> : Continuous guard rings provide stronger confinement of the local substrate potential, while segmented ones trade isolation for area and routing flexibility.</p>
 <p>Two topological categories are widely used:</p>
 <ul>
 <li><p><strong>Continuous Guard Rings</strong><br>
 These structures <strong>completely enclose</strong> the protected device region without any breaks.<br>
 They offer <strong>maximum isolation</strong>, <strong>lowest effective substrate resistance</strong>, and <strong>best protection against latch-up and substrate noise</strong>.<br>
 Continuous rings are preferred in <strong>high-precision analog blocks</strong> where low <span class="math inline">\(R_{\text{sub}}\)</span> and <span class="math inline">\(R_{\text{well}}\)</span> are crucial for stable operation.<br>
-In our OTA layout, every critical block—especially the differential pair—is enclosed by <strong>continuous rectangular guard rings</strong>, chosen for their strong isolation and reliability.</p></li>
+In our OTA layout, every critical block especially the differential pair is enclosed by <strong>continuous rectangular guard rings</strong>, chosen for their strong isolation and reliability.</p></li>
 <li><p><strong>Segmented Guard Rings</strong><br>
 These are composed of <strong>discrete diffusion segments</strong> separated by intentional openings to accommodate routing or area constraints.<br>
 While they exhibit <strong>higher <span class="math inline">\(R_{\text{sub}}\)</span></strong> and <strong>reduced isolation</strong> compared to continuous rings, properly designed segmented rings can still prevent latch-up and effectively attenuate substrate coupling. They are often used in moderately sensitive or space-limited blocks.</p></li>
@@ -532,7 +532,7 @@ This ensures stable device behavior across temperature and process variations an
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Pro Tip — Parasitics Are Design Variables
+Pro Tip - Parasitics Are Design Variables
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -973,8 +973,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/_sec_layout_finalsteps.html" class="pagination-link" aria-label="Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../content/_sec_layout_finalsteps.html" class="pagination-link" aria-label="Final Layout Steps - Bonding, Seal Ring, and Pad-Frame Integration">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps - Bonding, Seal Ring, and Pad-Frame Integration</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -225,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_layout_finalsteps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps - Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
   </div>
 </li>
       </ul>
@@ -325,12 +325,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Once, schematic in <strong>Xschem</strong> is finished, what we have is only the functional intent of the circuit. At this stage the devices are ideal: transistors have exactly the width and length we assign, wires have zero resistance, and parasitics like source/drain capacitances or coupling between metals are invisible. The layout stage is where this abstraction becomes <strong>real silicon geometry</strong>. Here, every transistor must be drawn in the technology’s layers, with actual fingers, source/drain contacts, guard rings and no component is ideal anymore.</p>
-<p>For analog circuits, this step is critical. Small layout choices — for example, placing two input devices slightly asymmetrically, or routing one input longer than the other — can directly show up as offset voltage or degraded common-mode rejection. In digital design, such effects are often absorbed by logic thresholds, but in analog design they decide whether the OTA meets its simulated gain or not.</p>
+<p>For analog circuits, this step is critical. Small layout choices for example, placing two input devices slightly asymmetrically, or routing one input longer than the other can directly show up as offset voltage or degraded common-mode rejection. In digital design, such effects are often absorbed by logic thresholds, but in analog design they decide whether the OTA meets its simulated gain or not.</p>
 <p>In other words, schematic defines <em>“what we want”</em>, layout decides <em>“what we actually get”</em>. This chapter focuses on showing how a <em>folded-cascode OTA</em> in <strong>IHP-SG13G2</strong> was translated from a verified schematic into a manufacturable layout that still respects matching, symmetry, and parasitic limits.</p>
 <section id="layout-toolchain-klayout" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="layout-toolchain-klayout"><span class="header-section-number">6.1</span> Layout Toolchain: KLayout</h2>
 <p>For the layout implementation, we relied on <em>KLayout</em>. It is a free, scriptable editor that is already integrated with the <strong>IHP-SG13G2 open-source PDK</strong> and provided in the <strong>IIC-OSIC toolchain</strong>. This makes it possible to perform layout tasks without the need for commercial software.</p>
-<p>All necessary files — such as <strong>Design Rule Checks (DRC)</strong>, <strong>LVS comparison setups</strong>, and <strong>Parameterized cells (PCells)</strong> — are directly accessible and supported within KLayout. This allows devices to be generated, verified, and extracted in a reproducible way.</p>
+<p>All necessary files such as <strong>Design Rule Checks (DRC)</strong>, <strong>LVS comparison setups</strong>, and <strong>Parameterized cells (PCells)</strong> are directly accessible and supported within KLayout. This allows devices to be generated, verified, and extracted in a reproducible way.</p>
 <p>For further details, see the <a href="https://www.klayout.de/">KLayout website</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Using KLayout: Docker vs. Source Build">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">

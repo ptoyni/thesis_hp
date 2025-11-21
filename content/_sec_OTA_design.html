@@ -308,7 +308,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_layout_finalsteps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps - Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
   </div>
 </li>
       </ul>
@@ -918,7 +918,7 @@ Figure&nbsp;5.9: Phase middlebrook vs Tian
 <li><p>You are using a framework which highly automates this task of running a plethora of different simulations and evaluating the outcome. These frameworks are called simulation runners.</p></li>
 </ol>
 <p>Luckily, there are open-source versions of simulation runners available, and we will use <a href="https://github.com/efabless/cace">CACE</a>. CACE is written in Python and allows to setup a datasheet in <a href="https://yaml.org">YAML</a> which defines the simulation problem and the performance parameters to evaluate against which limits. The resulting simulations are then run in parallel and the simulation data is evaluated and summarized in various forms.</p>
-<p>There is a CACE setup available for our 5T-OTA. The <a href="../cace/foldedcascode_nmos.yaml">datasheet</a> describes the operating conditions and the simulations tasks. For each simulation a testbench template is needed, <a href="../cace/templates/foldedcascode-nmos-ac.sch">this one</a> is used for ac simulations, <a href="../cace/templates/foldedcascode-nmos-noise.sch">this one</a> is used for noise simulation, and <a href="../cace/templates/foldedcascode-nmos-tran.sch">this one</a> is used for transient simulation.</p>
+<p>There is a CACE setup available for our OTA. The <a href="../cace/foldedcascode_nmos.yaml">datasheet</a> describes the operating conditions and the simulations tasks. For each simulation a testbench template is needed, <a href="../cace/templates/foldedcascode-nmos-ac.sch">this one</a> is used for ac simulations, <a href="../cace/templates/foldedcascode-nmos-noise.sch">this one</a> is used for noise simulation, and <a href="../cace/templates/foldedcascode-nmos-tran.sch">this one</a> is used for transient simulation.</p>
 <p>After a successful run, a documentation is automatically generated. The result of a full run of this is presented below:</p>
 <div id="ota-cace-result" class="callout callout-style-default callout-note callout-titled" title="CACE Summary for OTA">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -931,8 +931,7 @@ CACE Summary for OTA
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<section id="cace-summary-for-foldedcascode_nmos" class="level1 callout-body-container callout-body" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> CACE Summary for foldedcascode_nmos</h1>
+<div class="callout-body-container callout-body">
 <p><strong>netlist source</strong>: schematic</p>
 <table class="caption-top table">
 <colgroup>
@@ -972,7 +971,7 @@ CACE Summary for OTA
 <td style="text-align: right;">0.999 V/V</td>
 <td style="text-align: right;">1.1 V/V</td>
 <td style="text-align: right;">1.000 V/V</td>
-<td style="text-align: center;">Pass ✅</td>
+<td style="text-align: center;">Pass</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Bandwidth</td>
@@ -984,7 +983,7 @@ CACE Summary for OTA
 <td style="text-align: right;">7827360.000 Hz</td>
 <td style="text-align: right;">any</td>
 <td style="text-align: right;">13271000.000 Hz</td>
-<td style="text-align: center;">Pass ✅</td>
+<td style="text-align: center;">Pass</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Output voltage ratio (MC)</td>
@@ -996,7 +995,7 @@ CACE Summary for OTA
 <td style="text-align: right;">0.996 V/V</td>
 <td style="text-align: right;">any</td>
 <td style="text-align: right;">1.502 V/V</td>
-<td style="text-align: center;">Pass ✅</td>
+<td style="text-align: center;">Pass</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Bandwidth (MC)</td>
@@ -1008,7 +1007,7 @@ CACE Summary for OTA
 <td style="text-align: right;">7454465.000 Hz</td>
 <td style="text-align: right;">any</td>
 <td style="text-align: right;">91913200.000 Hz</td>
-<td style="text-align: center;">Pass ✅</td>
+<td style="text-align: center;">Pass</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Output noise</td>
@@ -1020,7 +1019,7 @@ CACE Summary for OTA
 <td style="text-align: right;">0.101 mV</td>
 <td style="text-align: right;">0.2 mV</td>
 <td style="text-align: right;">0.134 mV</td>
-<td style="text-align: center;">Pass ✅</td>
+<td style="text-align: center;">Pass</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Settling time</td>
@@ -1032,91 +1031,20 @@ CACE Summary for OTA
 <td style="text-align: right;">0.287 us</td>
 <td style="text-align: right;">1.5 us</td>
 <td style="text-align: right;">0.320 us</td>
-<td style="text-align: center;">Pass ✅</td>
+<td style="text-align: center;">Pass</td>
 </tr>
 </tbody>
 </table>
-<!-- ## Plots
-
-## gain_vs_temp
-
-![gain_vs_temp](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/gain_vs_temp.png)
-
-## gain_vs_vin
-
-![gain_vs_vin](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/gain_vs_vin.png)
-
-## gain_vs_vdd
-
-![gain_vs_vdd](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/gain_vs_vdd.png)
-
-## gain_vs_corner
-
-![gain_vs_corner](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/gain_vs_corner.png)
-
-## bw_vs_temp
-
-![bw_vs_temp](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/bw_vs_temp.png)
-
-## bw_vs_vin
-
-![bw_vs_vin](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/bw_vs_vin.png)
-
-## bw_vs_vdd
-
-![bw_vs_vdd](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/bw_vs_vdd.png)
-
-## bw_vs_corner
-
-![bw_vs_corner](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/bw_vs_corner.png)
-
-## gain_mc
-
-![gain_mc](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/gain_mc.png)
-
-## bw_mc
-
-![bw_mc](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/bw_mc.png)
-
-## noise_vs_temp
-
-![noise_vs_temp](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/noise_vs_temp.png)
-
-## noise_vs_vin
-
-![noise_vs_vin](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/noise_vs_vin.png)
-
-## noise_vs_vdd
-
-![noise_vs_vdd](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/noise_vs_vdd.png)
-
-## noise_vs_corner
-
-![noise_vs_corner](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/noise_vs_corner.png)
-
-## settling_vs_temp
-
-![settling_vs_temp](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/settling_vs_temp.png)
-
-## settling_vs_vin
-
-![settling_vs_vin](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/settling_vs_vin.png)
-
-## settling_vs_vdd
-
-![settling_vs_vdd](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/settling_vs_vdd.png)
-
-## settling_vs_corner
-
-![settling_vs_corner](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/settling_vs_corner.png) -->
-</section>
+<p>Along with this, all the PVT and MonteCarlo graphs are plotted using python which can be found <a href="https://github.com/ptoyni/thesis_hp/tree/main/cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic">here</a></p>
+<p>Let’s take Noise vs Corner for example: <img src="../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/noise_vs_corner.png" class="img-fluid" alt="noise_vs_corner"></p>
 </div>
 </div>
-<p>The situation with the design is summarized in <a href="#tbl-voltage-buffer-spec" class="quarto-xref">Table&nbsp;<span>6.1</span></a>.</p>
+</div>
+<p>The situation with the design is summarized in <a href="#tbl-voltage-buffer-spec" class="quarto-xref">Table&nbsp;<span>5.1</span></a>.</p>
 <div id="tbl-voltage-buffer-spec" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-voltage-buffer-spec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.1: Voltage buffer specification
+Table&nbsp;5.1: Voltage buffer specification
 </figcaption>
 <div aria-describedby="tbl-voltage-buffer-spec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">

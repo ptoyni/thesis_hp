@@ -279,7 +279,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_layout_finalsteps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps - Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
   </div>
 </li>
       </ul>
@@ -387,22 +387,22 @@ div.csl-indent {
 
 
 <p>The transition from an electrical schematic to a manufacturable integrated circuit relies on the integrity of the <strong>layout</strong>, which represents the true physical interface between design and fabrication. While schematic-level verification ensures functional correctness and circuit performance, it is the layout that determines whether the circuit can be fabricated reliably within the limits of the chosen process.<br>
-To formalize and automate this verification, the semiconductor industry have <strong>Design Rule Checking (DRC)</strong>—a systematic comparison of the layout geometry against a set of process-specific constraints provided by the foundry or technology provider (in our case IHP-PDK Authors).</p>
+To formalize and automate this verification, the semiconductor industry have <strong>Design Rule Checking (DRC)</strong> a systematic comparison of the layout geometry against a set of process-specific constraints provided by the foundry or technology provider (in our case IHP-PDK Authors).</p>
 <section id="fundamentals-of-drc" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="fundamentals-of-drc"><span class="header-section-number">8.1</span> Fundamentals of DRC</h2>
 <p>Design Rule Checking is a geometric verification step that ensures a layout adheres to the <strong>minimum/maximum feature sizes, spacings, enclosures, and overlaps</strong> defined by the fabrication process.<br>
 Each layer in a modern BiCMOS process (e.g.&nbsp;diffusion, polysilicon, metal interconnects, and vias) is subject to numerous rules derived from the physical limitations of photolithography, etching, and deposition steps.<br>
 Violating these constraints can lead to a spectrum of manufacturing defects: short-circuits due to over-etching, open connections caused by lithographic line thinning, or parametric variations resulting from disuniform film growth.<br>
 Thus, DRC forms the <strong>first line of defense</strong> against non-manufacturable or yield-critical layouts.</p>
-<p>The design rules themselves originate from <strong>process specifications</strong>. Foundries experimentally determine the tolerances of their technology through test structures that measure lithographic resolution, etch bias, and alignment accuracy between layers. From these experiments, statistical margins are extracted and translated into deterministic layout constraints—expressed as rules such as <em>minimum Active width = 0.15 µm</em> or <em>minimum spacing between Metal1 lines = 0.18 µm</em>. <span class="citation" data-cites="IHP_PDK_2024"><a href="../references.html#ref-IHP_PDK_2024" role="doc-biblioref">[1]</a></span> As discussed in <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[2]</a></span>, these rules balance manufacturability with design density: tighter rules enable compact designs but raise the risk of yield loss, while relaxed rules increase process robustness at the expense of silicon area.</p>
+<p>The design rules themselves originate from <strong>process specifications</strong>. Foundries experimentally determine the tolerances of their technology through test structures that measure lithographic resolution, etch bias, and alignment accuracy between layers. From these experiments, statistical margins are extracted and translated into deterministic layout constraints expressed as rules such as <em>minimum Active width = 0.15 µm</em> or <em>minimum spacing between Metal1 lines = 0.18 µm</em>. <span class="citation" data-cites="IHP_PDK_2024"><a href="../references.html#ref-IHP_PDK_2024" role="doc-biblioref">[1]</a></span> As discussed in <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[2]</a></span>, these rules balance manufacturability with design density: tighter rules enable compact designs but raise the risk of yield loss, while relaxed rules increase process robustness at the expense of silicon area.</p>
 </section>
 <section id="technology-dependence-and-process-node" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="technology-dependence-and-process-node"><span class="header-section-number">8.2</span> Technology Dependence and Process Node</h2>
-<p>Every <strong>technology node</strong>—for instance, 130 nm, 65 nm, or 28 nm—defines its own set of DRC parameters. These parameters evolve with advances in lithographic precision, material systems, and transistor architecture. At older nodes such as <strong>0.35 µm or 0.25 µm</strong>, DRC rules mainly governed planar dimensions and spacing; however, in sub-100 nm processes, additional considerations such as <strong>antennas, stress effects, and metal density gradients</strong> are incorporated. Consequently, the complexity of DRC rules increases exponentially as the process geometry scales down.<span class="citation" data-cites="baker2010"><a href="../references.html#ref-baker2010" role="doc-biblioref">[3]</a></span></p>
+<p>Every <strong>technology node</strong> for instance, 130 nm, 65 nm, or 28 nm defines its own set of DRC parameters. These parameters evolve with advances in lithographic precision, material systems, and transistor architecture. At older nodes such as <strong>0.35 µm or 0.25 µm</strong>, DRC rules mainly governed planar dimensions and spacing; however, in sub-100 nm processes, additional considerations such as <strong>antennas, stress effects, and metal density gradients</strong> are incorporated. Consequently, the complexity of DRC rules increases exponentially as the process geometry scales down.<span class="citation" data-cites="baker2010"><a href="../references.html#ref-baker2010" role="doc-biblioref">[3]</a></span></p>
 <p>The <strong>Process Design Kit (PDK)</strong> serves as the bridge between the foundry and the design environment.<br>
-It encapsulates all technology-specific information—design rules, layer definitions, device models, parasitic extraction parameters, and layout-Vs-schematic (LVS) configurations—into a single framework usable by EDA tools.<br>
+It encapsulates all technology-specific information design rules, layer definitions, device models, parasitic extraction parameters, and layout-Vs-schematic (LVS) configurations into a single framework usable by EDA tools.<br>
 The DRC deck, which is a formalized file (often written in languages such as SVRF or Python-based scripts for tools like KLayout), encodes these geometric constraints in machine-readable form. When the layout is processed through the DRC engine, each polygon and layer is algorithmically compared against the rule database to identify violations.</p>
-<p>In the case of the <strong>IHP SG13G2 130 nm BiCMOS process</strong>, used throughout this work, the <em>IHP-PDK</em> provides a comprehensive DRC rule set defining all critical geometrical limits—from diffusion-to-diffusion spacing and via enclosures to hierarchical density checks of upper metal layers, <span class="citation" data-cites="IHP_PDK_2024"><a href="../references.html#ref-IHP_PDK_2024" role="doc-biblioref">[1]</a></span>. The <em>IHP-PDK</em> also supplies detailed technology definition files that can be manually integrated into layout tools such as KLayout. However, since the <em>IHP-PDK</em> is part of the <em>IIC-OSIC</em> open-source toolchain, these technology files and rule decks are already pre-configured within the provided Docker image, offering an optimized and reproducible setup for DRC verification.</p>
+<p>In the case of the <strong>IHP SG13G2 130 nm BiCMOS process</strong>, used throughout this work, the <em>IHP-PDK</em> provides a comprehensive DRC rule set defining all critical geometrical limits from diffusion-to-diffusion spacing and via enclosures to hierarchical density checks of upper metal layers, <span class="citation" data-cites="IHP_PDK_2024"><a href="../references.html#ref-IHP_PDK_2024" role="doc-biblioref">[1]</a></span>. The <em>IHP-PDK</em> also supplies detailed technology definition files that can be manually integrated into layout tools such as KLayout. However, since the <em>IHP-PDK</em> is part of the <em>IIC-OSIC</em> open-source toolchain, these technology files and rule decks are already pre-configured within the provided Docker image, offering an optimized and reproducible setup for DRC verification.</p>
 <p>In addition, the PDK documentation includes a complete layer table defining all process layers, along with descriptions of forbidden layers reserved for internal fabrication use, grid rules, and the full list of DRC constraints illustrations. This document has served as the primary reference for understanding the process and implementing all layout structures in this work. Hence, even within an open-source environment, the design remains <strong>foundry-compliant</strong>, physically realizable, and fully aligned with the manufacturing specifications of the SG13G2 process.</p>
 </section>
 <section id="importance-in-the-design-flow" class="level2" data-number="8.3">
@@ -411,16 +411,16 @@ The DRC deck, which is a formalized file (often written in languages such as SVR
 As mentioned before, an unverified layout might pass all functional and electrical simulations yet still fail in fabrication because certain features violate lithographic limits or introduce yield-limiting defects. Typical examples include insufficient metal spacing leading to shorts, or inadequate enclosure of contacts resulting in open circuits after etching.<br>
 By enforcing DRC compliance before tape-out, the designer ensures that the design adheres to the <strong>design-for-manufacturability (DFM)</strong> principles required for reproducible production.</p>
 <p>Furthermore, DRC compliance is not merely a binary condition of “pass or fail.” It also acts as a <strong>metric of process awareness</strong>: a DRC-clean layout demonstrates the designer’s adherence to technology constraints and reflects a realistic understanding of fabrication tolerances. In professional design flows, foundries refuse to fabricate any layout that fails DRC, as doing so would waste mask costs and process time.</p>
-<p>Therefore, DRC stands as the final checkpoint between design creativity and physical implementation—a gate that ensures the <strong>logical intent of the schematic can manifest in silicon without violation of the underlying physics</strong>.</p>
+<p>Therefore, DRC stands as the final checkpoint between design creativity and physical implementation a gate that ensures the <strong>logical intent of the schematic can manifest in silicon without violation of the underlying physics</strong>.</p>
 </section>
 <section id="practical-implementation-of-design-rule-checking" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="practical-implementation-of-design-rule-checking"><span class="header-section-number">8.4</span> Practical Implementation of Design Rule Checking</h2>
-<p>As discussed in earlier chapters, the <strong>layout is the sole design entity that directly communicates with fabrication</strong>. Neither schematic diagrams nor behavioral models ever reach the foundry—only the geometric database (typically in GDSII or OASIS format) generated from the layout is delivered for mask generation and processing.<br>
+<p>As discussed in earlier chapters, the <strong>layout is the sole design entity that directly communicates with fabrication</strong>. Neither schematic diagrams nor behavioral models ever reach the foundry only the geometric database (typically in GDSII or OASIS format) generated from the layout is delivered for mask generation and processing.<br>
 In this sense, <strong>Design Rule Checking (DRC)</strong> serves as the mechanism through which the <em>language of design</em> is translated into the <em>language of manufacturing</em>. It guarantees that every transistor, interconnect, and via is drawn within the lithographic and etching tolerances established by the process technology. This alignment between layout geometry and process capability is essential to achieving both functional yield and long-term device reliability.<br>
 To borrow the phrasing of <span class="citation" data-cites="baker2010"><a href="../references.html#ref-baker2010" role="doc-biblioref">[3]</a></span>, <em>“a perfect schematic means nothing without a correct layout.”</em><br>
-DRC ensures that this correctness is quantifiable and verifiable—it enforces the discipline that transforms circuit theory into a physically reproducible artifact, one capable of moving confidently from layout database to wafer fabrication.</p>
-<p>In this work, all DRC verification was performed using <strong>KLayout</strong> as part of the <strong>IIC-OSIC open-source toolchain</strong>, which integrates the <strong>IHP SG13G2 130 nm BiCMOS process</strong>. The PDK provides complete DRC rule decks in the form of Python-based macros that systematically check every process layer and layer combination—diffusion overlaps, via enclosures, contact spacings, metal width and density requirements, and top-metal clearance to the passivation opening.</p>
-<p>The DRC engine performs a hierarchical scan of the layout, flags any violations, and displays annotated markers directly within the KLayout interface for review. Each violation encountered during the layout phase was analyzed and corrected at either the device or routing level until the design achieved a fully <strong>DRC-clean status</strong>. This verified layout therefore not only satisfies the intended schematic connectivity but also conforms to every <strong>physical constraint required for successful fabrication</strong>. Through this process, DRC validation in KLayout establishes the final and most critical bridge between the abstract world of circuit design and the tangible reality of silicon manufacturing—where compliance with foundry rules ensures that what is drawn can, indeed, be built.</p>
+DRC ensures that this correctness is quantifiable and verifiable it enforces the discipline that transforms circuit theory into a physically reproducible artifact, one capable of moving confidently from layout database to wafer fabrication.</p>
+<p>In this work, all DRC verification was performed using <strong>KLayout</strong> as part of the <strong>IIC-OSIC open-source toolchain</strong>, which integrates the <strong>IHP SG13G2 130 nm BiCMOS process</strong>. The PDK provides complete DRC rule decks in the form of Python-based macros that systematically check every process layer and layer combination diffusion overlaps, via enclosures, contact spacings, metal width and density requirements, and top-metal clearance to the passivation opening.</p>
+<p>The DRC engine performs a hierarchical scan of the layout, flags any violations, and displays annotated markers directly within the KLayout interface for review. Each violation encountered during the layout phase was analyzed and corrected at either the device or routing level until the design achieved a fully <strong>DRC-clean status</strong>. This verified layout therefore not only satisfies the intended schematic connectivity but also conforms to every <strong>physical constraint required for successful fabrication</strong>. Through this process, DRC validation in KLayout establishes the final and most critical bridge between the abstract world of circuit design and the tangible reality of silicon manufacturing where compliance with foundry rules ensures that what is drawn can, indeed, be built.</p>
 <section id="types-of-drc-scripts-in-the-ihp-sg13g2-process" class="level3" data-number="8.4.1">
 <h3 data-number="8.4.1" class="anchored" data-anchor-id="types-of-drc-scripts-in-the-ihp-sg13g2-process"><span class="header-section-number">8.4.1</span> Types of DRC Scripts in the IHP SG13G2 Process</h3>
 <p>The <strong>IHP SG13G2 PDK</strong> provides two distinct DRC scripts, each corresponding to a specific level of design compliance and verification rigor. These scripts are referred to as <strong>sg13g2_minimal</strong> and <strong>sg13g2_maximal</strong> rule decks. Both are written as Python macros configured within the KLayout environment and can be executed directly from the <em>Macros Development</em> interface.</p>
@@ -431,7 +431,7 @@ DRC ensures that this correctness is quantifiable and verifiable—it enforces t
 </section>
 <section id="performing-drc-in-klayout" class="level3" data-number="8.4.2">
 <h3 data-number="8.4.2" class="anchored" data-anchor-id="performing-drc-in-klayout"><span class="header-section-number">8.4.2</span> Performing DRC in KLayout</h3>
-<p>As mentioned in the <em>Known Issues</em> section, DRC cannot be executed in KLayout solely by relying on direct tools or commands. Instead, a specific workflow must be followed. Within the <strong>Macros Development</strong> interface of KLayout, there is a dedicated <strong>DRC section</strong> that lists all available rule scripts for the selected technology. To perform DRC, the user must select the desired rule deck—either <em>sg13_g2_minimal</em> or <em>sg13_g2_maximal</em>—and then execute the corresponding script.</p>
+<p>As mentioned in the <em>Known Issues</em> section, DRC cannot be executed in KLayout solely by relying on direct tools or commands. Instead, a specific workflow must be followed. Within the <strong>Macros Development</strong> interface of KLayout, there is a dedicated <strong>DRC section</strong> that lists all available rule scripts for the selected technology. To perform DRC, the user must select the desired rule deck either <em>sg13_g2_minimal</em> or <em>sg13_g2_maximal</em> and then execute the corresponding script.</p>
 <div id="fig-macro-dev" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-macro-dev-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -460,80 +460,44 @@ Script
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="quarto-embed-nb-cell" data-notebook="C:\Users\HP\eda\designs\thesis\thesis_hp\layout_scripts\drc_errors_check.ipynb" data-notebook-title="DRC Error Check" data-notebook-cellid="0dd2707b">
+<div class="quarto-embed-nb-cell" data-notebook="C:\Users\HP\eda\designs\thesis\thesis_hp\layout_scripts\drc_errors_check.ipynb" data-notebook-title="2nd Funtion" data-notebook-cellid="0dd2707b">
 <p>DRC Errors Check</p>
 <p>This script gives 2 functions: 1st needs the the errors copied from KLayout to be pasted in drc_log function inside script and than run the script. It can be tidious to change script again and again. Therefore, not recommended.</p>
 <p>For 2nd function just run the script and paste your errors copied from KLayout in the terminal and press enter and DONE. By default, script uses this function.</p>
-<div id="d09d5d4a" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DRC Error Check</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1st function</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_drc_errors(drc_log: <span class="bu">str</span>):</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    lines <span class="op">=</span> drc_log.strip().splitlines()</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"⚠️ Rules with errors:"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> lines:</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">"error(s)"</span> <span class="kw">in</span> line:</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">try</span>:</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                rule, error_text <span class="op">=</span> line.split(<span class="st">":"</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                error_count <span class="op">=</span> <span class="bu">int</span>(error_text.strip().split()[<span class="dv">0</span>])</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> error_count <span class="op">&gt;=</span> <span class="dv">1</span>:</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>rule<span class="sc">.</span>strip()<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>error_count<span class="sc">}</span><span class="ss"> error(s)"</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                <span class="cf">continue</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="ae26ed6c" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Paste your DRC log below READ THE COMMENT BELOW</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>drc_log <span class="op">=</span> <span class="st">"""</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="st">Rule forbidden.PEmPoly: 0 error(s)</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="st">Rule forbidden.EmPoly: 0 error(s)</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">Rule forbidden.LDMOS: 0 error(s)</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="st">Rule forbidden.PBiWind: 0 error(s)</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="st">Rule forbidden.Flash: 0 error(s)</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="st">Rule forbidden.ColWind: 0 error(s)</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># parse_drc_errors(drc_log)</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># remove above comment ==&gt;&gt; If you want to put manually inside script not in terminal than use above function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <div id="e4d450e8" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2nd Funtion</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_drc_errors_new():</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">" Paste your DRC error log below. Press Enter twice to finish:"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Collect multiline input</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    lines <span class="op">=</span> []</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        line <span class="op">=</span> <span class="bu">input</span>()</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> line.strip() <span class="op">==</span> <span class="st">""</span>:</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        lines.append(line)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">⚠️ Rules with errors :"</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    i<span class="op">=</span><span class="dv">0</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> lines:</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">"error(s)"</span> <span class="kw">in</span> line:</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">try</span>:</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>                rule, error_text <span class="op">=</span> line.split(<span class="st">":"</span>)</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>                error_count <span class="op">=</span> <span class="bu">int</span>(error_text.strip().split()[<span class="dv">0</span>])</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> error_count <span class="op">&gt;=</span> <span class="dv">1</span>:</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>rule<span class="sc">.</span>strip()<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>error_count<span class="sc">}</span><span class="ss"> error(s)"</span>)</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>                    i<span class="op">=</span><span class="dv">1</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>            <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>                <span class="cf">continue</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i<span class="op">==</span><span class="dv">0</span>:</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Congrats! No error"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2nd Funtion</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_drc_errors_new():</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">" Paste your DRC error log below. Press Enter twice to finish:"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Collect multiline input</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    lines <span class="op">=</span> []</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        line <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> line.strip() <span class="op">==</span> <span class="st">""</span>:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        lines.append(line)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">⚠️ Rules with errors :"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    i<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> lines:</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">"error(s)"</span> <span class="kw">in</span> line:</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">try</span>:</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                rule, error_text <span class="op">=</span> line.split(<span class="st">":"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                error_count <span class="op">=</span> <span class="bu">int</span>(error_text.strip().split()[<span class="dv">0</span>])</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> error_count <span class="op">&gt;=</span> <span class="dv">1</span>:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>rule<span class="sc">.</span>strip()<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>error_count<span class="sc">}</span><span class="ss"> error(s)"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                    i<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>            <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                <span class="cf">continue</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i<span class="op">==</span><span class="dv">0</span>:</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Congrats! No error"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ff844004" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the parser</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>parse_drc_errors_new()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> Paste your DRC error log below. Press Enter twice to finish:
-
-⚠️ Rules with errors :
-Congrats! No error</code></pre>
-</div>
+<div id="ff844004" class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the parser</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>parse_drc_errors_new()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -546,7 +510,7 @@ Congrats! No error</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Pro Tip — Run DRC Early and Often
+Pro Tip Run DRC Early and Often
 </div>
 </div>
 <div class="callout-body-container callout-body">

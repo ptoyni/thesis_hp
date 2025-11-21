@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration – Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
+<title>11&nbsp; Final Layout Steps - Bonding, Seal Ring, and Pad-Frame Integration – Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,7 +101,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_into_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_layout_finalsteps.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_into_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_layout_finalsteps.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps - Bonding, Seal Ring, and Pad-Frame Integration</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -245,7 +245,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_layout_finalsteps.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps - Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
   </div>
 </li>
       </ul>
@@ -337,9 +337,9 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_into_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_layout_finalsteps.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_into_layout.html">Physical Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_layout_finalsteps.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps - Bonding, Seal Ring, and Pad-Frame Integration</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps - Bonding, Seal Ring, and Pad-Frame Integration</span></h1>
 </div>
 
 
@@ -370,7 +370,7 @@ Beyond its mechanical role, the seal ring also acts as a <strong>low-impedance e
 </li>
 <li>confinement of parasitic surface currents.</li>
 </ul>
-<p>In the SG13G2 PDK, the seal ring is provided as a <strong>P_Cell</strong> (parameterized cell), built from stacked metal layers and dense via walls. Its geometry is fully adjustable—width, margin, and spacing can be tuned—allowing the designer to adapt it to the die dimensions while maintaining foundry compliance.<br>
+<p>In the SG13G2 PDK, the seal ring is provided as a <strong>P_Cell</strong> (parameterized cell), built from stacked metal layers and dense via walls. Its geometry is fully adjustable width, margin, and spacing can be tuned allowing the designer to adapt it to the die dimensions while maintaining foundry compliance.<br>
 For this work, we instantiated and customized the provided seal ring PCell and placed it around the complete pad frame, ensuring full mechanical and electrical enclosure of the analog OTA core.</p>
 </section>
 <section id="bond-pads-and-external-interfacing" class="level2" data-number="11.2">
@@ -379,7 +379,7 @@ For this work, we instantiated and customized the provided seal ring PCell and p
 <h3 data-number="11.2.1" class="anchored" data-anchor-id="purpose-and-structure"><span class="header-section-number">11.2.1</span> Purpose and Structure</h3>
 <p>Bond pads form the electrical interface between the on-chip metal layers and the external package or measurement environment.<br>
 Each pad is a large, top-metal landing area with a passivation opening, designed to withstand mechanical bonding forces while maintaining low series resistance.<br>
-To minimize parasitic disturbance, each functional bond pad was further <strong>surrounded by a dummy pad frame</strong>—a ring of electrically inactive pads. These dummy pads act as protective buffers: if parasitic displacement currents or surface leakage occur near the die edge, they discharge into the dummy pads rather than coupling into the functional I/O pads. This arrangement reduces the susceptibility of the pad ring to noise and preserves the integrity of the sensitive analog connections.<span class="citation" data-cites="Prof_Razavi_2011"><a href="../references.html#ref-Prof_Razavi_2011" role="doc-biblioref">[1]</a></span></p>
+To minimize parasitic disturbance, each functional bond pad was further <strong>surrounded by a dummy pad frame</strong>; a ring of electrically inactive pads. These dummy pads act as protective buffers: if parasitic displacement currents or surface leakage occur near the die edge, they discharge into the dummy pads rather than coupling into the functional I/O pads. This arrangement reduces the susceptibility of the pad ring to noise and preserves the integrity of the sensitive analog connections.<span class="citation" data-cites="Prof_Razavi_2011"><a href="../references.html#ref-Prof_Razavi_2011" role="doc-biblioref">[1]</a></span></p>
 <p>The placement of pads was also optimized to minimize parasitic capacitive coupling to the underlying analog core. Pads were spaced to avoid long parallel overlaps with internal routing, and their distribution was balanced to avoid asymmetries in substrate stress and top-metal loading.</p>
 </section>
 </section>
@@ -399,7 +399,7 @@ It is widely used for low- to medium-pin-count analog ICs because:</p>
 </li>
 <li>bare dies can be bonded directly without redistribution layers.</li>
 </ul>
-<p>For this project—intended for bare-die evaluation—<strong>wire bonding</strong> was the natural choice and fully supported by the SG13G2 pad library.</p>
+<p>For this project intended for bare-die evaluation <strong>wire bonding</strong> was the natural choice and fully supported by the SG13G2 pad library.</p>
 </section>
 <section id="flip-chip-bonding" class="level3" data-number="11.3.2">
 <h3 data-number="11.3.2" class="anchored" data-anchor-id="flip-chip-bonding"><span class="header-section-number">11.3.2</span> <strong>Flip-Chip Bonding</strong></h3>
@@ -440,7 +440,7 @@ To prevent this, the SG13G2 PDK provides a series of <strong>ESD protection PCel
 </li>
 <li>grounded-gate NMOS structures</li>
 </ul>
-<p>PCells are invaluable because they embed <strong>foundry-validated device geometries</strong>, with correct well biasing, spacing rules, finger structures, and metal enclosures. Designing ESD structures manually would risk violating subtle DRC rules—particularly those related to well spacing, diffusion density, and metal overlap.<br>
+<p>PCells are invaluable because they embed <strong>foundry-validated device geometries</strong>, with correct well biasing, spacing rules, finger structures, and metal enclosures. Designing ESD structures manually would risk violating subtle DRC rules particularly those related to well spacing, diffusion density, and metal overlap.<br>
 By using the PDK-provided PCells, the pad frame automatically complies with:</p>
 <ul>
 <li>ESD breakdown voltage limits,<br>
@@ -454,11 +454,11 @@ By using the PDK-provided PCells, the pad frame automatically complies with:</p>
 <section id="density-fill-structures-metal-active-and-poly-fillers" class="level2" data-number="11.6">
 <h2 data-number="11.6" class="anchored" data-anchor-id="density-fill-structures-metal-active-and-poly-fillers"><span class="header-section-number">11.6</span> Density Fill Structures (Metal, Active, and Poly Fillers)</h2>
 <p>The final step before tape-out is the insertion of <strong>density fill structures</strong>, often simply referred to as <em>fillers</em>. Modern fabrication processes require that each metal, diffusion, and polysilicon layer maintain a specified <strong>pattern density</strong> within every local window of the layout. These density rules prevent issues such as erosion, and non-uniform planarization during CMP (Chemical–Mechanical Polishing), which can adversely affect metal thickness, resistance, and interlayer dielectric integrity.</p>
-<p>Fillers are non-functional geometries—typically small, repeatable patterns of <strong>metal</strong>, <strong>active diffusion</strong>, and <strong>gate poly</strong>—that ensure the overall layout meets the foundry’s density requirements without altering circuit behavior.<br>
+<p>Fillers are non-functional geometries typically small, repeatable patterns of <strong>metal</strong>, <strong>active diffusion</strong>, and <strong>gate poly</strong> that ensure the overall layout meets the foundry’s density requirements without altering circuit behavior.<br>
 They are deliberately placed far from sensitive analog nodes or designed with grounded landing points so that any residual capacitive effect remains negligible. In analog circuits, filler insertion must be performed carefully to avoid parasitic loading of high-impedance nodes or unintentional coupling to bias networks.</p>
 <p>The IHP-SG13G2 PDK provides automated filler-generation utilities that greatly simplify this process.<br>
 Filling can be performed directly within <strong>KLayout</strong> using built-in irreversible function, or, more robustly, through a <strong>Python script supplied by the PDK</strong>, which analyzes layer densities and inserts the appropriate fill shapes according to process-specific rules.<br>
-The script outputs a final <strong>GDS2 file</strong> in which all required fills—metal, active, and poly—have been inserted and you have to verify against the SG13G2 density constraints.</p>
+The script outputs a final <strong>GDS2 file</strong> in which all required fills metal, active, and poly have been inserted and you have to verify against the SG13G2 density constraints.</p>
 <p>This finalized and verified, density-compliant GDS2 file represents the <strong>manufacturing-ready layout</strong>, suitable for submission to the foundry in compliance with all CMP and density specifications.</p>
 
 

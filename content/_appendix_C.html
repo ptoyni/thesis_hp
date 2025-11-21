@@ -224,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_layout_finalsteps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps — Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Final Layout Steps - Bonding, Seal Ring, and Pad-Frame Integration</span></span></a>
   </div>
 </li>
       </ul>
@@ -325,26 +325,24 @@ ul.task-list li input[type="checkbox"] {
 ├── _quarto.yml
 ├── _bibliography
 ├── _manuscript
-├── appendix.qmd          # The file where this structure will be placed
-├── index.qmd             # Main project page / Introduction
+├── index.qmd             # Main project page / Abstract
 ├── README.md
 ├── references.qmd
 ├── KNOWN_ISSUES.md
-├── cace/                 # (Folder likely related to CACE/CAD tools)
-├── content/
+├── cace/                 # CACE setup for corner alaysis, PVT, MonteCarlo.
+├── content/              # contains all the .qmd files for documentation
 ├── Designs/              # Top-level Design Folder
-│   ├── foldedcascode_nmos_withdummies.gds   # (GDS file for layout fabrication)
-│   ├── foldedcascode_nmos_withdummies.spice # (SPICE netlist for simulation)
 │   ├── 1_schematics/     # (Design subfolder: Circuit schematics)
+        ├── otas          # contains .sch files of otas
 │   ├── 2_layout/         # (Design subfolder: Physical layout files)
 │   └── 3_kpex/           # (Design subfolder: Extracted parasitic netlists)
-├── Expose_HP/            # (Likely High-Power related files/code)
-├── figures/              # Location for generated images and plots
-├── layout_scripts/       # Scripts specific to physical layout generation/checking
+├── Expose_HP/            
+├── figures/              # contains all the figues for documentation
+├── layout_scripts/       # Python scripts specific to physical layout generation/checking
 ├── Literature/           # References or literature review material
-├── python_codes/         # General scripts for data processing or analysis
-├── sizing/               # Files related to component sizing/calculations
-├── simulations/          # Folder for simulation setup and raw outputs
+├── python_codes/         # Python scripts to plot raw data
+├── sizing/               # sizing using pygmid tool and python scripts for sizing
+├── simulations/          # Folder for .spice files and .raw outputs
 └── postlayout_simulations/   # Post-Layout Simulation results/setup
 </code></pre>
 
