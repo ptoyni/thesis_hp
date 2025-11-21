@@ -12,7 +12,7 @@
 | Settling time             | ngspice | tsettle |       any |       0.259 us |        any |       0.287 us |    1.5 us |        0.320 us | Pass ✅ |
 
 
-<!-- ## Plots
+## Plots
 
 ## gain_vs_temp
 
@@ -84,4 +84,4 @@
 
 ## settling_vs_corner
 
-![settling_vs_corner](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/settling_vs_corner.png) -->
+![settling_vs_corner](../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic/settling_vs_corner.png)
