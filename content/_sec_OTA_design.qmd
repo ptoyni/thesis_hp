@@ -156,8 +156,6 @@ The plots include both Middlebrook's and Tian's method for loop gain.
 
 ![Phase middlebrook vs Tian](../figures/_fig_loopgain_phase.svg){#fig-loopgain-phase}
 
-`¸
-
 ## Corner Simulations for PVT and Monte-Carlo
 
 As you have seen in @sec-ota-simulation, running simulations by hand is tedious. When we want to check the overall
