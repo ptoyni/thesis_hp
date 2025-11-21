@@ -1,0 +1,76 @@
+# Corner Simulations for PVT and Monte-Carlo
+
+As you have seen in @sec-ota-simulation, running simulations by hand is tedious. When we want to check the overall
+performance, we have to run many simulations over various conditions:
+
+1. The supply voltage of the circuit has tolerances, and thus we need to check the performance against this variation.
+
+2. The temperature at which the circuit is operated is likely changing. Also the performance against this has to be verified.
+
+3. When manufacturing the wafers random variations in various process parameters lead to changed parameters of the
+   integrated circuit components. In order to  check for this effect, wafer foundries provide model files which shall
+   cover these manufacturing excursions. Simplified, this leads to a slower or faster MOSFET, and usually NMOS and PMOS
+   are not correlated, so we have the process corners **SS**, **SF**, **TT**,  **FS**, and **FF**. So far, we have only
+   used the **TT** models in our simulations.
+
+The variations listed in the previous list are abbreviated as **PVT** (process, voltage, temperature) variations. In
+order to finalize a circuit all combinations of these (plus the variations in operating conditions like input voltage)
+have to be simulated. As you can imagine, this leads to a huge number of simulations, and simulation results which have
+to be evaluated for pass/fail.
+
+There are two options how to tackle this efficiently:
+
+1. As an experienced designer you have a very solid understanding of the circuit, plus based on the analytic equations
+   you can identify which combination of operating conditions will lead to a worst case performance. Thus, you can
+   drastically reduce the number of corners to simulate, and you run them by hand.
+
+2. You are using a framework which highly automates this task of running a plethora of different simulations and
+   evaluating the outcome. These frameworks are called simulation runners.
+
+Luckily, there are open-source versions of simulation runners available, and we will use
+[CACE](https://github.com/efabless/cace). CACE is written in Python and allows to setup a datasheet in
+[YAML](https://yaml.org) which defines the simulation problem and the performance parameters to evaluate against which
+limits. The resulting simulations are then run in parallel and the simulation data is evaluated and summarized in
+various forms.
+
+There is a CACE setup available for our OTA. The [datasheet](../cace/foldedcascode_nmos.yaml) describes the operating
+conditions and the simulations tasks. For each simulation a testbench template is needed, [this
+one](../cace/templates/foldedcascode-nmos-ac.sch) is used for ac simulations, [this
+one](../cace/templates/foldedcascode-nmos-noise.sch) is used for noise simulation, and [this
+one](../cace/templates/foldedcascode-nmos-tran.sch) is used for transient simulation.
+
+After a successful run, a documentation is automatically generated. The result of a full run of this is presented below:
+
+::: {#ota-cace-result .callout-note title="CACE Summary for OTA" collapse="true"}
+
+**netlist source**: schematic
+
+| Parameter                 | Tool    | Result  | Min Limit |      Min Value | Typ Target |      Typ Value | Max Limit |       Max Value | Status  |
+|:--------------------------|:--------|:--------|----------:|---------------:|-----------:|---------------:|----------:|----------------:|:-------:|
+| Output voltage ratio      | ngspice | gain    |  0.98 V/V |      0.996 V/V |        any |      0.999 V/V |   1.1 V/V |       1.000 V/V | Pass    |
+| Bandwidth                 | ngspice | bw      |    1e6 Hz | 5118320.000 Hz |        any | 7827360.000 Hz |       any | 13271000.000 Hz | Pass    |
+| Output voltage ratio (MC) | ngspice | gain_mc |       any |      0.671 V/V |        any |      0.996 V/V |       any |       1.502 V/V | Pass    |
+| Bandwidth (MC)            | ngspice | bw_mc   |    1e6 Hz | 1024950.000 Hz |        any | 7454465.000 Hz |       any | 91913200.000 Hz | Pass    |
+| Output noise              | ngspice | noise   |       any |       0.069 mV |        any |       0.101 mV |    0.2 mV |        0.134 mV | Pass    |
+| Settling time             | ngspice | tsettle |       any |       0.259 us |        any |       0.287 us |    1.5 us |        0.320 us | Pass    |
+:::
+
+Along with this, all the PVT and MonteCarlo graphs are plotted using python which can be found [here](https://github.com/ptoyni/thesis_hp/tree/main/cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic)
+
+
+Let's take Noise vs Corner for example:
+![noise_vs_corner](../figures/_fig_noise_vs_corner.png){width=80%}
+
+
+
+The situation with the design is summarized in @tbl-voltage-buffer-spec.
+
+| Specification                              | OTA     | Unit    |
+|:-------------------------------------------|:-------:|:-------:|
+| Output voltage error                       | $<1$    | %       |
+| Total output noise (rms)                   | $<0.15$ | mV~rms~ |
+| Supply current (as low as possible)        | $<14$ | µA      |
+| Turn-on time                               | $<0.4$  | µs      |
+| Externally provided bias current (nominal) | $12.5$  | µA      |
+
+: Voltage buffer specification {#tbl-voltage-buffer-spec}
