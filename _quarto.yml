@@ -41,6 +41,7 @@ book:
 
   chapters:
     - index.qmd
+    # - content/Abstract.qmd
     - content/_sec_introduction.qmd
     - content/_sec_Requirements_AES.qmd
     - part: Circuit Design
@@ -73,30 +74,55 @@ book:
 bibliography: _bibliography/references.bib
 csl: _bibliography/ieee.csl
 
+number-sections: true
+highlight-style: github
 
 format:
   html:
     theme: flatly
-    number-sections: true
-    highlight-style: github
+    # number-sections: true
+    # highlight-style: github
+
+  # epub:
+  #   theme: flatly
+  #   number-sections: true
+  #   highlight-style: github
+
+  pdf:
+    documentclass: scrbook
+    keep-tex: true
+
+    # Table of Contents
+    toc: true
+    lof: true
+    lot: true
+
+    # Setup page layout
+    geometry: 
+      - top=30mm
+      - left=20mm
+      - heightrounded
+    hyperrefoptions:
+      - linktoc=all
+    colorlinks: true
+    linkcolor: "blue" 
+
+    # Fonts
+    mainfont: "Calibri"
 
   epub:
     theme: flatly
-    number-sections: true
-    highlight-style: github
+    # documentclass: uoe-thesis-template
+    # classoption: [twoside]
+    # papersize: a4
+    
 
-  pdf:
-    documentclass: uoe-thesis-template
-    classoption: [twoside]
-    papersize: a4
-    # keep-tex: true
-
-    template-partials:
-    - frontmatter/title.tex
-    - frontmatter/before-body.tex
-    - frontmatter/toc.tex
-    include-in-header:
-    - frontmatter/header.tex
+    # template-partials:
+    # - frontmatter/title.tex
+    # - frontmatter/before-body.tex
+    # - frontmatter/toc.tex
+    # include-in-header:
+    # - frontmatter/header.tex
     
 college: Hochschule Bremen - City University of Applied Sciences
 degree: Master of Science (M.Sc.)
