@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Declaration of Authorship – Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
+<title>5&nbsp; Corner Simulations for PVT and Monte-Carlo – Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/_sec_Requirements_AES.html" rel="next">
-<link href="../content/_sec_introduction.html" rel="prev">
+<link href="../content/_sec_into_layout.html" rel="next">
+<link href="../content/_sec_OTA_design.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/Declaration_of_Authorship.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Declaration of Authorship</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_OTA_design.html">Circuit Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_cornersimulations.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Corner Simulations for PVT and Monte-Carlo</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -145,14 +174,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/Declaration_of_Authorship.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Declaration of Authorship</span></span></a>
+  <a href="../content/_sec_Requirements_AES.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Requirements</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">System</span></a>
+ <span class="menu-text">Circuit Design</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -160,8 +189,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/_sec_Requirements_AES.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Requirements</span></span></a>
+  <a href="../content/_sec_OTA_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">OTA Design</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../content/_sec_cornersimulations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Corner Simulations for PVT and Monte-Carlo</span></span></a>
   </div>
 </li>
       </ul>
@@ -169,29 +204,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Circuit Design</span></a>
+ <span class="menu-text">Physical Design</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/_sec_OTA_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Thesis Focus</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Physical Design</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_into_layout.html" class="sidebar-item-text sidebar-link">
@@ -232,13 +250,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Post-Layout Simulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_sec_postlayout_simulation.html" class="sidebar-item-text sidebar-link">
@@ -261,17 +279,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_appendix_A.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">CACE Summary for foldedcascode_nmos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">_appendix_A.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -299,9 +317,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_OTA_design.html">Circuit Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_cornersimulations.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Corner Simulations for PVT and Monte-Carlo</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Declaration of Authorship</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Corner Simulations for PVT and Monte-Carlo</span></h1>
 </div>
 
 
@@ -318,24 +336,195 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><a href="https://www.hs-bremen.de/assets/hsb/de/Dokumente/ZLL/MMCC/declaration_indep_work_Nov_2024_Form.pdf">https://www.hs-bremen.de/assets/hsb/de/Dokumente/ZLL/MMCC/declaration_indep_work_Nov_2024_Form.pdf</a></p>
-<p>I hereby certify that I have written this thesis independently and have not used any sources or aids other than those specified. Sources and aids other than those indicated. The passages in the thesis that have been taken from other works in terms of wording or meaning are from other works are identified as such.</p>
-<p>This statement also applies to the graphics, sketches and illustrations contained in the thesis. I have not already submitted the work in the same or a similar form, including extracts, as part of an examination or coursework. submitted as part of an examination or coursework.</p>
-<p>I hereby certify that the electronic version of the dissertation submitted is a complete copy of the printed version. and agree to an electronic check of the thesis using plagiarism software.</p>
-<p>Please tick the box: One of the two options must be chosen in consultation between the assessor and the assessee.</p>
-<ul class="task-list">
-<li><p><label><input type="checkbox">Option 1: Use of AI-based tools without mandatory labelling I confirm that I have not used any AI-based tools whose use has not been agreed in writing with the verifier. I understand that the use of text or other content and products generated by AI-based tools is not a guarantee of their quality. I accept responsibility for the work submitted and the content contained therein. I also assure you that my creative influence predominates in this work.</label></p></li>
-<li><p><label><input type="checkbox">Option 2: Use of AI-based tools with mandatory labelling I confirm that I have not used any AI-based tools whose use has not been agreed in writing with the verifier. I understand that the use of text or other content and products generated by AI-based tools is not a guarantee of their quality. I accept responsibility for the work submitted and the content contained therein. I also assure you that my creative influence predominates in this work. All verbatim or analogous adaptations and quotations, and all sections designed, written and/or edited using AI-based tools, will be marked and checked by me. The form of marking will be agreed between the examiner and the examinee.</label></p></li>
-</ul>
-<p>I am aware that failure to comply with the above may have consequences in terms of examination law, and in particular may result in the examination being marked ’insufficient’ or the coursework being marked ’failed’ and, in the case of multiple or serious attempts to cheat, may result in my being de-registered.</p>
-<p>First name and surname:</p>
-<p>Matriculation number:</p>
-<p>Date:</p>
-<p>Signature:</p>
-<p>First name and surname:</p>
-<p>Matriculation number:</p>
-<p>Date:</p>
-<p>Signature:</p>
+<p>As you have seen in <a href="_sec_OTA_design.html#sec-ota-simulation" class="quarto-xref"><span>Section 4.4</span></a>, running simulations by hand is tedious. When we want to check the overall performance, we have to run many simulations over various conditions:</p>
+<ol type="1">
+<li><p>The supply voltage of the circuit has tolerances, and thus we need to check the performance against this variation.</p></li>
+<li><p>The temperature at which the circuit is operated is likely changing. Also the performance against this has to be verified.</p></li>
+<li><p>When manufacturing the wafers random variations in various process parameters lead to changed parameters of the integrated circuit components. In order to check for this effect, wafer foundries provide model files which shall cover these manufacturing excursions. Simplified, this leads to a slower or faster MOSFET, and usually NMOS and PMOS are not correlated, so we have the process corners <strong>SS</strong>, <strong>SF</strong>, <strong>TT</strong>, <strong>FS</strong>, and <strong>FF</strong>. So far, we have only used the <strong>TT</strong> models in our simulations.</p></li>
+</ol>
+<p>The variations listed in the previous list are abbreviated as <strong>PVT</strong> (process, voltage, temperature) variations. In order to finalize a circuit all combinations of these (plus the variations in operating conditions like input voltage) have to be simulated. As you can imagine, this leads to a huge number of simulations, and simulation results which have to be evaluated for pass/fail.</p>
+<p>There are two options how to tackle this efficiently:</p>
+<ol type="1">
+<li><p>As an experienced designer you have a very solid understanding of the circuit, plus based on the analytic equations you can identify which combination of operating conditions will lead to a worst case performance. Thus, you can drastically reduce the number of corners to simulate, and you run them by hand.</p></li>
+<li><p>You are using a framework which highly automates this task of running a plethora of different simulations and evaluating the outcome. These frameworks are called simulation runners.</p></li>
+</ol>
+<p>Luckily, there are open-source versions of simulation runners available, and we will use <a href="https://github.com/efabless/cace">CACE</a>. CACE is written in Python and allows to setup a datasheet in <a href="https://yaml.org">YAML</a> which defines the simulation problem and the performance parameters to evaluate against which limits. The resulting simulations are then run in parallel and the simulation data is evaluated and summarized in various forms.</p>
+<p>There is a CACE setup available for our OTA. The <a href="../cace/foldedcascode_nmos.yaml">datasheet</a> describes the operating conditions and the simulations tasks. For each simulation a testbench template is needed, <a href="../cace/templates/foldedcascode-nmos-ac.sch">this one</a> is used for ac simulations, <a href="../cace/templates/foldedcascode-nmos-noise.sch">this one</a> is used for noise simulation, and <a href="../cace/templates/foldedcascode-nmos-tran.sch">this one</a> is used for transient simulation.</p>
+<p>After a successful run, a documentation is automatically generated. The result of a full run of this is presented below:</p>
+<div id="ota-cace-result" class="callout callout-style-default callout-note callout-titled" title="CACE Summary for OTA">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+CACE Summary for OTA
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>netlist source</strong>: schematic</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 11%">
+<col style="width: 8%">
+<col style="width: 11%">
+<col style="width: 8%">
+<col style="width: 12%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Tool</th>
+<th style="text-align: left;">Result</th>
+<th style="text-align: right;">Min Limit</th>
+<th style="text-align: right;">Min Value</th>
+<th style="text-align: right;">Typ Target</th>
+<th style="text-align: right;">Typ Value</th>
+<th style="text-align: right;">Max Limit</th>
+<th style="text-align: right;">Max Value</th>
+<th style="text-align: center;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Output voltage ratio</td>
+<td style="text-align: left;">ngspice</td>
+<td style="text-align: left;">gain</td>
+<td style="text-align: right;">0.98 V/V</td>
+<td style="text-align: right;">0.996 V/V</td>
+<td style="text-align: right;">any</td>
+<td style="text-align: right;">0.999 V/V</td>
+<td style="text-align: right;">1.1 V/V</td>
+<td style="text-align: right;">1.000 V/V</td>
+<td style="text-align: center;">Pass</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bandwidth</td>
+<td style="text-align: left;">ngspice</td>
+<td style="text-align: left;">bw</td>
+<td style="text-align: right;">1e6 Hz</td>
+<td style="text-align: right;">5118320.000 Hz</td>
+<td style="text-align: right;">any</td>
+<td style="text-align: right;">7827360.000 Hz</td>
+<td style="text-align: right;">any</td>
+<td style="text-align: right;">13271000.000 Hz</td>
+<td style="text-align: center;">Pass</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Output voltage ratio (MC)</td>
+<td style="text-align: left;">ngspice</td>
+<td style="text-align: left;">gain_mc</td>
+<td style="text-align: right;">any</td>
+<td style="text-align: right;">0.671 V/V</td>
+<td style="text-align: right;">any</td>
+<td style="text-align: right;">0.996 V/V</td>
+<td style="text-align: right;">any</td>
+<td style="text-align: right;">1.502 V/V</td>
+<td style="text-align: center;">Pass</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bandwidth (MC)</td>
+<td style="text-align: left;">ngspice</td>
+<td style="text-align: left;">bw_mc</td>
+<td style="text-align: right;">1e6 Hz</td>
+<td style="text-align: right;">1024950.000 Hz</td>
+<td style="text-align: right;">any</td>
+<td style="text-align: right;">7454465.000 Hz</td>
+<td style="text-align: right;">any</td>
+<td style="text-align: right;">91913200.000 Hz</td>
+<td style="text-align: center;">Pass</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Output noise</td>
+<td style="text-align: left;">ngspice</td>
+<td style="text-align: left;">noise</td>
+<td style="text-align: right;">any</td>
+<td style="text-align: right;">0.069 mV</td>
+<td style="text-align: right;">any</td>
+<td style="text-align: right;">0.101 mV</td>
+<td style="text-align: right;">0.2 mV</td>
+<td style="text-align: right;">0.134 mV</td>
+<td style="text-align: center;">Pass</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Settling time</td>
+<td style="text-align: left;">ngspice</td>
+<td style="text-align: left;">tsettle</td>
+<td style="text-align: right;">any</td>
+<td style="text-align: right;">0.259 us</td>
+<td style="text-align: right;">any</td>
+<td style="text-align: right;">0.287 us</td>
+<td style="text-align: right;">1.5 us</td>
+<td style="text-align: right;">0.320 us</td>
+<td style="text-align: center;">Pass</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Along with this, all the PVT and MonteCarlo graphs are plotted using python which can be found <a href="https://github.com/ptoyni/thesis_hp/tree/main/cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic">here</a></p>
+<p>Let’s take Noise vs Corner for example:</p>
+<div class="figure" width="80%">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../figures/_fig_noise_vs_corner.png" class="img-fluid figure-img"></p>
+<figcaption>noise_vs_corner</figcaption>
+</figure>
+</div>
+</div>
+<p>The situation with the design is summarized in <a href="#tbl-voltage-buffer-spec" class="quarto-xref">Table&nbsp;<span>5.1</span></a>.</p>
+<div id="tbl-voltage-buffer-spec" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-voltage-buffer-spec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.1: Voltage buffer specification
+</figcaption>
+<div aria-describedby="tbl-voltage-buffer-spec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Specification</th>
+<th style="text-align: center;">OTA</th>
+<th style="text-align: center;">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Output voltage error</td>
+<td style="text-align: center;"><span class="math inline">\(&lt;1\)</span></td>
+<td style="text-align: center;">%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total output noise (rms)</td>
+<td style="text-align: center;"><span class="math inline">\(&lt;0.15\)</span></td>
+<td style="text-align: center;">mV<sub>rms</sub></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Supply current (as low as possible)</td>
+<td style="text-align: center;"><span class="math inline">\(&lt;14\)</span></td>
+<td style="text-align: center;">µA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Turn-on time</td>
+<td style="text-align: center;"><span class="math inline">\(&lt;0.4\)</span></td>
+<td style="text-align: center;">µs</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Externally provided bias current (nominal)</td>
+<td style="text-align: center;"><span class="math inline">\(12.5\)</span></td>
+<td style="text-align: center;">µA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
 
 
 
@@ -759,13 +948,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/_sec_introduction.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="../content/_sec_OTA_design.html" class="pagination-link" aria-label="OTA Design">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">OTA Design</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/_sec_Requirements_AES.html" class="pagination-link" aria-label="Requirements">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Requirements</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../content/_sec_into_layout.html" class="pagination-link" aria-label="Introduction to Layout">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Layout</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -777,7 +966,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ptoyni/thesis_hp/edit/main/content/Declaration_of_Authorship.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ptoyni/thesis_hp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/ptoyni/thesis_hp/edit/main/content/_sec_cornersimulations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ptoyni/thesis_hp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
