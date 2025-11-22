@@ -98,6 +98,3 @@ Filling can be performed directly within **KLayout** using built-in irreversible
 The script outputs a final **GDS2 file** in which all required fills metal, active, and poly have been inserted and you have to verify against the SG13G2 density constraints. 
 
 This finalized and verified, density-compliant GDS2 file represents the **manufacturing-ready layout**, suitable for submission to the foundry in compliance with all CMP and density specifications.
-
-
-

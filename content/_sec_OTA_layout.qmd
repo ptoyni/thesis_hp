@@ -255,4 +255,3 @@ By providing required parameters, the script outputs the **minimum feasible even
 
 The script can be found in Appendix C.
 :::
-

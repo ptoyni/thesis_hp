@@ -48,5 +48,3 @@ Improvement of **PEX precision** and **post-layout verification** within the ope
 Beyond the circuit-level design, this research establishes a **validated analog verification workflow** under fully open conditions.  
 The complete flow — from schematic capture, device sizing, and layout to LVS, PEX, and post-layout simulation — was developed within the *IIC-OSIC-TOOLS* environment.  
 Insights gained from the OTA design, including *device matching*, *guard-ring implementation*, *fill density*, and *PEX consistency*, are being integrated into improvements of the toolchain for future mixed-signal designs.
-
-
