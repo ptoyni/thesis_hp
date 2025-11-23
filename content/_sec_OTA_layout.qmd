@@ -1,10 +1,10 @@
 #  Device-Level Layout Concepts
 
 Integrated circuit layout translates the schematic into **physical layers** on silicon.  
-The IHP-SG13G2 process provides numerous layers such as active/diffusion regions, poly gates, contacts, multiple metal levels, and passivation. [@IHP_PDK_2024].  
+The IHP-SG13G2 process provides numerous layers such as active/diffusion regions, poly gates, contacts, multiple metal levels, and passivation. [@IHP_PDK_2024]  
 Each of these layers plays a role in forming MOSFETs, capacitors, resistors, and interconnects, further layer specific description for the IHP PDK can be found on Layout Rules [@IHP_PDK_2024].  
 
-Unlike digital design, where the goal is mainly connectivity, analog layout must ensure **matching, symmetry, and parasitic control**. This is particularly critical in our **folded-cascode OTA**, where the differential input pair, current mirrors, and cascode devices dominate the overall gain, offset, and common-mode rejection ratio (CMRR) [@baker2010][@lienig2020].  
+Unlike digital design, where the goal is mainly connectivity, analog layout must ensure **matching, symmetry, and parasitic control**. This is particularly critical in our **folded-cascode OTA**, where the differential input pair, current mirrors, and cascode devices dominate the overall gain, offset, and common-mode rejection ratio (CMRR). [@baker2010; @lienig2020] 
 
 The following subsections describe the major device-level layout techniques used in this work, with examples and figures suggested for illustration.
 
@@ -61,7 +61,7 @@ Represents the tail transistor in our layout with 4 fingers instead of one huge 
 Despite its benefits, multi-fingering comes with trade-offs:  
 - **Increased routing overhead**, since all fingers must be tied together with well-balanced interconnect.  
 - **Extra junction perimeters**, which can increase total parasitic capacitance if the layout is not compacted carefully.  
-- **Via placement sensitivity**, as each finger requires source/drain contacts and vias; poor via distribution can lead to resistance mismatches or electromigration concerns. Using 2 vias is always reccommended.[@lienig2020]
+- **Via placement sensitivity**, as each finger requires source/drain contacts and vias; poor via distribution can lead to resistance mismatches or electromigration concerns. Using 2 vias is always recommended.[@lienig2020]
 
 For this reason, multi-fingering is often combined with other layout strategies.  
 **Dummies** are placed at the array edges to shield active fingers, while **common-centroid arrangements** may be used for further gradient cancellation. This combined approach was applied in our OTA’s diffpair, ensuring both parasitic reduction and high matching fidelity.
@@ -75,7 +75,7 @@ As excessive fingering increases total diffusion perimeter and further elevating
 
 Therefore, selecting the *minimum* number of fingers that satisfies these electrical and physical constraints is essential for achieving optimal analog performance.
 
-A rigorous methodology for estimating this minimum finger count considering gate resistance limits, diffusion capacitance contributions, layout symmetry, and manufacturability is presented in **Section 5.6: Finger Count Estimation**, where the all equations and procedures are discussed in detail.
+A rigorous methodology for estimating this minimum finger count considering gate resistance limits, diffusion capacitance contributions, layout symmetry, and manufacturability is presented in **Section 7.6: Finger Count Estimation**, where all the equations and procedures are discussed in detail.
 :::
 
 ##  Dummy Devices
@@ -108,7 +108,7 @@ To ensure **LVS clean results**, we:
 
 When two matched transistors are placed adjacent to each other but in separate diffusion regions, each device is exposed to a slightly different portion of the process gradient across the chip. As a result, parameters such as threshold voltage, carrier mobility, and oxide thickness vary between them, leading to a systematic mismatch even though both devices have identical drawn dimensions.  
 
-The **interdigitated layout technique** addresses this issue by physically alternating the unit devices of a matched pair or array. Instead of grouping devices as AA–BB, the transistors are arranged in an alternating or mirrored pattern such as **ABAB** or **A–B–B–A**, where *A* and *B* represent identical unit devices belonging to two matched elements.  
+The **interdigitated layout technique** addresses this issue by physically alternating the unit devices of a matched pair or array. Instead of grouping devices as AABB, the transistors are arranged in an alternating or mirrored pattern such as **ABAB** or **ABBA**, where *A* and *B* represent identical unit devices belonging to two matched elements.  
 Through this alternating placement, each device is spatially distributed across the gradient, allowing it to experience regions of both higher and lower process variations. As a result, the local fabrication differences are **averaged** out across all unit fingers, and the two devices become physically and electrically better matched under real process conditions.
 
 ::: {#fig-abba .figure}
@@ -142,7 +142,7 @@ Illustrates how common centroid configuration can be achieved (right) of current
 
 Although each individual finger occupies a slightly different position on the chip and therefore a slightly different local environment the geometric center (centroid) of all devices coincides. This ensures that the averaged electrical properties of each device are identical, effectively cancelling first-order process gradients across both axes.
 
-In our folded-cascode OTA, the **diff pair** were laid out using a **common-centroid pattern** derived from the AB/BA principle. This was essential to maintain current accuracy and minimize systematic gain variation.  
+In our folded-cascode OTA, the **diff pair** was laid out using a **common-centroid pattern** derived from the AB/BA principle. This was essential to maintain current accuracy and minimize systematic gain variation.  
 The layout ensured that matched transistors experienced a balanced environment, even in the presence of lateral thermal gradients or stress gradients from nearby metal density variations.
 
 **Routing Considerations:**  
@@ -165,7 +165,7 @@ Meticulous routing decisions layer staggering, spacing, orthogonality, and contr
 This section establishes a systematic method for estimating the **minimum number of fingers** $N_f$ required for a wide MOSFET such that  
 (i) the **distributed gate resistance** remains below acceptable limits, and  
 (ii) the **junction capacitances** introduced by segmentation do not dominate the node dynamics.  
-The methodology follows the classical treatment of **gate resistance**, **thermal/gate noise**, and **diffusion capacitance scaling** described in Razavi’s *Design of Analog CMOS Integrated Circuits* and related literature.
+The methodology follows the classical treatment of **gate resistance**, **thermal/gate noise**, and **diffusion capacitance scaling** described in [@Prof_Razavi_2001; @Prof_Razavi_2011].
 
 For a device with total drawn width $W_{tot}$ and channel length *L*, splitting the device into $N_f$ identical fingers results in an effective per-finger width
 
@@ -173,7 +173,7 @@ $$
 W_f = \frac{W_{\text{tot}}}{N_f}.
 $$
 
-Selecting $N_f$ is therefore an exercise in determining how narrow each finger can be made before device performance becomes degraded by source drain capacitence, or minimum-geometry constraints.  
+Selecting $N_f$ is therefore an exercise in determining how narrow each finger can be made before device performance becomes degraded by source drain capacitance, or minimum-geometry constraints.  
 
 The following design principles guide the estimation procedure:
 
@@ -198,6 +198,7 @@ $$
 \overline{v_{n,\text{ch}}^2} = \frac{4 k T\, \gamma}{g_m}
 $$
 
+
 **Gate-resistance noise:**
 
 $$
@@ -217,7 +218,7 @@ In our application, Channel noise is 5 times that of Gate-resistance noise.
 
 The optimization also depends on the **noise coefficient *$\gamma$*** in the MOSFET thermal noise model. The correct value of $\gamma$ depends on the channel length:
 
-- If $L < 3*L_{min}$, then $\gamma = 1$  
+- If $L < 3 \times L_{min}$, then $\gamma = 1$  
 - otherwise, $\gamma = \frac{2}{3}$
 
 Because shorter-channel devices exhibit stronger velocity saturation and increased thermal noise.
