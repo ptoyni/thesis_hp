@@ -14,10 +14,6 @@ In analog circuits — especially precision blocks like **folded cascode OTAs** 
 | **Post-Layout Verification**    | Confirms that layout did not violate design intent (gain, UGB, PSRR, etc.). |
 | **Tapeout Confidence**          | Ensures high correlation between simulation and silicon behavior.           |
 
-
-
-
-
 For a folded cascode OTA, RC + CC extraction is essential. It ensures layout-induced degradation is captured early in simulation, enabling confident tapeout. Neglecting coupling capacitance or interconnect resistance can lead to significant performance loss or instability in silicon.
 
 ## PEX using Klayout-PEX tool
@@ -34,9 +30,7 @@ Available KLayout PEX Engines:
 | `KPEX/2.5D`        | CC           | Under construction      | Prototype engine implementing MAGIC concepts/formulas with `KLayout` means       |
 | `KPEX/2.5D`        | R, RC        | Planned                 | Prototype engine implementing MAGIC concepts/formulas with `KLayout` means       |
 
-
 ## Running the [`KPEX/MAGIC` Engine](https://iic-jku.github.io/klayout-pex-website/doc/doc.html#sec-kpex-magic)
-
 
 The magic section of `kpex --help` describes the arguments and their defaults. Important arguments:
 
@@ -45,7 +39,6 @@ The magic section of `kpex --help` describes the arguments and their defaults. I
 - `--magic`: enable magic engine
 
 ### Example Command
-
 
 ```bash
 kpex --pdk ihp_sg13g2 --magic --gds GDS_PATH --out_dir OUTPUT_DIR_PATH
@@ -57,13 +50,11 @@ more to kpex can be found under the command `kpex --help`
 ```
 Once PEX is succesfully done, the extracted netlist SPICE file will be generated in the provided output path, which consists of extracted parasitics which can be further used to do post layout simulations and verify whether the design layout satisfies the design specifications or not.
 
-
 ## Observations and Practical Results
 
 During this work, the 2025.05 Docker release of IIC-OSIC-Tools was used, since the design was submitted on 21 August 2025, and subsequent debugging was performed in that version.
 When running the FasterCap engine, the process executed successfully; however, the generated `.pex.spice` file was empty, indicating that no valid parasitic data were written.
 Conversely, when using the MAGIC engine, a `.pex.spice` file was generated but contained improperly scaled parameters, leading to simulation inconsistencies.
-
 
 Upon investigation of the official [IIC-OSIC-Tools release notes](), it was confirmed that in the `2025.07` update, the developers temporarily removed klayout-pex due to incompatibility with several dependencies. 
 

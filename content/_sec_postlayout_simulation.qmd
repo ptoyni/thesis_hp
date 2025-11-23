@@ -8,9 +8,7 @@ Firstly we need to open the symbol file in Xschem, edit the properties of the sy
 
 Once changed to primitive, now we can include the `.spice` file or `.cir` file from layout to the testbench. See @fig-include
 
-
 ![Include](../figures/_fig_include.png){#fig-include}
-
 
 Once the file is declared, we can run the testbench. 
 
@@ -18,12 +16,10 @@ Once the file is declared, we can run the testbench.
 It is critically important to match the order of pins and their names. The pin order and names in the `.cir` files need to be exact same as included in the testbench. See the figures mentioned below
 :::
 
-
 ![Correct Matching](../figures/_fig_correct_matching_xschem.png){#fig-correctmatchingxschem}
 ![SS Extracted Layout](../figures/_fig_correct_matching_cir.png){#fig-correctmatchingcir}
 
 
 ***Post layout and prelayout graphs to be added here as results***
-
 
 ![Postlayout Results](../figures/_fig_foldedcascode_ac_bode_postlayout.svg){#fig-postlayout-output}

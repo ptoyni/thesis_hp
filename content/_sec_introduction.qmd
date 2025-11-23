@@ -14,8 +14,6 @@ The long-term objective of the parent project is to extend the **open-source IIC
 By integrating the PDK into the IIC-OSIC-TOOLS flow, the project aims to make **open-source chip design accessible for SMEs**, who have so far been restricted to board-level development due to the prohibitive cost and complexity of commercial EDA ecosystems.  
 This initiative aligns with the global movement toward **democratizing IC design**, exemplified by the formation of the *IEEE SSCS Technical Committee on Open Source Ecosystem (TC-OSE)*.
 
----
-
 ## Scope of the Thesis
 
 Within this framework, the present thesis establishes the **proof of concept for the analog front-end** of the LED driver IC.  
@@ -27,21 +25,16 @@ The design was submitted to the **IHP Open Multi-Project Wafer (MPW) Run in July
 The successful **tape-out of the OTA** represents one of the earliest demonstrations of the SG13G2 OpenPDK using the IIC-OSIC toolchain and serves as a validation of the *open-source analog flow*.
 :::
 
----
-
 ## Motivation and Challenges
 
 The analog subsystem of an LED driver in **aircraft cabin lighting** must regulate voltages between **18 V and 32 V**, ensuring efficiency, low noise, and individual seat controllability.  
 Such power-management circuits are particularly sensitive to **layout-dependent parasitic effects**, which can degrade performance. 
 Hence, a major emphasis of this work lies in the **DRC- and LVS-clean** design and its reliability in open-source flows.
 
-
 ::: callout-tip
 ### Core Research Focus
 Improvement of **PEX precision** and **post-layout verification** within the open-source flow is the **central contribution** of this thesis and the broader collaborative project.
 :::
-
----
 
 ## Methodological Contributions
 

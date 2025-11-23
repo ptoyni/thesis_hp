@@ -6,7 +6,6 @@ For analog circuits, this step is critical. Small layout choices for example, pl
 
 In other words, schematic defines *“what we want”*, layout decides *“what we actually get”*. This chapter focuses on showing how a *folded-cascode OTA* in **IHP-SG13G2** was translated from a verified schematic into a manufacturable layout that still respects matching, symmetry, and parasitic limits.
 
-
 ##  Layout Toolchain: KLayout
 
 For the layout implementation, we relied on *KLayout*. It is a free, scriptable editor that is already integrated with the **IHP-SG13G2 open-source PDK** and provided in the **IIC-OSIC toolchain**. This makes it possible to perform layout tasks without the need for commercial software.  

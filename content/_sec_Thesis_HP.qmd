@@ -59,8 +59,6 @@ system operating within a 5 V output and 18–36 V input range.
 
 ![Design Flow](figures/_fig_Designflow.png){#fig-design-flow}
 
-
-
 ### Specifications
 
 | **Parameter**     | **Target Value**          |

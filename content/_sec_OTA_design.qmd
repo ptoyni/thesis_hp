@@ -1,5 +1,3 @@
-
-
 ## OTA Design
 
 The focus of our thesis is designing and implementating error amplifier block within the selected buck converter
@@ -25,7 +23,6 @@ on:
 - In most cases, the paper assumes low voltage domain
 
 - The architectures shown are two-stage OTAs or folded cascode for high PSRR
-
 
 Final Take:
 
@@ -65,7 +62,6 @@ mirror for low-voltage operation**, also referred to as high-swing cascode curre
 type is very often used, as it forces the $V_{GS}$ and $V_{DS}$ of $M_{3,4}$ to be equal, so the current mirror ratio is
 independent of $g_{ds}$.
 
-
 ## Sizing using $g_{m}$ over $I_d$ method{#sec-gmid-method}
 
 In nanometer CMOS, the MOSFET behavior is much more complex than these simple models. Also, this highly simplified
@@ -83,15 +79,11 @@ down to nanometer FinFET devices. Of course the absolute values change, but the 
 We will be using the [pygmid tool](https://github.com/dreoilin/pygmid) which is included in IIC-OSIC-TOOLS and is
 basically a python version of the gm/Id starter kit from Boris Murmann.
 
-
-
 A brief implementation of this method is available
 [here](https://github.com/dreoilin/pygmid)
 
 Following is the python notebook designed for the sizing of Foldedcascode OTA with nmos differential input pair using
 $g_{m}$ over $I_d$ method.
-
-
 
 ::: {.callout-note title="OTA Sizing" collapse="true"}
 Detailed python code for sizing can be found [here](https://github.com/ptoyni/thesis_hp/tree/main/sizing/python)
@@ -135,13 +127,9 @@ We will now do an analysis of the circuit design of the OTA including all the co
 Now that circuit is ready we need to test its ac and transient behaviour as well as loop gain using Middlebrook's method
 and Tian's method as mention in @fig-ac-xschem, @fig-tran-xschem, @fig-loopgain-xschem
 
-
-
 ![AC Analysis Setup](../figures/_fig_ac.svg){#fig-ac-xschem}
 
 ![AC Analysis Output](../figures/_fig_foldedcascode_ac_bode.svg){#fig-ac-output-xschem}
-
-
 
 ![Transient Analysis Setup](../figures/_fig_tran.svg){#fig-tran-xschem}
 
@@ -152,8 +140,6 @@ and Tian's method as mention in @fig-ac-xschem, @fig-tran-xschem, @fig-loopgain-
 The loop gain analysis yeilds the following plots which clarifies that our specifications such as gain and phase margin
 are met successfully. See @fig-loopgain-magnitude and @fig-loopgain-phase
 The plots include both Middlebrook's and Tian's method for loop gain.
-
-
 
 ::: {#fig-loopgain-magnitude .figure}
 ![](../figures/_fig_loopgain_magnitude.svg){width=80%}

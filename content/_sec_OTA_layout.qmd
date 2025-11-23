@@ -8,7 +8,6 @@ Unlike digital design, where the goal is mainly connectivity, analog layout must
 
 The following subsections describe the major device-level layout techniques used in this work, with examples and figures suggested for illustration.
 
-
 ##  Matching & Symmetry
 
 In real silicon, device characteristics are never perfectly uniform across the die.  
@@ -28,7 +27,6 @@ Thermal gradients caused by non-uniform heat distributtion across the chip area.
 Contradictory to above gradient in mechnical stress high gradient area should be avoided such as corners and devices should be placed closer to chip center lines (adapted from @lienig2020). 
 :::
 
-
 To minimize this, layout must enforce **symmetry**:
 
 - **Symmetry around an axis.**  
@@ -42,7 +40,6 @@ Together, these forms of symmetry improve **matching**  the ability of two devic
 Finally, symmetry must extend to the **routing**. Interconnect lengths, widths, and via stacks must be balanced on both sides of the differential pair. Even with well-matched devices, asymmetric wiring can introduce additional resistance and capacitance, which shows up as systematic offset or degraded bandwidth [@lienig2020; @baker2010].  
 In our OTA layout, routing symmetry was not only maintained in terms of path length and via balance, but also extended to the **choice of metal layers**. Long interconnects were assigned to **higher metal layers** with lower sheet resistance, while short local connections remained on **lower metals** for compact access.  
 This combination of length balancing, via symmetry, and layer assignment ensured that both differential branches exhibited comparable parasitic resistance and capacitance, preserving matching despite unavoidable topological constraints.  
-
 
 ##  Multi-Fingering
 
@@ -103,7 +100,6 @@ To ensure **LVS clean results**, we:
 - Replicated the same connections in layout.  
 :::
 
-
 ##  Interdigitated Layout
 
 When two matched transistors are placed adjacent to each other but in separate diffusion regions, each device is exposed to a slightly different portion of the process gradient across the chip. As a result, parameters such as threshold voltage, carrier mobility, and oxide thickness vary between them, leading to a systematic mismatch even though both devices have identical drawn dimensions.  
@@ -117,14 +113,12 @@ Through this alternating placement, each device is spatially distributed across 
 Shows the interdigitated layout pattern "ABBA" (right) of current mirror schematic of NMOS-FETs with current ratio 1:1(left). The "D" gates in layout represent the Dummy transistors.[@lienig2020] 
 :::
 
-
 This concept can be visualized by imagining a linear gradient across the x-axis of the die. If one device occupies the left region and the other the right, they sample distinct gradient values. However, when their unit fingers are interleaved, each device occupies multiple local regions along the gradient, resulting in matched *average parameters*.
 
 In practice, interdigitation is most effective for **linear process gradients** along one direction and is often used for **matched transistor pairs, current mirrors, or differential input stages**.  
 For two-dimensional gradients or more complex variations, this technique is typically extended using **common-centroid placement** (discussed in the next section).
 
 In the folded cascode OTA, **interdigitation** was applied to the active loads and bias current mirrors. This layout ensured that each mirrored transistor experienced an equivalent average doping and oxide thickness, resulting in better current matching, symmetrical output swing, and reduced systematic offset in bias generation.
-
 
 ##  Common-Centroid Layout
 
@@ -159,7 +153,6 @@ These findings highlight that in precision analog layout, **symmetry must be int
 
 Meticulous routing decisions layer staggering, spacing, orthogonality, and controlled via placement often determine whether a differential structure performs ideally or fails entirely.
 
-
 ##  Finger Count Estimation (Minimum Number of Fingers)
 
 This section establishes a systematic method for estimating the **minimum number of fingers** $N_f$ required for a wide MOSFET such that  
@@ -176,7 +169,6 @@ $$
 Selecting $N_f$ is therefore an exercise in determining how narrow each finger can be made before device performance becomes degraded by source drain capacitance, or minimum-geometry constraints.  
 
 The following design principles guide the estimation procedure:
-
 
 ###  **Gate Resistance Requirement (Low-Noise Criterion)**
 

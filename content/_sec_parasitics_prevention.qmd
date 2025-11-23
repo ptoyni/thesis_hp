@@ -3,7 +3,6 @@
 Even though a layout is **DRC- and LVS-clean** but can still fail in silicon if parasitics and noise coupling are ignored.  
 This chapter formalizes the main parasitic mechanisms relevant to **analog ICs**, outlines why analog is **more vulnerable than digital**, and documents the concrete prevention measures implemented in our design. The discussion follows the physical reasoning and best-practice guidance in @lienig2020 (Ch. 7), adapted to the SG13G2 context.
 
-
 ## Why Analog Suffers More from Parasitics
 
 Digital logic tolerates substantial RC and substrate coupling because functionality is determined by logic thresholds and noise margins. By contrast, **analog circuits** encode information in **amplitude, phase, and continuous bias conditions**. Small parasitic shifts in device parameters or interconnect coupling directly effects gain, offset, bandwidth, and noise.  
@@ -21,7 +20,6 @@ These parasitics may reduce phase margin, cause peaking in the frequency respons
 Consequently, the layout must be arranged to minimize parasitic capacitance at high-impedance nodes, isolate bias networks from noisy regions, and maintain compact, symmetrical feedback routing to preserve loop stability.
 Therefore, parasitics must be **anticipated and shaped** not merely checked during layout.
 
-
 ## Interconnect and Device-Level Parasitics
 
 ### Metal and Coupling Capacitances
@@ -36,12 +34,10 @@ We use **redundant via arrays** on low-impedance and high-current paths, keep **
 Source/drain junction areas and perimeters add capacitance that **loads high-impedance nodes** and shifts poles.  
 We mitigate this by **multi-fingering** large devices (controlling diffusion area/perimeter) and by **dummy fingers** to regularize edge effects, as detailed earlier. Device segmentation is paired with **balanced routing and via symmetry** to preserve matching.
 
-
 ## Critical Parasitics Mechanisms and Mitigation Strategies
 
 As discussed above, the physical behavior of the silicon can be compromised by secondary effects. These parasitic mechanisms though invisible in schematic design can severely degrade performance or even render an integrated circuit non-functional.  
 The following subsections discuss the most relevant effects for analog circuits and the preventive measures applied in this work.
-
 
 ### Latch-Up
 
@@ -58,7 +54,6 @@ Adequate **spacing between n-wells and p-wells** reduces parasitic coupling betw
 For highly sensitive analog blocks, the **deep-N-well (isolation well)** option provided in the SG13G2 process was employed. This isolation ensures that the substrate region of the analog core is electrically separated from neighboring digital or I/O structures, effectively suppressing latch-up initiation.  
 Additionally, I/O pads and high-swing nodes are placed away from precision analog circuits to minimize injection of transient substrate currents @lienig2020.
 
-
 ### Antenna Effect
 
 During etching and deposition steps in fabrication, unconnected metal or polysilicon features can act as **charge-collecting antennas**.  
@@ -69,7 +64,6 @@ The risk increases with larger metal area and thinner gate oxides, making advanc
 **Prevention:**  
 To prevent this, **metal hopping** is applied routing is divided into shorter segments by inserting vias to higher or lower metal layers, thus reducing the effective exposed area.  
 In this work, **metal segmentation** were used for nets identified by the SG13G2 PDK’s antenna check script as having potential plasma-induced charging risk.
-
 
 ### Interconnecting Vias (Reliability and Noise)
 
@@ -82,7 +76,6 @@ To enhance both **reliability and symmetry**, we employ **redundant via arrays**
 In matched differential structures, **via symmetry** is strictly maintained, meaning identical via count, shape, and placement on both branches. This guarantees balanced parasitic resistance and capacitance, preventing differential offset.  
 These measures collectively improve **electromigration margins**, ensuring the long-term reliability of the metal interconnect network.
 
-
 ### Charge Injection and Gate Coupling
 
 Charge injection refers to the **unintended transfer of charge** from a switching device’s channel or overlap capacitances into adjacent high-impedance nodes. When a MOSFET gate or drain experiences a fast voltage transition, the associated capacitances ($C_{gd}$, $C_{gs}$, and junction capacitances) couple a portion of the transient charge into nearby sensitive nodes.  
@@ -94,10 +87,8 @@ High-impedance nodes are kept as short as possible, routed away from noisy or sw
 In differential circuits, balanced and symmetric routing ensures that any residual injected charge appears as a **common-mode disturbance**, which is then rejected by the amplifier’s differential nature.  
 In networks involving switching (e.g., current-steering DACs or sample-and-hold circuits), **bottom-plate switching** and **complementary transistor pairs** are used to cancel charge injection. In static bias networks, minimizing gate–drain overlap and ensuring sufficient separation from high-slew-rate lines further reduces this parasitic coupling.
 
-
 In summary, understanding these parasitic mechanisms is essential for robust analog design. Each represents a different physical coupling path through the substrate, interconnect, or process environment and each must be addressed at layout level.  
 The preventive strategies applied in this work, derived from the IHP SG13G2 PDK rules and the guidelines in @lienig2020, ensure that the layout not only meets design rules but also preserves **electrical integrity and long-term reliability** in fabrication and operation.
-
 
 ## Guard Rings (Local Substrate Sinks) - Saviour
 
@@ -142,7 +133,6 @@ This ensures stable device behavior across temperature and process variations an
 - **Decoupling.** **Local decoupling mosfets** (e.g., from AVDD to AVSS) are placed **close to the OTA core**, especially around the **input pair**, with short, wide connections and redundant vias inside the same isolation domain.  
 - **Symmetry.** Wherever matching matters, we keep **equal lengths**, **matched via stacks**, and **balanced shields** on both branches so parasitics affect each side equally.
 
-
 ## Practical Checklist (Analog-Focused)
 
 1. **Plan isolation first.** Assign deep-N-well/guard-ring envelopes before routing.  
@@ -151,7 +141,6 @@ This ensures stable device behavior across temperature and process variations an
 4. **Use via arrays.** Add redundancy and enforce symmetry across matched paths.  
 5. **Place decaps locally.** Near the most sensitive block (here, the differential pair).  
 6. **Re-run checks often.** DRC + antenna + density after small edits; extract and inspect parasitics on critical nodes early.
-
 
 ::: callout-tip
 ## Pro Tip - Parasitics Are Design Variables
