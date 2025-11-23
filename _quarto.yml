@@ -83,12 +83,18 @@ format:
     # number-sections: true
     # highlight-style: github
 
-  # epub:
-  #   theme: flatly
+  epub:
+    theme: flatly
   #   number-sections: true
   #   highlight-style: github
 
   pdf:
+    # Thesis Template Settings
+    # documentclass: uoe-thesis-template
+    # classoption: [twoside]
+    # papersize: a4
+
+    # Default LaTeX Settings
     documentclass: scrbook
     keep-tex: true
 
@@ -110,13 +116,7 @@ format:
     # Fonts
     mainfont: "Calibri"
 
-  epub:
-    theme: flatly
-    # documentclass: uoe-thesis-template
-    # classoption: [twoside]
-    # papersize: a4
-    
-
+    # Thesis Template Customization 
     # template-partials:
     # - frontmatter/title.tex
     # - frontmatter/before-body.tex
@@ -129,6 +129,6 @@ degree: Master of Science (M.Sc.)
 year: 2025
 
 supervisors: |
-  Prof. Dr.-Ing. M. Meiners
-  Prof. Dr. (PhD) S. Peik
+  - Prof. Dr.-Ing. M. Meiners
+  - Prof. Dr. (PhD) S. Peik
 
