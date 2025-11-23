@@ -1,4 +1,4 @@
-# USB-Stick
+# USB-Stick and Script Referencing
 
 ```t
 thesis_hp/
