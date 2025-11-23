@@ -149,6 +149,12 @@ Post-layout analysis revealed that the close proximity of long parallel segments
 This led to a revised routing strategy grounded in parasitic-aware symmetry rather than purely geometric symmetry. The final solution employed a combination of **Metal1, Metal2, and Metal3**, arranged such that the two branches remained electrically matched but **did not rely on identical metal layers running in close parallel**. Where parallelism was unavoidable, routing was staggered (e.g., $Metal_n$ with $Metal_{n+2}$) to reduce capacitive coupling.  
 This parasitic-conscious routing produced a substantial improvement in OTA performance, restoring gain and achieving stable differential operation.
 
+::: {#fig-diff_pair.figure}
+![](../figures/_fig_diffpair.svg)
+
+Modified Layout of OTA's Differential Pair with labelled terminals. All used layers are described in bottom-right corner. The box around the pair is called Guard Ring which is tied to VSS, also acts as body terminal for all the devices and is explained in Chapter - *Parasitics and Prevention*.  
+:::
+
 These findings highlight that in precision analog layout, **symmetry must be interpreted electrically, not only geometrically**. Effective matching requires an awareness of sheet-resistance gradients, metal-layer coupling, and the spatial distribution of parasitics. 
 
 Meticulous routing decisions layer staggering, spacing, orthogonality, and controlled via placement often determine whether a differential structure performs ideally or fails entirely.
@@ -246,5 +252,5 @@ To support the design methodology described above, a dedicated **Python script**
 The script implements the **thumb-rule constraints** introduced above.
 By providing required parameters, the script outputs the **minimum feasible even-valued $N_f$** that satisfies all electrical constraints. 
 
-The script can be found in Appendix C.
+The script can be found in *Appendix - C*.
 :::

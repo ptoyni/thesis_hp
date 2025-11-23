@@ -86,7 +86,7 @@ Following is the python notebook designed for the sizing of Foldedcascode OTA wi
 $g_{m}$ over $I_d$ method.
 
 ::: {.callout-note title="OTA Sizing" collapse="true"}
-Detailed python code for sizing can be found [here](https://github.com/ptoyni/thesis_hp/tree/main/sizing/python)
+Detailed python code for sizing can be found in *Appendix - C* and [here](https://github.com/ptoyni/thesis_hp/tree/main/sizing/python)
 :::
 
 ## Complete Design and constant $g_m$ biasing using current mirrors
@@ -144,11 +144,11 @@ The plots include both Middlebrook's and Tian's method for loop gain.
 ::: {#fig-loopgain-magnitude .figure}
 ![](../figures/_fig_loopgain_magnitude.svg){width=80%}
 
-MAgnitude middlebrook vs Tian.
+Magnitude middlebrook vs Tian.
 :::
 
 ::: {#fig-loopgain-phase .figure}
-![](../figures/_fig_loopgain_phase.svg)){width=80%}
+![](../figures/_fig_loopgain_phase.svg){width=80%}
 
 Phase middlebrook vs Tian.
 :::

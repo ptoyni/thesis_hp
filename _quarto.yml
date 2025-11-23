@@ -60,7 +60,7 @@ book:
       chapters:
         - content/_sec_postlayout_simulation.qmd
         - content/_sec_OTA_pex.qmd
-    - _sec_conclusion.qmd
+    - content/_sec_conclusion.qmd
     - references.qmd
     
   appendices:

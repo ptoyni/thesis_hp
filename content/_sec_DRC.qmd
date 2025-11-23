@@ -80,7 +80,7 @@ This is the automation script used for processing DRC results:
 {{< embed ../layout_scripts/drc_errors_check.ipynb# echo=true >}}
 :::
 
-To use the script, simply copy the DRC console output from KLayout, paste it into the terminal running the Python program, and the script will generate a concise summary of the errors that remain to be corrected manually in the layout.
+To use the script, simply copy the DRC Errors from console output from KLayout, paste it into the terminal running the Python program, and the script will generate a concise summary of the errors that remain to be corrected manually in the layout. This script could also be found in *Appendix - C*.
 
 ::: callout-tip
 ## Pro Tip  Run DRC Early and Often  

@@ -23,14 +23,17 @@ Therefore, parasitics must be **anticipated and shaped** not merely checked duri
 ## Interconnect and Device-Level Parasitics
 
 ### Metal and Coupling Capacitances
+
 Parallel conductors form **inter-wire capacitances**; long, co-planar runs also couple substrate noise through capacitance to ground.  
 In our layout, we **avoid long same-layer parallel routing** on sensitive nets. Where proximity is unavoidable, we prefer **layer staggering** (e.g., route one net on $M_n$ and the other on $M_{n+2}$), maintain generous spacing, and, when beneficial, add **symmetric ground shields**. Orthogonal routing between adjacent layers (Manhattan style) further reduces broadside coupling @lienig2020.
 
 ### Via and Contact Parasitics
+
 Vias introduce **series resistance** and small fringing capacitances; unbalanced via stacks can create gain/offset asymmetry. 
 We use **redundant via arrays** on low-impedance and high-current paths, keep **via symmetry** across matched branches, and avoid unnecessary layer hops on high-impedance nodes. This also improves electromigration margins.
 
 ### Junction/Overlap Capacitances
+
 Source/drain junction areas and perimeters add capacitance that **loads high-impedance nodes** and shifts poles.  
 We mitigate this by **multi-fingering** large devices (controlling diffusion area/perimeter) and by **dummy fingers** to regularize edge effects, as detailed earlier. Device segmentation is paired with **balanced routing and via symmetry** to preserve matching.
 

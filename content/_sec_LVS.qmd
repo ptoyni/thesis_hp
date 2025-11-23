@@ -74,6 +74,5 @@ If mismatches occur, the differences are highlighted in red, showing missing dev
 Klayout also provides powerful **tracing functionality**, allowing designers to visually select and highlight individual devices or nets within the layout to locate mismatches precisely.  
 This interactive feedback significantly accelerates debugging and helps ensure that every element is electrically connected as intended.
 
-
 In summary, LVS is the final and most critical step in confirming that a verified, DRC-clean layout is also **electrically identical** to its schematic representation. By performing LVS through the IHP-provided Python script and analyzing results within KLayout, the design achieves both physical and electrical closure.  
 The successful completion of this step certifies that the layout accurately implements the intended circuit topology, allowing it to proceed confidently toward **parasitic extraction and post-layout simulation**, and ultimately, **fabrication**.
