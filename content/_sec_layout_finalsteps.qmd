@@ -56,8 +56,7 @@ These requirements go beyond the scope of this prototype analog OTA; therefore, 
 
 ##  Pad Geometry: Orthogonal vs. Square Pads
 
-Bond pad geometry influences both mechanical reliability and parasitic loading.  
-Classical square pads are straightforward but can concentrate mechanical stress at their sharp corners during bonding. To mitigate this, the SG13G2 PDK also offers **orthogonal (octagonal) pads**, which soften corner transitions and distribute force more evenly across the pad boundary.[@lienig2020]  
+[@lienig2020] describes Bond pad geometry influences both mechanical reliability and parasitic loading. Classical square pads are straightforward but can concentrate mechanical stress at their sharp corners during bonding. To mitigate this, the SG13G2 PDK also offers **orthogonal (octagonal) pads**, which soften corner transitions and distribute force more evenly across the pad boundary.  
 They inherently reduce the tendency for:
 
 - metal delamination,  

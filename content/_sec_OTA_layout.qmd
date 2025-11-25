@@ -1,8 +1,7 @@
 #  Device-Level Layout Concepts
 
 Integrated circuit layout translates the schematic into **physical layers** on silicon.  
-The IHP-SG13G2 process provides numerous layers such as active/diffusion regions, poly gates, contacts, multiple metal levels, and passivation. [@IHP_PDK_2024]  
-Each of these layers plays a role in forming MOSFETs, capacitors, resistors, and interconnects, further layer specific description for the IHP PDK can be found on Layout Rules [@IHP_PDK_2024].  
+The IHP-SG13G2 process [@IHP_PDK_2024] provides numerous layers such as active/diffusion regions, poly gates, contacts, multiple metal levels, and passivation. Each of these layers plays a role in forming MOSFETs, capacitors, resistors, and interconnects, further layer specific description for the IHP PDK can be found in [@IHP_PDK_2024].  
 
 Unlike digital design, where the goal is mainly connectivity, analog layout must ensure **matching, symmetry, and parasitic control**. This is particularly critical in our **folded-cascode OTA**, where the differential input pair, current mirrors, and cascode devices dominate the overall gain, offset, and common-mode rejection ratio (CMRR). [@baker2010; @lienig2020] 
 
@@ -11,14 +10,14 @@ The following subsections describe the major device-level layout techniques used
 ##  Matching & Symmetry
 
 In real silicon, device characteristics are never perfectly uniform across the die.  
-**Process gradients** arise during fabrication due to variations in temperature, pressure, and material distribution. These gradients can be visualized using concepts similar to **isobars** (lines with constant mechanical pressure) or **isotherms** (lines with same temperature), where physical properties gradually shift across the wafer surface [@lienig2020].  
+**Process gradients** arise during fabrication due to variations in temperature, pressure, and material distribution. These gradients can be visualized using concepts similar to **isobars** (lines with constant mechanical pressure) or **isotherms** (lines with same temperature), where physical properties gradually shift across the wafer surface as further described in [@lienig2020].  
 
-Such gradients directly affect threshold voltage, mobility, and oxide thickness. As a result, two transistors with identical schematic dimensions may behave differently if placed at different positions on the chip. For analog circuits like OTAs, these mismatches degrade input offset, gain, and common-mode rejection ratio (CMRR).  
+Such gradients directly affect threshold voltage, mobility, and oxide thickness. As a result, two transistors with identical schematic dimensions may behave differently if placed at different positions on the chip. For analog circuits like OTAs, these mismatches degrade input offset, gain, and common-mode rejection ratio (CMRR). Adapted form @lienig2020, @fig-isotherm describes Thermal gradients caused by non-uniform heat distributtion across the chip area. Best practice is to place the devices along the same isotherm. 
 
 ::: {#fig-isotherm .figure .no-float}
-![](../figures/_fig_isotherm.svg){format=html}
-![](../figures/_fig_isotherm.pdf){format=pdf}
-Thermal gradients caused by non-uniform heat distributtion across the chip area. Best practice is to place the devices along the same isotherm. (adapted from @lienig2020) 
+![Thermal Gradient](../figures/_fig_isotherm.svg){format=html}
+![Thermal Gradient](../figures/_fig_isotherm.pdf){format=pdf}
+
 :::
 
 ::: {#fig-isobar .figure .no-float}
@@ -44,7 +43,7 @@ This combination of length balancing, via symmetry, and layer assignment ensured
 
 ##  Multi-Fingering
 
-When MOSFETs are designed with very wide channel widths, implementing them as a single continuous device introduces several problems. A long, uninterrupted polysilicon gate line introduces significant **polysilicon gate resistance**, which degrades high-frequency behavior and increases phase delay. At the same time, the enlarged diffusion regions lead to higher source and drain junction capacitances, creating substantial loading on sensitive circuit nodes. Finally, wide monolithic devices suffer in terms of matching: process gradients across the active area are no longer averaged, making these devices more vulnerable to systematic variation and random mismatch effects [@baker2010; @lienig2020].  
+When MOSFETs are designed with very wide channel widths, implementing them as a single continuous device introduces several problems. A long, uninterrupted polysilicon gate line introduces significant **polysilicon gate resistance**, which degrades high-frequency behavior and increases phase delay. At the same time, the enlarged diffusion regions lead to higher source and drain junction capacitances, creating substantial loading on sensitive circuit nodes. Finally, wide monolithic devices suffer in terms of matching: process gradients across the active area are no longer averaged, making these devices more vulnerable to systematic variation and random mismatch, these effects which can be further studied in [@baker2010; @lienig2020].  
 
 The solution is **multi-fingering**: dividing the wide transistor into several narrower, identical fingers that are connected in parallel. This segmentation reduces gate resistance (shorter poly stripes), distributes junction capacitances more evenly, and improves statistical matching by averaging across multiple smaller units.  
 
@@ -59,7 +58,7 @@ Represents the tail transistor in our layout with 4 fingers instead of one huge 
 Despite its benefits, multi-fingering comes with trade-offs:  
 - **Increased routing overhead**, since all fingers must be tied together with well-balanced interconnect.  
 - **Extra junction perimeters**, which can increase total parasitic capacitance if the layout is not compacted carefully.  
-- **Via placement sensitivity**, as each finger requires source/drain contacts and vias; poor via distribution can lead to resistance mismatches or electromigration concerns. Using 2 vias is always recommended.[@lienig2020]
+- **Via placement sensitivity**, as each finger requires source/drain contacts and vias; poor via distribution can lead to resistance mismatches or electromigration concerns. Using 2 vias is always recommended, for in-depth reasoning refer [@lienig2020]
 
 For this reason, multi-fingering is often combined with other layout strategies.  
 **Dummies** are placed at the array edges to shield active fingers, while **common-centroid arrangements** may be used for further gradient cancellation. This combined approach was applied in our OTA’s diffpair, ensuring both parasitic reduction and high matching fidelity.
@@ -81,8 +80,7 @@ A rigorous methodology for estimating this minimum finger count considering gate
 Even when multi-fingering is used, the **edge fingers** of a device array experience different fabrication conditions compared to the inner fingers. At the boundary between active diffusion and isolation (STI), variations in oxide growth, stress, and implant profiles create **edge effects** that change threshold voltage, carrier mobility, and junction capacitance [@baker2010].  
 If left unaddressed, these systematic differences degrade device matching, particularly in sensitive analog structures such as the OTA input pair or current mirrors.  
 
-To eliminate this, **dummy devices** are placed at the ends of transistor arrays. They act as sacrificial neighbors, ensuring that all *active* devices are surrounded by identical environments.  
-This makes the inner devices more uniform, effectively shielding them from edge-related mismatches.[@lienig2020]  
+To eliminate this @lienig2020 suggests, **"dummy devices"** which are placed at the ends of transistor arrays. They act as sacrificial neighbors, ensuring that all *active* devices are surrounded by identical environments. This makes the inner devices more uniform, effectively shielding them from edge-related mismatches.  
 
 Connection of dummy devices can vary across design flows:  
 - In some methodologies, dummy gates are left **floating**, since their only role is geometric.  
@@ -218,7 +216,7 @@ In our application, Channel noise is 5 times that of Gate-resistance noise.
 
 The optimization also depends on the **noise coefficient *$\gamma$*** in the MOSFET thermal noise model. The correct value of $\gamma$ depends on the channel length:
 
-- If $L < 3 \times L_{min}$, then $\gamma = 1$  
+- If $L < 3 \cdot L_{min}$, then $\gamma = 1$  
 - otherwise, $\gamma = \frac{2}{3}$
 
 Because shorter-channel devices exhibit stronger velocity saturation and increased thermal noise.
@@ -232,7 +230,7 @@ $$
 \frac{W_{\text{tot}}}{N_f} > L_{\min},
 $$
 
-because excessively narrow fingers approach the **minimum manufacturable width** and exhibit strong proximity effects, increased mismatch, and higher perimeter capacitance.[@Prof_Razavi_2001]
+because excessively narrow fingers approach the **minimum manufacturable width** and exhibit strong proximity effects, increased mismatch, and higher perimeter capacitance.
 For the IHP-SG13G2 130-nm process used here, as the name suggests the minimum channel length is:
 
 $$
@@ -254,5 +252,5 @@ To support the design methodology described above, a dedicated **Python script**
 The script implements the **thumb-rule constraints** introduced above.
 By providing required parameters, the script outputs the **minimum feasible even-valued $N_f$** that satisfies all electrical constraints. 
 
-The script can be found in *Appendix - C*.
+The detailed path for script can be found in *Appendix - C*.
 :::
