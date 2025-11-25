@@ -5,24 +5,29 @@ project:
 book:
   title: "Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS"
   author:
-    - name: Priyanka Toyni
-      orcid: 
-      email: ptoyni@hs-bremen.de
+    - name: "Priyanka Toyni"
+      email: "ptoyni@hs-bremen.de"
+      orcid: ""
       corresponding: true
       roles: "Lead author"
       affiliation:
-        - name: Hochschule Bremen - City University of Applied Sciences (HSB)
-          city: Bremen
-          state: Germany
-          url: https://www.hs-bremen.de  
-    - name: Hrishikesh Pangavhane
-      orcid: 
-      email: hpangavhane@hs-bremen.de
+        - id: hsb
+        - name: "Hochschule Bremen - City University of Applied Sciences"
+          city: "Bremen"
+          state: "Germany"
+          url: "https://www.hs-bremen.de"
+          department: "School of Electrical Engineering and Computer Sciences"
+    - name: "Hrishikesh Pangavhane"
+      email: "hpangavhane@hs-bremen.de"
+      orcid: ""
       corresponding: true
       roles: "Lead author"
+      affiliation:
+        - ref: hsb
 
-  date: last-modified
-  license: "Apache-2.0 license"
+  date: "28 November 2026"
+  date-format: "MMMM YYYY"
+  # license: "Apache-2.0 license"
 
   reader-mode: true
 
@@ -40,8 +45,11 @@ book:
   downloads: [pdf,epub]
 
   chapters:
+    - frontmatter/01-dedication.qmd
+    - frontmatter/02-declaration.qmd
+    - frontmatter/03-abstract.qmd
+    - frontmatter/04-acknowledgements.qmd
     - index.qmd
-    # - content/Abstract.qmd
     - content/_sec_introduction.qmd
     - content/_sec_Requirements_AES.qmd
     - part: Circuit Design
@@ -75,60 +83,83 @@ book:
 bibliography: _bibliography/references.bib
 csl: _bibliography/ieee.csl
 
-number-sections: true
-highlight-style: github
-
 format:
   html:
-    theme: flatly
-    # number-sections: true
-    # highlight-style: github
+    theme: simplex
+    fontsize: 1.2em
+    linestretch: 1.7
+    mainfont: Helvetica Neue, Helvetica, Arial, sans
+    monofont: Cascadia Mono, Menlo, Consolas, Courier New, Courier
+    backgroundcolor: "white"
+    fontcolor: "black"
+    highlight-style: github
 
   epub:
     theme: flatly
-  #   number-sections: true
-  #   highlight-style: github
+    fontsize: 1.2em
+    linestretch: 1.7
+    mainfont: Helvetica Neue, Helvetica, Arial, sans
+    monofont: Cascadia Mono, Menlo, Consolas, Courier New, Courier
+    backgroundcolor: "white"
+    fontcolor: "black"
+    highlight-style: github
 
   pdf:
-    # Thesis Template Settings
-    # documentclass: uoe-thesis-template
-    # classoption: [twoside]
-    # papersize: a4
-
-    # Default LaTeX Settings
     documentclass: scrbook
+    classoption: [twoside]
+    papersize: a4
     keep-tex: true
 
-    # Table of Contents
+    # Table of contents
     toc: true
+    toc-depth: 3
+    toc-title: "Table of contents"
     lof: true
     lot: true
 
+    number-sections: true
+    number-depth: 2
+        
     # Setup page layout
-    geometry: 
-      - top=30mm
-      - left=20mm
+    papersize: a4
+
+    geometry:
+      - inner=3cm
+      - outer=4cm
+      - top=3cm
+      - bottom=4cm
+      - headsep=22pt
+      - headheight=11pt
+      - footskip=33pt
+      - ignorehead
+      - ignorefoot
       - heightrounded
-    hyperrefoptions:
-      - linktoc=all
-    colorlinks: true
-    linkcolor: "blue" 
 
-    # Fonts
-    mainfont: "Calibri"
-
-    # Thesis Template Customization 
-    # template-partials:
-    # - frontmatter/title.tex
-    # - frontmatter/before-body.tex
-    # - frontmatter/toc.tex
-    include-in-header: header.tex
+    fontsize: 11pt
+    pdfengine: xelatex
     
-college: Hochschule Bremen - City University of Applied Sciences
-degree: Master of Science (M.Sc.)
-year: 2025
+    mainfont: "Times New Roman"
+    sansfont: "Arial"
+    monofont: "Courier New"
+    mathfont: "TeX Gyre Termes Math"
+    
+    # geometry: 
+    #   - top=30mm
+    #   - left=20mm
+    #   - heightrounded
+    # hyperrefoptions:
+    #   - linktoc=all
+    # colorlinks: true
+    # linkcolor: "blue" 
 
-supervisors: |
-  - Prof. Dr.-Ing. M. Meiners
-  - Prof. Dr. (PhD) S. Peik
+    # # Fonts
+    # mainfont: "Calibri"
+
+    
+    # Thesis customization 
+    include-in-header:
+      - frontmatter/header.tex
+    template-partials:
+     - frontmatter/before-body.tex
+     - frontmatter/toc.tex
 
