@@ -31,11 +31,6 @@ The analog subsystem of an LED driver in **aircraft cabin lighting** must regula
 Such power-management circuits are particularly sensitive to **layout-dependent parasitic effects**, which can degrade performance. 
 Hence, a major emphasis of this work lies in the **DRC- and LVS-clean** design and its reliability in open-source flows.
 
-::: callout-tip
-### Core Research Focus
-Improvement of **PEX precision** and **post-layout verification** within the open-source flow is the **central contribution** of this thesis and the broader collaborative project.
-:::
-
 ## Methodological Contributions
 
 Beyond the circuit-level design, this research establishes a **validated analog verification workflow** under fully open conditions.  

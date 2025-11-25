@@ -122,8 +122,7 @@ format:
     # - frontmatter/title.tex
     # - frontmatter/before-body.tex
     # - frontmatter/toc.tex
-    # include-in-header:
-    # - frontmatter/header.tex
+    include-in-header: header.tex
     
 college: Hochschule Bremen - City University of Applied Sciences
 degree: Master of Science (M.Sc.)
