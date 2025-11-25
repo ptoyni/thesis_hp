@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.43">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -52,15 +52,17 @@ div.csl-indent {
 <meta name="quarto:offset" content="../">
 <link href="../content/_sec_DRC.html" rel="next">
 <link href="../content/_sec_into_layout.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7fd0fe4245b865325b8ce8dccb604d59.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-98ae64bfd9899f02aacb27a3864e4079.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-847404b1397bb642580d6a42be486c59.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,7 +105,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -121,7 +123,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -182,8 +184,32 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../frontmatter/01-dedication.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dedication</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../frontmatter/02-declaration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Declaration of Authorship</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../frontmatter/03-abstract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstract</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../frontmatter/04-acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgement</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Abstract</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -293,6 +319,12 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../content/_sec_conclusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliography</span></a>
   </div>
@@ -309,19 +341,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_appendix_A.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">_appendix_A.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Tapeout Submissions and Repository Links</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_appendix_B.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">DRC Output</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Final Chip Layout</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../content/_appendix_C.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">USB-Stick</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">USB-Stick and Script Referencing</span></span></a>
   </div>
 </li>
       </ul>
@@ -374,29 +406,28 @@ window.Quarto = {
 
 
 <p>Integrated circuit layout translates the schematic into <strong>physical layers</strong> on silicon.<br>
-The IHP-SG13G2 process provides numerous layers such as active/diffusion regions, poly gates, contacts, multiple metal levels, and passivation. <span class="citation" data-cites="IHP_PDK_2024"><a href="../references.html#ref-IHP_PDK_2024" role="doc-biblioref">[1]</a></span>.<br>
-Each of these layers plays a role in forming MOSFETs, capacitors, resistors, and interconnects, further layer specific description for the IHP PDK can be found on Layout Rules <span class="citation" data-cites="IHP_PDK_2024"><a href="../references.html#ref-IHP_PDK_2024" role="doc-biblioref">[1]</a></span>.</p>
-<p>Unlike digital design, where the goal is mainly connectivity, analog layout must ensure <strong>matching, symmetry, and parasitic control</strong>. This is particularly critical in our <strong>folded-cascode OTA</strong>, where the differential input pair, current mirrors, and cascode devices dominate the overall gain, offset, and common-mode rejection ratio (CMRR) [<span class="citation" data-cites="baker2010"><a href="../references.html#ref-baker2010" role="doc-biblioref">[2]</a></span>]<span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>.</p>
+The IHP-SG13G2 process <span class="citation" data-cites="IHP_PDK_2024"><a href="../references.html#ref-IHP_PDK_2024" role="doc-biblioref">[1]</a></span> provides numerous layers such as active/diffusion regions, poly gates, contacts, multiple metal levels, and passivation. Each of these layers plays a role in forming MOSFETs, capacitors, resistors, and interconnects, further layer specific description for the IHP PDK can be found in <span class="citation" data-cites="IHP_PDK_2024"><a href="../references.html#ref-IHP_PDK_2024" role="doc-biblioref">[1]</a></span>.</p>
+<p>Unlike digital design, where the goal is mainly connectivity, analog layout must ensure <strong>matching, symmetry, and parasitic control</strong>. This is particularly critical in our <strong>folded-cascode OTA</strong>, where the differential input pair, current mirrors, and cascode devices dominate the overall gain, offset, and common-mode rejection ratio (CMRR). <span class="citation" data-cites="baker2010 lienig2020"><a href="../references.html#ref-baker2010" role="doc-biblioref">[2]</a>, <a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span></p>
 <p>The following subsections describe the major device-level layout techniques used in this work, with examples and figures suggested for illustration.</p>
 <section id="matching-symmetry" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="matching-symmetry"><span class="header-section-number">7.1</span> Matching &amp; Symmetry</h2>
 <p>In real silicon, device characteristics are never perfectly uniform across the die.<br>
-<strong>Process gradients</strong> arise during fabrication due to variations in temperature, pressure, and material distribution. These gradients can be visualized using concepts similar to <strong>isobars</strong> (lines with constant mechanical pressure) or <strong>isotherms</strong> (lines with same temperature), where physical properties gradually shift across the wafer surface <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>.</p>
-<p>Such gradients directly affect threshold voltage, mobility, and oxide thickness. As a result, two transistors with identical schematic dimensions may behave differently if placed at different positions on the chip. For analog circuits like OTAs, these mismatches degrade input offset, gain, and common-mode rejection ratio (CMRR).</p>
-<div id="fig-isotherm" class="figure quarto-float quarto-figure quarto-figure-center anchored">
+<strong>Process gradients</strong> arise during fabrication due to variations in temperature, pressure, and material distribution. These gradients can be visualized using concepts similar to <strong>isobars</strong> (lines with constant mechanical pressure) or <strong>isotherms</strong> (lines with same temperature), where physical properties gradually shift across the wafer surface as further described in <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>.</p>
+<p>Such gradients directly affect threshold voltage, mobility, and oxide thickness. As a result, two transistors with identical schematic dimensions may behave differently if placed at different positions on the chip. For analog circuits like OTAs, these mismatches degrade input offset, gain, and common-mode rejection ratio (CMRR). Adapted form <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>, <a href="#fig-isotherm" class="quarto-xref">Figure&nbsp;<span>7.1</span></a> describes Thermal gradients caused by non-uniform heat distributtion across the chip area. Best practice is to place the devices along the same isotherm.</p>
+<div id="fig-isotherm" class="figure no-float quarto-float quarto-figure quarto-figure-center anchored" data-format="html">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-isotherm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/_fig_isotherm.svg" class="img-fluid figure-img">
+<img src="../figures/_fig_isotherm.svg" class="img-fluid figure-img" data-format="html">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-isotherm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.1: Thermal gradients caused by non-uniform heat distributtion across the chip area. Best practice is to place the devices along the same isotherm. (adapted from <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>)
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-isotherm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1
 </figcaption>
 </figure>
 </div>
-<div id="fig-isobar" class="figure quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-isobar" class="figure no-float quarto-float quarto-figure quarto-figure-center anchored" data-format="html">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-isobar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/_fig_isobar.svg" class="img-fluid figure-img">
+<img src="../figures/_fig_isobar.svg" class="img-fluid figure-img" data-format="html">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-isobar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.2: Contradictory to above gradient in mechnical stress high gradient area should be avoided such as corners and devices should be placed closer to chip center lines (adapted from <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>).
@@ -417,7 +448,7 @@ This combination of length balancing, via symmetry, and layer assignment ensured
 </section>
 <section id="multi-fingering" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="multi-fingering"><span class="header-section-number">7.2</span> Multi-Fingering</h2>
-<p>When MOSFETs are designed with very wide channel widths, implementing them as a single continuous device introduces several problems. A long, uninterrupted polysilicon gate line introduces significant <strong>polysilicon gate resistance</strong>, which degrades high-frequency behavior and increases phase delay. At the same time, the enlarged diffusion regions lead to higher source and drain junction capacitances, creating substantial loading on sensitive circuit nodes. Finally, wide monolithic devices suffer in terms of matching: process gradients across the active area are no longer averaged, making these devices more vulnerable to systematic variation and random mismatch effects <span class="citation" data-cites="baker2010 lienig2020"><a href="../references.html#ref-baker2010" role="doc-biblioref">[2]</a>, <a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>.</p>
+<p>When MOSFETs are designed with very wide channel widths, implementing them as a single continuous device introduces several problems. A long, uninterrupted polysilicon gate line introduces significant <strong>polysilicon gate resistance</strong>, which degrades high-frequency behavior and increases phase delay. At the same time, the enlarged diffusion regions lead to higher source and drain junction capacitances, creating substantial loading on sensitive circuit nodes. Finally, wide monolithic devices suffer in terms of matching: process gradients across the active area are no longer averaged, making these devices more vulnerable to systematic variation and random mismatch, these effects which can be further studied in <span class="citation" data-cites="baker2010 lienig2020"><a href="../references.html#ref-baker2010" role="doc-biblioref">[2]</a>, <a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span>.</p>
 <p>The solution is <strong>multi-fingering</strong>: dividing the wide transistor into several narrower, identical fingers that are connected in parallel. This segmentation reduces gate resistance (shorter poly stripes), distributes junction capacitances more evenly, and improves statistical matching by averaging across multiple smaller units.</p>
 <p>In our OTA, the <strong>tail current source</strong> required a total width of 8.5 µm. Instead of realizing it as a single device, it was split into <strong>four fingers of 2.125 µm each</strong>. This segmentation reduced the distributed gate resistance, improved current uniformity, and made gate routing more compact and symmetrical, while maintaining acceptable junction capacitance at the high-impedance tail node. Similarly, majority of transistors were implemented in multi-finger form to balance parasitic capacitances and maintain symmetry across branches.</p>
 <div id="fig-ota_tail" class="figure quarto-float quarto-figure quarto-figure-center anchored">
@@ -433,7 +464,7 @@ Figure&nbsp;7.3: Represents the tail transistor in our layout with 4 fingers ins
 <p>Despite its benefits, multi-fingering comes with trade-offs:<br>
 - <strong>Increased routing overhead</strong>, since all fingers must be tied together with well-balanced interconnect.<br>
 - <strong>Extra junction perimeters</strong>, which can increase total parasitic capacitance if the layout is not compacted carefully.<br>
-- <strong>Via placement sensitivity</strong>, as each finger requires source/drain contacts and vias; poor via distribution can lead to resistance mismatches or electromigration concerns. Using 2 vias is always reccommended.<span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span></p>
+- <strong>Via placement sensitivity</strong>, as each finger requires source/drain contacts and vias; poor via distribution can lead to resistance mismatches or electromigration concerns. Using 2 vias is always recommended, for in-depth reasoning refer <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span></p>
 <p>For this reason, multi-fingering is often combined with other layout strategies.<br>
 <strong>Dummies</strong> are placed at the array edges to shield active fingers, while <strong>common-centroid arrangements</strong> may be used for further gradient cancellation. This combined approach was applied in our OTA’s diffpair, ensuring both parasitic reduction and high matching fidelity.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -442,14 +473,14 @@ Figure&nbsp;7.3: Represents the tail transistor in our layout with 4 fingers ins
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-How to calculate minimum number of fingers
+<span class="screen-reader-only">Note</span>How to calculate minimum number of fingers
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Determining the appropriate number of fingers for a wide MOSFET is not arbitrary; it requires balancing several parasitic and physical effects.</p>
 <p>As excessive fingering increases total diffusion perimeter and further elevating the total source/drain junction capacitance.</p>
 <p>Therefore, selecting the <em>minimum</em> number of fingers that satisfies these electrical and physical constraints is essential for achieving optimal analog performance.</p>
-<p>A rigorous methodology for estimating this minimum finger count considering gate resistance limits, diffusion capacitance contributions, layout symmetry, and manufacturability is presented in <strong>Section 5.6: Finger Count Estimation</strong>, where the all equations and procedures are discussed in detail.</p>
+<p>A rigorous methodology for estimating this minimum finger count considering gate resistance limits, diffusion capacitance contributions, layout symmetry, and manufacturability is presented in <strong>Section 7.6: Finger Count Estimation</strong>, where all the equations and procedures are discussed in detail.</p>
 </div>
 </div>
 </section>
@@ -457,19 +488,18 @@ How to calculate minimum number of fingers
 <h2 data-number="7.3" class="anchored" data-anchor-id="dummy-devices"><span class="header-section-number">7.3</span> Dummy Devices</h2>
 <p>Even when multi-fingering is used, the <strong>edge fingers</strong> of a device array experience different fabrication conditions compared to the inner fingers. At the boundary between active diffusion and isolation (STI), variations in oxide growth, stress, and implant profiles create <strong>edge effects</strong> that change threshold voltage, carrier mobility, and junction capacitance <span class="citation" data-cites="baker2010"><a href="../references.html#ref-baker2010" role="doc-biblioref">[2]</a></span>.<br>
 If left unaddressed, these systematic differences degrade device matching, particularly in sensitive analog structures such as the OTA input pair or current mirrors.</p>
-<p>To eliminate this, <strong>dummy devices</strong> are placed at the ends of transistor arrays. They act as sacrificial neighbors, ensuring that all <em>active</em> devices are surrounded by identical environments.<br>
-This makes the inner devices more uniform, effectively shielding them from edge-related mismatches.<span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span></p>
+<p>To eliminate this <span class="citation" data-cites="lienig2020"><a href="../references.html#ref-lienig2020" role="doc-biblioref">[3]</a></span> suggests, <strong>“dummy devices”</strong> which are placed at the ends of transistor arrays. They act as sacrificial neighbors, ensuring that all <em>active</em> devices are surrounded by identical environments. This makes the inner devices more uniform, effectively shielding them from edge-related mismatches.</p>
 <p>Connection of dummy devices can vary across design flows:<br>
 - In some methodologies, dummy gates are left <strong>floating</strong>, since their only role is geometric.<br>
 - In others, dummies are <strong>tied to supply rails</strong> (AVDD or AVSS) to avoid LVS errors and ensure consistent recognition by verification tools.</p>
 <p>In our OTA, Dummy devices were placed at the edges of all the MOSFET’s. This ensured that all transistors within the OTA operated in well-matched environments, minimizing systematic offset.</p>
 <div class="callout callout-style-default callout-important callout-titled" title="Important Implementation Note">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important Implementation Note
+<span class="screen-reader-only">Important</span>Important Implementation Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -488,7 +518,7 @@ This was necessary because in <strong>KLayout</strong>, adding an extra finger w
 <section id="interdigitated-layout" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="interdigitated-layout"><span class="header-section-number">7.4</span> Interdigitated Layout</h2>
 <p>When two matched transistors are placed adjacent to each other but in separate diffusion regions, each device is exposed to a slightly different portion of the process gradient across the chip. As a result, parameters such as threshold voltage, carrier mobility, and oxide thickness vary between them, leading to a systematic mismatch even though both devices have identical drawn dimensions.</p>
-<p>The <strong>interdigitated layout technique</strong> addresses this issue by physically alternating the unit devices of a matched pair or array. Instead of grouping devices as AA–BB, the transistors are arranged in an alternating or mirrored pattern such as <strong>ABAB</strong> or <strong>A–B–B–A</strong>, where <em>A</em> and <em>B</em> represent identical unit devices belonging to two matched elements.<br>
+<p>The <strong>interdigitated layout technique</strong> addresses this issue by physically alternating the unit devices of a matched pair or array. Instead of grouping devices as AABB, the transistors are arranged in an alternating or mirrored pattern such as <strong>ABAB</strong> or <strong>ABBA</strong>, where <em>A</em> and <em>B</em> represent identical unit devices belonging to two matched elements.<br>
 Through this alternating placement, each device is spatially distributed across the gradient, allowing it to experience regions of both higher and lower process variations. As a result, the local fabrication differences are <strong>averaged</strong> out across all unit fingers, and the two devices become physically and electrically better matched under real process conditions.</p>
 <div id="fig-abba" class="figure quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -521,7 +551,7 @@ Figure&nbsp;7.5: Illustrates how common centroid configuration can be achieved (
 </figure>
 </div>
 <p>Although each individual finger occupies a slightly different position on the chip and therefore a slightly different local environment the geometric center (centroid) of all devices coincides. This ensures that the averaged electrical properties of each device are identical, effectively cancelling first-order process gradients across both axes.</p>
-<p>In our folded-cascode OTA, the <strong>diff pair</strong> were laid out using a <strong>common-centroid pattern</strong> derived from the AB/BA principle. This was essential to maintain current accuracy and minimize systematic gain variation.<br>
+<p>In our folded-cascode OTA, the <strong>diff pair</strong> was laid out using a <strong>common-centroid pattern</strong> derived from the AB/BA principle. This was essential to maintain current accuracy and minimize systematic gain variation.<br>
 The layout ensured that matched transistors experienced a balanced environment, even in the presence of lateral thermal gradients or stress gradients from nearby metal density variations.</p>
 <p><strong>Routing Considerations:</strong><br>
 Achieving symmetry in interconnect is as critical as maintaining symmetry in device placement. In principle, identical path lengths, matched metal layers, and mirrored via distributions help ensure that the parasitic resistances and capacitances experienced by paired devices remain equal. However, practical experience reveals that <em>strict geometric symmetry does not always translate into optimal electrical symmetry</em>, especially in multi-metal processes such as IHP-SG13G2.</p>
@@ -530,6 +560,16 @@ In an attempt to maximize matching, the initial differential-pair routing was im
 Post-layout analysis revealed that the close proximity of long parallel segments on the same or adjacent lower metal layers introduced <strong>excessive lateral and broadside capacitances</strong>, overwhelming the high-impedance input nodes and collapsing the expected differential behavior.</p>
 <p>This led to a revised routing strategy grounded in parasitic-aware symmetry rather than purely geometric symmetry. The final solution employed a combination of <strong>Metal1, Metal2, and Metal3</strong>, arranged such that the two branches remained electrically matched but <strong>did not rely on identical metal layers running in close parallel</strong>. Where parallelism was unavoidable, routing was staggered (e.g., <span class="math inline">\(Metal_n\)</span> with <span class="math inline">\(Metal_{n+2}\)</span>) to reduce capacitive coupling.<br>
 This parasitic-conscious routing produced a substantial improvement in OTA performance, restoring gain and achieving stable differential operation.</p>
+<div id="fig-diff_pair.figure" class="quarto-float quarto-figure quarto-figure-center anchored" data-format="html">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-diff_pair.figure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../figures/_fig_diffpair.svg" class="img-fluid figure-img" data-format="html">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diff_pair.figure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.6: Modified Layout of OTA’s Differential Pair with labelled terminals. All used layers are described in bottom-right corner. The box around the pair is called Guard Ring which is tied to VSS, also acts as body terminal for all the devices and is explained in Chapter - <em>Parasitics and Prevention</em>.
+</figcaption>
+</figure>
+</div>
 <p>These findings highlight that in precision analog layout, <strong>symmetry must be interpreted electrically, not only geometrically</strong>. Effective matching requires an awareness of sheet-resistance gradients, metal-layer coupling, and the spatial distribution of parasitics.</p>
 <p>Meticulous routing decisions layer staggering, spacing, orthogonality, and controlled via placement often determine whether a differential structure performs ideally or fails entirely.</p>
 </section>
@@ -538,12 +578,12 @@ This parasitic-conscious routing produced a substantial improvement in OTA perfo
 <p>This section establishes a systematic method for estimating the <strong>minimum number of fingers</strong> <span class="math inline">\(N_f\)</span> required for a wide MOSFET such that<br>
 (i) the <strong>distributed gate resistance</strong> remains below acceptable limits, and<br>
 (ii) the <strong>junction capacitances</strong> introduced by segmentation do not dominate the node dynamics.<br>
-The methodology follows the classical treatment of <strong>gate resistance</strong>, <strong>thermal/gate noise</strong>, and <strong>diffusion capacitance scaling</strong> described in Razavi’s <em>Design of Analog CMOS Integrated Circuits</em> and related literature.</p>
+The methodology follows the classical treatment of <strong>gate resistance</strong>, <strong>thermal/gate noise</strong>, and <strong>diffusion capacitance scaling</strong> described in <span class="citation" data-cites="Prof_Razavi_2001 Prof_Razavi_2011"><a href="../references.html#ref-Prof_Razavi_2001" role="doc-biblioref">[4]</a>, <a href="../references.html#ref-Prof_Razavi_2011" role="doc-biblioref">[5]</a></span>.</p>
 <p>For a device with total drawn width <span class="math inline">\(W_{tot}\)</span> and channel length <em>L</em>, splitting the device into <span class="math inline">\(N_f\)</span> identical fingers results in an effective per-finger width</p>
 <p><span class="math display">\[
 W_f = \frac{W_{\text{tot}}}{N_f}.
 \]</span></p>
-<p>Selecting <span class="math inline">\(N_f\)</span> is therefore an exercise in determining how narrow each finger can be made before device performance becomes degraded by source drain capacitence, or minimum-geometry constraints.</p>
+<p>Selecting <span class="math inline">\(N_f\)</span> is therefore an exercise in determining how narrow each finger can be made before device performance becomes degraded by source drain capacitance, or minimum-geometry constraints.</p>
 <p>The following design principles guide the estimation procedure:</p>
 <section id="gate-resistance-requirement-low-noise-criterion" class="level3" data-number="7.6.1">
 <h3 data-number="7.6.1" class="anchored" data-anchor-id="gate-resistance-requirement-low-noise-criterion"><span class="header-section-number">7.6.1</span> <strong>Gate Resistance Requirement (Low-Noise Criterion)</strong></h3>
@@ -555,7 +595,7 @@ For high-performance or low-noise applications, the gate resistance should prefe
 R_g &lt; \frac{1}{5 g_m} \quad \text{to} \quad R_g &lt; \frac{1}{10 g_m}
 \]</span></p>
 </blockquote>
-<p>This condition ensures that the <strong>gate thermal noise contribution</strong> remains significantly below the <strong>channel thermal noise</strong>, preventing degradation of input-referred noise or gain.<span class="citation" data-cites="Prof_Razavi_2011"><a href="../references.html#ref-Prof_Razavi_2011" role="doc-biblioref">[4]</a></span></p>
+<p>This condition ensures that the <strong>gate thermal noise contribution</strong> remains significantly below the <strong>channel thermal noise</strong>, preventing degradation of input-referred noise or gain.<span class="citation" data-cites="Prof_Razavi_2011"><a href="../references.html#ref-Prof_Razavi_2011" role="doc-biblioref">[5]</a></span></p>
 <p>Basically, we compare the <strong>channel thermal noise</strong> with the <strong>gate-resistance thermal noise</strong>, and we solve to get the value of <span class="math inline">\(N_f\)</span> ensuring that gate noise remains well below channel noise.</p>
 <p><strong>Channel noise:</strong></p>
 <p><span class="math display">\[
@@ -578,7 +618,7 @@ R_g &lt; \frac{1}{5 g_m} \quad \text{to} \quad R_g &lt; \frac{1}{10 g_m}
 <h3 data-number="7.6.2" class="anchored" data-anchor-id="noise-model-adjustment-based-on-channel-length"><span class="header-section-number">7.6.2</span> <strong>Noise Model Adjustment Based on Channel Length</strong></h3>
 <p>The optimization also depends on the <strong>noise coefficient <em><span class="math inline">\(\gamma\)</span></em></strong> in the MOSFET thermal noise model. The correct value of <span class="math inline">\(\gamma\)</span> depends on the channel length:</p>
 <ul>
-<li>If <span class="math inline">\(L &lt; 3*L_{min}\)</span>, then <span class="math inline">\(\gamma = 1\)</span><br>
+<li>If <span class="math inline">\(L &lt; 3 \cdot L_{min}\)</span>, then <span class="math inline">\(\gamma = 1\)</span><br>
 </li>
 <li>otherwise, <span class="math inline">\(\gamma = \frac{2}{3}\)</span></li>
 </ul>
@@ -590,7 +630,7 @@ R_g &lt; \frac{1}{5 g_m} \quad \text{to} \quad R_g &lt; \frac{1}{10 g_m}
 <p><span class="math display">\[
 \frac{W_{\text{tot}}}{N_f} &gt; L_{\min},
 \]</span></p>
-<p>because excessively narrow fingers approach the <strong>minimum manufacturable width</strong> and exhibit strong proximity effects, increased mismatch, and higher perimeter capacitance.<span class="citation" data-cites="Prof_Razavi_2001"><a href="../references.html#ref-Prof_Razavi_2001" role="doc-biblioref">[5]</a></span> For the IHP-SG13G2 130-nm process used here, as the name suggests the minimum channel length is:</p>
+<p>because excessively narrow fingers approach the <strong>minimum manufacturable width</strong> and exhibit strong proximity effects, increased mismatch, and higher perimeter capacitance. For the IHP-SG13G2 130-nm process used here, as the name suggests the minimum channel length is:</p>
 <p><span class="math display">\[
 L_{\min} = 0.13\,\mu\text{m}.
 \]</span></p>
@@ -602,12 +642,12 @@ L_{\min} = 0.13\,\mu\text{m}.
 But, a practical recommendation particularly in differential or current-mirror structures is:</p>
 <p>Choose the <strong>minimum even number of fingers</strong> <span class="math inline">\(N_f\)</span> that satisfies the electrical and geometrical constraints. Even segmentation simplifies mirrored routing, centroid or interdigitated arrangements, and guard ring alignment.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Number of fingers Calculation using Python Script">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Number of fingers Calculation using Python Script
+<span class="screen-reader-only">Note</span>Number of fingers Calculation using Python Script
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -615,7 +655,7 @@ Number of fingers Calculation using Python Script
 <div class="callout-body-container callout-body">
 <p>To support the design methodology described above, a dedicated <strong>Python script</strong> has been developed to automatically compute the <strong>minimum number of fingers</strong> required for any given MOSFET width.<br>
 The script implements the <strong>thumb-rule constraints</strong> introduced above. By providing required parameters, the script outputs the <strong>minimum feasible even-valued <span class="math inline">\(N_f\)</span></strong> that satisfies all electrical constraints.</p>
-<p>The script can be found in Appendix C.</p>
+<p>The detailed path for script can be found in <em>Appendix - C</em>.</p>
 </div>
 </div>
 </div>
@@ -631,11 +671,11 @@ The script implements the <strong>thumb-rule constraints</strong> introduced abo
 <div id="ref-lienig2020" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[3] </div><div class="csl-right-inline">J. Lienig and J. Scheible, <em>Fundamentals of layout design for electronic circuits</em>. Springer International Publishing, 2020. doi: <a href="https://doi.org/10.1007/978-3-030-39284-0">10.1007/978-3-030-39284-0</a>.</div>
 </div>
-<div id="ref-Prof_Razavi_2011" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">B. Razavi, <em>Design of analog CMOS integrated circuits</em>. McGraw-Hill, 2011.</div>
-</div>
 <div id="ref-Prof_Razavi_2001" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">B. Razavi, <em>Design of analog CMOS integrated circuits</em>. McGraw-Hill, 2001.</div>
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">B. Razavi, <em>Design of analog CMOS integrated circuits</em>. McGraw-Hill, 2001.</div>
+</div>
+<div id="ref-Prof_Razavi_2011" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">B. Razavi, <em>Design of analog CMOS integrated circuits</em>. McGraw-Hill, 2011.</div>
 </div>
 </div>
 </section>
@@ -643,236 +683,243 @@ The script implements the <strong>thumb-rule constraints</strong> introduced abo
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/ptoyni\.github\.io\/thesis_hp\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ptoyni\.github\.io\/thesis_hp\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -880,185 +927,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../content/_sec_into_layout.html" class="pagination-link" aria-label="Introduction to Layout">

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; OTA Design – Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
+<title>Declaration of Authorship – Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,8 +30,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/_sec_cornersimulations.html" rel="next">
-<link href="../content/_sec_Requirements_AES.html" rel="prev">
+<link href="../frontmatter/03-abstract.html" rel="next">
+<link href="../frontmatter/01-dedication.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -91,39 +71,10 @@ div.csl-indent {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -132,7 +83,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_OTA_design.html">Circuit Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_OTA_design.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">OTA Design</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../frontmatter/02-declaration.html">Declaration of Authorship</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -190,7 +141,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../frontmatter/02-declaration.html" class="sidebar-item-text sidebar-link">
+  <a href="../frontmatter/02-declaration.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Declaration of Authorship</span></a>
   </div>
 </li>
@@ -235,7 +186,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/_sec_OTA_design.html" class="sidebar-item-text sidebar-link active">
+  <a href="../content/_sec_OTA_design.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">OTA Design</span></span></a>
   </div>
 </li>
@@ -363,27 +314,13 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#into-the-design" id="toc-into-the-design" class="nav-link active" data-scroll-target="#into-the-design"><span class="header-section-number">4.1</span> Into the design</a></li>
-  <li><a href="#sec-gmid-method" id="toc-sec-gmid-method" class="nav-link" data-scroll-target="#sec-gmid-method"><span class="header-section-number">4.2</span> Sizing using <span class="math inline">\(g_{m}\)</span> over <span class="math inline">\(I_d\)</span> method</a></li>
-  <li><a href="#complete-design-and-constant-g_m-biasing-using-current-mirrors" id="toc-complete-design-and-constant-g_m-biasing-using-current-mirrors" class="nav-link" data-scroll-target="#complete-design-and-constant-g_m-biasing-using-current-mirrors"><span class="header-section-number">4.3</span> Complete Design and constant <span class="math inline">\(g_m\)</span> biasing using current mirrors</a>
-  <ul class="collapse">
-  <li><a href="#discussion-of-the-ota-design" id="toc-discussion-of-the-ota-design" class="nav-link" data-scroll-target="#discussion-of-the-ota-design"><span class="header-section-number">4.3.1</span> Discussion of the OTA Design</a></li>
-  </ul></li>
-  <li><a href="#sec-ota-simulation" id="toc-sec-ota-simulation" class="nav-link" data-scroll-target="#sec-ota-simulation"><span class="header-section-number">4.4</span> Simulation of the OTA</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ptoyni/thesis_hp/edit/main/content/_sec_OTA_design.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ptoyni/thesis_hp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/_sec_OTA_design.html">Circuit Design</a></li><li class="breadcrumb-item"><a href="../content/_sec_OTA_design.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">OTA Design</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">OTA Design</span></h1>
+<h1 class="title">Declaration of Authorship</h1>
 </div>
 
 
@@ -400,220 +337,18 @@ window.Quarto = {
 </header>
 
 
-<p>As the focus of our thesis is designing and implementating error amplifier block within the selected buck converter topology using Open Source Tools. This involves developing the block from initial specification and schematic design through to layout, verification (including LVS and PEX), and final tapeout using exclusively open-source tools and IHP-SG13G2 PDK. The goal is to create a high-performance, low-power error amplifier tailored to the requirements of the mixed-signal LED driver IC, ensuring accurate regulation and stability of the control loop. This work will contribute a critical building block to the overall ASIC design while also serving as a case study in open-source analog IC design workflows.</p>
-<p>The amplifier is tailored to meet the feedback stability and performance specifications of the LED driver system operating within a 5 V output and 18–36 V input range.</p>
-<p>In the section detailing buck converter control design (especially the voltage-mode control loop), <span class="citation" data-cites="wicht2020"><a href="../references.html#ref-wicht2020" role="doc-biblioref">[1]</a></span> focuses on:</p>
-<ul>
-<li><p>A transconductance amplifier used as the error amplifier</p></li>
-<li><p>High open-loop gain</p></li>
-<li><p>A clear emphasis on stability, bandwidth, and linear range</p></li>
-<li><p>In most cases, the paper assumes low voltage domain</p></li>
-<li><p>The architectures shown are two-stage OTAs or folded cascode for high PSRR</p></li>
-</ul>
-<p>Final Take:</p>
-<p>Folded Cascode OTA (see <a href="#fig-foldedcascode-diagram" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>) is very much aligned with <span class="citation" data-cites="wicht2020"><a href="../references.html#ref-wicht2020" role="doc-biblioref">[1]</a></span> methodology, especially if our focus is on:</p>
-<ul>
-<li><p>A high-gain, linear, feedback-stage amplifier</p></li>
-<li><p>Working within 1.5V analog domain</p></li>
-<li><p>Dealing with moderate capacitive loads (e.g.&nbsp;compensation network / VCOMP node)</p></li>
-<li><p><span class="citation" data-cites="wicht2020"><a href="../references.html#ref-wicht2020" role="doc-biblioref">[1]</a></span> doesn’t enforce one architecture rigidly, but the characteristics described match folded cascode best.</p></li>
-</ul>
-<div id="fig-foldedcascode-diagram" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-foldedcascode-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/_fig_foldedcascode_diagram.svg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-foldedcascode-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1: Topology
-</figcaption>
-</figure>
-</div>
-<table class="caption-top table">
-<caption>Finalised Specifications</caption>
-<thead>
-<tr class="header">
-<th><strong>Parameter</strong></th>
-<th><strong>Target Value</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Bandwidth</td>
-<td>&gt; 1 MHz</td>
-</tr>
-<tr class="even">
-<td>Phase Margin</td>
-<td>&gt; 60°</td>
-</tr>
-<tr class="odd">
-<td>Power Supply</td>
-<td>1.5 V (AVDD)</td>
-</tr>
-<tr class="even">
-<td>Load Capacitance</td>
-<td>~1-2 pF</td>
-</tr>
-<tr class="odd">
-<td>Power Consumption</td>
-<td>&lt; 1 mW</td>
-</tr>
-</tbody>
-</table>
-<section id="into-the-design" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="into-the-design"><span class="header-section-number">4.1</span> Into the design</h2>
-<p>As shown in the <a href="#fig-foldedcascode-diagram" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>, <span class="math inline">\(M_1\)</span> and <span class="math inline">\(M_2\)</span> are the input differential pair mosfets with <span class="math inline">\(M_5,_6\)</span> and <span class="math inline">\(M_7,_8\)</span> as their cascoded mosfets.</p>
-<div class="callout callout-style-default callout-important callout-titled" title="Cascode Bias Voltage Generation">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Cascode Bias Voltage Generation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>It is critically import for a stable performance across PVT that the bias voltages for the cascode gates are created in a manner that tracks variations with process, temperature, and supply voltage!</p>
-</div>
-</div>
-<p>The current mirror constructed out of <span class="math inline">\(M_\mathrm{3,7}\)</span> and <span class="math inline">\(M_\mathrm{4,8}\)</span> is a special kind of <strong>cascode current mirror for low-voltage operation</strong>, also referred to as high-swing cascode current mirror <span class="citation" data-cites="Jespers_Murmann_2017"><a href="../references.html#ref-Jespers_Murmann_2017" role="doc-biblioref">[2]</a></span>. This type is very often used, as it forces the <span class="math inline">\(V_{GS}\)</span> and <span class="math inline">\(V_{DS}\)</span> of <span class="math inline">\(M_{3,4}\)</span> to be equal, so the current mirror ratio is independent of <span class="math inline">\(g_{ds}\)</span>.</p>
-</section>
-<section id="sec-gmid-method" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="sec-gmid-method"><span class="header-section-number">4.2</span> Sizing using <span class="math inline">\(g_{m}\)</span> over <span class="math inline">\(I_d\)</span> method</h2>
-<p>In nanometer CMOS, the MOSFET behavior is much more complex than these simple models. Also, this highly simplified derivations introduce concepts like the threshold voltage or the overdrive voltage, which are interesting from a theoretical viewpoint, but bear little practical use. Modern compact MOSFET models (like the PSP model used in SG13G2) use hundreds of parameters and fairly complex equations to somewhat properly describe MOSFET behavior over a wide range of parameters like width, length and temperature. A modern approach to MOSFET sizing is thus based on the thought to use exactly these MOSFET models, characterize them, put the resulting data into tables and charts, and therefore learn about the complex MOSFET behavior and use it for MOSFET sizing.</p>
-<p>The <span class="math inline">\(g_{m}\)</span> over <span class="math inline">\(I_d\)</span> methodology has the huge advantage that it catches MOSFET behavior quite accurately over a wide range of operating conditions, and the curves look very similar for pretty much all CMOS technologies, from micrometer bulk CMOS down to nanometer FinFET devices. Of course the absolute values change, but the method applies universally.</p>
-<p>We will be using the <a href="https://github.com/dreoilin/pygmid">pygmid tool</a> which is included in IIC-OSIC-TOOLS and is basically a python version of the <span class="math inline">\(g_{m}\)</span> over <span class="math inline">\(I_d\)</span> starter kit from Boris Murmann.</p>
-<p>A brief implementation of this method is available <a href="https://github.com/dreoilin/pygmid">here</a>. Adapted from <span class="citation" data-cites="pretl2024"><a href="../references.html#ref-pretl2024" role="doc-biblioref">[3]</a></span>, we designed python notebook for the sizing of Foldedcascode OTA with nmos as well as pmos differential input pair using <span class="math inline">\(g_{m}\)</span> over <span class="math inline">\(I_d\)</span> method.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="OTA Sizing">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>OTA Sizing
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Detailed path for python code for sizing can be found in <em>Appendix - C</em> or <a href="https://github.com/ptoyni/thesis_hp/tree/main/sizing/python">here</a>.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="complete-design-and-constant-g_m-biasing-using-current-mirrors" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="complete-design-and-constant-g_m-biasing-using-current-mirrors"><span class="header-section-number">4.3</span> Complete Design and constant <span class="math inline">\(g_m\)</span> biasing using current mirrors</h2>
-<p>Based on the sizing procedure in <a href="#sec-gmid-method" class="quarto-xref"><span>Section 4.2</span></a>, we are ready with all the <span class="math inline">\(W/L\)</span> ratios and able to design the complete OTA (see <a href="#fig-foldedcascode-xschem" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>).</p>
-<div id="fig-foldedcascode-xschem" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-foldedcascode-xschem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/_fig_foldedcascode_xschem.svg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-foldedcascode-xschem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.2: OTA design in Xschem
-</figcaption>
-</figure>
-</div>
-<p>Find the schematic design <a href="../Designs/otas/1_schematics/foldedcascode_nmos.sch">here</a></p>
-<section id="discussion-of-the-ota-design" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="discussion-of-the-ota-design"><span class="header-section-number">4.3.1</span> Discussion of the OTA Design</h3>
-<p>We will now do an analysis of the circuit design of the OTA including all the complications which make this design practical.</p>
-<ol type="1">
-<li><p>For easier navigation, the device identifier are consistent with the circuit sketch in <a href="#fig-foldedcascode-xschem" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>.</p></li>
-<li><p>Some MOSFET dimensions are rounded to make a better fit in the IC layout. Please also look carefully at <span class="math inline">\(W\)</span>, <span class="math inline">\(L\)</span>, and <span class="math inline">\(\mathrm{ng}\)</span>. The parameter <span class="math inline">\(\mathrm{ng}\)</span> defines how the total <span class="math inline">\(W\)</span> of a MOSFET should be split into individual MOSFET fingers with <span class="math inline">\(W_\mathrm{f} = W / \mathrm{ng}\)</span>. This is done to arrive at a suitably sized MOSFET physical implementation.</p></li>
-<li><p>As you can (hopefully) see the circuit is carefully drawn to ease readability. Important nets are named, text comments state certain properties like nominal voltage levels, bias currents, etc. Current sensing elements are added to directly see the dc currents in the circuit simulation.</p></li>
-<li><p>The bias voltage generation for the cascodes is included as well. The voltage drop for the bottom transistors is developed by properly scaling the MOSFETs in the reference branch. We reduce the <span class="math inline">\(W/L\)</span> ratio to increase the <span class="math inline">\(V_{GS}\)</span> to create a voltage headroom for the bottom MOSFET.</p></li>
-<li><p>Sensitive bias nodes are buffered with decoupling capacitors. We are using MOSFETs as nonlinear capacitors, which is not an issue in this application, but we value the increased capacitive density. Please note how the MOSFET are connected (some are tied to <span class="math inline">\({VDD}\)</span> while others are tied to <span class="math inline">\(V{SS}\)</span>).</p></li>
-</ol>
-</section>
-</section>
-<section id="sec-ota-simulation" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="sec-ota-simulation"><span class="header-section-number">4.4</span> Simulation of the OTA</h2>
-<p>Now that circuit is ready we need to test its ac and transient behaviour as well as loop gain using Middlebrook’s method and Tian’s method as mention in <a href="#fig-ac-xschem" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>, <a href="#fig-tran-xschem" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>, <a href="#fig-loopgain-xschem" class="quarto-xref">Figure&nbsp;<span>4.7</span></a></p>
-<div id="fig-ac-xschem" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ac-xschem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/_fig_ac.svg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ac-xschem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.3: AC Analysis Setup
-</figcaption>
-</figure>
-</div>
-<div id="fig-ac-output-xschem" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ac-output-xschem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/_fig_foldedcascode_ac_bode.svg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ac-output-xschem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.4: AC Analysis Output
-</figcaption>
-</figure>
-</div>
-<div id="fig-tran-xschem" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-tran-xschem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/_fig_tran.svg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tran-xschem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.5: Transient Analysis Setup
-</figcaption>
-</figure>
-</div>
-<div id="fig-tran-output-xschem" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-tran-output-xschem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/_fig_foldedcascode_tran_combined.svg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tran-output-xschem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.6: Transient Analysis Output
-</figcaption>
-</figure>
-</div>
-<div id="fig-loopgain-xschem" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-loopgain-xschem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/_fig_loopgain.svg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-loopgain-xschem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.7: Loop Gain Setup
-</figcaption>
-</figure>
-</div>
-<p>The loop gain analysis yeilds the following plots which clarifies that our specifications such as gain and phase margin are met successfully. See <a href="#fig-loopgain-magnitude" class="quarto-xref">Figure&nbsp;<span>4.8</span></a> and <a href="#fig-loopgain-phase" class="quarto-xref">Figure&nbsp;<span>4.9</span></a> The plots include both Middlebrook’s and Tian’s method for loop gain.</p>
-<div id="fig-loopgain-magnitude" class="figure quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-loopgain-magnitude-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/_fig_loopgain_magnitude.svg" class="img-fluid figure-img" style="width:80.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-loopgain-magnitude-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.8: Magnitude middlebrook vs Tian.
-</figcaption>
-</figure>
-</div>
-<div id="fig-loopgain-phase" class="figure quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-loopgain-phase-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../figures/_fig_loopgain_phase.svg" class="img-fluid figure-img" style="width:80.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-loopgain-phase-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.9: Phase middlebrook vs Tian.
-</figcaption>
-</figure>
-</div>
+<p>We hereby declare that we have written the present work independently and have not used any sources or aids other than those indicated.</p>
+<p>The passages of this work that were taken from other works, either verbatim or in terms of meaning, are marked with indications of their origin.</p>
+<p>This declaration also applies to the graphics, sketches, and visual representations contained in the work. We have not submitted this work, either in the same or similar form, nor in excerpts, as part of an examination or academic requirement.</p>
+<p>We certify that the electronic version of the submitted work is identical to the printed version, and we agree to an electronic review of the work using plagiarism detection software.</p>
+<p>We certify that we have not used any AI-based tools whose use has not been agreed upon in writing with the examiner. I am aware that the use of texts or other content and products generated by AI-based tools does not guarantee their quality. We assume responsibility for the work submitted and for its content. We further certify that our own creative input predominates in the present work. All verbatim or paraphrased contributions and quotations, as well as all sections created, written, and/or edited with the aid of AI-based tools, are marked and documented by us. The form of disclosure will be agreed upon between the examiner and the examinee.</p>
+<p>We are aware that a violation of the points mentioned may have examination-related consequences and, in particular, may lead to the examination performance being graded as "insufficient" or the academic performance as "failed". In cases of repeated or serious misconduct, expulsion may occur.</p>
+<p>First name and surname:</p>
+<p>Student ID Number:</p>
+<p>Bremen,</p>
+<p>Signature</p>
 
 
-<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-wicht2020" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">B. Wicht, <span>“Analog building blocks of dc-dc converters: Examining fundamental concepts,”</span> <em><span>IEEE</span> Solid-State Circuits Magazine</em>, vol. 12, no. 3, pp. 42–47, 2020, doi: <a href="https://doi.org/10.1109/mssc.2020.3002141">10.1109/mssc.2020.3002141</a>.</div>
-</div>
-<div id="ref-Jespers_Murmann_2017" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">P. G. A. Jespers and B. Murmann, <em>Systematic design of analog CMOS circuits: Using pre-computed lookup tables</em>. Cambridge University Press, 2017.</div>
-</div>
-<div id="ref-pretl2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">H. Pretl, M. Koefinger, and S. Dorrer, <span>“Analog <span>Circuit</span> <span>Design</span>.”</span> Dec. 2024. doi: <a href="https://doi.org/10.5281/zenodo.14387481">10.5281/zenodo.14387481</a>.</div>
-</div>
-</div>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1018,13 +753,13 @@ Figure&nbsp;4.9: Phase middlebrook vs Tian.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/_sec_Requirements_AES.html" class="pagination-link" aria-label="Requirements">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Requirements</span></span>
+      <a href="../frontmatter/01-dedication.html" class="pagination-link" aria-label="Dedication">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Dedication</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/_sec_cornersimulations.html" class="pagination-link" aria-label="Corner Simulations for PVT and Monte-Carlo">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Corner Simulations for PVT and Monte-Carlo</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../frontmatter/03-abstract.html" class="pagination-link" aria-label="Abstract">
+        <span class="nav-page-text">Abstract</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1036,7 +771,7 @@ Figure&nbsp;4.9: Phase middlebrook vs Tian.
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ptoyni/thesis_hp/edit/main/content/_sec_OTA_design.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ptoyni/thesis_hp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/ptoyni/thesis_hp/edit/main/frontmatter/02-declaration.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ptoyni/thesis_hp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
