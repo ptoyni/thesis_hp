@@ -15,14 +15,15 @@ In real silicon, device characteristics are never perfectly uniform across the d
 
 Such gradients directly affect threshold voltage, mobility, and oxide thickness. As a result, two transistors with identical schematic dimensions may behave differently if placed at different positions on the chip. For analog circuits like OTAs, these mismatches degrade input offset, gain, and common-mode rejection ratio (CMRR).  
 
-::: {#fig-isotherm .figure}
-![](../figures/_fig_isotherm.svg)
-
+::: {#fig-isotherm .figure .no-float}
+![](../figures/_fig_isotherm.svg){format=html}
+![](../figures/_fig_isotherm.pdf){format=pdf}
 Thermal gradients caused by non-uniform heat distributtion across the chip area. Best practice is to place the devices along the same isotherm. (adapted from @lienig2020) 
 :::
 
-::: {#fig-isobar .figure}
-![](../figures/_fig_isobar.svg)
+::: {#fig-isobar .figure .no-float}
+![](../figures/_fig_isobar.svg){format=html}
+![](../figures/_fig_isobar.pdf){format=pdf}
 
 Contradictory to above gradient in mechnical stress high gradient area should be avoided such as corners and devices should be placed closer to chip center lines (adapted from @lienig2020). 
 :::
@@ -150,7 +151,8 @@ This led to a revised routing strategy grounded in parasitic-aware symmetry rath
 This parasitic-conscious routing produced a substantial improvement in OTA performance, restoring gain and achieving stable differential operation.
 
 ::: {#fig-diff_pair.figure}
-![](../figures/_fig_diffpair.svg)
+![](../figures/_fig_diffpair.svg){format=html}
+![](../figures/_fig_diffpair.pdf){format=pdf}
 
 Modified Layout of OTA's Differential Pair with labelled terminals. All used layers are described in bottom-right corner. The box around the pair is called Guard Ring which is tied to VSS, also acts as body terminal for all the devices and is explained in Chapter - *Parasitics and Prevention*.  
 :::

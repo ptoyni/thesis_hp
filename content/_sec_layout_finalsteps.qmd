@@ -98,8 +98,12 @@ The script outputs a final **GDS2 file** in which all required fills metal, acti
 
 This finalized and verified, density-compliant GDS2 file represents the **manufacturing-ready layout**, suitable for submission to the foundry in compliance with all CMP and density specifications.
 
+
+\clearpage
+
 ::: {#fig-final_layout.figure}
-![](../figures/_fig_fullchip.svg)
+![](../figures/_fig_full_chip.pdf)
 
 Final Chip Layout with Bondpads, ESD Diodes and Metal Fillers around the core block before final density fillers.  
 :::
+

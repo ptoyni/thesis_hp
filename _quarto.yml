@@ -107,10 +107,9 @@ format:
   pdf:
     documentclass: scrbook
     classoption: [twoside]
-    papersize: a4
+
     keep-tex: true
 
-    # Table of contents
     toc: true
     toc-depth: 3
     toc-title: "Table of contents"
@@ -120,9 +119,9 @@ format:
     number-sections: true
     number-depth: 2
         
-    # Setup page layout
     papersize: a4
-
+    fig-pos: "H"
+    
     geometry:
       - inner=3cm
       - outer=4cm
@@ -137,26 +136,12 @@ format:
 
     fontsize: 11pt
     pdfengine: xelatex
-    
+
     mainfont: "Times New Roman"
     sansfont: "Arial"
     monofont: "Courier New"
     mathfont: "TeX Gyre Termes Math"
     
-    # geometry: 
-    #   - top=30mm
-    #   - left=20mm
-    #   - heightrounded
-    # hyperrefoptions:
-    #   - linktoc=all
-    # colorlinks: true
-    # linkcolor: "blue" 
-
-    # # Fonts
-    # mainfont: "Calibri"
-
-    
-    # Thesis customization 
     include-in-header:
       - frontmatter/header.tex
     template-partials:

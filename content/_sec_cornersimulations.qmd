@@ -3,15 +3,15 @@
 As you have seen in @sec-ota-simulation, running simulations by hand is tedious. When we want to check the overall
 performance, we have to run many simulations over various conditions:
 
-1. The supply voltage of the circuit has tolerances, and thus we need to check the performance against this variation.
+1. The supply voltage of the circuit has tolerances, and thus we need to check the performance against this variation.[@pretl2024]
 
-2. The temperature at which the circuit is operated is likely changing. Also the performance against this has to be verified.
+2. The temperature at which the circuit is operated is likely changing. Also the performance against this has to be verified.[@pretl2024]
 
 3. When manufacturing the wafers random variations in various process parameters lead to changed parameters of the
    integrated circuit components. In order to  check for this effect, wafer foundries provide model files which shall
    cover these manufacturing excursions. Simplified, this leads to a slower or faster MOSFET, and usually NMOS and PMOS
    are not correlated, so we have the process corners **SS**, **SF**, **TT**,  **FS**, and **FF**. So far, we have only
-   used the **TT** models in our simulations.
+   used the **TT** models in our simulations.[@pretl2024]
 
 The variations listed in the previous list are abbreviated as **PVT** (process, voltage, temperature) variations. In
 order to finalize a circuit all combinations of these (plus the variations in operating conditions like input voltage)
@@ -22,24 +22,20 @@ There are two options how to tackle this efficiently:
 
 1. As an experienced designer you have a very solid understanding of the circuit, plus based on the analytic equations
    you can identify which combination of operating conditions will lead to a worst case performance. Thus, you can
-   drastically reduce the number of corners to simulate, and you run them by hand.
+   drastically reduce the number of corners to simulate, and you run them by hand.[@pretl2024]
 
 2. You are using a framework which highly automates this task of running a plethora of different simulations and
-   evaluating the outcome. These frameworks are called simulation runners.
+   evaluating the outcome. These frameworks are called simulation runners.[@pretl2024]
 
 Luckily, there are open-source versions of simulation runners available, and we will use
 [CACE](https://github.com/efabless/cace). CACE is written in Python and allows to setup a datasheet in
-[YAML](https://yaml.org) which defines the simulation problem and the performance parameters to evaluate against which
-limits. The resulting simulations are then run in parallel and the simulation data is evaluated and summarized in
-various forms.
+[YAML](https://yaml.org) which defines the simulation problem and the performance parameters to evaluate against which limits. The resulting simulations are then run in parallel and the simulation data is evaluated and summarized in various forms.[@pretl2024]
 
-There is a CACE setup available for our OTA. The [datasheet](../cace/foldedcascode_nmos.yaml) describes the operating
-conditions and the simulations tasks. For each simulation a testbench template is needed, [this
-one](../cace/templates/foldedcascode-nmos-ac.sch) is used for ac simulations, [this
-one](../cace/templates/foldedcascode-nmos-noise.sch) is used for noise simulation, and [this
-one](../cace/templates/foldedcascode-nmos-tran.sch) is used for transient simulation.
+There is a CACE setup available for our OTA. The [datasheet](../cace/foldedcascode_nmos.yaml) describes the operating conditions and the simulations tasks. For each simulation a testbench template is needed, [this one](../cace/templates/foldedcascode-nmos-ac.sch) is used for ac simulations, [this one](../cace/templates/foldedcascode-nmos-noise.sch) is used for noise simulation, and [this one](../cace/templates/foldedcascode-nmos-tran.sch) is used for transient simulation.
 
 After a successful run, a documentation is automatically generated. The result of a full run of this is presented below:
+
+\clearpage
 
 ::: {#ota-cace-result .callout-note title="CACE Summary for OTA" collapse="true"}
 
