@@ -50,7 +50,7 @@ book:
     - frontmatter/03-abstract.qmd
     - frontmatter/04-acknowledgements.qmd
     - index.qmd
-    - content/_sec_introduction.qmd
+  #  - content/_sec_introduction.qmd
     - content/_sec_Requirements_AES.qmd
     - part: Circuit Design
       chapters:
@@ -85,23 +85,23 @@ csl: _bibliography/ieee.csl
 
 format:
   html:
-    theme: simplex
+    theme: flatly
     fontsize: 1.2em
     linestretch: 1.7
-    mainfont: Helvetica Neue, Helvetica, Arial, sans
-    monofont: Cascadia Mono, Menlo, Consolas, Courier New, Courier
-    backgroundcolor: "white"
-    fontcolor: "black"
+    # mainfont: Helvetica Neue, Helvetica, Arial, sans
+    # monofont: Cascadia Mono, Menlo, Consolas, Courier New, Courier
+    # backgroundcolor: "white"
+    # fontcolor: "black"
     highlight-style: github
 
   epub:
     theme: flatly
     fontsize: 1.2em
     linestretch: 1.7
-    mainfont: Helvetica Neue, Helvetica, Arial, sans
-    monofont: Cascadia Mono, Menlo, Consolas, Courier New, Courier
-    backgroundcolor: "white"
-    fontcolor: "black"
+    # mainfont: Helvetica Neue, Helvetica, Arial, sans
+    # monofont: Cascadia Mono, Menlo, Consolas, Courier New, Courier
+    # backgroundcolor: "white"
+    # fontcolor: "black"
     highlight-style: github
 
   pdf:
