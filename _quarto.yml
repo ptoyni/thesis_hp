@@ -16,7 +16,7 @@ book:
           state: Germany
           url: https://www.hs-bremen.de  
     - name: Hrishikesh Pangavhane
-      orcid: 
+      orcid: 0009-0008-0089-336X
       email: hpangavhane@hs-bremen.de
       corresponding: true
       roles: "Lead author"
@@ -93,10 +93,12 @@ format:
     # Thesis Template Settings
     # documentclass: uoe-thesis-template
     # classoption: [twoside]
-    # papersize: a4
+    papersize: a4
+    fig-pos: "H"
 
     # Default LaTeX Settings
     documentclass: scrbook
+    classoption: oneside
     keep-tex: true
 
     # Table of Contents
@@ -106,23 +108,33 @@ format:
 
     # Setup page layout
     geometry: 
-      - top=30mm
-      - left=20mm
+      - top=2.5cm
+      - bottom=2.5cm
+      - left=4cm
+      - right=2.5cm
       - heightrounded
+      - includehead
     hyperrefoptions:
       - linktoc=all
     colorlinks: true
     linkcolor: "blue" 
 
     # Fonts
-    mainfont: "Calibri"
+    mainfont: "Latin Modern Roman"
+    fontsize: 11pt
+    
 
     # Thesis Template Customization 
     # template-partials:
     # - frontmatter/title.tex
     # - frontmatter/before-body.tex
     # - frontmatter/toc.tex
-    include-in-header: header.tex
+    
+    include-in-header:
+      - header.tex
+      
+    include-before-body:
+      - titlepage.tex
     
 college: Hochschule Bremen - City University of Applied Sciences
 degree: Master of Science (M.Sc.)
