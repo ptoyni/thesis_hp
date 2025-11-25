@@ -1,4 +1,4 @@
-# Corner Simulations for PVT and Monte-Carlo
+<!-- # Corner Simulations for PVT and Monte-Carlo
 
 As you have seen in @sec-ota-simulation, running simulations by hand is tedious. When we want to check the overall
 performance, we have to run many simulations over various conditions:
@@ -68,5 +68,95 @@ The situation with the design is summarized in @tbl-voltage-buffer-spec.
 | Supply current (as low as possible)        | $<14$ | µA      |
 | Turn-on time                               | $<0.4$  | µs      |
 | Externally provided bias current (nominal) | $12.5$  | µA      |
+
+: Voltage buffer specification {#tbl-voltage-buffer-spec} -->
+
+
+# Corner Simulations for PVT and Monte-Carlo
+
+As already discussed in @sec-ota-simulation, running every simulation manually is inefficient and time-consuming.  
+To properly evaluate the OTA, the design must be verified across a wide range of conditions that influence device behavior.  
+These conditions include:
+
+1. **Supply voltage variations:**  
+   Practical power supplies do not maintain a fixed nominal value. The amplifier therefore needs to be tested across the expected voltage tolerance range.[@pretl2024]
+
+2. **Temperature variations:**  
+   Analog circuits experience significant parameter shifts across temperature. The OTA’s performance must therefore be checked over its full operating temperature range.[@pretl2024]
+
+3. **Process variations:**  
+   Due to unavoidable deviations during wafer fabrication, transistor parameters never perfectly match their ideal values.  
+   Foundries provide *corner model files* to represent these extremes.  
+   Since NMOS and PMOS devices vary independently, the typical CMOS process corners are:  
+   **SS, SF, TT, FS, and FF**.  
+   All simulations performed so far used only the **TT** corner.[@pretl2024]
+
+Together, these variations form the well-known **PVT (Process–Voltage–Temperature)** space.  
+A complete design verification requires ensuring that the OTA meets specifications across *all relevant combinations* of PVT conditions and input scenarios.  
+This quickly leads to a large number of simulations, each of which must be evaluated for pass/fail behavior.
+
+To handle this efficiently, two practical strategies exist:
+
+1. **Experience-based reduction:**  
+   A skilled analog designer can often predict which PVT combinations are most critical using analytical intuition.  
+   This allows the number of simulations to be reduced without compromising coverage.[@pretl2024]
+
+2. **Automated simulation runners:**  
+   Frameworks known as *simulation runners* automate PVT exploration. They can execute large batches of simulations, check performance against specification limits, and summarize the results.[@pretl2024]
+
+For this project, we use the open-source simulation runner **CACE**.  
+CACE is Python-based and uses a YAML “datasheet” that defines:
+
+- the operating conditions,  
+- all required analyses, and  
+- performance metrics with their limits.
+
+CACE then automatically generates the required testbenches, runs all simulations in parallel, extracts results, and compiles them into documentation.[@pretl2024]
+
+A complete CACE setup exists for our OTA.  
+The datasheet file (`../cace/foldedcascode_nmos.yaml`) defines the simulation environment, while the corresponding testbench templates are:
+
+- AC analysis: `../cace/templates/foldedcascode-nmos-ac.sch`
+- Noise analysis: `../cace/templates/foldedcascode-nmos-noise.sch`
+- Transient analysis: `../cace/templates/foldedcascode-nmos-tran.sch`
+
+After a successful run, CACE automatically generates a detailed summary of all results.  
+A portion of this summary is included below:
+
+\clearpage
+
+::: {#ota-cace-result .callout-note title="CACE Summary for OTA" collapse="true"}
+
+*netlist source*: schematic
+
+| Parameter                 | Tool    | Result  | Min Limit |      Min Value | Typ Target |      Typ Value | Max Limit |       Max Value | Status  |
+|:--------------------------|:--------|:--------|----------:|---------------:|-----------:|---------------:|----------:|----------------:|:-------:|
+| Output voltage ratio      | ngspice | gain    |  0.98 V/V |      0.996 V/V |        any |      0.999 V/V |   1.1 V/V |       1.000 V/V | Pass    |
+| Bandwidth                 | ngspice | bw      |    1e6 Hz | 5118320.000 Hz |        any | 7827360.000 Hz |       any | 13271000.000 Hz | Pass    |
+| Output voltage ratio (MC) | ngspice | gain_mc |       any |      0.671 V/V |        any |      0.996 V/V |       any |       1.502 V/V | Pass    |
+| Bandwidth (MC)            | ngspice | bw_mc   |    1e6 Hz | 1024950.000 Hz |        any | 7454465.000 Hz |       any | 91913200.000 Hz | Pass    |
+| Output noise              | ngspice | noise   |       any |       0.069 mV |        any |       0.101 mV |    0.2 mV |        0.134 mV | Pass    |
+| Settling time             | ngspice | tsettle |       any |       0.259 us |        any |       0.287 us |    1.5 us |        0.320 us | Pass    |
+:::
+
+CACE also produces Python-based plots for each PVT corner and Monte-Carlo run.  
+The full set of generated plots for our OTA is available in the repository:  
+`../cace/_docs/foldedcascode_nmos_1/foldedcascode_nmos/schematic`
+
+As an example, the figure below shows the **Noise vs. Corner** plot:
+
+::: {width=80% .figure}
+![noise_vs_corner](../figures/_fig_noise_vs_corner.png)
+:::
+
+The results of these analyses can be compared to the required voltage-buffer specifications listed in @tbl-voltage-buffer-spec.
+
+| Specification                              | OTA     | Unit    |
+|:-------------------------------------------|:-------:|:-------:|
+| Output voltage error                       | $<1$    | %       |
+| Total output noise (rms)                   | $<0.15$ | mV~rms~ |
+| Supply current (as low as possible)        | $<14$   | µA      |
+| Turn-on time                               | $<0.4$  | µs      |
+| Externally provided bias current (nominal) | $14$  | µA      |
 
 : Voltage buffer specification {#tbl-voltage-buffer-spec}

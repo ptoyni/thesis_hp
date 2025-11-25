@@ -8,6 +8,7 @@ This chapter formalizes the main parasitic mechanisms relevant to **analog ICs**
 Digital logic tolerates substantial RC and substrate coupling because functionality is determined by logic thresholds and noise margins. By contrast, **analog circuits** encode information in **amplitude, phase, and continuous bias conditions**. Small parasitic shifts in device parameters or interconnect coupling directly effects gain, offset, bandwidth, and noise.  
 
 Key vulnerabilities arise because analog circuits operate on continuous voltage and current levels, where even small parasitic interactions can shift the operating point or distort the signal.
+
 1. High-impedance nodes, such as the inputs of operational transconductance amplifiers (OTAs), are particularly sensitive because they cannot source or sink significant current. Any parasitic capacitance  whether from junction diffusion, metal-to-substrate coupling, or fringe fields from nearby interconnects  directly loads these nodes. This loading introduces unwanted poles, reduces input resistance, and increases thermal noise coupling. In precision amplifiers, such parasitic capacitances can also create signal-dependent charge storage, causing distortion or phase lag at higher frequencies.
 
 2. Bias networks and current mirrors are another vulnerable class. These circuits rely on exact matching of device characteristics and stable well or substrate potentials to maintain bias accuracy. Substrate noise or potential fluctuations, often injected from digital switching activity or supply ripple, modulate the body voltage of transistors.
@@ -25,7 +26,7 @@ Therefore, parasitics must be **anticipated and shaped** not merely checked duri
 ### Metal and Coupling Capacitances
 
 Parallel conductors form **inter-wire capacitances**; long, co-planar runs also couple substrate noise through capacitance to ground.  
-In our layout, we **avoid long same-layer parallel routing** on sensitive nets. Where proximity is unavoidable, we prefer **layer staggering** (e.g., route one net on $M_n$ and the other on $M_{n+2}$), maintain generous spacing, and, when beneficial, add **symmetric ground shields**. Orthogonal routing between adjacent layers (Manhattan style) further reduces broadside coupling as mentioned in @lienig2020.
+In our layout, we **avoid long same-layer parallel routing** on sensitive nets. Where proximity is unavoidable, we prefer **layer staggering** (e.g., route one net on $M_n$ and the other on $M_{n+2}$), maintain generous spacing, and, when beneficial, add **symmetric ground shields**. Orthogonal routing between adjacent layers (Manhattan style) further reduces broadside coupling @lienig2020.
 
 ### Via and Contact Parasitics
 
@@ -55,7 +56,7 @@ Latch-up prevention requires **breaking the feedback path** and **lowering subst
 This is achieved by surrounding all active devices with **dense guard rings** and inserting **well and substrate contacts** at regular intervals to provide low-resistance current return paths.  
 Adequate **spacing between n-wells and p-wells** reduces parasitic coupling between complementary transistors.  
 For highly sensitive analog blocks, the **deep-N-well (isolation well)** option provided in the SG13G2 process was employed. This isolation ensures that the substrate region of the analog core is electrically separated from neighboring digital or I/O structures, effectively suppressing latch-up initiation.  
-Additionally, I/O pads and high-swing nodes are placed away from precision analog circuits to minimize injection of transient substrate currents.
+Additionally, I/O pads and high-swing nodes are placed away from precision analog circuits to minimize injection of transient substrate currents @lienig2020.
 
 ### Antenna Effect
 
@@ -91,12 +92,12 @@ In differential circuits, balanced and symmetric routing ensures that any residu
 In networks involving switching (e.g., current-steering DACs or sample-and-hold circuits), **bottom-plate switching** and **complementary transistor pairs** are used to cancel charge injection. In static bias networks, minimizing gate–drain overlap and ensuring sufficient separation from high-slew-rate lines further reduces this parasitic coupling.
 
 In summary, understanding these parasitic mechanisms is essential for robust analog design. Each represents a different physical coupling path through the substrate, interconnect, or process environment and each must be addressed at layout level.  
-The preventive strategies applied in this work, derived from the IHP SG13G2 PDK rules [@IHP_PDK_2024] and the guidelines in @lienig2020, ensure that the layout not only meets design rules but also preserves **electrical integrity and long-term reliability** in fabrication and operation.
+The preventive strategies applied in this work, derived from the IHP SG13G2 PDK rules and the guidelines in @lienig2020, ensure that the layout not only meets design rules but also preserves **electrical integrity and long-term reliability** in fabrication and operation.
 
 ## Guard Rings (Local Substrate Sinks) - Saviour
 
 Guard rings are a fundamental structural element for **substrate noise suppression** and **latch-up prevention** in analog and mixed-signal IC layouts.  
-They consist of **diffusion regions tied to power rails** that form a **low-impedance sink** for substrate currents and injected minority carriers. When nearby transistors switch, charge is injected into the substrate or well regions, creating potential fluctuations that can couple into sensitive nodes. Guard rings intercept these currents and route them to a stable potential (AVDD or AVSS), thereby **reducing parasitic coupling, improving device reliability, and stabilizing substrate potentials**.
+They consist of **diffusion regions tied to power rails** that form a **low-impedance sink** for substrate currents and injected minority carriers. When nearby transistors switch, charge is injected into the substrate or well regions, creating potential fluctuations that can couple into sensitive nodes. Guard rings intercept these currents and route them to a stable potential (AVDD or AVSS), thereby **reducing parasitic coupling, improving device reliability, and stabilizing substrate potentials** @lienig2020.
 
 In physical terms, the substrate and well behave as resistive media represented by **Rsub** (substrate resistance) and **Rwell** (well resistance).  
 Both parameters define the degree of electrical isolation between neighboring devices.  
@@ -147,5 +148,5 @@ This ensures stable device behavior across temperature and process variations an
 
 ::: callout-tip
 ## Pro Tip - Parasitics Are Design Variables
-Treat coupling capacitances, substrate returns, and via resistances as **designable quantities**. Early floorplanning of isolation, ring continuity, layer assignment, and decap placement saves orders of magnitude in late-stage debugging and protects analog performance margins.
+Treat coupling capacitances, substrate returns, and via resistances as **designable quantities**. Early floorplanning of isolation, ring continuity, layer assignment, and decap placement saves orders of magnitude in late-stage debugging and protects analog performance margins @lienig2020.
 :::

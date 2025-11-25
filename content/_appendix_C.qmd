@@ -21,6 +21,8 @@ thesis_hp/
 │   ├── 1_schematics/     # (Design subfolder: Circuit schematics)
         ├── otas          # contains .sch files of otas
 │   ├── 2_layout/         # (Design subfolder: Physical layout files)
+        ├── tapeout
+            ├── final_layout_before_fillering   # final gds files
 │   └── 3_kpex/           # (Design subfolder: Extracted parasitic netlists)
 ├── Expose_HP/            
 ├── figures/              # contains all the figues for documentation
@@ -31,7 +33,7 @@ thesis_hp/
     ├── matlab            # contains matlab codes for lookup tables 
     ├── python            # sizing using pygmid tool and python scripts for sizing
     ├── xschem            # contains testbenches on mosfets to Extract data  
-                          # provided by foundry in order to use them for gm id method
+                          # provided by foundry to use them for gm id method
 ├── simulations/          # Folder for .spice files and .raw outputs
 └── postlayout_simulations/   # Post-Layout Simulation results/setup
 

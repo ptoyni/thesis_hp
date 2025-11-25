@@ -19,13 +19,13 @@ book:
           department: "School of Electrical Engineering and Computer Sciences"
     - name: "Hrishikesh Pangavhane"
       email: "hpangavhane@hs-bremen.de"
-      orcid: ""
+      orcid: "0009-0008-0089-336X"
       corresponding: true
       roles: "Lead author"
       affiliation:
         - ref: hsb
 
-  date: "28 November 2026"
+  date: "25 November 2026"
   date-format: "MMMM YYYY"
   # license: "Apache-2.0 license"
 
@@ -45,7 +45,7 @@ book:
   downloads: [pdf,epub]
 
   chapters:
-    - frontmatter/01-dedication.qmd
+    # - frontmatter/01-dedication.qmd
     - frontmatter/02-declaration.qmd
     - frontmatter/03-abstract.qmd
     - frontmatter/04-acknowledgements.qmd
@@ -83,6 +83,9 @@ book:
 bibliography: _bibliography/references.bib
 csl: _bibliography/ieee.csl
 
+number-sections: true
+highlight-style: github
+
 format:
   html:
     theme: flatly
@@ -106,9 +109,11 @@ format:
 
   pdf:
     documentclass: scrbook
-    classoption: [twoside]
-
+    classoption: [oneside]
     keep-tex: true
+
+    papersize: a4
+    fig-pos: "H"
 
     toc: true
     toc-depth: 3
@@ -119,32 +124,49 @@ format:
     number-sections: true
     number-depth: 2
         
-    papersize: a4
-    fig-pos: "H"
+    
     
     geometry:
-      - inner=3cm
-      - outer=4cm
-      - top=3cm
-      - bottom=4cm
-      - headsep=22pt
-      - headheight=11pt
-      - footskip=33pt
+      # - inner=3cm
+      # - outer=4cm
+      - top=2.5cm
+      - bottom=2.5cm
+      - left=4cm
+      - right=2.5cm
+      # - headsep=22pt
+      # - headheight=11pt
+      # - footskip=33pt
       - ignorehead
-      - ignorefoot
+      # - ignorefoot
       - heightrounded
+
+
+    hyperrefoptions: 
+      - linktoc=all
+    colorlinks: true
+    linkcolor: "blue"
+
 
     fontsize: 11pt
     pdfengine: xelatex
 
-    mainfont: "Times New Roman"
-    sansfont: "Arial"
-    monofont: "Courier New"
-    mathfont: "TeX Gyre Termes Math"
+
+    # Fonts
+    mainfont: "Latin Modern Roman"
+    # sansfont: "Arial"
+    # monofont: "Courier New"
+    # mathfont: "TeX Gyre Termes Math"
     
     include-in-header:
       - frontmatter/header.tex
-    template-partials:
-     - frontmatter/before-body.tex
-     - frontmatter/toc.tex
+
+    template-partials: []
+
+    include-before-body: 
+      - frontmatter/titlepage.tex
+
+
+    supervisors : 
+      - Prof. Dr.-Ing. M. Meiners
+      - Prof. Dr. (PHD) S. Peik  
 

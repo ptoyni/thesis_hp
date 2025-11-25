@@ -16,20 +16,23 @@ This initiative aligns with the global movement toward **democratizing IC design
 
 ## Scope of the Thesis
 
-Within this framework, the present thesis establishes the *proof of concept for the analog front-end* of the LED driver IC. The work focuses on developing, simulating, and taping-out an **operational amplifier (OTA)** using the **IHP SG13G2 PDK** and the **IIC-OSIC-TOOLS**.  
+Within this framework, the present thesis establishes the **proof of concept for the analog front-end** of the LED driver IC.  
+The work focuses on developing, simulating, and taping-out an **operational amplifier (OTA)** using the **IHP SG13G2 PDK** and the **IIC-OSIC-TOOLS**.  
 The design was submitted to the **IHP Open Multi-Project Wafer (MPW) Run in July 2025**, demonstrating a complete, fabrication-ready analog layout realized entirely with open-source tools such as **Xschem**, **Ngspice**, **KLayout**, **Klayout-PEX**, and **CACE**.
 
 ::: callout-important
 ### Technical Milestone
-The successful **tape-out of the OTA** represents one of the earliest demonstrations of the IHP SG13G2 OpenPDK using the IIC-OSIC toolchain and serves as a validation of the *open-source analog flow*.
+The successful **tape-out of the OTA** represents one of the earliest demonstrations of the SG13G2 OpenPDK using the IIC-OSIC toolchain and serves as a validation of the *open-source analog flow*.
 :::
 
 ## Motivation and Challenges
 
 The analog subsystem of an LED driver in **aircraft cabin lighting** must regulate voltages between **18 V and 32 V**, ensuring efficiency, low noise, and individual seat controllability.  
-Such power-management circuits are particularly sensitive to **layout-dependent parasitic effects**, which can degrade performance. Hence, a major emphasis of this work lies in the **DRC- and LVS-clean** design and its reliability in open-source flows.
+Such power-management circuits are particularly sensitive to **layout-dependent parasitic effects**, which can degrade performance. 
+Hence, a major emphasis of this work lies in the **DRC- and LVS-clean** design and its reliability in open-source flows.
 
 ## Methodological Contributions
 
-Beyond the circuit-level design, this research establishes a **validated analog verification workflow** under fully open conditions. The complete flow — from schematic capture, device sizing, and layout to LVS, PEX, and post-layout simulation — was developed within the *IIC-OSIC-TOOLS* environment.  
+Beyond the circuit-level design, this research establishes a **validated analog verification workflow** under fully open conditions.  
+The complete flow — from schematic capture, device sizing, and layout to LVS, PEX, and post-layout simulation — was developed within the *IIC-OSIC-TOOLS* environment.  
 Insights gained from the OTA design, including *device matching*, *guard-ring implementation*, *fill density*, and *PEX consistency*, are being integrated into improvements of the toolchain for future mixed-signal designs.
