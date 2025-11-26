@@ -72,7 +72,7 @@ The Cross Reference tab displays a side-by-side comparison between the layout an
 
 If mismatches occur, the differences are highlighted in red, showing missing devices, incorrect connections, or parameter discrepancies. These issues are further detailed in the Log tab, which provides textual summary of each error and its location in the design. This visualization enables efficient debugging by allowing the designer to inspect each net and device interactively, ensuring complete electrical equivalence before declaring the layout LVS-clean.
 
-Klayout also provides powerful **tracing functionality**, allowing designers to visually select and highlight individual devices or nets within the layout to locate mismatches precisely.  
+Klayout also provides powerful **tracing functionality**, allowing designers to visually select and highlight individual devices or nets within the layout to locate mismatches precisely. As, shown in @fig-lvs, same Netlist Browser could be used to read other layout files such as DRC report.   
 This interactive feedback significantly accelerates debugging and helps ensure that every element is electrically connected as intended.
 
 In summary, LVS is the final and most critical step in confirming that a verified, DRC-clean layout is also **electrically identical** to its schematic representation. By performing LVS through the IHP-provided Python script and analyzing results within KLayout, the design achieves both physical and electrical closure.  
