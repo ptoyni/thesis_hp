@@ -231,11 +231,25 @@ write tb_foldedcascode_nmos_tran.raw\newline
 
 
 
-![Transient Analysis Output](../figures/_fig_foldedcascode_tran_combined.svg){#fig-tran-output-xschem}
+::: {#fig-tran-output-xschem .figure}
+![](../figures/_fig_foldedcascode_tran_combined.svg)
+
+Transient Analysis Output
+:::
 
 
-![Loop Gain Setup Tian](../figures/_fig_loopgain_tian.pdf){#fig-loopgain-xschem-tian}
-![Loop Gain Setup MiddleBrook](../figures/_fig_loopgain_mb.pdf){#fig-loopgain-xschem-mb}
+::: {#fig-loopgain-xschem-tian .figure}
+![](../figures/_fig_loopgain_tian.pdf)
+
+Loop Gain Setup Tian
+:::
+
+::: {#fig-loopgain-xschem-mb .figure}
+![](../figures/_fig_loopgain_mb.pdf)
+
+Loop Gain Setup MiddleBrook
+:::
+
 The testbench setup with ngspice code is included in the schematic\newline
 `./Designs/otas/1_schematics/tb_foldedcascode_nmos_loopgain.sch`
 
