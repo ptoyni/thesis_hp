@@ -102,8 +102,8 @@ This finalized and verified, density-compliant GDS2 file represents the **manufa
 \clearpage
 
 ::: {#fig-final_layout.figure}
-![](../figures/_fig_full_chip.pdf)
+![](../figures/_fig_full_chip.pdf){height="100%"}
 
-Final Chip Layout with Bondpads, ESD Diodes and Metal Fillers around the core block before final density fillers.  
+Final NMOS-OTA Chip Layout with Bondpads, ESD Diodes and Metal Fillers around the core block before final density fillers.  
 :::
 

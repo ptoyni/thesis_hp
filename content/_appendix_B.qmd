@@ -1,6 +1,6 @@
 # FINAL CHIP LAYOUT
 
-![Final PMOS OTA after adding fillers](../figures/_fig_PMOS_with_fillers.png){#fig-pmos-png height="100%"}
-\clearpage
+
+
 ![Final PMOS OTA after adding fillers](../figures/_fig_PMOS_with_fillers.pdf){#fig-pmos height="100%"}
 
