@@ -7,8 +7,8 @@
 **CACE** — Computer-Aided Circuit Evaluation  
 **CC** — Coupling Capacitor  
 **C** — Capacitance  
-**Cgd** — Gate–Drain Capacitance  
-**Cgs** — Gate–Source Capacitance  
+**$C_{gd}$** — Gate–Drain Capacitance  
+**$C_{gs}$** — Gate–Source Capacitance  
 **CMOS** — Complementary Metal–Oxide–Semiconductor  
 **CMRR** — Common-Mode Rejection Ratio   
 
@@ -24,20 +24,20 @@
 **FS** — Fast–Slow Process Corner  
 
 **GDS / GDSII** — Graphic Data System (Final Layout Format)  
-**g_m** — Transconductance  
+**$g_m$** — Transconductance  
 
 **Hz** — Hertz  
 
 **I/O** — Input/Output  
 **IC** — Integrated Circuit  
-**I_d** — Drain Current  
+**$I_d$** — Drain Current  
 **IHP** — Innovations for High Performance Microelectronics  
 
 **LED** — Light-Emitting Diode  
 **LDO** — Low-Dropout Regulator  
 **LHS** — Left-Hand Side  
 **L** — Channel Length  
-**Lmin** — Minimum Channel Length  
+**$L_{min}$** — Minimum Channel Length  
 
 **MC** — Monte-Carlo Simulation  
 **MIM** — Metal–Insulator–Metal Capacitor  
@@ -46,8 +46,8 @@
 **MPW** — Multi-Project Wafer  
 **µm** — Micrometre (Micron)  
 
-**ng** — Number of gates
-**N_f** — Number of fingers  
+**$n_g$** — Number of gates  
+**$N_f$** — Number of fingers  
 **NMOS** — n-channel MOSFET  
 **nm** — Nanometre  
 
