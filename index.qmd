@@ -40,8 +40,7 @@
 **$L_{min}$** — Minimum Channel Length  
 
 **MC** — Monte-Carlo Simulation  
-**MIM** — Metal–Insulator–Metal Capacitor  
-**ML** — Metal Layer  
+**MIM** — Metal–Insulator–Metal Capacitor   
 **MOSFET** — Metal–Oxide–Semiconductor Field-Effect Transistor  
 **MPW** — Multi-Project Wafer  
 **µm** — Micrometre (Micron)  
@@ -67,8 +66,8 @@
 **Qt** — Qt Framework (used by KLayout GUI)  
 
 **R** — Resistance  
-**Rsub** — Substrate Resistance  
-**Rwell** — Well Resistance    
+**$R_{sub}$** — Substrate Resistance  
+**$R_{well}$** — Well Resistance    
  
 **SG13G2** — IHP 130-nm SiGe BiCMOS Technology  
 **SME** — Small and Medium-Sized Enterprise  

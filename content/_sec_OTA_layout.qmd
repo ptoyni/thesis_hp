@@ -13,12 +13,12 @@ The following subsections describe the major device-level layout techniques used
 In real silicon, device characteristics are never perfectly uniform across the die.  
 **Process gradients** arise during fabrication due to variations in temperature, pressure, and material distribution. These gradients can be visualized using concepts similar to **isobars** (lines with constant mechanical pressure) or **isotherms** (lines with same temperature), where physical properties gradually shift across the wafer surface [@lienig2020].  
 
-Such gradients directly affect threshold voltage, mobility, and oxide thickness. As a result, two transistors with identical schematic dimensions may behave differently if placed at different positions on the chip. For analog circuits like OTAs, these mismatches degrade input offset, gain, and common-mode rejection ratio (CMRR).  
+Such gradients directly affect threshold voltage, mobility, and oxide thickness. As a result, two transistors with identical schematic dimensions may behave differently if placed at different positions on the chip. For analog circuits like OTAs, these mismatches degrade input offset, gain, and common-mode rejection ratio (CMRR). In @fig-isotherm, adapted from @lienig2020 thermal gradients caused by non-uniform heat distributtion across the chip area. Best practice is to place the devices along the same isotherm.
 
 ::: {#fig-isotherm .figure .no-float}
 ![](../figures/_fig_isotherm.svg){format=html}
 ![](../figures/_fig_isotherm.pdf){format=pdf}
-Thermal gradients caused by non-uniform heat distributtion across the chip area. Best practice is to place the devices along the same isotherm. (adapted from @lienig2020) 
+ 
 :::
 
 ::: {#fig-isobar .figure .no-float}

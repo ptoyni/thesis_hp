@@ -34,8 +34,7 @@ Vias introduce **series resistance** and small fringing capacitances; unbalanced
 
 ### Junction/Overlap Capacitances
 
-Source/drain junction areas and perimeters add capacitance that **loads high-impedance nodes** and shifts poles.  
-We mitigate this by **multi-fingering** large devices (controlling diffusion area/perimeter) and by **dummy fingers** to regularize edge effects, as detailed earlier. Device segmentation is paired with **balanced routing and via symmetry** to preserve matching.
+Source/drain junction areas and perimeters add capacitance that **loads high-impedance nodes** and shifts poles. We mitigate this by **multi-fingering** large devices (controlling diffusion area/perimeter) and by **dummy fingers** to regularize edge effects, as detailed earlier. Device segmentation is paired with **balanced routing and via symmetry** to preserve matching.
 
 ## Critical Parasitics Mechanisms and Mitigation Strategies
 
@@ -44,15 +43,10 @@ The following subsections discuss the most relevant effects for analog circuits 
 
 ### Latch-Up
 
-Latch-up is a destructive parasitic phenomenon that occurs primarily in bulk CMOS and BiCMOS technologies.  
-Within the substrate and well structure, every pair of adjacent p–n junctions inherently forms **parasitic bipolar transistors** (pnp and npn).  
-When certain layout geometries or biasing conditions bring these devices into proximity, they can create an unintended path between the power rails (AVDD and AVSS). A transient event such as an electrostatic discharge, substrate noise spike, or voltage overshoot can trigger this path, producing a **low-impedance short** between supply and ground.  
-Once triggered, the latch-up state sustains itself through regenerative feedback, often leading to local thermal runaway and irreversible damage.
+Latch-up is a destructive parasitic phenomenon that occurs primarily in bulk CMOS and BiCMOS technologies. Within the substrate and well structure, every pair of adjacent p–n junctions inherently forms **parasitic bipolar transistors** (pnp and npn). When certain layout geometries or biasing conditions bring these devices into proximity, they can create an unintended path between the power rails (AVDD and AVSS). A transient event such as an electrostatic discharge, substrate noise spike, or voltage overshoot can trigger this path, producing a **low-impedance short** between supply and ground. Once triggered, the latch-up state sustains itself through regenerative feedback, often leading to local thermal runaway and irreversible damage.
 
 **Prevention:**  
-Latch-up prevention requires **breaking the feedback path** and **lowering substrate resistance**.  
-This is achieved by surrounding all active devices with **dense guard rings** and inserting **well and substrate contacts** at regular intervals to provide low-resistance current return paths.  
-Adequate **spacing between n-wells and p-wells** reduces parasitic coupling between complementary transistors if area is not an issue. For highly sensitive analog blocks, the **deep-N-well (isolation well)** option provided in the SG13G2 process was employed. This isolation ensures that the substrate region of the pmos core is electrically separated from neighboring structures, effectively suppressing latch-up initiation. Additionally, I/O pads and high-swing nodes are placed away from precision analog circuits to minimize injection of transient substrate currents @lienig2020.
+Latch-up prevention requires **breaking the feedback path** and **lowering substrate resistance**. This is achieved by surrounding all active devices with **dense guard rings** and inserting **well and substrate contacts** at regular intervals to provide low-resistance current return paths. Adequate **spacing between n-wells and p-wells** reduces parasitic coupling between complementary transistors if area is not an issue. For highly sensitive analog blocks, the **deep-N-well (isolation well)** option provided in the SG13G2 process was employed. This isolation ensures that the substrate region of the pmos core is electrically separated from neighboring structures, effectively suppressing latch-up initiation. Additionally, I/O pads and high-swing nodes are placed away from precision analog circuits to minimize injection of transient substrate currents @lienig2020.
 
 ### Antenna Effect
 
