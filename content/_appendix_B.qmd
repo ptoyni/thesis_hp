@@ -1,7 +1,7 @@
 # FINAL CHIP LAYOUT
 
-::: {#fig-pmos .figure}
-![](../figures/_fig_finalpmos.png)
+<!-- ::: {#fig-pmos .figure} -->
+<!-- ![](../figures/_fig_finalpmos.png) -->
 
-Final PMOS OTA after adding fillers.
-:::
+<!-- Final PMOS OTA after adding fillers. -->
+<!-- ::: -->
