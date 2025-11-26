@@ -8,6 +8,7 @@ After a layout has been verified for physical manufacturability through Design R
 *Layout Vs Schematic* comparison is a **netlist-based verification process**. It compares the electrical connectivity extracted from the physical layout with that defined in the schematic. During LVS, the tool first performs **netlist extraction** from the layout (parsing all transistors, polygons, capacitors, and interconnects), and then compares this extracted netlist against the schematic netlist. The goal is to verify that both represent the same electrical circuit that is, the same devices, same connections, and identical hierarchy.
 
 Typical checks performed during LVS include:  
+
 - **Device recognition**: confirming that every transistor or passive component in the layout corresponds to a schematic element.  
 - **Pin and net matching**: ensuring all connections and signal names align between the two domains.  
 - **Parameter equivalence**: verifying that critical parameters such as transistor width, length, and multiplicity match (number of fingers).  

@@ -178,7 +178,7 @@ Selecting $N_f$ is therefore an exercise in determining how narrow each finger c
 
 The following design principles guide the estimation procedure:
 
-###  **Gate Resistance Requirement (Low-Noise Criterion)**
+###  Gate Resistance Requirement (Low-Noise Criterion)
 
 As a practical thumb rule used in low-noise analog design:
 
@@ -214,7 +214,7 @@ where,
 
 In our application, Channel noise is 5 times that of Gate-resistance noise. 
 
-### **Noise Model Adjustment Based on Channel Length**
+### Noise Model Adjustment Based on Channel Length
 
 The optimization also depends on the **noise coefficient *$\gamma$*** in the MOSFET thermal noise model. The correct value of $\gamma$ depends on the channel length:
 
@@ -224,7 +224,7 @@ The optimization also depends on the **noise coefficient *$\gamma$*** in the MOS
 Because shorter-channel devices exhibit stronger velocity saturation and increased thermal noise.
 
 
-### **Minimum Geometry Constraint**
+### Minimum Geometry Constraint
 
 The number of fingers must also satisfy:
 
@@ -241,7 +241,7 @@ $$
 
 This constraint prevents unrealistic fingering.
 
-### **Even Number of Fingers (Practical Layout Consideration)**
+### Even Number of Fingers (Practical Layout Consideration)
 
 Although electrically permissible, **odd-valued finger counts** typically complicate routing and disrupt symmetry. Although in fewer cases odd numbered fingers are used as well.  
 But, a practical recommendation particularly in differential or current-mirror structures is:
@@ -254,5 +254,5 @@ To support the design methodology described above, a dedicated **Python script**
 The script implements the **thumb-rule constraints** introduced above.
 By providing required parameters, the script outputs the **minimum feasible even-valued $N_f$** that satisfies all electrical constraints. 
 
-The script can be found in *Appendix - C*.
+The detailed path for script can be found in *Appendix - C*.
 :::

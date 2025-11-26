@@ -1,4 +1,4 @@
-## Appendix A: Tapeout Submissions and Repository Links
+## Tapeout Submissions and Repository Links
 
 ### **Tapeout 1**
 This design, titled **“ledamp_ph70”**, was submitted to the *IHP Open-MPW TO_July2025* program and is available at: 

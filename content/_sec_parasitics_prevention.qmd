@@ -141,7 +141,7 @@ This ensures stable device behavior across temperature and process variations an
 
 1. **Plan isolation first.** Assign deep-N-well/guard-ring envelopes before routing.  
 2. **Route high-Z nodes last.** Keep them shortest; add shields only if you can mirror them.  
-3. **Avoid parallelism.** No long, same-layer parallels on sensitive nets; prefer Mn vs. Mn+2.  
+3. **Avoid parallelism.** No long, same-layer parallels on sensitive nets; prefer $M_n$ vs. $M_{n+2}$.  
 4. **Use via arrays.** Add redundancy and enforce symmetry across matched paths.  
 5. **Place decaps locally.** Near the most sensitive block (here, the differential pair).  
 6. **Re-run checks often.** DRC + antenna + density after small edits; extract and inspect parasitics on critical nodes early.

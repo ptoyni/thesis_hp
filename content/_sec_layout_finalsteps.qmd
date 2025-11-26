@@ -31,7 +31,7 @@ The placement of pads was also optimized to minimize parasitic capacitive coupli
 
 Two principal bonding methods exist in industry, each with distinct process and performance characteristics.
 
-### **Wire Bonding**
+### Wire Bonding
 Wire bonding uses thin gold or aluminum wires, thermosonically welded between the pad and the package lead.  
 It is widely used for low- to medium-pin-count analog ICs because:
 
@@ -42,7 +42,7 @@ It is widely used for low- to medium-pin-count analog ICs because:
 
 For this project intended for bare-die evaluation **wire bonding** was the natural choice and fully supported by the SG13G2 pad library.
 
-### **Flip-Chip Bonding**
+### Flip-Chip Bonding
 Flip-chip uses solder microbumps on the die surface, flipping the die face-down onto the substrate.  
 It offers extremely low-inductance interconnects but demands:
 
