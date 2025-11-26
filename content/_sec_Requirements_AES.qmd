@@ -19,7 +19,9 @@ driver IC, particularly in ensuring reliable performance across varying input co
 
 ## Block Diagram
 
-![Block Diagram from @wicht2020](../figures/_fig_BlockDiagram.png){#fig-block-diagram}
+![Block Diagram[@wicht2020]](../figures/_fig_BlockDiagram.png){#fig-block-diagram}
+
+\clearpage
 
 | Block                                          | Function                                              |
 |------------------------------------------------|-------------------------------------------------------|

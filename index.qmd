@@ -1,41 +1,92 @@
-<!-- \let\mainmatter\mainmatterreal
-\mainmatter -->
+# List of Abbreviations {.unnumbered .unlisted}
 
-# Introduction
+**AC** — Alternating Current  
+**AVDD** — Analog Supply Voltage  
+**AVSS** — Analog Ground
 
-In recent years, the **open-source hardware ecosystem** has matured to a point where advanced *analog* and *mixed-signal* integrated circuit (IC) design has become increasingly feasible outside proprietary EDA environments.  
-Building on this trend, the present work contributes to the **preparatory phase of a larger collaborative initiative** that aims to strengthen open-source-based chip design methodologies for small and medium-sized enterprises (SMEs), universities, and research institutes.  
+**CACE** — Computer-Aided Circuit Evaluation  
+**CC** — Coupling Capacitor  
+**C** — Capacitance  
+**Cgd** — Gate–Drain Capacitance  
+**Cgs** — Gate–Source Capacitance  
+**CMOS** — Complementary Metal–Oxide–Semiconductor  
+**CMRR** — Common-Mode Rejection Ratio   
 
-Using the design of an **LED driver IC** as a demonstrator, the overarching project seeks to **identify and close gaps** in the open-source design flow and to establish a reproducible, validated toolchain for mixed-signal system design.
+**DC** — Direct Current  
+**DFM** — Design for Manufacturability  
+**DRC** — Design Rule Check  
 
-::: callout-note
-### Project Context
-This thesis forms the **technical pre-work** of a multi-partner initiative that extends the *IIC-OSIC-TOOLS* environment with the *IHP SG13G2 OpenPDK*, enabling future open-source mixed-signal tapeouts for SMEs and universities.
-:::
+**EDA** — Electronic Design Automation  
+**EDA-OS** — Open-Source Electronic Design Automation  
+**ESD** — Electrostatic Discharge  
 
-The long-term objective of the parent project is to extend the **open-source IIC-OSIC-TOOLS** developed by *Prof. Pretl (JKU Linz)* with the **IHP OpenPDK SG13G2**, a 130 nm SiGe BiCMOS process offering analog and RF capabilities suited for power management, sensor, and communication ICs.  
-By integrating the PDK into the IIC-OSIC-TOOLS flow, the project aims to make **open-source chip design accessible for SMEs**, who have so far been restricted to board-level development due to the prohibitive cost and complexity of commercial EDA ecosystems.  
-This initiative aligns with the global movement toward **democratizing IC design**, exemplified by the formation of the *IEEE SSCS Technical Committee on Open Source Ecosystem (TC-OSE)*.
+**FF** — Fast–Fast Process Corner  
+**FS** — Fast–Slow Process Corner  
 
-## Scope of the Thesis
+**GDS / GDSII** — Graphic Data System (Final Layout Format)  
+**g_m** — Transconductance  
 
-Within this framework, the present thesis establishes the **proof of concept for the analog front-end** of the LED driver IC.  
-The work focuses on developing, simulating, and taping-out an **operational amplifier (OTA)** using the **IHP SG13G2 PDK** and the **IIC-OSIC-TOOLS**.  
-The design was submitted to the **IHP Open Multi-Project Wafer (MPW) Run in July 2025**, demonstrating a complete, fabrication-ready analog layout realized entirely with open-source tools such as **Xschem**, **Ngspice**, **KLayout**, **Klayout-PEX**, and **CACE**.
+**Hz** — Hertz  
 
-::: callout-important
-### Technical Milestone
-The successful **tape-out of the OTA** represents one of the earliest demonstrations of the SG13G2 OpenPDK using the IIC-OSIC toolchain and serves as a validation of the *open-source analog flow*.
-:::
+**I/O** — Input/Output  
+**IC** — Integrated Circuit  
+**I_d** — Drain Current  
+**IHP** — Innovations for High Performance Microelectronics  
 
-## Motivation and Challenges
+**LED** — Light-Emitting Diode  
+**LDO** — Low-Dropout Regulator  
+**LHS** — Left-Hand Side  
+**L** — Channel Length  
+**Lmin** — Minimum Channel Length  
 
-The analog subsystem of an LED driver in **aircraft cabin lighting** must regulate voltages between **18 V and 32 V**, ensuring efficiency, low noise, and individual seat controllability.  
-Such power-management circuits are particularly sensitive to **layout-dependent parasitic effects**, which can degrade performance. 
-Hence, a major emphasis of this work lies in the **DRC- and LVS-clean** design and its reliability in open-source flows.
+**MC** — Monte-Carlo Simulation  
+**MIM** — Metal–Insulator–Metal Capacitor  
+**ML** — Metal Layer  
+**MOSFET** — Metal–Oxide–Semiconductor Field-Effect Transistor  
+**MPW** — Multi-Project Wafer  
+**µm** — Micrometre (Micron)  
 
-## Methodological Contributions
+**ng** — Number of gates
+**N_f** — Number of fingers  
+**NMOS** — n-channel MOSFET  
+**nm** — Nanometre  
 
-Beyond the circuit-level design, this research establishes a **validated analog verification workflow** under fully open conditions.  
-The complete flow — from schematic capture, device sizing, and layout to LVS, PEX, and post-layout simulation — was developed within the *IIC-OSIC-TOOLS* environment.  
-Insights gained from the OTA design, including *device matching*, *guard-ring implementation*, *fill density*, and *PEX consistency*, are being integrated into improvements of the toolchain for future mixed-signal designs.
+**OTA** — Operational Transconductance Amplifier  
+
+**PAD** — Bond Pad  
+**PCB** — Printed Circuit Board  
+**Pcell** — Parameterized Cell  
+**PDK** — Process Design Kit  
+**PEX** — Parasitic Extraction  
+**PMIC** — Power Management Integrated Circuit  
+**PMOS** — p-channel MOSFET  
+**PPV** — Post-Processing Verification  
+**PSRR** — Power Supply Rejection Ratio  
+**PVT** — Process, Voltage, Temperature  
+
+**Qt** — Qt Framework (used by KLayout GUI)  
+
+**R** — Resistance  
+**Rsub** — Substrate Resistance  
+**Rwell** — Well Resistance    
+ 
+**SG13G2** — IHP 130-nm SiGe BiCMOS Technology  
+**SME** — Small and Medium-Sized Enterprise  
+**SS** — Slow–Slow Process Corner  
+**SF** — Slow–Fast Process Corner  
+**STI** — Shallow Trench Isolation  
+
+**TT** — Typical–Typical Process Corner  
+
+**UGB** — Unity-Gain Bandwidth  
+
+**V** — Volt  
+**VDS** — Drain–Source Voltage  
+**VGS** — Gate–Source Voltage  
+**$V_{IN}^{+}$** — Non-inverting Input Voltage  
+**$V_{IN}^{−}$** — Inverting Input Voltage  
+**$V_{OUT}$** — Output Voltage  
+**$V_{REF}$** — Reference Voltage  
+
+**W** — Channel Width  
+**W/L** — Width-to-Length Ratio  

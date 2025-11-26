@@ -25,7 +25,7 @@ book:
       affiliation:
         - ref: hsb
 
-  date: "25 November 2026"
+  date: "26 November 2025"
   date-format: "MMMM YYYY"
   # license: "Apache-2.0 license"
 
@@ -44,13 +44,15 @@ book:
   repo-actions: [edit,issue]
   downloads: [pdf,epub]
 
+  
+    
+    
   chapters:
-    # - frontmatter/01-dedication.qmd
     - frontmatter/02-declaration.qmd
     - frontmatter/03-abstract.qmd
     - frontmatter/04-acknowledgements.qmd
     - index.qmd
-  #  - content/_sec_introduction.qmd
+    - content/_sec_introduction.qmd
     - content/_sec_Requirements_AES.qmd
     - part: Circuit Design
       chapters:
@@ -131,8 +133,8 @@ format:
       # - outer=4cm
       - top=2.5cm
       - bottom=2.5cm
-      - left=4cm
-      - right=2.5cm
+      - left=3cm
+      - right=1.5cm
       # - headsep=22pt
       # - headheight=11pt
       # - footskip=33pt

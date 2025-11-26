@@ -94,9 +94,9 @@ Detailed python code for sizing can be found in *Appendix - C* and [here](https:
 Based on the sizing procedure in @sec-gmid-method, we are ready with all the $W/L$ ratios and able to design the
 complete OTA (see @fig-foldedcascode-xschem) 
 
-![OTA design in Xschem](../figures/_fig_foldedcascode_xschem.svg){#fig-foldedcascode-xschem}
+![OTA design in Xschem](../figures/_fig_foldedcascode_xschem.pdf){#fig-foldedcascode-xschem height="100%"}
 
-Find the schematic design [here](../Designs/otas/1_schematics/foldedcascode_nmos.sch)
+Please find the schematic design [here](../Designs/otas/1_schematics/foldedcascode_nmos.sch)`../Designs/otas/1_schematics/foldedcascode_nmos.sch`
 
 ### Discussion of the OTA Design
 
@@ -125,17 +125,128 @@ We will now do an analysis of the circuit design of the OTA including all the co
 ## Simulation of the OTA{#sec-ota-simulation}
 
 Now that circuit is ready we need to test its ac and transient behaviour as well as loop gain using Middlebrook's method
-and Tian's method as mention in @fig-ac-xschem, @fig-tran-xschem, @fig-loopgain-xschem
+and Tian's method as mention in @fig-ac-xschem, @fig-tran-xschem, @fig-loopgain-xschem-tian and @fig-loopgain-xschem-mb
 
-![AC Analysis Setup](../figures/_fig_ac.svg){#fig-ac-xschem}
+<!-- ![AC Analysis Setup](../figures/_fig_ac.svg){#fig-ac-xschem format=html}
+![AC Analysis Setup](../figures/_fig_ac.pdf){#fig-ac-xschem format=pdf} -->
+
+
+::: {#fig-ac-xschem .figure .no-float}
+![](../figures/_fig_ac.svg){format=html}
+![](../figures/_fig_ac.pdf){format=pdf}{width=100%}
+AC Analysis Setup
+:::
+ 
+
+
+
+::: callout-note 
+# ngspice code for ac analysis setup
+
+name=NGSPICE1 only_toplevel=true 
+value="
+       
+.temp 27
+.control
+option sparse
+save all
+
+***AC analysis***\newline
+op
+ac dec 101 1k 1G
+
+
+setplot ac1
+remzerovec
+
+***Measurements on AC***\newline
+meas ac dcgain MAX vmag(v_out) FROM=10 TO=10k\newline
+let f3db = dcgain/sqrt(2)\newline
+meas ac fbw WHEN vmag(v_out)=f3db FALL=1\newline
+let gainerror=(dcgain-1)/1\newline
+print dcgain\newline
+print fbw\newline
+print gainerror\newline
+
+
+plot 20*log10(v_out)\newline
+plot 180/pi*ph(v_out) vs frequency\newline
+
+
+write tb_foldedcascode_nmos_ac.raw\newline
+
+***Noise analysis***\newline
+noise v(v_out) Vin dec 101 1k 100MEG\newline
+print onoise_total\newline
+
+
+setplot noise1\newline
+
+
+write tb_foldedcascode_nmos_noise.raw\newline
+
+.endc"
+:::
 
 ![AC Analysis Output](../figures/_fig_foldedcascode_ac_bode.svg){#fig-ac-output-xschem}
 
-![Transient Analysis Setup](../figures/_fig_tran.svg){#fig-tran-xschem}
+![Transient Analysis Setup](../figures/_fig_tran.pdf){#fig-tran-xschem width=100%}
+
+The testbench setup with ngspice code is included in the schematic\newline 
+`./Designs/otas/1_schematics/tb_foldedcascode_nmos_ac.sch`
+
+::: callout-note 
+# ngspice code for transient analysis setup
+
+name=NGSPICE1\newline
+only_toplevel=true\newline
+value="\newline
+.temp 27\newline
+\newline
+.ic v(v_out)=0\newline
+.option method=gear\newline
+\newline
+.control\newline
+option sparse\newline
+save all\newline
+\newline
+tran 0.005u 15u uic\newline
+plot v_ena v_out\newline
+\newline
+* Settling time measurements\newline
+let vout_limit = 0.8*0.99\newline
+meas tran tcross WHEN v(v_out)=vout_limit\newline
+let vena_limit = 0.5*1.5\newline
+meas tran tstart WHEN v(v_ena)=vena_limit\newline
+let tsettle = tcross - tstart\newline
+print tsettle\newline
+\newline
+remzerovec\newline
+write tb_foldedcascode_nmos_tran.raw\newline
+\newline
+.endc\newline
+"\newline
+
+:::
+
+
 
 ![Transient Analysis Output](../figures/_fig_foldedcascode_tran_combined.svg){#fig-tran-output-xschem}
 
-![Loop Gain Setup](../figures/_fig_loopgain.svg){#fig-loopgain-xschem}
+
+![Loop Gain Setup Tian](../figures/_fig_loopgain_tian.pdf){#fig-loopgain-xschem-tian}
+![Loop Gain Setup MiddleBrook](../figures/_fig_loopgain_mb.pdf){#fig-loopgain-xschem-mb}
+The testbench setup with ngspice code is included in the schematic\newline
+`./Designs/otas/1_schematics/tb_foldedcascode_nmos_loopgain.sch`
+
+
+
+
+
+
+
+
+
 
 The loop gain analysis yeilds the following plots which clarifies that our specifications such as gain and phase margin
 are met successfully. See @fig-loopgain-magnitude and @fig-loopgain-phase

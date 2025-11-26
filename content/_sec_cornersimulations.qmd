@@ -123,7 +123,6 @@ The datasheet file (`../cace/foldedcascode_nmos.yaml`) defines the simulation en
 After a successful run, CACE automatically generates a detailed summary of all results.  
 A portion of this summary is included below:
 
-\clearpage
 
 ::: {#ota-cace-result .callout-note title="CACE Summary for OTA" collapse="true"}
 
