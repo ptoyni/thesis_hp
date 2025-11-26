@@ -81,8 +81,8 @@
 **UGB** — Unity-Gain Bandwidth  
 
 **V** — Volt  
-**VDS** — Drain–Source Voltage  
-**VGS** — Gate–Source Voltage  
+**$V_{DS}$** — Drain–Source Voltage  
+**$V_{GS}$** — Gate–Source Voltage  
 **$V_{IN}^{+}$** — Non-inverting Input Voltage  
 **$V_{IN}^{−}$** — Inverting Input Voltage  
 **$V_{OUT}$** — Output Voltage  

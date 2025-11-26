@@ -1,7 +1,6 @@
 # Final Layout Steps - Bonding, Seal Ring, and Pad-Frame Integration
 
-After completing device-level layout, parasitic-aware routing, and full DRC/LVS verification, the final stage of physical design is the construction of the **pad frame** and the **seal ring**.  
-These structures are the physical interface between the silicon die and the outside world. Although electrically simple, they are mechanically and parasitically critical, as they determine whether the fabricated chip can be safely diced, bonded, packaged, and measured.   
+After completing device-level layout, parasitic-aware routing, and full DRC/LVS verification, the final stage of physical design is the construction of the **pad frame** and the **seal ring**. These structures are the physical interface between the silicon die and the outside world. Although electrically simple, they are mechanically and parasitically critical, as they determine whether the fabricated chip can be safely diced, bonded, packaged, and measured.   
 In the SG13G2 process, the IHP-PDK provides a fully parameterized library of PCells for bond pads, ESD structures, and seal rings, which we used and adapted for our layout.
 
 
@@ -20,8 +19,7 @@ For this work, we instantiated and customized the provided seal ring PCell and p
 
 ##  Bond Pads and External Interfacing
 
-Bond pads form the electrical interface between the on-chip metal layers and the external package or measurement environment.  
-Each pad is a large, top-metal landing area with a passivation opening, designed to withstand mechanical bonding forces while maintaining low series resistance.  
+Bond pads form the electrical interface between the on-chip metal layers and the external package or measurement environment. Each pad is a large, top-metal landing area with a passivation opening, designed to withstand mechanical bonding forces while maintaining low series resistance.  
 To minimize parasitic disturbance, each functional bond pad was further **surrounded by a dummy pad frame**; a ring of electrically inactive pads. These dummy pads act as protective buffers: if parasitic displacement currents or surface leakage occur near the die edge, they discharge into the dummy pads rather than coupling into the functional I/O pads. This arrangement reduces the susceptibility of the pad ring to noise and preserves the integrity of the sensitive analog connections.[@Prof_Razavi_2011]
 
 The placement of pads was also optimized to minimize parasitic capacitive coupling to the underlying analog core. Pads were spaced to avoid long parallel overlaps with internal routing, and their distribution was balanced to avoid asymmetries in substrate stress and top-metal loading.[@lienig2020]
@@ -56,8 +54,7 @@ These requirements go beyond the scope of this prototype analog OTA; therefore, 
 
 ##  Pad Geometry: Orthogonal vs. Square Pads
 
-Bond pad geometry influences both mechanical reliability and parasitic loading.  
-Classical square pads are straightforward but can concentrate mechanical stress at their sharp corners during bonding. To mitigate this, the SG13G2 PDK also offers **orthogonal (octagonal) pads**, which soften corner transitions and distribute force more evenly across the pad boundary.[@lienig2020]  
+Bond pad geometry influences both mechanical reliability and parasitic loading. @lienig2020 mentions classical square pads are straightforward but can concentrate mechanical stress at their sharp corners during bonding. To mitigate this, the SG13G2 PDK also offers **orthogonal (octagonal) pads**, which soften corner transitions and distribute force more evenly across the pad boundary.
 They inherently reduce the tendency for:
 
 - metal delamination,  
