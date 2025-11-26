@@ -132,9 +132,9 @@ and Tian's method as mention in @fig-ac-xschem, @fig-tran-xschem, @fig-loopgain-
 
 
 ::: {#fig-ac-xschem .figure .no-float}
-![](../figures/_fig_ac.svg){format=html}
-![](../figures/_fig_ac.pdf){format=pdf}{width=100%}
-AC Analysis Setup
+![AC Analysis Setup](../figures/_fig_ac.svg){format=html}
+![AC Analysis Setup](../figures/_fig_ac.pdf){format=pdf}{width=100%}
+
 :::
  
 
