@@ -1,0 +1,8 @@
+% Remove default blank pages for chapters
+\KOMAoptions{open=any}
+
+% Reduce spacing before/after chapter titles
+\RedeclareSectionCommand[
+  beforeskip=-1ex plus -1ex minus -1ex,
+  afterskip=2ex plus 1ex minus 1ex
+]{chapter}
