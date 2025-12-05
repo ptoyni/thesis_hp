@@ -1,4 +1,5 @@
 % Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode,linktoc=all}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
@@ -7,22 +8,24 @@
   11pt,
   a4paper,
   oneside]{scrbook}
-
+\usepackage{xcolor}
+\usepackage[top=2.5cm,bottom=2.5cm,left=3cm,right=1.5cm,ignorehead,heightrounded]{geometry}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{2}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 \usepackage{lmodern}
-\ifPDFTeX\else  
-    % xetex/luatex font selection
-    \setmainfont[]{Latin Modern Roman}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Latin Modern Roman}
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -40,10 +43,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
-\usepackage[top=2.5cm,bottom=2.5cm,left=3cm,right=1.5cm,ignorehead,heightrounded]{geometry}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{2}
 % Make \paragraph and \subparagraph free-standing
 \makeatletter
 \ifx\paragraph\undefined\else
@@ -75,40 +74,39 @@
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
 % Add ',fontsize=\small' for more characters per line
 \newenvironment{Shaded}{}{}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.33,0.33}{\textbf{#1}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
-\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.33,0.33}{\underline{#1}}}
-\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{\textbf{#1}}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.44,0.26,0.76}{#1}}
-\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
-\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.14,0.16,0.18}{#1}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.14,0.16,0.18}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.44,0.26,0.76}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
-\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.89,0.38,0.04}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{1.00,0.33,0.33}{#1}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
 
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -133,6 +131,8 @@
 % Set default figure placement to htbp
 \def\fps@figure{htbp}
 \makeatother
+
+
 % definitions for citeproc citations
 \NewDocumentCommand\citeproctext{}{}
 \NewDocumentCommand\citeproc{mm}{%
@@ -166,6 +166,18 @@
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
 
 % ---------- PROFESSOR'S HEADER (KEEP THIS) ----------
 \addtokomafont{disposition}{\rmfamily}
@@ -259,11 +271,9 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
-
 \usepackage{bookmark}
-
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS},
   pdfauthor={Priyanka Toyni; Hrishikesh Pangavhane},
@@ -279,7 +289,6 @@
 block for LED driver control using IHP-Open-PDK and IIC-OSIC-TOOLS}
 \author{Priyanka Toyni \and Hrishikesh Pangavhane}
 \date{November 2025}
-
 \begin{document}
 \frontmatter
 \maketitle
@@ -628,7 +637,7 @@ overarching project seeks to \textbf{identify and close gaps} in the
 open-source design flow and to establish a reproducible, validated
 toolchain for mixed-signal system design.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Project Context}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Project Context}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 This thesis forms the \textbf{technical pre-work} of a multi-partner
 initiative that extends the \emph{IIC-OSIC-TOOLS} environment with the
@@ -663,7 +672,7 @@ analog layout realized entirely with open-source tools such as
 \textbf{Xschem}, \textbf{Ngspice}, \textbf{KLayout},
 \textbf{Klayout-PEX}, and \textbf{CACE}.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-important-color!10!white, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Technical Milestone}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-important-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, rightrule=.15mm, colframe=quarto-callout-important-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Technical Milestone}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 The successful \textbf{tape-out of the OTA} represents one of the
 earliest demonstrations of the SG13G2 OpenPDK using the IIC-OSIC
@@ -858,7 +867,7 @@ As shown in the Figure~\ref{fig-foldedcascode-diagram}, \(M_1\) and
 \(M_2\) are the input differential pair mosfets with \(M_5,_6\) and
 \(M_7,_8\) as their cascoded mosfets.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-important-color!10!white, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Cascode Bias Voltage Generation}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-important-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, rightrule=.15mm, colframe=quarto-callout-important-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Cascode Bias Voltage Generation}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 It is critically import for a stable performance across PVT that the
 bias voltages for the cascode gates are created in a manner that tracks
@@ -905,7 +914,7 @@ Following is the python notebook designed for the sizing of
 Foldedcascode OTA with nmos differential input pair using \(g_{m}\) over
 \(I_d\) method.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{OTA Sizing}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{OTA Sizing}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 Detailed python code for sizing can be found in \emph{Appendix - C} and
 \href{https://github.com/ptoyni/thesis_hp/tree/main/sizing/python}{here}
@@ -993,7 +1002,7 @@ Figure~\ref{fig-loopgain-xschem-mb}
 
 \end{figure}%
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{ngspice code for ac analysis setup}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{ngspice code for ac analysis setup}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 name=NGSPICE1 only\_toplevel=true value=''
 
@@ -1053,7 +1062,7 @@ The testbench setup with ngspice code is included in the
 schematic\newline 
 \texttt{./Designs/otas/1\_schematics/tb\_foldedcascode\_nmos\_ac.sch}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{ngspice code for transient analysis setup}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{ngspice code for transient analysis setup}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 name=NGSPICE1\newline only\_toplevel=true\newline value=``\newline .temp
 27\newline \newline .ic v(v\_out)=0\newline .option method=gear\newline
@@ -1238,7 +1247,7 @@ After a successful run, CACE automatically generates a detailed summary
 of all results.\\
 A portion of this summary is included below:
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{CACE Summary for OTA}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{CACE Summary for OTA}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 \emph{netlist source}: schematic
 
@@ -1381,7 +1390,7 @@ reproducible way.
 For further details, see the \href{https://www.klayout.de/}{KLayout
 website}.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Using KLayout: Docker vs.~Source Build}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Using KLayout: Docker vs.~Source Build}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 Our layout work was carried out using \textbf{KLayout v0.30.1}, provided
 within the \textbf{IIC-OSIC Docker image}. Since this image is a
@@ -1566,7 +1575,7 @@ while \textbf{common-centroid arrangements} may be used for further
 gradient cancellation. This combined approach was applied in our OTA's
 diffpair, ensuring both parasitic reduction and high matching fidelity.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{How to calculate minimum number of fingers}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{How to calculate minimum number of fingers}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 Determining the appropriate number of fingers for a wide MOSFET is not
 arbitrary; it requires balancing several parasitic and physical effects.
@@ -1615,7 +1624,7 @@ In our OTA, Dummy devices were placed at the edges of all the MOSFET's.
 This ensured that all transistors within the OTA operated in
 well-matched environments, minimizing systematic offset.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-important-color!10!white, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important Implementation Note}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-important-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, rightrule=.15mm, colframe=quarto-callout-important-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important Implementation Note}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 In our OTA layout, dummy devices were implemented as \textbf{complete
 MOSFETs} with their gates explicitly tied to \textbf{AVDD} or
@@ -1942,7 +1951,7 @@ satisfies the electrical and geometrical constraints. Even segmentation
 simplifies mirrored routing, centroid or interdigitated arrangements,
 and guard ring alignment.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Number of fingers Calculation using Python Script}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Number of fingers Calculation using Python Script}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 To support the design methodology described above, a dedicated
 \textbf{Python script} has been developed to automatically compute the
@@ -2201,7 +2210,7 @@ their respective layer categories.
 
 This is the automation script used for processing DRC results:
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Script}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Script}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 DRC Errors Check
 
@@ -2263,7 +2272,7 @@ script will generate a concise summary of the errors that remain to be
 corrected manually in the layout. This script could also be found in
 \emph{Appendix - C}.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Pro Tip Run DRC Early and Often}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Pro Tip Run DRC Early and Often}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 It is strongly recommended to run DRC checks \textbf{after every 5--6
 layout modifications}, even for small routing or placement changes. This
@@ -2345,7 +2354,7 @@ operate within the Dockerized KLayout interface, LVS must be performed
 \textbf{externally in the Docker terminal} using a \emph{Python script
 provided by the IHP PDK}.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{LVS Script}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{LVS Script}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 The LVS verification script provided with the \textbf{IHP SG13G2 PDK}
 can be found at:
@@ -2388,7 +2397,7 @@ files, typically including:
   files, tool version and error if encountered
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Important Naming Consistency}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Important Naming Consistency}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 For LVS to run successfully, the \textbf{schematic name}, \textbf{GDS
 file name}, \textbf{SPICE netlist name}, and the \textbf{top-cell name}
@@ -2825,7 +2834,7 @@ Work}\label{block-level-practices-implemented-in-this-work}
   edits; extract and inspect parasitics on critical nodes early.
 \end{enumerate}
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Pro Tip - Parasitics Are Design Variables}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Pro Tip - Parasitics Are Design Variables}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 Treat coupling capacitances, substrate returns, and via resistances as
 \textbf{designable quantities}. Early floorplanning of isolation, ring
@@ -3110,7 +3119,7 @@ Figure~\ref{fig-include}
 
 Once the file is declared, we can run the testbench.
 
-\begin{tcolorbox}[enhanced jigsaw, titlerule=0mm, bottomrule=.15mm, arc=.35mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-important-color!10!white, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Correct pin order}, coltitle=black, opacityback=0, leftrule=.75mm, left=2mm, colback=white, toptitle=1mm, breakable, bottomtitle=1mm, colframe=quarto-callout-important-color-frame, rightrule=.15mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, colback=white, left=2mm, toprule=.15mm, arc=.35mm, coltitle=black, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, rightrule=.15mm, colframe=quarto-callout-important-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Correct pin order}, toptitle=1mm, bottomtitle=1mm, bottomrule=.15mm, opacitybacktitle=0.6]
 
 It is critically important to match the order of pins and their names.
 The pin order and names in the \texttt{.cir} files need to be exact same

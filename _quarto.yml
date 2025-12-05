@@ -7,7 +7,7 @@ book:
   author:
     - name: "Priyanka Toyni"
       email: "ptoyni@hs-bremen.de"
-      orcid: ""
+      orcid: "0009-0007-6435-4990"
       corresponding: true
       roles: "Lead author"
       affiliation:
@@ -86,7 +86,7 @@ bibliography: _bibliography/references.bib
 csl: _bibliography/ieee.csl
 
 number-sections: true
-highlight-style: github
+highlight-style: pygments
 
 format:
   html:
