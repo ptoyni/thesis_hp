@@ -10,6 +10,7 @@
 
 \usepackage{multicol}
 \usepackage{graphicx}
+\usepackage{svg}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \usepackage{blindtext}
 \usepackage[absolute]{textpos}
@@ -68,208 +69,130 @@ The results demonstrate that a fully open-source toolchain, combined with an ind
 \end{abstract}
 %
 %=======================================================================================================
-\section{Systemübersicht}\label{sec:ubersicht}
-\begin{figure}[H]
+
+
+% -----------------------------------------------------------------------------
+
+\section{Motivation \& Scope}\label{sec:ubersicht}
+
+\textbf{Industry-Grade Analog Tape-Out Using Open-Source EDA}
+
+Analog IC development in industry is defined by strict timelines, verified
+design flows, and manufacturable silicon. This work follows the same
+constraints. Using the IHP SG13G2 130\,nm SiGe BiCMOS process, a complete
+analog design flow was executed—from schematic and layout to verification
+and fabrication—entirely with open-source EDA tools.
+
+The objective was not to propose a new methodology, but to prove feasibility
+under realistic industrial conditions. Two independent analog designs were
+completed, verified, and submitted within a standard MPW schedule, resulting
+in successful tape-out and fabrication. The results demonstrate that
+open-source EDA can satisfy industrial requirements for analog IC design,
+verification, and delivery.
+
+% -----------------------------------------------------------------------------
+
+
+\section{Design and Fabrication Context}
+
+The analog blocks were designed and fabricated using the IHP SG13G2
+130\,nm SiGe BiCMOS technology, selected for its industrial relevance,
+robust device models, and availability as an open PDK. The complete
+design flow was executed using the open-source IIC-OSIC-TOOLS toolchain,
+covering schematic capture, simulation, layout, parasitic extraction,
+and verification.
+
+Both designs followed a standard industry-style MPW schedule and were
+submitted to the IHP Open MPW run of July~2025. All verification steps,
+including DRC, LVS, and post-layout simulation, were completed prior to
+submission. The flow and timeline were aligned with industrial analog IC
+development practices.
+
+% -----------------------------------------------------------------------------
+
+\section{Analog Block Architecture}
+
+The target circuit is a folded-cascode operational transconductance
+amplifier (OTA), selected as a representative analog building block for
+LED driver control applications. The topology offers high intrinsic gain,
+good output swing, and robust biasing characteristics, making it suitable
+for integration in mixed-signal power management systems.
+
+Two functionally equivalent implementations were realized: an NMOS
+folded-cascode variant and a PMOS folded-cascode variant. This enabled a
+direct comparison of device-level trade-offs and layout complexity within
+the same technology node and verification flow. Both designs were
+dimensioned for stable operation under post-layout parasitics and
+industrial operating conditions.
+
+\begin{figure}
 \centering
-\includegraphics[width=.7\textwidth]{../figures/system.pdf}
-\caption{Systemübersicht}
-\label{fig:system}
+\includesvg[width=0.85\linewidth]{../figures/_fig_foldedcascode_diagram.svg}
+\caption{Folded-cascode OTA topology implemented in NMOS and PMOS variants.}
+\label{fig:foldedcascode}
 \end{figure}
 
-\section{Dekodierung}
+% \vspace{-1cm}
 
-\subsection{FPGA Cyclone V}
+% -----------------------------------------------------------------------------
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=.6]{../figures/Schema.pdf}
-\caption{Schema realisierte Funktion Cyclon V Gruppe}
-\label{CycloneV}
-\end{figure}
-\vspace{-1cm}
+\section{Dual Tape-Out Strategy and Role Separation}
 
-Die vorhandenen ICs auf dem Entwicklungsboard \textquote{Cyclone V GX
-  Starter Kit} und ein mitgeliefertes Basisprogramm wurden hier verwendet. 
-Dabei konnten mithilfe des Audio-Codec \textquote{SSM2601} digitale Wave-Dateien
-von einer SD-Karte gelesen und in ein analoges Signal umgewandelt
-werden. Die Ausgabe des Analogsignals und der PCM-Rohdaten wurden in
-Verilog realisiert. Abbildung \ref{CycloneV} zeigt schematisch die
-realisierte Funktion der Cyclone V Gruppe, woraus zu erkennen ist,
-dass die PCM Signale abgegriffen und als Ausgangssignale an die GPIO's
-und den Audio-Codec gegeben werden. 
+To evaluate the robustness of the open-source design flow under realistic
+conditions, two independent tape-outs were executed within the same MPW
+cycle. The first tape-out implemented an NMOS folded-cascode OTA, while
+the second implemented a PMOS folded-cascode OTA, both using identical
+verification and submission procedures.
 
+To reflect industrial team structures, the authors deliberately separated
+responsibilities between design and layout. In the first tape-out, one
+author served as circuit designer while the other was responsible for
+layout and verification; these roles were reversed for the second tape-out.
+This approach enabled an unbiased assessment of workflow handover,
+toolchain usability, and verification effort.
 
-\subsection{FPGA Cyclone IV}
+The dual tape-out strategy exposed practical bottlenecks and validated the
+repeatability of the open-source flow, demonstrating that independent
+analog designs can be delivered within an industry-style MPW timeline.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=.6\textwidth]{../figures/cyclone_IV.pdf}
-\caption{Schema Cyclon IV Gruppe}
-\label{Cyclone IV}
-\end{figure}
-\vspace{-1cm}
+% -----------------------------------------------------------------------------
 
-Das erste Modell ist ein Clock-Teiler, welches die externe 50
-MHz-Clock des DE0-nano Boards an das WordSelect-Signal anpasst. Das
-Word Select Modell wandelt den vom Raspberry Pi 3 gelieferten Bitstrom
-in ein 16 Bit Wort um, welches anschließend im Sigma-Delta-Modulator
-verarbeitet wird. Dieser wandelt das 16 Bit Datenwort in ein PWM
-Signal um und gibt dieses an einem Pin aus. Dieser Pin wird mit dem
-nachfolgenden Tiefpass verbunden und die abfallende Spannung an diesem
-an den analogen Class AB-Verstärker weitergeleitet. 
+\section{Layout, Verification, and Post-Layout Validation}
 
+Both OTA variants were fully laid out following analog layout best
+practices, including device matching, symmetry, and substrate isolation.
+Guard rings and well-defined supply routing were applied to ensure robust
+operation under mixed-signal conditions.
 
-\subsection{FPGA Spartan 6}
+Design rule checking (DRC) and layout-versus-schematic (LVS) verification
+were completed successfully for both designs. Parasitic extraction (PEX)
+was performed, and the extracted netlists were used for post-layout
+simulation. The post-layout results showed predictable behavior relative
+to pre-layout simulations, confirming that the open-source flow supports
+reliable parasitic-aware analog design.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=.95\textwidth]{../figures/PRJ2_Blockschaltbild.png}
-\caption{Schema Spartan 6 Gruppe}
-\label{Spartan 6}
-\end{figure}
-\vspace{-1cm}
+% -----------------------------------------------------------------------------
 
-Abb. \ref{Spartan 6} veranschaulicht die Signalverarbeitungskette
-des FPGAs. Als Signalquelle dient ein Raspberry Pi 3, welcher eine
-Musikdatei abspielt. Das empfangende Schieberegister SREG wandelt die
-serielle Datenleitung in ein paralleles Datenwort mit einer Breite von
-16 Bit. Dieses Datenwort ist der Abtastwert des analogen Musiksignals
-und wird anschließend von einem Sigma-Delta Modulator 2.\ Ordnung in
-einen hochfrequenten Bitstream umgewandelt. Der Bitstream weist
-bereits das richtige Puls-Pausen Verhältnis auf, ist jedoch in der
-Frequenz variabel. Daher wird ein eigens entwickelter Wandler
-dazugeschaltet, welcher die Frequenz für den nachfolgenden Klasse D
-Verstärker stabilisiert. 
+\section{Results and Key Takeaways}
 
-\section{Hardware Entwurf}
+Both analog designs were successfully verified and fabricated through the
+IHP Open MPW program, demonstrating that a fully open-source EDA flow can
+support industry-grade analog IC development. The results confirm that
+complex analog blocks can be designed, verified, and delivered within a
+standard MPW timeline without reliance on proprietary tools.
 
-\subsection{Klasse A/B Monoblock Links}
-
-Das System wurde mit Hilfe von LTSpice dimensioniert und
-analysiert. Der Verstarker ist für einen Monokanal ausgelegt und
-arbeitet in einem Frequenzbereich von \SI{20}{Hz} bis \SI{20}{kHz}. 
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=.5\textwidth]{../figures/ABL_Aufbau.png}
-\caption{Aufbau Monoblock Links}
-\label{ABL Aufbau}
-\end{figure}
-\vspace{-1cm}
-
-Diese Endstufe ist monophon und sie wird durch eine selbstgebaute
-Platine realisiert. Q1 und Q2 Bilden den Verstärker, der die Differenz
-zwischen Ausgang und Eingang an die Widerstande weiter gibt. Die
-Transitoren Q7 und Q8 dienen als Konstantstromquelle, R13 und C2
-bilden einen Tiefpassfilter. Q4 und Q12 bilden den zweiten
-Differenzverstärker, der die Spannungverstärkung einstellt. R18 und
-R20 reduzieren und linearisieren die Verstärkung. Die Kondensatoren
-C3, C4, C7 und C14 sind für die Stabilisierung der Gegenkopplung
-verantwortlich. Die in Stufe 2 erzeugte Spannung erfährt eine
-Stromverstärkung durch eine Darlington-Schaltung. 
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{../figures/ABL_schematic.png}
-\caption{Schaltplan der Klasse A/B Endstufe Links}
-\label{ABL schematic}
-\end{figure}
+This work validates the repeatability and practical usability of open-source
+EDA for analog and mixed-signal design and provides a proven reference
+flow for academic groups, SMEs, and early-stage industrial teams targeting
+real silicon fabrication.
 
 
-\subsection{Klasse A/B Monoblock Rechts}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=.6\textwidth]{../figures/MonoblockRechts/IMG1972.jpg}
-\caption{Aufbau der Klasse A/B Endstufe Rechts}
-\label{mono_rechts_aufbau}
-\end{figure}
-\vspace{-1cm}
 
-Der Verstärker besteht aus vier Stufen. In der Ersten wird das
-Eingangssignal mittels eines Differenzverstärkers und einer
-Konstantstromquelle vorverstärkt. Im zweiten Block wird das Signal
-zusätzlich verstärkt und an den dritten Block weitergegeben. Zudem
-sorgt ein Stromspiegel dafür, dass gleich viel Strom aus dem positiven
-und dem negativen Bereich in den dritten Block fließen. Der dritte
-Block besteht aus dem Leistungsverstärker und einer
-Arbeitspunkteinstellung. Diese ermöglicht die Justierung der
-Vorspannung der Transistoren. Hier werden die Transistoren in den für
-den AB-Verstärker typischen Push-Pull-Betrieb versetzt. 
-Der finale vierte Block ist ein AB-Verstärker, welcher an einem
-Tiefpass angeschlossen ist. 
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{../figures/ABR_schematic.png}
-\caption{Schaltplan der Class A/B Endstufe Rechts}
-\label{ABR schematic}
-\end{figure}
 
-\subsection{Klasse D Monoblock}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.9\textwidth]{../figures/ClassD_schematic.png}
-  \caption{Schaltplan des Class D Verstärkers}
-  \label{Class D schematic}
-\end{figure}
-\vspace{-1cm}
 
-Zur Realisierung des Klasse D Monoblocks wurde ein Verstärker mit einer
-Vollbrückenschaltung, bestehend aus zwei Gatetreibern und 4
-Leistungstransistoren, aufgebaut. Die Filterung wird durch zwei
-LC-Tiefpassfilter vorgenommen, die gleichzeitig aus einem PWM-Signal
-ein stetiges Signal am Ausgang erzeugen.  
-Dazu wurde ein LTSpice-Modell entworfen und die Schaltung
-simuliert. Mit Hilfe von EAGLE wurde ein Platinenlayout entworfen und
-die Platine geätzt und bestückt. 
-
-\section{Messtechnik}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.9\textwidth]{../figures/mess.pdf}
-  \caption{Schemata Messtechnik}
-  \label{mess}
-\end{figure}
-\vspace{-1cm}
-
-Ziel der Messtechnik-Gruppe war die ferngesteuerte Messwertaufnahme
-mithilfe eines RedPitaya STEMlab-Boards. Es wurden zwei verschiedene
-Ansätze untersucht: Die Messwertaufnahme über einen SCPI-Server direkt
-in MATLAB und die Datenaufnahme mit GNURadio. Für den ersten Ansatz
-kann der RedPitaya mittels MATLAB-Skript und den zugehörigen
-SCPI-Befehlen ferngesteuert werden. Dabei stellte sich heraus, dass
-die Puffergröße über den SCPI-Server auf 16k Werte limitiert
-ist. Folglich dauert die Befehlsumsetzung von MATLAB zum SCPI-Server
-einige Millisekunden, sodass eine Echtzeit-Verkettung nicht möglich
-ist. Für den zweiten Ansatz wurde ein RedPitaya Image von Pavel Denim
-als Alternative gewählt, mit dem das FPGA als SDR Transceiver
-konfiguriert wird. Dies ermöglichte Sampleraten von bis zu 2500
-kS/s. Mit GNURadio lässt sich das Eingangssignal über die PC-Boxen
-ausgeben, abspeichern und ebenfalls in Echtzeit im Zeit- und
-Frequenzbereich anzeigen. 
-%#######################################################################################################
-%=======================================================================================================
-\section{Dokumentation}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=.5\textwidth]{../figures/app.png}
-\caption{App zur Schnittstellenkontrolle}
-\end{figure}
-\vspace{-1cm}
-
-Neben der Pflege des Blogs der Projektgruppen lag es an der Doku
-Gruppe, eine Kompatibilität der Schnittstellen sicherzustellen. Um
-dies zu bewerkstelligen, wurde eine \textquote{Object PASCAL} basierte
-Controlling App entwickelt. Die Kernfunktion dieser App ist die
-automatisierte Auswertung der eingepflegten Daten der
-Projektteams. Konflikte von Daten- und Steckertypen werden in der
-Systemübersicht rot markiert. Darüber hinaus bietet die App das
-Generieren einer druckbaren Zusammenfassung der eingepflegten
-Gruppendaten, womit jederzeit der aktuelle Stand des Projektes
-abgefragt werden konnte. 
 
 %=======================================================================================================
 

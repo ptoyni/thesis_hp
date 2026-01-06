@@ -40,7 +40,7 @@ N 1490 -350 1500 -350 {lab=v_ss}
 C {devices/vsource.sym} 1020 -160 0 0 {name=Vss value=0}
 C {devices/gnd.sym} 1020 -110 0 0 {name=l1 lab=GND}
 C {lab_pin.sym} 1020 -210 0 0 {name=p1 sig_type=std_logic lab=v_ss}
-C {devices/vsource.sym} 870 -180 0 0 {name=Vdd value=1.55}
+C {devices/vsource.sym} 870 -180 0 0 {name=Vdd value=1.5}
 C {devices/gnd.sym} 870 -130 0 0 {name=l3 lab=GND}
 C {lab_pin.sym} 870 -220 0 0 {name=p2 sig_type=std_logic lab=v_dd}
 C {devices/vsource.sym} 1120 -320 0 0 {name=Vin value="dc 0.7 ac 1"}

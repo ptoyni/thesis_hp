@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.7 file_version=1.2}
 G {}
 K {}
 V {}
@@ -90,7 +90,7 @@ value="
 .lib cornerMOSlv.lib mos_CACE\{corner_mos\}
 .lib cornerMOShv.lib mos_CACE\{corner_mos\}
 "}
-C {foldedcascode_nmos.sym} 1500 -700 0 0 {name=x1}
 C {vsource.sym} 1440 -450 0 0 {name=Venable value="dc 0 pwl(0 0 1u 0 1.1u CACE\{vdd\})" savecurrent=false}
 C {spice_probe.sym} 1440 -480 0 0 {name=p7 attrs=""}
 C {lab_wire.sym} 1440 -550 0 1 {name=p8 sig_type=std_logic lab=v_ena}
+C {/foss/designs/thesis/thesis_hp/Designs/otas/1_schematics/foldedcascode_nmos.sym} 1500 -700 0 0 {name=x1}
