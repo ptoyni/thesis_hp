@@ -1,4 +1,6 @@
-# List of Abbreviations {.unnumbered .unlisted}
+# Introduction
+
+<!-- # List of Abbreviations {.unnumbered .unlisted}
 
 **AC** — Alternating Current  
 **AVDD** — Analog Supply Voltage  
@@ -88,4 +90,8 @@
 **$V_{REF}$** — Reference Voltage  
 
 **W** — Channel Width  
-**W/L** — Width-to-Length Ratio  
+**W/L** — Width-to-Length Ratio   -->
+
+
+
+{{< include ./content/_sec_introduction.qmd >}}

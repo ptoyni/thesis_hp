@@ -1,38 +1,104 @@
-# Introduction
+<!-- # Introduction -->
 
-In recent years, the **open-source hardware ecosystem** has matured to a point where advanced *analog* and *mixed-signal* integrated circuit (IC) design has become increasingly feasible outside proprietary EDA environments.  
+<!-- In recent years, the **open-source hardware ecosystem** has matured to a point where advanced *analog* and *mixed-signal* integrated circuit (IC) design has become increasingly feasible outside proprietary EDA environments.  
 Building on this trend, the present work contributes to the **preparatory phase of a larger collaborative initiative** that aims to strengthen open-source-based chip design methodologies for small and medium-sized enterprises (SMEs), universities, and research institutes.  
 
-Using the design of an **LED driver IC** as a demonstrator, the overarching project seeks to **identify and close gaps** in the open-source design flow and to establish a reproducible, validated toolchain for mixed-signal system design.
+Using the design of an **LED driver IC** as a demonstrator, the overarching project seeks to **identify and close gaps** in the open-source design flow and to establish a reproducible, validated toolchain for mixed-signal system design. -->
+
+In recent years, the **open-source hardware ecosystem** has evolved to a level where advanced analog and mixed-signal integrated circuit (IC) design can be pursued beyond proprietary electronic design automation (EDA) environments. Parallel to developments in digital open-source design, increasing attention is now being given to analog and mixed-signal methodologies that enable fabrication-ready designs using openly available toolchains and process design kits (PDKs).
+
+The present thesis contributes to the **preparatory phase of a larger collaborative initiative** that focuses on strengthening open-source-based IC design methodologies for small and medium-sized enterprises (SMEs), universities, and research institutions. The objective of this initiative is to establish a validated, reproducible mixed-signal design flow that enables real silicon fabrication using **open-source tools**.
+
+As a demonstrator system, the parent project is centered around the development of an **LED driver integrated circuit**, representative of typical power management applications found in industrial and aerospace environments. Within such systems, analog building blocks play a critical role in ensuring performance, stability, and robustness. The LED driver project therefore serves as a suitable reference platform to identify limitations in current open-source flows and to systematically address them.
 
 ::: callout-note
-### Project Context
-This thesis forms the **technical pre-work** of a multi-partner initiative that extends the *IIC-OSIC-TOOLS* environment with the *IHP SG13G2 OpenPDK*, enabling future open-source mixed-signal tapeouts for SMEs and universities.
+<!-- ### Project Context
+This thesis forms the **technical pre-work** of a multi-partner initiative that extends the *IIC-OSIC-TOOLS* environment with the *IHP SG13G2 OpenPDK*, enabling future open-source mixed-signal tapeouts for SMEs and universities. -->
+
+**Project Context**
+
+This thesis constitutes the technical pre-work of a multi-partner initiative that extends the **IIC-OSIC-TOOLS** environment with the **IHP SG13G2 OpenPDK**, with the goal of enabling future open-source mixed-signal tape-outs for SMEs and universities.
 :::
 
-The long-term objective of the parent project is to extend the **open-source IIC-OSIC-TOOLS** developed by *Prof. Pretl (JKU Linz)* with the **IHP OpenPDK SG13G2**, a 130 nm SiGe BiCMOS process offering analog and RF capabilities suited for power management, sensor, and communication ICs.  
+<!-- The long-term objective of the parent project is to extend the **open-source IIC-OSIC-TOOLS** developed by *Prof. Pretl (JKU Linz)* with the **IHP OpenPDK SG13G2**, a 130 nm SiGe BiCMOS process offering analog and RF capabilities suited for power management, sensor, and communication ICs.  
 By integrating the PDK into the IIC-OSIC-TOOLS flow, the project aims to make **open-source chip design accessible for SMEs**, who have so far been restricted to board-level development due to the prohibitive cost and complexity of commercial EDA ecosystems.  
-This initiative aligns with the global movement toward **democratizing IC design**, exemplified by the formation of the *IEEE SSCS Technical Committee on Open Source Ecosystem (TC-OSE)*.
+This initiative aligns with the global movement toward **democratizing IC design**, exemplified by the formation of the *IEEE SSCS Technical Committee on Open Source Ecosystem (TC-OSE)*. -->
+
+
+A central goal of the parent project is the integration of the **open-source IIC-OSIC-TOOLS** framework, developed under the coordination of **Prof. Pretl (JKU Linz)**, with the **IHP SG13G2 OpenPDK**. The SG13G2 technology is a 130 nm SiGe BiCMOS process that provides analog, RF, and high-voltage device options, making it well suited for applications such as power management ICs, sensor interfaces, and communication systems.
+
+By incorporating this PDK into a fully open-source design flow, the project aims to lower the barrier to IC fabrication for SMEs that are currently limited to board-level development due to the cost, licensing complexity, and long-term vendor dependencies associated with commercial EDA toolchains. In this context, the work aligns with broader international efforts to **democratize integrated circuit(IC) design**, as reflected by initiatives such as the **IEEE Solid-State Circuits Society Technical Committee on Open Source Ecosystem (TC-OSE)**.
+
+Within this framework, the focus of this thesis is the design, layout, and verification of an **analog operational transconductance amplifier (OTA)** that functions as the **error amplifier** in the LED driver system. The ***electrical specifications*** of the OTA-such as gain, bandwidth, stability, noise, and robustness-are derived directly from the system-level requirements of the **LED driver** and reflect a realistic industrial design workflow. The circuit was implemented using the open-source toolchain and prepared for fabrication in the SG13G2 technology, following foundry-compliant verification steps.
+
+This thesis therefore documents a complete analog design path, starting from system context and specification derivation, through schematic design and layout implementation, and concluding with fabrication-ready verification. The presented work demonstrates how open-source tools and PDKs can be applied to real mixed-signal design tasks, forming a foundation for future industrial and academic tape-outs based on open methodologies.
+
+
+
+## State of the Art
+
+### Analog and Mixed-Signal IC Design Practices
+
+Analog and mixed-signal integrated circuits are essential components in power management, sensing, and communication systems. In industrial practice, their development is predominantly carried out using proprietary electronic design automation (EDA) toolchains that tightly integrate schematic design, simulation, layout, parasitic extraction, and sign-off verification. These environments provide reliable foundry compatibility but come with high cost and operational overhead.
+
+A key characteristic of analog IC design is the strong impact of layout-dependent parasitic effects, which directly influence performance, stability, and robustness. Consequently, analog design requires close interaction between circuit design and physical implementation, supported by mature process design kits (PDKs) and established verification methodologies.
+
+### Open-Source IC Design and Toolchains
+
+Open-source IC design has achieved broad adoption in the digital domain, where standardized flows and automated verification dominate. In contrast, open-source approaches for analog and mixed-signal design have evolved more cautiously due to higher sensitivity to device modeling accuracy, layout quality, and verification completeness.
+
+While open-source tools are available for individual tasks such as simulation or layout, fabrication-oriented analog design requires their integration into structured and reproducible design flows that reflect industrial practice.
+
+The **IIC-OSIC-TOOLS** framework addresses this requirement by combining open-source tools into a coherent analog and mixed-signal design environment. Its focus on end-to-end flow consistency provides a practical foundation for moving open-source analog design toward fabrication readiness.
+
+### OpenPDKs and Current Focus
+
+The availability of open PDKs is a critical enabler for open-source analog IC development. The **IHP SG13G2 OpenPDK**, based on a 130 nm SiGe BiCMOS technology, offers analog and RF device options suitable for realistic mixed-signal applications and serves as a representative industrial-grade process for evaluating open-source design flows.
+
+Although open-source toolchains and OpenPDKs have matured significantly, publicly documented end-to-end analog design flows leading to foundry submission remain limited. As a result, there is continued interest in practical, fabrication-oriented case studies that document design and verification steps in a reproducible manner.
+
+
+
 
 ## Scope of the Thesis
 
-Within this framework, the present thesis establishes the **proof of concept for the analog front-end** of the LED driver IC.  
+<!-- Within this framework, the present thesis establishes the **proof of concept for the analog front-end** of the LED driver IC.  
 The work focuses on developing, simulating, and taping-out an **operational amplifier (OTA)** using the **IHP SG13G2 PDK** and the **IIC-OSIC-TOOLS**.  
 The design was submitted to the **IHP Open Multi-Project Wafer (MPW) Run in July 2025**, demonstrating a complete, fabrication-ready analog layout realized entirely with open-source tools such as **Xschem**, **Ngspice**, **KLayout**, **Klayout-PEX**, and **CACE**.
 
 ::: callout-important
 ### Technical Milestone
 The successful **tape-out of the OTA** represents one of the earliest demonstrations of the SG13G2 OpenPDK using the IIC-OSIC toolchain and serves as a validation of the *open-source analog flow*.
+::: -->
+
+
+Within the framework described in the previous sections, this thesis establishes a proof of concept for the analog front-end of an LED driver integrated circuit. The work focuses on the design, simulation, layout, and fabrication preparation of an operational transconductance amplifier (OTA) intended to operate as the error amplifier within the system.
+
+The OTA is developed using the IHP SG13G2 OpenPDK and the IIC-OSIC-TOOLS open-source design environment. The design flow covers the complete analog development cycle, including schematic-level design and simulation, physical layout implementation, parasitic-aware verification, and preparation for foundry submission. The resulting layout was submitted to the **IHP Open Multi-Project Wafer (MPW) run in July 2025**, demonstrating a fabrication-ready analog block realized entirely with open-source tools.
+
+The scope of this thesis is limited to a single, well-defined analog building block and does not include the full implementation of the LED driver IC or system-level validation. Instead, the focus is placed on validating a reproducible and foundry-compliant open-source analog design flow under realistic industrial constraints.
+
+::: callout-note
+
+### Technical Milestone
+
+The successful tape-out of the OTA confirms the applicability of the SG13G2 OpenPDK within the IIC-OSIC-TOOLS environment and demonstrates that open-source analog design flows can be used to prepare fabrication-ready layouts for modern mixed-signal technologies.
 :::
+
+By concentrating on a representative analog front-end block and following an end-to-end design methodology, this work provides a practical reference for future open-source mixed-signal developments in academic and industrial contexts.
 
 ## Motivation and Challenges
 
-The analog subsystem of an LED driver in **aircraft cabin lighting** must regulate voltages between **18 V and 32 V**, ensuring efficiency, low noise, and individual seat controllability.  
-Such power-management circuits are particularly sensitive to **layout-dependent parasitic effects**, which can degrade performance. 
-Hence, a major emphasis of this work lies in the **DRC- and LVS-clean** design and its reliability in open-source flows.
+LED driver systems used in aircraft cabin lighting are subject to stringent electrical and environmental constraints. In addition to operating over a wide voltage range of **18 V to 32 V**, such systems must ensure high efficiency, low output noise, and reliable operation across multiple independently controlled lighting channels. These requirements place significant demands on the underlying analog circuitry, particularly on the stability and robustness of control loops.
+
+From an analog design perspective, these constraints translate into a strong sensitivity to layout-dependent **parasitic effects**, including mismatches, coupling, and substrate interactions. In power-management applications, insufficient control of these effects can lead to degraded loop stability, increased noise, or reduced robustness under process and temperature variations.
+
+A further challenge addressed in this work arises from the use of a fully open-source design flow. While open-source tools provide flexibility and transparency, ensuring **design-rule-clean (DRC)** and **layout-versus-schematic (LVS)** correctness at a level acceptable for fabrication requires careful methodology and systematic verification. Consequently, a central motivation of this thesis is to assess and demonstrate the reliability of open-source analog design flows under realistic industrial constraints, with particular emphasis on layout integrity and verification completeness.
 
 ## Methodological Contributions
 
-Beyond the circuit-level design, this research establishes a **validated analog verification workflow** under fully open conditions.  
-The complete flow — from schematic capture, device sizing, and layout to LVS, PEX, and post-layout simulation — was developed within the *IIC-OSIC-TOOLS* environment.  
-Insights gained from the OTA design, including *device matching*, *guard-ring implementation*, *fill density*, and *PEX consistency*, are being integrated into improvements of the toolchain for future mixed-signal designs.
+In addition to the circuit-level design of the OTA, this thesis contributes a structured and validated **analog design methodology** implemented entirely within an open-source environment. The complete design flow-from schematic capture and device sizing to layout implementation, parasitic extraction, and post-layout simulation-was developed and exercised using the **IIC-OSIC-TOOLS** framework.
+
+Throughout the design process, particular attention was given to layout-centric aspects that are critical for analog performance and fabrication readiness. These include device matching strategies, guard-ring implementation, fill density considerations, and the consistency between extracted parasitics and schematic-level assumptions. The insights gained from addressing these aspects were not only applied to the presented design but also fed back into the refinement of the overall design flow.
+
+By documenting these methodological aspects alongside the circuit implementation, this work contributes practical guidance for future open-source mixed-signal designs. The resulting methodology supports reproducibility and provides a foundation for extending open-source toolchains toward more complex, fabrication-oriented analog and mixed-signal systems.

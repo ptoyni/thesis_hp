@@ -48,11 +48,11 @@ book:
     
     
   chapters:
-    - frontmatter/02-declaration.qmd
-    - frontmatter/03-abstract.qmd
-    - frontmatter/04-acknowledgements.qmd
+    # - frontmatter/02-declaration.qmd
+    # - frontmatter/03-abstract.qmd
+    # - frontmatter/04-acknowledgements.qmd
     - index.qmd
-    - content/_sec_introduction.qmd
+    # - content/_sec_introduction.qmd
     - content/_sec_Requirements_AES.qmd
     - part: Circuit Design
       chapters:
