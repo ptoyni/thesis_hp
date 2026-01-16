@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,19 +32,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./content/_sec_introduction.html" rel="next">
-<link href="./frontmatter/04-acknowledgements.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<link href="./content/_sec_Requirements_AES.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7fd0fe4245b865325b8ce8dccb604d59.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-847404b1397bb642580d6a42be486c59.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d17f3fe3d44958465712692b5c6d3532.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,39 +70,10 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-sidebar floating fullcontent quarto-light">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -114,7 +82,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">List of Abbreviations</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -166,31 +134,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./frontmatter/02-declaration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Declaration of Authorship</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./frontmatter/03-abstract.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Abstract</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./frontmatter/04-acknowledgements.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Acknowledgement</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">List of Abbreviations</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content/_sec_introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -339,7 +283,26 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
+  <ul class="collapse">
+  <li><a href="#state-of-the-art" id="toc-state-of-the-art" class="nav-link" data-scroll-target="#state-of-the-art"><span class="header-section-number">1.1</span> State of the Art</a>
+  <ul class="collapse">
+  <li><a href="#analog-and-mixed-signal-ic-design-practices" id="toc-analog-and-mixed-signal-ic-design-practices" class="nav-link" data-scroll-target="#analog-and-mixed-signal-ic-design-practices"><span class="header-section-number">1.1.1</span> Analog and Mixed-Signal IC Design Practices</a></li>
+  <li><a href="#open-source-ic-design-and-toolchains" id="toc-open-source-ic-design-and-toolchains" class="nav-link" data-scroll-target="#open-source-ic-design-and-toolchains"><span class="header-section-number">1.1.2</span> Open-Source IC Design and Toolchains</a></li>
+  <li><a href="#openpdks-and-current-focus" id="toc-openpdks-and-current-focus" class="nav-link" data-scroll-target="#openpdks-and-current-focus"><span class="header-section-number">1.1.3</span> OpenPDKs and Current Focus</a></li>
+  </ul></li>
+  <li><a href="#scope-of-the-thesis" id="toc-scope-of-the-thesis" class="nav-link" data-scroll-target="#scope-of-the-thesis"><span class="header-section-number">1.2</span> Scope of the Thesis</a></li>
+  <li><a href="#motivation-and-challenges" id="toc-motivation-and-challenges" class="nav-link" data-scroll-target="#motivation-and-challenges"><span class="header-section-number">1.3</span> Motivation and Challenges</a></li>
+  <li><a href="#methodological-contributions" id="toc-methodological-contributions" class="nav-link" data-scroll-target="#methodological-contributions"><span class="header-section-number">1.4</span> Methodological Contributions</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ptoyni/thesis_hp/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ptoyni/thesis_hp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -394,321 +357,425 @@ window.Quarto = {
 </header>
 
 
-<section id="list-of-abbreviations" class="level1 unnumbered unlisted">
-<h1 class="unnumbered unlisted">List of Abbreviations</h1>
-<p><strong>AC</strong> — Alternating Current<br>
-<strong>AVDD</strong> — Analog Supply Voltage<br>
-<strong>AVSS</strong> — Analog Ground</p>
-<p><strong>CACE</strong> — Computer-Aided Circuit Evaluation<br>
-<strong>CC</strong> — Coupling Capacitor<br>
-<strong>C</strong> — Capacitance<br>
-<strong><span class="math inline">\(C_{gd}\)</span></strong> — Gate–Drain Capacitance<br>
-<strong><span class="math inline">\(C_{gs}\)</span></strong> — Gate–Source Capacitance<br>
-<strong>CMOS</strong> — Complementary Metal–Oxide–Semiconductor<br>
-<strong>CMRR</strong> — Common-Mode Rejection Ratio</p>
-<p><strong>DC</strong> — Direct Current<br>
-<strong>DFM</strong> — Design for Manufacturability<br>
-<strong>DRC</strong> — Design Rule Check</p>
-<p><strong>EDA</strong> — Electronic Design Automation<br>
-<strong>EDA-OS</strong> — Open-Source Electronic Design Automation<br>
-<strong>ESD</strong> — Electrostatic Discharge</p>
-<p><strong>FF</strong> — Fast–Fast Process Corner<br>
-<strong>FS</strong> — Fast–Slow Process Corner</p>
-<p><strong>GDS / GDSII</strong> — Graphic Data System (Final Layout Format)<br>
-<strong><span class="math inline">\(g_m\)</span></strong> — Transconductance</p>
-<p><strong>Hz</strong> — Hertz</p>
-<p><strong>I/O</strong> — Input/Output<br>
-<strong>IC</strong> — Integrated Circuit<br>
-<strong><span class="math inline">\(I_d\)</span></strong> — Drain Current<br>
-<strong>IHP</strong> — Innovations for High Performance Microelectronics</p>
-<p><strong>LED</strong> — Light-Emitting Diode<br>
-<strong>LDO</strong> — Low-Dropout Regulator<br>
-<strong>LHS</strong> — Left-Hand Side<br>
-<strong>L</strong> — Channel Length<br>
-<strong><span class="math inline">\(L_{min}\)</span></strong> — Minimum Channel Length</p>
-<p><strong>MC</strong> — Monte-Carlo Simulation<br>
-<strong>MIM</strong> — Metal–Insulator–Metal Capacitor<br>
-<strong>MOSFET</strong> — Metal–Oxide–Semiconductor Field-Effect Transistor<br>
-<strong>MPW</strong> — Multi-Project Wafer<br>
-<strong>µm</strong> — Micrometre (Micron)</p>
-<p><strong><span class="math inline">\(n_g\)</span></strong> — Number of gates<br>
-<strong><span class="math inline">\(N_f\)</span></strong> — Number of fingers<br>
-<strong>NMOS</strong> — n-channel MOSFET<br>
-<strong>nm</strong> — Nanometre</p>
-<p><strong>OTA</strong> — Operational Transconductance Amplifier</p>
-<p><strong>PAD</strong> — Bond Pad<br>
-<strong>PCB</strong> — Printed Circuit Board<br>
-<strong>Pcell</strong> — Parameterized Cell<br>
-<strong>PDK</strong> — Process Design Kit<br>
-<strong>PEX</strong> — Parasitic Extraction<br>
-<strong>PMIC</strong> — Power Management Integrated Circuit<br>
-<strong>PMOS</strong> — p-channel MOSFET<br>
-<strong>PPV</strong> — Post-Processing Verification<br>
-<strong>PSRR</strong> — Power Supply Rejection Ratio<br>
-<strong>PVT</strong> — Process, Voltage, Temperature</p>
-<p><strong>Qt</strong> — Qt Framework (used by KLayout GUI)</p>
-<p><strong>R</strong> — Resistance<br>
-<strong><span class="math inline">\(R_{sub}\)</span></strong> — Substrate Resistance<br>
-<strong><span class="math inline">\(R_{well}\)</span></strong> — Well Resistance</p>
-<p><strong>SG13G2</strong> — IHP 130-nm SiGe BiCMOS Technology<br>
-<strong>SME</strong> — Small and Medium-Sized Enterprise<br>
-<strong>SS</strong> — Slow–Slow Process Corner<br>
-<strong>SF</strong> — Slow–Fast Process Corner<br>
-<strong>STI</strong> — Shallow Trench Isolation</p>
-<p><strong>TT</strong> — Typical–Typical Process Corner</p>
-<p><strong>UGB</strong> — Unity-Gain Bandwidth</p>
-<p><strong>V</strong> — Volt<br>
-<strong><span class="math inline">\(V_{DS}\)</span></strong> — Drain–Source Voltage<br>
-<strong><span class="math inline">\(V_{GS}\)</span></strong> — Gate–Source Voltage<br>
-<strong><span class="math inline">\(V_{IN}^{+}\)</span></strong> — Non-inverting Input Voltage<br>
-<strong><span class="math inline">\(V_{IN}^{−}\)</span></strong> — Inverting Input Voltage<br>
-<strong><span class="math inline">\(V_{OUT}\)</span></strong> — Output Voltage<br>
-<strong><span class="math inline">\(V_{REF}\)</span></strong> — Reference Voltage</p>
-<p><strong>W</strong> — Channel Width<br>
-<strong>W/L</strong> — Width-to-Length Ratio</p>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<!-- # List of Abbreviations {.unnumbered .unlisted}
+
+**AC** — Alternating Current  
+**AVDD** — Analog Supply Voltage  
+**AVSS** — Analog Ground
+
+**CACE** — Computer-Aided Circuit Evaluation  
+**CC** — Coupling Capacitor  
+**C** — Capacitance  
+**$C_{gd}$** — Gate–Drain Capacitance  
+**$C_{gs}$** — Gate–Source Capacitance  
+**CMOS** — Complementary Metal–Oxide–Semiconductor  
+**CMRR** — Common-Mode Rejection Ratio   
+
+**DC** — Direct Current  
+**DFM** — Design for Manufacturability  
+**DRC** — Design Rule Check  
+
+**EDA** — Electronic Design Automation  
+**EDA-OS** — Open-Source Electronic Design Automation  
+**ESD** — Electrostatic Discharge  
+
+**FF** — Fast–Fast Process Corner  
+**FS** — Fast–Slow Process Corner  
+
+**GDS / GDSII** — Graphic Data System (Final Layout Format)  
+**$g_m$** — Transconductance  
+
+**Hz** — Hertz  
+
+**I/O** — Input/Output  
+**IC** — Integrated Circuit  
+**$I_d$** — Drain Current  
+**IHP** — Innovations for High Performance Microelectronics  
+
+**LED** — Light-Emitting Diode  
+**LDO** — Low-Dropout Regulator  
+**LHS** — Left-Hand Side  
+**L** — Channel Length  
+**$L_{min}$** — Minimum Channel Length  
+
+**MC** — Monte-Carlo Simulation  
+**MIM** — Metal–Insulator–Metal Capacitor   
+**MOSFET** — Metal–Oxide–Semiconductor Field-Effect Transistor  
+**MPW** — Multi-Project Wafer  
+**µm** — Micrometre (Micron)  
+
+**$n_g$** — Number of gates  
+**$N_f$** — Number of fingers  
+**NMOS** — n-channel MOSFET  
+**nm** — Nanometre  
+
+**OTA** — Operational Transconductance Amplifier  
+
+**PAD** — Bond Pad  
+**PCB** — Printed Circuit Board  
+**Pcell** — Parameterized Cell  
+**PDK** — Process Design Kit  
+**PEX** — Parasitic Extraction  
+**PMIC** — Power Management Integrated Circuit  
+**PMOS** — p-channel MOSFET  
+**PPV** — Post-Processing Verification  
+**PSRR** — Power Supply Rejection Ratio  
+**PVT** — Process, Voltage, Temperature  
+
+**Qt** — Qt Framework (used by KLayout GUI)  
+
+**R** — Resistance  
+**$R_{sub}$** — Substrate Resistance  
+**$R_{well}$** — Well Resistance    
+ 
+**SG13G2** — IHP 130-nm SiGe BiCMOS Technology  
+**SME** — Small and Medium-Sized Enterprise  
+**SS** — Slow–Slow Process Corner  
+**SF** — Slow–Fast Process Corner  
+**STI** — Shallow Trench Isolation  
+
+**TT** — Typical–Typical Process Corner  
+
+**UGB** — Unity-Gain Bandwidth  
+
+**V** — Volt  
+**$V_{DS}$** — Drain–Source Voltage  
+**$V_{GS}$** — Gate–Source Voltage  
+**$V_{IN}^{+}$** — Non-inverting Input Voltage  
+**$V_{IN}^{−}$** — Inverting Input Voltage  
+**$V_{OUT}$** — Output Voltage  
+**$V_{REF}$** — Reference Voltage  
+
+**W** — Channel Width  
+**W/L** — Width-to-Length Ratio   -->
+<!-- # Introduction -->
+<!-- In recent years, the **open-source hardware ecosystem** has matured to a point where advanced *analog* and *mixed-signal* integrated circuit (IC) design has become increasingly feasible outside proprietary EDA environments.  
+Building on this trend, the present work contributes to the **preparatory phase of a larger collaborative initiative** that aims to strengthen open-source-based chip design methodologies for small and medium-sized enterprises (SMEs), universities, and research institutes.  
+
+Using the design of an **LED driver IC** as a demonstrator, the overarching project seeks to **identify and close gaps** in the open-source design flow and to establish a reproducible, validated toolchain for mixed-signal system design. -->
+<p>In recent years, the <strong>open-source hardware ecosystem</strong> has evolved to a level where advanced analog and mixed-signal integrated circuit (IC) design can be pursued beyond proprietary electronic design automation (EDA) environments. Parallel to developments in digital open-source design, increasing attention is now being given to analog and mixed-signal methodologies that enable fabrication-ready designs using openly available toolchains and process design kits (PDKs).</p>
+<p>The present thesis contributes to the <strong>preparatory phase of a larger collaborative initiative</strong> that focuses on strengthening open-source-based IC design methodologies for small and medium-sized enterprises (SMEs), universities, and research institutions. The objective of this initiative is to establish a validated, reproducible mixed-signal design flow that enables real silicon fabrication using <strong>open-source tools</strong>.</p>
+<p>As a demonstrator system, the parent project is centered around the development of an <strong>LED driver integrated circuit</strong>, representative of typical power management applications found in industrial and aerospace environments. Within such systems, analog building blocks play a critical role in ensuring performance, stability, and robustness. The LED driver project therefore serves as a suitable reference platform to identify limitations in current open-source flows and to systematically address them.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- ### Project Context
+This thesis forms the **technical pre-work** of a multi-partner initiative that extends the *IIC-OSIC-TOOLS* environment with the *IHP SG13G2 OpenPDK*, enabling future open-source mixed-signal tapeouts for SMEs and universities. -->
+<p><strong>Project Context</strong></p>
+<p>This thesis constitutes the technical pre-work of a multi-partner initiative that extends the <strong>IIC-OSIC-TOOLS</strong> environment with the <strong>IHP SG13G2 OpenPDK</strong>, with the goal of enabling future open-source mixed-signal tape-outs for SMEs and universities.</p>
+</div>
+</div>
+<!-- The long-term objective of the parent project is to extend the **open-source IIC-OSIC-TOOLS** developed by *Prof. Pretl (JKU Linz)* with the **IHP OpenPDK SG13G2**, a 130 nm SiGe BiCMOS process offering analog and RF capabilities suited for power management, sensor, and communication ICs.  
+By integrating the PDK into the IIC-OSIC-TOOLS flow, the project aims to make **open-source chip design accessible for SMEs**, who have so far been restricted to board-level development due to the prohibitive cost and complexity of commercial EDA ecosystems.  
+This initiative aligns with the global movement toward **democratizing IC design**, exemplified by the formation of the *IEEE SSCS Technical Committee on Open Source Ecosystem (TC-OSE)*. -->
+<p>A central goal of the parent project is the integration of the <strong>open-source IIC-OSIC-TOOLS</strong> framework, developed under the coordination of <strong>Prof.&nbsp;Pretl (JKU Linz)</strong>, with the <strong>IHP SG13G2 OpenPDK</strong>. The SG13G2 technology is a 130 nm SiGe BiCMOS process that provides analog, RF, and high-voltage device options, making it well suited for applications such as power management ICs, sensor interfaces, and communication systems.</p>
+<p>By incorporating this PDK into a fully open-source design flow, the project aims to lower the barrier to IC fabrication for SMEs that are currently limited to board-level development due to the cost, licensing complexity, and long-term vendor dependencies associated with commercial EDA toolchains. In this context, the work aligns with broader international efforts to <strong>democratize integrated circuit(IC) design</strong>, as reflected by initiatives such as the <strong>IEEE Solid-State Circuits Society Technical Committee on Open Source Ecosystem (TC-OSE)</strong>.</p>
+<p>Within this framework, the focus of this thesis is the design, layout, and verification of an <strong>analog operational transconductance amplifier (OTA)</strong> that functions as the <strong>error amplifier</strong> in the LED driver system. The <strong><em>electrical specifications</em></strong> of the OTA-such as gain, bandwidth, stability, noise, and robustness-are derived directly from the system-level requirements of the <strong>LED driver</strong> and reflect a realistic industrial design workflow. The circuit was implemented using the open-source toolchain and prepared for fabrication in the SG13G2 technology, following foundry-compliant verification steps.</p>
+<p>This thesis therefore documents a complete analog design path, starting from system context and specification derivation, through schematic design and layout implementation, and concluding with fabrication-ready verification. The presented work demonstrates how open-source tools and PDKs can be applied to real mixed-signal design tasks, forming a foundation for future industrial and academic tape-outs based on open methodologies.</p>
+<section id="state-of-the-art" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="state-of-the-art"><span class="header-section-number">1.1</span> State of the Art</h2>
+<section id="analog-and-mixed-signal-ic-design-practices" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="analog-and-mixed-signal-ic-design-practices"><span class="header-section-number">1.1.1</span> Analog and Mixed-Signal IC Design Practices</h3>
+<p>Analog and mixed-signal integrated circuits are essential components in power management, sensing, and communication systems. In industrial practice, their development is predominantly carried out using proprietary electronic design automation (EDA) toolchains that tightly integrate schematic design, simulation, layout, parasitic extraction, and sign-off verification. These environments provide reliable foundry compatibility but come with high cost and operational overhead.</p>
+<p>A key characteristic of analog IC design is the strong impact of layout-dependent parasitic effects, which directly influence performance, stability, and robustness. Consequently, analog design requires close interaction between circuit design and physical implementation, supported by mature process design kits (PDKs) and established verification methodologies.</p>
+</section>
+<section id="open-source-ic-design-and-toolchains" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="open-source-ic-design-and-toolchains"><span class="header-section-number">1.1.2</span> Open-Source IC Design and Toolchains</h3>
+<p>Open-source IC design has achieved broad adoption in the digital domain, where standardized flows and automated verification dominate. In contrast, open-source approaches for analog and mixed-signal design have evolved more cautiously due to higher sensitivity to device modeling accuracy, layout quality, and verification completeness.</p>
+<p>While open-source tools are available for individual tasks such as simulation or layout, fabrication-oriented analog design requires their integration into structured and reproducible design flows that reflect industrial practice.</p>
+<p>The <strong>IIC-OSIC-TOOLS</strong> framework addresses this requirement by combining open-source tools into a coherent analog and mixed-signal design environment. Its focus on end-to-end flow consistency provides a practical foundation for moving open-source analog design toward fabrication readiness.</p>
+</section>
+<section id="openpdks-and-current-focus" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="openpdks-and-current-focus"><span class="header-section-number">1.1.3</span> OpenPDKs and Current Focus</h3>
+<p>The availability of open PDKs is a critical enabler for open-source analog IC development. The <strong>IHP SG13G2 OpenPDK</strong>, based on a 130 nm SiGe BiCMOS technology, offers analog and RF device options suitable for realistic mixed-signal applications and serves as a representative industrial-grade process for evaluating open-source design flows.</p>
+<p>Although open-source toolchains and OpenPDKs have matured significantly, publicly documented end-to-end analog design flows leading to foundry submission remain limited. As a result, there is continued interest in practical, fabrication-oriented case studies that document design and verification steps in a reproducible manner.</p>
+</section>
+</section>
+<section id="scope-of-the-thesis" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="scope-of-the-thesis"><span class="header-section-number">1.2</span> Scope of the Thesis</h2>
+<!-- Within this framework, the present thesis establishes the **proof of concept for the analog front-end** of the LED driver IC.  
+The work focuses on developing, simulating, and taping-out an **operational amplifier (OTA)** using the **IHP SG13G2 PDK** and the **IIC-OSIC-TOOLS**.  
+The design was submitted to the **IHP Open Multi-Project Wafer (MPW) Run in July 2025**, demonstrating a complete, fabrication-ready analog layout realized entirely with open-source tools such as **Xschem**, **Ngspice**, **KLayout**, **Klayout-PEX**, and **CACE**.
+
+::: callout-important
+### Technical Milestone
+The successful **tape-out of the OTA** represents one of the earliest demonstrations of the SG13G2 OpenPDK using the IIC-OSIC toolchain and serves as a validation of the *open-source analog flow*.
+::: -->
+<p>Within the framework described in the previous sections, this thesis establishes a proof of concept for the analog front-end of an LED driver integrated circuit. The work focuses on the design, simulation, layout, and fabrication preparation of an operational transconductance amplifier (OTA) intended to operate as the error amplifier within the system.</p>
+<p>The OTA is developed using the IHP SG13G2 OpenPDK and the IIC-OSIC-TOOLS open-source design environment. The design flow covers the complete analog development cycle, including schematic-level design and simulation, physical layout implementation, parasitic-aware verification, and preparation for foundry submission. The resulting layout was submitted to the <strong>IHP Open Multi-Project Wafer (MPW) run in July 2025</strong>, demonstrating a fabrication-ready analog block realized entirely with open-source tools.</p>
+<p>The scope of this thesis is limited to a single, well-defined analog building block and does not include the full implementation of the LED driver IC or system-level validation. Instead, the focus is placed on validating a reproducible and foundry-compliant open-source analog design flow under realistic industrial constraints.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Technical Milestone
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The successful tape-out of the OTA confirms the applicability of the SG13G2 OpenPDK within the IIC-OSIC-TOOLS environment and demonstrates that open-source analog design flows can be used to prepare fabrication-ready layouts for modern mixed-signal technologies.</p>
+</div>
+</div>
+<p>By concentrating on a representative analog front-end block and following an end-to-end design methodology, this work provides a practical reference for future open-source mixed-signal developments in academic and industrial contexts.</p>
+</section>
+<section id="motivation-and-challenges" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="motivation-and-challenges"><span class="header-section-number">1.3</span> Motivation and Challenges</h2>
+<p>LED driver systems used in aircraft cabin lighting are subject to stringent electrical and environmental constraints. In addition to operating over a wide voltage range of <strong>18 V to 32 V</strong>, such systems must ensure high efficiency, low output noise, and reliable operation across multiple independently controlled lighting channels. These requirements place significant demands on the underlying analog circuitry, particularly on the stability and robustness of control loops.</p>
+<p>From an analog design perspective, these constraints translate into a strong sensitivity to layout-dependent <strong>parasitic effects</strong>, including mismatches, coupling, and substrate interactions. In power-management applications, insufficient control of these effects can lead to degraded loop stability, increased noise, or reduced robustness under process and temperature variations.</p>
+<p>A further challenge addressed in this work arises from the use of a fully open-source design flow. While open-source tools provide flexibility and transparency, ensuring <strong>design-rule-clean (DRC)</strong> and <strong>layout-versus-schematic (LVS)</strong> correctness at a level acceptable for fabrication requires careful methodology and systematic verification. Consequently, a central motivation of this thesis is to assess and demonstrate the reliability of open-source analog design flows under realistic industrial constraints, with particular emphasis on layout integrity and verification completeness.</p>
+</section>
+<section id="methodological-contributions" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="methodological-contributions"><span class="header-section-number">1.4</span> Methodological Contributions</h2>
+<p>In addition to the circuit-level design of the OTA, this thesis contributes a structured and validated <strong>analog design methodology</strong> implemented entirely within an open-source environment. The complete design flow-from schematic capture and device sizing to layout implementation, parasitic extraction, and post-layout simulation-was developed and exercised using the <strong>IIC-OSIC-TOOLS</strong> framework.</p>
+<p>Throughout the design process, particular attention was given to layout-centric aspects that are critical for analog performance and fabrication readiness. These include device matching strategies, guard-ring implementation, fill density considerations, and the consistency between extracted parasitics and schematic-level assumptions. The insights gained from addressing these aspects were not only applied to the presented design but also fed back into the refinement of the overall design flow.</p>
+<p>By documenting these methodological aspects alongside the circuit implementation, this work contributes practical guidance for future open-source mixed-signal designs. The resulting methodology supports reproducibility and provides a foundation for extending open-source toolchains toward more complex, fabrication-oriented analog and mixed-signal systems.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
     }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
     }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ptoyni\.github\.io\/thesis_hp\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/ptoyni\.github\.io\/thesis_hp\/");
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
       }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
     }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
     }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
       } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
           }
         } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
+          // See if we can fetch this
+          fetch(url.split('#')[0])
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
+            const note = htmlDoc.getElementById(id);
             if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
+              const html = processXRef(id, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -716,170 +783,191 @@ window.Quarto = {
             instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
       } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
         });
       }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
     }
-  });
-  </script>
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./frontmatter/04-acknowledgements.html" class="pagination-link" aria-label="Acknowledgement">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Acknowledgement</span>
-      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./content/_sec_introduction.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./content/_sec_Requirements_AES.html" class="pagination-link" aria-label="Requirements">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Requirements</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -891,7 +979,7 @@ window.Quarto = {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ptoyni/thesis_hp/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ptoyni/thesis_hp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ptoyni/thesis_hp/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ptoyni/thesis_hp/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
