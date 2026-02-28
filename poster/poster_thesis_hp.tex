@@ -42,13 +42,13 @@
 %
 \setmargins[2cm]
 %
-\rightlogo[0.75]{../figures/HSB_Vertikal_RGB}
-\leftlogo[0.65]{../figures/qr_code}
+\rightlogo[0.75]{./figures/HSB_Vertikal_RGB}
+\leftlogo[0.65]{./figures/qr_code}
 \title{Assessing the feasibility of developing and taping-out an analog block for LED driver control using IHP-Open-PDK
   and IIC-OSIC-TOOLS}
 \author{P. Toyni and H. Pangavhane}
 %   
-\institute{Prof. Dr.-Ing. M. Meiners, Concept Engineering SoCs and Design}
+\institute{Prof. Dr.-Ing. M. Meiners, Concept Engineering SOCs and Design}
 \email{mirco.meiners@hs-bremen.de}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -127,7 +127,7 @@ industrial operating conditions.
 
 \begin{figure}
 \centering
-\includesvg[width=0.85\linewidth]{../figures/_fig_foldedcascode_diagram.svg}
+\includesvg[width=0.85\linewidth]{./figures/_fig_foldedcascode_diagram.svg}
 \caption{Folded-cascode OTA topology implemented in NMOS and PMOS variants.}
 \label{fig:foldedcascode}
 \end{figure}
@@ -170,6 +170,13 @@ was performed, and the extracted netlists were used for post-layout
 simulation. The post-layout results showed predictable behavior relative
 to pre-layout simulations, confirming that the open-source flow supports
 reliable parasitic-aware analog design.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth]{./figures/_fig_otaled}
+\caption{Folded-cascode OTA topology implemented in NMOS and PMOS variants.}
+\label{fig:foldedcascode}
+\end{figure}
 
 % -----------------------------------------------------------------------------
 
